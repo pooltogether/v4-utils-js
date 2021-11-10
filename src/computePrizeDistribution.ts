@@ -1,29 +1,17 @@
 import { Contract } from '@ethersproject/contracts';
-import { Draw } from '@pooltogether/v4-ts-types';
+import { Draw, PrizeDistribution } from '@pooltogether/v4-ts-types';
 import { ethers } from 'ethers';
 import { calculatePicks } from './calculatePicks';
 import { computeCardinality } from './computeCardinality';
 
 const debug = require('debug')('v4-js-core');
 
-interface IPrizeDistribution {
-  bitRangeSize: any;
-  matchCardinality: any;
-  tiers: any;
-  maxPicksPerUser: any;
-  numberOfPicks: any;
-  expiryDuration: any;
-  startTimestampOffset: any;
-  prize: any;
-  endTimestampOffset: any;
-}
-
 export async function computePrizeDistribution(
   draw: Draw,
   prizeTierHistory?: Contract,
   ticketsToCalculate?: Contract,
   otherTickets?: Contract
-): Promise<IPrizeDistribution | undefined> {
+): Promise<PrizeDistribution | undefined> {
   debug('computePrizeDistribution:entered');
   if (!draw || !prizeTierHistory || !ticketsToCalculate || !otherTickets) return undefined;
   const prizeTier = await prizeTierHistory.getPrizeTier(draw.drawId);
@@ -36,7 +24,6 @@ export async function computePrizeDistribution(
   const { endTimestampOffset } = prizeTier;
   const startTime = draw.timestamp - startTimestampOffset;
   const endTime = draw.timestamp - endTimestampOffset;
-
 
   const ticketAverage = await ticketsToCalculate.getAverageTotalSuppliesBetween(
     [startTime],
