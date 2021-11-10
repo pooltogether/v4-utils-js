@@ -1,6 +1,6 @@
 import { BigNumber } from "ethers"
 
-const debug = require('debug')('pt:tsunami-sdk-drawCalculator')
+const debug = require('debug')('pt:v4-core-js')
 
 //SOLIDITY SIG: function _findBitMatchesAtIndex(uint256 word1, uint256 word2, uint256 indexOffset, uint8 _bitRangeMaskValue) 
 export function findBitMatchesAtIndex(word1: BigNumber, word2: BigNumber, matchIndex: number, bitRangeSize: number): boolean {
@@ -16,10 +16,10 @@ export function findBitMatchesAtIndex(word1: BigNumber, word2: BigNumber, matchI
 
     const bitRangeMaxInt = (Math.pow(2, bitRangeSize) - 1)
     // debug(`Max int: `, bitRangeMaxInt.toString(16))
-    const mask : BigInt = BigInt(bitRangeMaxInt) << BigInt(indexOffset.toString())
+    const mask: BigInt = BigInt(bitRangeMaxInt) << BigInt(indexOffset.toString())
 
     // debug(mask.toString(16))
-    
+
     const bits1 = BigInt(word1DataHexString) & BigInt(mask)
     // debug(`bits1: `, bits1.toString(16))
     const bits2 = BigInt(word2DataHexString) & BigInt(mask)

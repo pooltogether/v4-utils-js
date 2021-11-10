@@ -56,6 +56,5 @@ export type Claim = {
 
 export type UserDrawResult = {
     user: User;
-    // drawId: BigNumber
     drawResult: DrawResults;
 };

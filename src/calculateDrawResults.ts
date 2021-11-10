@@ -5,7 +5,7 @@ import { Draw, DrawResults, PrizeDistribution, User } from './types';
 import { computeDrawResults } from './computeDrawResults';
 import { filterResultsByValue } from './helpers/filterResultsByValue';
 
-const debug = require('debug')('pt:tsunami-sdk-drawCalculator');
+const debug = require('debug')('pt:v4-core-js');
 
 export function calculateDrawResults(
     prizeDistribution: PrizeDistribution,

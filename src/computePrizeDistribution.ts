@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import { Contract } from '@ethersproject/contracts';
 import { Draw, PrizeDistribution } from '@pooltogether/v4-ts-types';
 import { ethers } from 'ethers';
@@ -62,13 +63,13 @@ export async function computePrizeDistribution(
 
   debug(`number of picks is ${numberOfPicks}`);
 
-  const prizeDistribution: IPrizeDistribution = {
+  const prizeDistribution: PrizeDistribution = {
     bitRangeSize: prizeTier.bitRangeSize,
     matchCardinality,
     tiers: prizeTier.tiers,
     maxPicksPerUser: prizeTier.maxPicksPerUser,
     expiryDuration,
-    numberOfPicks,
+    numberOfPicks: BigNumber.from(numberOfPicks),
     startTimestampOffset,
     prize: prizeTier.prize,
     endTimestampOffset,

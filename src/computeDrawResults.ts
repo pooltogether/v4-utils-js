@@ -16,17 +16,17 @@ export function computeDrawResults(drawSettings: PrizeDistribution, draw: Draw, 
     totalValue: ethers.constants.Zero,
     drawId: draw.drawId
   }
-  
+
   // run matching enegine for each pick
   for (let i = 0; i < picks.length; i++) {
     const pick = picks[i]
-    const pickPrize: PickPrize | undefined = calculatePickPrize(pick.hash, draw.winningRandomNumber, drawSettings, draw)
-    
+    const pickPrize: PickPrize | undefined = calculatePickPrize(pick.hash, draw.winningRandomNumber, drawSettings)
+
     // if there is a prize for that pick, add it to the results
     if (pickPrize) {
-      const prizeAwardable : PrizeAwardable = {
-          ...pickPrize,
-          pick: ethers.BigNumber.from(pick.index)
+      const prizeAwardable: PrizeAwardable = {
+        ...pickPrize,
+        pick: ethers.BigNumber.from(pick.index)
       }
       results.totalValue = results.totalValue.add(prizeAwardable.amount)
       results.prizes.push(prizeAwardable)

@@ -1,3 +1,3 @@
-# PoolTogether V4 Javascript Core 
+# PoolTogether V4 JS 
 
-The `v4-js-core` module handles calculations and computations for PoolTogether V4 operations.
+The `v4-js` module handles calculations and computations for PoolTogether V4 operations.
