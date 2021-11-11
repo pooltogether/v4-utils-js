@@ -1,4 +1,4 @@
-export const INFURA_ID = 'b81e24d29d1942b8bf04bf3c81ae3761';
+export const INFURA_ID = "b81e24d29d1942b8bf04bf3c81ae3761";
 
 export const NETWORK_CHAIN_ID = parseInt(
   process.env.DEFAULT_CHAIN_ID ?? "1",
@@ -24,8 +24,7 @@ export const NETWORK_URL_POLYGON_MAINNET =
   `https://polygon-mainnet.infura.io/v3/${INFURA_ID}`;
 
 export const NETWORK_URL_POLYGON_MUMBAI =
-  process.env.NETWORK_URL_POLYGON_MUMBAI ||
-  "https://rpc-mumbai.maticvigil.com";
+  process.env.NETWORK_URL_POLYGON_MUMBAI || "https://rpc-mumbai.maticvigil.com";
 
 export const NETWORK_URL_BINANCE_MAINNET =
   process.env.NETWORK_URL_BINANCE_MAINNET ||

@@ -1,4 +1,5 @@
-import { BigNumber } from "ethers";
+import { Provider } from "@ethersproject/abstract-provider";
+import { BigNumber } from "@ethersproject/bignumber";
 
 export type PrizeDistribution = {
   matchCardinality: number;
@@ -63,4 +64,9 @@ export interface ContractAddressWithNetwork {
   address: string;
   name: string;
   network: string;
+  chainId: number;
+}
+
+export interface Providers {
+  [chainId: number]: Provider;
 }

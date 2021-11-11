@@ -30,6 +30,7 @@
     "@ethersproject/bytes": "^5.5.0",
     "@ethersproject/contracts": "^5.5.0",
     "@ethersproject/networks": "^5.5.0",
+    "@pooltogether/contract-list-schema": "^0.1.4",
     "@pooltogether/v4-core": "^1.1.1",
     "@pooltogether/v4-periphery": "^1.0.0",
     "@pooltogether/v4-timelocks": "^1.0.0",
@@ -37,6 +38,7 @@
     "ethers": "^5.5.1"
   },
   "devDependencies": {
+    "@pooltogether/v4-pool-data": "^1.1.0",
     "@size-limit/preset-small-lib": "^6.0.4",
     "@types/chai": "^4.2.22",
     "chai": "^4.3.4",

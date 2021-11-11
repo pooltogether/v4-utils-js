@@ -1,3 +1,4 @@
+import PoolTogetherV4 from "./PoolTogetherV4";
 export * from "./batchCalculateDrawResults";
 export * from "./calculateDrawResults";
 export * from "./calculatePicks";
@@ -12,3 +13,5 @@ export * from "./validatePrizeDistributionParameters";
 // Helpers
 export * from "./helpers/calculateNumberOfPrizesForIndex";
 export * from "./helpers/calculatePrizeForDistributionIndex";
+
+export default PoolTogetherV4;

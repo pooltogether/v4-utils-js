@@ -1480,6 +1480,11 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.1.tgz#c01f791ce6c9d3989ac1a643267501dbe336b9e3"
   integrity sha512-QjgbPPlmDK2clK1hzjw2ROfY8KA5q+PfhDUUxZFEBCZP9fi6d5FuNoh/Uq0oCTMEKPmue69vhX2jcl0N/tFKGw==
 
+"@pooltogether/contract-list-schema@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@pooltogether/contract-list-schema/-/contract-list-schema-0.1.4.tgz#52a4b35e1ef1b263c643e517ca1908180cf1cb6e"
+  integrity sha512-oLAu9TGfU9xf1QFJJZQxUj0hsfcRao/DMCZ1hVvDkmwOnX1PUkuhuvZfvgwLFd4hJ4m2kjdCyTJ+VJ5qvgjyww==
+
 "@pooltogether/fixed-point@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pooltogether/fixed-point/-/fixed-point-1.0.0.tgz#2c9fb9fe1cca557ca2be7b9ed7414d5edd5a816f"
@@ -1511,6 +1516,11 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pooltogether/v4-periphery/-/v4-periphery-1.0.0.tgz#a24f5acee41b1673475ab6d5f0f5f4e32974445d"
   integrity sha512-pLoVvNBS94X0NWdukZjXNV0nlJU39LqFmH9ms0MpQAbYvlt8TCAx/JS6/a9ePE4rTH7qlwcJC/QneGuIZNct0g==
+
+"@pooltogether/v4-pool-data@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/v4-pool-data/-/v4-pool-data-1.1.0.tgz#715ea2fee1d6779baee847a9d913a60d74400ec8"
+  integrity sha512-tCOrAgPRJ86ksZbQlNwnp63ZxaxDVfIJ6SFjWDn7kHKOgS9s9tQM8nE46GQ8uB0DNqn/8fOjN/E0SArid1NvgA==
 
 "@pooltogether/v4-timelocks@^1.0.0":
   version "1.0.0"
