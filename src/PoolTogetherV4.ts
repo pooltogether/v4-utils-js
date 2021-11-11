@@ -3,7 +3,8 @@ import { ContractList } from "@pooltogether/contract-list-schema";
 import { Contract } from "@ethersproject/contracts";
 import { getContract, getInterface } from "./utils";
 import { Providers } from "./types";
-
+import { Provider } from '@ethersproject/abstract-provider'
+import { InfuraProvider } from '@ethersproject/providers'
 export interface PoolTogetherV4Config {
   infuraApiKey: string;
 }
@@ -30,7 +31,7 @@ export class PoolTogetherV4 {
     return this;
   }
 
-  getInfuraProvider(chainId: number): Provider | undefined {
+  getInfuraProvider(chainId: number): InfuraProvider | undefined {
     return !this.config
       ? undefined
       : new providers.InfuraProvider(chainId, this.config.infuraApiKey);
