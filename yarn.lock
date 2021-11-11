@@ -1475,11 +1475,58 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pooltogether/v4-ts-types@pooltogether/v4-ts-types#master":
+"@openzeppelin/contracts@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.1.tgz#c01f791ce6c9d3989ac1a643267501dbe336b9e3"
+  integrity sha512-QjgbPPlmDK2clK1hzjw2ROfY8KA5q+PfhDUUxZFEBCZP9fi6d5FuNoh/Uq0oCTMEKPmue69vhX2jcl0N/tFKGw==
+
+"@pooltogether/fixed-point@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/fixed-point/-/fixed-point-1.0.0.tgz#2c9fb9fe1cca557ca2be7b9ed7414d5edd5a816f"
+  integrity sha512-YhvjswZuDpKK/NFboyeFWoXhq4763kbi/hNx0L5+6kCRUq8WruvXR4WFvWlDo+5Dx1UsaOnPygAMfrJT0h7bMw==
+
+"@pooltogether/owner-manager-contracts@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/owner-manager-contracts/-/owner-manager-contracts-1.1.0.tgz#776f1b96a81cec05bfe6575583b4b239a4038fa9"
+  integrity sha512-1PqkzSE/AJ4luGhpEfaN9YnHI7mbe63zy92iXgNwHJ4XDqerm+hfJsggrXK7BUyUkAIFLFf8+Ol0TntZAUTedw==
+
+"@pooltogether/pooltogether-rng-contracts@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-rng-contracts/-/pooltogether-rng-contracts-1.4.0.tgz#310b9667a1123cfcce718aa6d8eba7c434a53c75"
+  integrity sha512-dNgDpDsCMxUxaz8u6OfpjSBtMOdcp8QkLC3cwJ6E++4ux0qY2ON+ZqJEHIC3q4ZVJ4Xf6FikMJF0a8SVNtl8Zw==
+
+"@pooltogether/v4-core@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@pooltogether/v4-core/-/v4-core-1.1.1.tgz#8b96635ce3016354c10e790ece0fbf9cca22c9b3"
+  integrity sha512-l+odkcWdfRbAaqMfJdJPDyA5BvpRpWwmafIQhB1ZXdqlweW+V1c08NF+2h3/v6k40rwP+FeiKRGmB5m4OsfPaQ==
+  dependencies:
+    "@openzeppelin/contracts" "4.3.1"
+    "@pooltogether/fixed-point" "1.0.0"
+    "@pooltogether/owner-manager-contracts" "1.1.0"
+    "@pooltogether/pooltogether-rng-contracts" "1.4.0"
+    "@pooltogether/yield-source-interface" "1.3.0"
+    deploy-eip-1820 "1.0.0"
+
+"@pooltogether/v4-periphery@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/v4-periphery/-/v4-periphery-1.0.0.tgz#a24f5acee41b1673475ab6d5f0f5f4e32974445d"
+  integrity sha512-pLoVvNBS94X0NWdukZjXNV0nlJU39LqFmH9ms0MpQAbYvlt8TCAx/JS6/a9ePE4rTH7qlwcJC/QneGuIZNct0g==
+
+"@pooltogether/v4-timelocks@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/v4-timelocks/-/v4-timelocks-1.0.0.tgz#ae1a7a378b79c72f1c55b7cb778eb192c4dd32cc"
+  integrity sha512-8rcDPOrEab1Ka/Ws/QnUZTXef4C48iw3Rc4eHbmA59nzTe2hF36Q1Q5xX5KpWNzAAJOlzDBqGf1FOyk4rHGvxA==
+
+"@pooltogether/v4-ts-types@pooltogether/v4-ts-types":
   version "0.1.0"
-  resolved "git+ssh://git@github.com/pooltogether/v4-ts-types.git#5552df371c618a53500a223f0108050167e4e694"
+  resolved "git+ssh://git@github.com/pooltogether/v4-ts-types.git#9b01bc55bf92f32fe14dff9d4c9dc0f2b6cb6cd7"
   dependencies:
     ethers "^5.4.7"
+
+"@pooltogether/yield-source-interface@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@pooltogether/yield-source-interface/-/yield-source-interface-1.3.0.tgz#93e9c12bb2d62e2215bb2f9c9d391a092e6eb6d5"
+  integrity sha512-HEo4iB/emXz/QZ0J1ilWVtBk0NFAmIQe80xG3hbSfLI/SnAMIHixGq/TSw3IWu4RGEf2ttoMc44Bxd+IdbZisA==
 
 "@rollup/plugin-babel@^5.1.0":
   version "5.3.0"
@@ -3239,6 +3286,11 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
+
+deploy-eip-1820@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/deploy-eip-1820/-/deploy-eip-1820-1.0.0.tgz#59aa3de9cc8d2bcee9d7a1e5d1aff8b0f117d693"
+  integrity sha512-WQG0ANtT8/Wcq77Tva4quphOVWzwlpxvtVPUuLrbkXSuU27LMZ8tEszpelc/1nDudiuj54mVBIXbOgkCMqKOkg==
 
 detect-newline@^3.0.0:
   version "3.1.0"

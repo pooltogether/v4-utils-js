@@ -1,4 +1,4 @@
-import { utils } from 'ethers';
+import { utils } from "ethers";
 
 export function computeCardinality(
   bitRangeSize: number,
@@ -10,7 +10,10 @@ export function computeCardinality(
   const range = 2 ** bitRangeSize;
 
   do {
-    numberOfPicks = utils.parseUnits(`${range ** ++matchCardinality}`, totalSupplyDecimals);
+    numberOfPicks = utils.parseUnits(
+      `${range ** ++matchCardinality}`,
+      totalSupplyDecimals
+    );
   } while (numberOfPicks.lt(totalSupply));
 
   matchCardinality--;

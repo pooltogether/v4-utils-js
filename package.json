@@ -24,9 +24,16 @@
     "analyze": "size-limit --why"
   },
   "dependencies": {
+    "@ethersproject/abi": "^5.5.0",
+    "@ethersproject/address": "^5.5.0",
     "@ethersproject/bignumber": "^5.5.0",
+    "@ethersproject/bytes": "^5.5.0",
     "@ethersproject/contracts": "^5.5.0",
-    "@pooltogether/v4-ts-types": "pooltogether/v4-ts-types#master",
+    "@ethersproject/networks": "^5.5.0",
+    "@pooltogether/v4-core": "^1.1.1",
+    "@pooltogether/v4-periphery": "^1.0.0",
+    "@pooltogether/v4-timelocks": "^1.0.0",
+    "@pooltogether/v4-ts-types": "pooltogether/v4-ts-types",
     "ethers": "^5.5.1"
   },
   "devDependencies": {
