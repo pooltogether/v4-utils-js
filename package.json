@@ -1,6 +1,7 @@
 {
   "name": "v4-js",
   "author": "Kames Geraghty",
+  "description": "PoolTogether V4 JS library for general calculations and computers of the protocol state.",
   "module": "dist/v4-js.esm.js",
   "version": "0.1.0",
   "license": "GPL-3.0-only",
@@ -30,6 +31,8 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^6.0.4",
+    "@types/chai": "^4.2.22",
+    "chai": "^4.3.4",
     "debug": "^4.3.2",
     "husky": "^7.0.4",
     "size-limit": "^6.0.4",
