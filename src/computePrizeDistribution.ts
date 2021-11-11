@@ -47,36 +47,30 @@ export async function computePrizeDistribution(
 
   // @TODO: handle case where ticketContracts is empty?
   if (!ticketContracts) return;
-  const { drawId, beaconPeriodSeconds } = draw
+  const { drawId, beaconPeriodSeconds, beaconPeriodStartedAt } = draw
   debug("computePrizeDistribution:fetching-data")
 
   const prizeTier = await prizeTierHistoryContract.getPrizeTier(drawId);
+  const { bitRangeSize, expiryDuration, maxPicksPerUser, tiers, prize } = prizeTier;
   debug("computePrizeDistribution:prizeTier", prizeTier);
-
-  const beaconPeriod = beaconPeriodSeconds;
-  const startTimestampOffset = beaconPeriod;
 
   const decimals = await ticketL1.decimals();
   debug("computePrizeDistribution:decimals", decimals);
 
   const { endTimestampOffset } = prizeTier;
-  const startTime = draw.timestamp - startTimestampOffset;
+  const startTime = draw.timestamp - beaconPeriodSeconds;
   const endTime = draw.timestamp - endTimestampOffset;
 
-  const getAverageTotalSuppliesBetween = await getMultiTicketAverageTotalSuppliesBetween(ticketContracts, startTime, endTime)
-
-  console.log(getAverageTotalSuppliesBetween, 'getAverageTotalSuppliesBetween')
-  getAverageTotalSuppliesBetween.forEach((avg, idx) => debug("Ticket ${idx}: ", avg))
-
-  const combinedTotalSupply = sumBigNumbers(getAverageTotalSuppliesBetween)
-  console.log(combinedTotalSupply, 'combinedTotalSupply')
+  const getMultiTicketAverageTotalSupplies = await getMultiTicketAverageTotalSuppliesBetween(ticketContracts, startTime, endTime)
+  const combinedTotalSupply = sumBigNumbers(getMultiTicketAverageTotalSupplies)
+  getMultiTicketAverageTotalSupplies.forEach((avg, idx) => debug("Ticket ${idx}: ", avg))
+  debug("computePrizeDistribution:combinedTotalSupply", combinedTotalSupply);
 
   const matchCardinality = computeCardinality(
-    prizeTier.bitRangeSize,
-    combinedTotalSupply,
+    bitRangeSize,
+    sumBigNumbers(getMultiTicketAverageTotalSupplies),
     decimals
   );
-  const { expiryDuration } = prizeTier;
   debug(`cardinality is ${matchCardinality}`);
 
   debug(
@@ -86,14 +80,14 @@ export async function computePrizeDistribution(
     )}`
   );
   debug(
-    `total number of picks: ${(2 ** prizeTier.bitRangeSize) **
+    `total number of picks: ${(2 ** bitRangeSize) **
     matchCardinality}`
   );
 
   let numberOfPicks = 0;
   if (combinedTotalSupply.gt("0")) {
     numberOfPicks = await calculatePicks(
-      prizeTier.bitRangeSize,
+      bitRangeSize,
       matchCardinality,
       startTime,
       endTime,
@@ -104,14 +98,14 @@ export async function computePrizeDistribution(
   debug(`number of picks is ${numberOfPicks}`);
 
   const prizeDistribution: PrizeDistribution = {
-    bitRangeSize: prizeTier.bitRangeSize,
+    bitRangeSize: bitRangeSize,
     matchCardinality,
-    tiers: prizeTier.tiers,
-    maxPicksPerUser: prizeTier.maxPicksPerUser,
+    tiers: tiers,
+    maxPicksPerUser: maxPicksPerUser,
     expiryDuration,
     numberOfPicks: BigNumber.from(numberOfPicks),
-    startTimestampOffset,
-    prize: prizeTier.prize,
+    startTimestampOffset: beaconPeriodSeconds,
+    prize: prize,
     endTimestampOffset,
   };
 

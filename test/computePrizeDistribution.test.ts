@@ -1,9 +1,9 @@
 import { BigNumber } from 'ethers';
 import { computePrizeDistribution } from '../src';
 import { ContractAddressWithNetwork } from '../src/types'
-
+const debug = require("debug")("v4-js-core:test");
 describe('computePrizeDistribution', () => {
-  it('should succeed', async () => {
+  it('should succeed to calculate a PrizeDistribution', async () => {
     const draw = {
       winningRandomNumber: BigNumber.from('21288413488180966377126236036201345909019919575750940621513526137694302720820'),
       drawId: 1,
@@ -30,9 +30,28 @@ describe('computePrizeDistribution', () => {
       network: 'polygon-mainnet'
     }
 
+    const expectation = {
+      bitRangeSize: 2,
+      matchCardinality: 10,
+      tiers: [
+        166889185, 0, 0,
+        320427236, 0, 512683578,
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, 0,
+        0
+      ],
+      maxPicksPerUser: 2,
+      expiryDuration: 5184000,
+      numberOfPicks: BigNumber.from({ _hex: '0x04dc79', _isBigNumber: true }),
+      startTimestampOffset: 86400,
+      prize: BigNumber.from({ _hex: '0x037ce0a900', _isBigNumber: true }),
+      endTimestampOffset: 900
+    }
+
     const results = await computePrizeDistribution(draw, prizeTierHistory, [ticketL1, ticketL2]).catch(e => console.log(e))
-    console.log('Results:', results)
-    expect(1 + 1).toEqual(2);
+    debug('computePrizeDistribution:results', results)
+    expect(results).toEqual(expectation);
   });
 });
 
