@@ -34,7 +34,6 @@
     "@pooltogether/v4-core": "^1.1.1",
     "@pooltogether/v4-periphery": "^1.0.0",
     "@pooltogether/v4-timelocks": "^1.0.0",
-    "@pooltogether/v4-ts-types": "pooltogether/v4-ts-types",
     "ethers": "^5.5.1",
     "lodash": "^4.17.21"
   },
