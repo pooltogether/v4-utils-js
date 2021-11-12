@@ -15,7 +15,7 @@ export function filterResultsByValue(
     );
     // sort by value
     const descendingSortedPrizes: PrizeAwardable[] = drawResults.prizes.sort(
-      function (a: PrizeAwardable, b: PrizeAwardable): number {
+      function(a: PrizeAwardable, b: PrizeAwardable): number {
         const subbedValue = a.amount.sub(b.amount);
         if (subbedValue.isZero()) return 0;
         if (subbedValue.isNegative()) return -1;

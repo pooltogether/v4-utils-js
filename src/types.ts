@@ -1,4 +1,4 @@
-import { BigNumber } from 'ethers';
+import { BigNumber } from "ethers";
 
 export interface Draw {
   drawId: number;
@@ -6,7 +6,7 @@ export interface Draw {
   timestamp: number;
   beaconPeriodStartedAt: number;
   beaconPeriodSeconds: number;
-};
+}
 
 export interface PrizeDistribution {
   bitRangeSize: number;
@@ -18,7 +18,7 @@ export interface PrizeDistribution {
   numberOfPicks: BigNumber;
   tiers: number[];
   prize: BigNumber;
-};
+}
 
 export interface PrizeTier {
   bitRangeSize: number;
@@ -32,41 +32,41 @@ export interface PrizeTier {
 export interface Pick {
   index: number;
   hash: string;
-};
+}
 
 export interface User {
   address: string;
   normalizedBalances: BigNumber[];
   picks?: Pick[]; // optional as user may not have picks (under floor)
-};
+}
 
 export interface DrawResults {
   drawId: number;
   totalValue: BigNumber;
   prizes: PrizeAwardable[];
-};
+}
 
 export interface PrizeAwardable {
   amount: BigNumber;
   distributionIndex: number;
   pick: BigNumber; //populate with claim index
-};
+}
 
 export interface PickPrize {
   amount: BigNumber;
   distributionIndex: number;
-};
+}
 
 export interface Claim {
   userAddress: string;
   drawIds: number[];
   data: BigNumber[][];
-};
+}
 
 export interface UserDrawResult {
   user: User;
   drawResult: DrawResults;
-};
+}
 
 export interface Providers {
   [chainId: number]: Provider;
