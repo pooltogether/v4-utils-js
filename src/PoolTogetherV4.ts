@@ -13,6 +13,7 @@ export interface PoolTogetherV4Config {
 
 export class PoolTogetherV4 {
   static instance: any;
+  isInitialized: boolean | undefined;
   providers: Providers | undefined;
   contractList: ContractList | undefined;
   config: PoolTogetherV4Config | undefined;
@@ -30,6 +31,8 @@ export class PoolTogetherV4 {
     this.providers = providers;
     this.contractList = contractList;
     this.config = config;
+    // TODO: add conditional to check if providers and contractList is valid.
+    this.isInitialized = true;
     return this;
   }
 

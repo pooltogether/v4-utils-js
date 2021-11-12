@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { Draw, PrizeDistribution } from "@pooltogether/v4-ts-types";
+import { Draw, PrizeDistribution } from "./types";
 import { ethers } from "ethers";
 import {
   calculatePicksFromAverageTotalSuppliesBetween,
@@ -19,6 +19,7 @@ export async function computePrizeDistribution(
 ): Promise<PrizeDistribution | undefined> {
   debug("computePrizeDistribution:entered");
   const poolTogetherV4 = new PoolTogetherV4();
+  if (!poolTogetherV4.isInitialized) throw new Error("PoolTogetherV4 is not initialized");
   if (
     !draw ||
     !prizeTierHistory ||
@@ -114,7 +115,7 @@ export async function computePrizeDistribution(
   );
   debug(
     `computePrizeDistribution: total number of picks: ${(2 ** bitRangeSize) **
-      matchCardinality}`
+    matchCardinality}`
   );
 
   let numberOfPicks;
