@@ -1,22 +1,35 @@
-import { parseUnits } from "@ethersproject/units"
-import { BigNumber, utils } from "ethers"
-import { PrizeDistribution } from "../types"
-import { calculateNumberOfPrizesForIndex } from "./calculateNumberOfPrizesForIndex"
+import { parseUnits } from "@ethersproject/units";
+import { BigNumber, utils } from "ethers";
+import { PrizeDistribution } from "../types";
+import { calculateNumberOfPrizesForIndex } from "./calculateNumberOfPrizesForIndex";
 
-const debug = require('debug')('pt:v4-core-js')
+const debug = require("debug")("pt:v4-core-js");
 
-export function calculateFractionOfPrize(prizeDistributionIndex: number, drawSettings: PrizeDistribution): BigNumber {
+export function calculateFractionOfPrize(
+  prizeDistributionIndex: number,
+  drawSettings: PrizeDistribution
+): BigNumber {
+  const numberOfPrizes = calculateNumberOfPrizesForIndex(
+    drawSettings.bitRangeSize,
+    prizeDistributionIndex
+  );
 
-    const numberOfPrizes = calculateNumberOfPrizesForIndex(drawSettings.bitRangeSize, prizeDistributionIndex)
+  debug("numberOfPrizes for index ", numberOfPrizes);
 
-    debug("numberOfPrizes for index ", numberOfPrizes)
+  const valueAtDistributionIndex = drawSettings.tiers[prizeDistributionIndex];
+  debug(
+    "valueAtDistributionIndex ",
+    utils.formatEther(valueAtDistributionIndex.toString())
+  );
 
-    const valueAtDistributionIndex = drawSettings.distributions[prizeDistributionIndex]
-    debug("valueAtDistributionIndex ", utils.formatEther(valueAtDistributionIndex.toString()))
+  const valueAtDistributionIndexUnformatted = parseUnits(
+    String(valueAtDistributionIndex),
+    9
+  );
 
-    const valueAtDistributionIndexUnformatted = parseUnits(String(valueAtDistributionIndex), 9)
-
-    const fractionOfPrize = valueAtDistributionIndexUnformatted.div(numberOfPrizes)
-    debug("fractionOfPrize: ", utils.formatEther(fractionOfPrize))
-    return fractionOfPrize
+  const fractionOfPrize = valueAtDistributionIndexUnformatted.div(
+    numberOfPrizes
+  );
+  debug("fractionOfPrize: ", utils.formatEther(fractionOfPrize));
+  return fractionOfPrize;
 }

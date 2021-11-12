@@ -1,8 +1,8 @@
-import { utils } from 'ethers';
+import { BigNumber, utils } from "ethers";
 
 export function computeCardinality(
   bitRangeSize: number,
-  totalSupply: number,
+  totalSupply: BigNumber,
   totalSupplyDecimals: number
 ): number {
   let numberOfPicks;
@@ -10,7 +10,10 @@ export function computeCardinality(
   const range = 2 ** bitRangeSize;
 
   do {
-    numberOfPicks = utils.parseUnits(`${range ** ++matchCardinality}`, totalSupplyDecimals);
+    numberOfPicks = utils.parseUnits(
+      `${range ** ++matchCardinality}`,
+      totalSupplyDecimals
+    );
   } while (numberOfPicks.lt(totalSupply));
 
   matchCardinality--;

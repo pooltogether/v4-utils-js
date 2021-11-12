@@ -1,81 +1,148 @@
-import { BigNumber } from '@ethersproject/bignumber';
-import { Contract } from '@ethersproject/contracts';
-import { Draw, PrizeDistribution } from '@pooltogether/v4-ts-types';
-import { ethers } from 'ethers';
-import { calculatePicks } from './calculatePicks';
-import { computeCardinality } from './computeCardinality';
-
-const debug = require('debug')('v4-js-core');
+import { BigNumber } from "@ethersproject/bignumber";
+import { Draw, PrizeDistribution } from "./types";
+import { ethers } from "ethers";
+import {
+  calculatePicksFromAverageTotalSuppliesBetween,
+  computeCardinality,
+} from "./index";
+import { sumBigNumbers } from "./utils";
+import { getMultiTicketAverageTotalSuppliesBetween } from "./fetching/getMultiTicketAverageTotalSuppliesBetween";
+import { PoolTogetherV4 } from "./PoolTogetherV4";
+import { validateContractListIsConnected } from "./utils";
+const debug = require("debug")("v4-js-core");
 
 export async function computePrizeDistribution(
   draw: Draw,
-  prizeTierHistory?: Contract,
-  ticketsToCalculate?: Contract,
-  otherTickets?: Contract
+  prizeTierHistory?: string,
+  ticketPrimaryAddress?: string,
+  ticketSecondaryAddressList?: Array<string>
 ): Promise<PrizeDistribution | undefined> {
-  debug('computePrizeDistribution:entered');
-  if (!draw || !prizeTierHistory || !ticketsToCalculate || !otherTickets) return undefined;
-  const prizeTier = await prizeTierHistory.getPrizeTier(draw.drawId);
+  debug("computePrizeDistribution:entered");
+  const poolTogetherV4 = new PoolTogetherV4();
+  if (!poolTogetherV4.isInitialized)
+    throw new Error("PoolTogetherV4 is not initialized");
+  if (
+    !draw ||
+    !prizeTierHistory ||
+    !ticketPrimaryAddress ||
+    !ticketSecondaryAddressList
+  )
+    return undefined;
+  const prizeTierHistoryContract = poolTogetherV4.getContract(prizeTierHistory);
+  const ticketPrimary = poolTogetherV4.getContract(ticketPrimaryAddress);
+  const ticketsSecondary = ticketSecondaryAddressList.map(address => {
+    return poolTogetherV4.getContract(address);
+  });
+  if (
+    !prizeTierHistoryContract ||
+    !ticketPrimary ||
+    ticketsSecondary.length === 0
+  )
+    return undefined;
+  debug(
+    "computePrizeDistribution:prizeTierHistoryContract",
+    !!prizeTierHistoryContract
+  );
+  const ticketL2 = ticketsSecondary[0];
 
-  const beaconPeriod = draw.beaconPeriodSeconds;
-  const startTimestampOffset = beaconPeriod;
+  validateContractListIsConnected([
+    prizeTierHistoryContract,
+    ticketPrimary,
+    ticketL2,
+  ]);
+  // @TODO: handle case where ticketContracts is empty?
 
-  const decimals = await ticketsToCalculate.decimals();
+  const { drawId, beaconPeriodSeconds } = draw;
+  debug("computePrizeDistribution:fetching-data");
+
+  const prizeTier = await prizeTierHistoryContract.getPrizeTier(drawId);
+  const {
+    bitRangeSize,
+    expiryDuration,
+    maxPicksPerUser,
+    tiers,
+    prize,
+  } = prizeTier;
+  debug("computePrizeDistribution:prizeTier", prizeTier);
+
+  const decimals = await ticketPrimary.decimals();
+  debug("computePrizeDistribution:decimals", decimals);
 
   const { endTimestampOffset } = prizeTier;
-  const startTime = draw.timestamp - startTimestampOffset;
+  const startTime = draw.timestamp - beaconPeriodSeconds;
   const endTime = draw.timestamp - endTimestampOffset;
+  debug("computePrizeDistribution:startTime", startTime);
+  debug("computePrizeDistribution:endTime", endTime);
 
-  const ticketAverage = await ticketsToCalculate.getAverageTotalSuppliesBetween(
-    [startTime],
-    [endTime]
+  if (ticketsSecondary.length === 0) return undefined;
+  const getMultiTicketAverageTotalSupplies = await getMultiTicketAverageTotalSuppliesBetween(
+    [ticketPrimary, ...ticketsSecondary],
+    startTime,
+    endTime
   );
-  const otherTicketAverage = await otherTickets.getAverageTotalSuppliesBetween(
-    [startTime],
-    [endTime]
+  if (!getMultiTicketAverageTotalSupplies) return undefined;
+  debug(
+    "computePrizeDistribution:getMultiTicketAverageTotalSupplies",
+    getMultiTicketAverageTotalSupplies
   );
-  debug('ticketAverage: ', ticketAverage);
-  debug('otherTicketAverage: ', otherTicketAverage);
 
-  const combinedTotalSupply = ticketAverage[0].add(otherTicketAverage[0]);
+  const primaryTicketTotalSupply = getMultiTicketAverageTotalSupplies[0];
+  const secondaryTicketSupplies = getMultiTicketAverageTotalSupplies.slice(1);
+
+  const combinedTotalSupply = sumBigNumbers(getMultiTicketAverageTotalSupplies);
+  const combinedTotalSupplySecondaryTickets = sumBigNumbers(
+    secondaryTicketSupplies
+  );
+  debug("computePrizeDistribution:combinedTotalSupply", combinedTotalSupply);
+  debug(
+    "computePrizeDistribution:combinedTotalSupplySecondaryTickets",
+    combinedTotalSupplySecondaryTickets
+  );
+  getMultiTicketAverageTotalSupplies.forEach(avg =>
+    debug("Ticket ${idx}: ", avg)
+  );
+
   const matchCardinality = computeCardinality(
-    prizeTier.bitRangeSize,
-    combinedTotalSupply,
+    bitRangeSize,
+    sumBigNumbers(getMultiTicketAverageTotalSupplies),
     decimals
   );
-  const { expiryDuration } = prizeTier;
-  debug(`cardinality is ${matchCardinality}`);
+  debug(`computePrizeDistribution::matchCardinality ${matchCardinality}`);
+  debug(
+    `matchCardinality:totalSupply(combined) formated: ${ethers.utils.formatUnits(
+      combinedTotalSupply,
+      decimals
+    )}`
+  );
+  debug(
+    `computePrizeDistribution: total number of picks: ${(2 ** bitRangeSize) **
+      matchCardinality}`
+  );
 
-  debug(`total supply (combined): ${ethers.utils.formatUnits(combinedTotalSupply, decimals)}`);
-  debug(`total number of picks: ${(2 ** prizeTier.bitRangeSize) ** matchCardinality}`);
-
-  let numberOfPicks = 0;
-  if (combinedTotalSupply.gt('0')) {
-    numberOfPicks = await calculatePicks(
-      prizeTier.bitRangeSize,
-      matchCardinality,
-      startTime,
-      endTime,
-      ticketsToCalculate,
-      otherTickets
+  let numberOfPicks;
+  const totalPicks = (2 ** bitRangeSize) ** matchCardinality;
+  if (combinedTotalSupply.gt("0")) {
+    numberOfPicks = calculatePicksFromAverageTotalSuppliesBetween(
+      totalPicks,
+      primaryTicketTotalSupply,
+      combinedTotalSupplySecondaryTickets
     );
   }
 
-  debug(`number of picks is ${numberOfPicks}`);
+  debug(`computePrizeDistribution: number of picks is ${numberOfPicks}`);
 
   const prizeDistribution: PrizeDistribution = {
-    bitRangeSize: prizeTier.bitRangeSize,
+    bitRangeSize: bitRangeSize,
     matchCardinality,
-    tiers: prizeTier.tiers,
-    maxPicksPerUser: prizeTier.maxPicksPerUser,
+    tiers: tiers,
+    maxPicksPerUser: maxPicksPerUser,
     expiryDuration,
     numberOfPicks: BigNumber.from(numberOfPicks),
-    startTimestampOffset,
-    prize: prizeTier.prize,
+    startTimestampOffset: beaconPeriodSeconds,
+    prize: prize,
     endTimestampOffset,
   };
-
-  debug(`prizeDistribution: `, prizeDistribution);
+  debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);
 
   return prizeDistribution;
 }

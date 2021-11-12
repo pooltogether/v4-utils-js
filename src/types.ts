@@ -1,60 +1,73 @@
-import { BigNumber } from 'ethers';
+import { BigNumber } from "ethers";
 
-export type PrizeDistribution = {
-    matchCardinality: number;
-    numberOfPicks: BigNumber;
-    distributions: number[];
-    bitRangeSize: number;
-    prize: BigNumber;
-    drawStartTimestampOffset?: number;
-    drawEndTimestampOffset?: number;
-    maxPicksPerUser: number;
-};
+export interface Draw {
+  drawId: number;
+  winningRandomNumber: BigNumber;
+  timestamp: number;
+  beaconPeriodStartedAt: number;
+  beaconPeriodSeconds: number;
+}
 
-export type Draw = {
-    drawId: number;
-    winningRandomNumber: BigNumber;
-    timestamp?: number;
-    beaconPeriodStartedAt?: number;
-    beaconPeriodSeconds?: number;
-};
+export interface PrizeDistribution {
+  bitRangeSize: number;
+  matchCardinality: number;
+  startTimestampOffset?: number;
+  endTimestampOffset?: number;
+  maxPicksPerUser: number;
+  expiryDuration: number;
+  numberOfPicks: BigNumber;
+  tiers: number[];
+  prize: BigNumber;
+}
 
-export type Pick = {
-    index: number;
-    hash: string;
-};
+export interface PrizeTier {
+  bitRangeSize: number;
+  drawId: number;
+  maxPicksPerUser: number;
+  prize: number;
+  tiers: number;
+  validityDuration: number;
+}
 
-export type User = {
-    address: string;
-    normalizedBalances: BigNumber[];
-    picks?: Pick[]; // optional as user may not have picks (under floor)
-};
+export interface Pick {
+  index: number;
+  hash: string;
+}
 
-export type DrawResults = {
-    drawId: number;
-    totalValue: BigNumber;
-    prizes: PrizeAwardable[];
-};
+export interface User {
+  address: string;
+  normalizedBalances: BigNumber[];
+  picks?: Pick[]; // optional as user may not have picks (under floor)
+}
 
-// prize that a User can receive
-export type PrizeAwardable = {
-    amount: BigNumber;
-    distributionIndex: number;
-    pick: BigNumber; //populate with claim index
-};
+export interface DrawResults {
+  drawId: number;
+  totalValue: BigNumber;
+  prizes: PrizeAwardable[];
+}
 
-export type PickPrize = {
-    amount: BigNumber;
-    distributionIndex: number;
-};
+export interface PrizeAwardable {
+  amount: BigNumber;
+  distributionIndex: number;
+  pick: BigNumber; //populate with claim index
+}
 
-export type Claim = {
-    userAddress: string;
-    drawIds: number[];
-    data: BigNumber[][];
-};
+export interface PickPrize {
+  amount: BigNumber;
+  distributionIndex: number;
+}
 
-export type UserDrawResult = {
-    user: User;
-    drawResult: DrawResults;
-};
+export interface Claim {
+  userAddress: string;
+  drawIds: number[];
+  data: BigNumber[][];
+}
+
+export interface UserDrawResult {
+  user: User;
+  drawResult: DrawResults;
+}
+
+export interface Providers {
+  [chainId: number]: Provider;
+}
