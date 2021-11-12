@@ -74,7 +74,7 @@ The `v4-js` module must be initialized with providers and a contract list.
 
 Current `mainnet` and `testnet` contract lists can be used via the `@pooltogether/v4-pool-data` NPM package
 
-> ⚠️ **NOTICE** ⚠️: The `v4-js` module must be initialized before functions requiring blockchain reads requests be executed.
+The `v4-js` module must be initialized before blockchain read requests be executed.
 
 ```js
 import PoolTogetherV4, { config } from 'pooltogether/v4-js';
