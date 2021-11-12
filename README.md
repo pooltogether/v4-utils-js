@@ -25,6 +25,8 @@ npm install @pooltogether/v4-js
 yarn add @pooltogether/v4-js
 ```
 
+The repo can be cloned from Github for contributions.
+
 ```sh
 git clone https://github.com/pooltogether/v4-core
 ```
