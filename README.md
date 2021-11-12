@@ -74,21 +74,21 @@ The `v4-js` module must be initialized with providers and a contract list.
 
 Current `mainnet` and `testnet` contract lists can be used via the `@pooltogether/v4-pool-data` NPM package
 
-```js
-import PoolTogetherV4 from 'pooltogether/v4-js';
+> ⚠️ **NOTICE** ⚠️: The `v4-js` module must be initialized before functions requiring blockchain reads requests be executed.
 
-const ptv4 = new PoolTogetherV4(providers, mainnetContractList)
+```js
+import PoolTogetherV4, { config } from 'pooltogether/v4-js';
+
+const ptv4 = new PoolTogetherV4(config.providersMainnet, mainnetContractList)
 ```
 
 *or*
 
 ```js
-import { initialize } from 'pooltogether/v4-js';
+import { initialize, config } from 'pooltogether/v4-js';
 
-const ptv4 = initialize(providers, mainnetContractList)
+const ptv4 = initialize(config.providersMainnet, mainnetContractList)
 ```
-
-> **ALERT**: The `v4-js` module must be initialize before functions requiring blockchain reads can be used.
 
 ## Providers
 Providers being passed must inherit the Provider type interface from `@ethersproject/abstract-provider`. In other words, ethers provider interfaces like JsonRpcProvider, InfuraProvider, FallbackProvider, etc... are usable as Provider interfaces.
