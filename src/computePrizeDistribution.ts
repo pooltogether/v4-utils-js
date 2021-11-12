@@ -1,11 +1,14 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import { Draw, PrizeDistribution } from "@pooltogether/v4-ts-types";
 import { ethers } from "ethers";
-import { calculatePicksFromAverageTotalSuppliesBetween, computeCardinality } from './index'
+import {
+  calculatePicksFromAverageTotalSuppliesBetween,
+  computeCardinality,
+} from "./index";
 import { sumBigNumbers } from "./utils";
 import { getMultiTicketAverageTotalSuppliesBetween } from "./fetching/getMultiTicketAverageTotalSuppliesBetween";
 import { PoolTogetherV4 } from "./PoolTogetherV4";
-import { validateContractListIsConnected } from './utils'
+import { validateContractListIsConnected } from "./utils";
 const debug = require("debug")("v4-js-core");
 
 export async function computePrizeDistribution(
@@ -16,20 +19,35 @@ export async function computePrizeDistribution(
 ): Promise<PrizeDistribution | undefined> {
   debug("computePrizeDistribution:entered");
   const poolTogetherV4 = new PoolTogetherV4();
-  if (!draw || !prizeTierHistory || !ticketPrimaryAddress || !ticketSecondaryAddressList) return undefined;
-  const prizeTierHistoryContract = poolTogetherV4.getContract(prizeTierHistory)
-  const ticketPrimary = poolTogetherV4.getContract(ticketPrimaryAddress)
+  if (
+    !draw ||
+    !prizeTierHistory ||
+    !ticketPrimaryAddress ||
+    !ticketSecondaryAddressList
+  )
+    return undefined;
+  const prizeTierHistoryContract = poolTogetherV4.getContract(prizeTierHistory);
+  const ticketPrimary = poolTogetherV4.getContract(ticketPrimaryAddress);
   const ticketsSecondary = ticketSecondaryAddressList.map(address => {
-    return poolTogetherV4.getContract(address)
+    return poolTogetherV4.getContract(address);
   });
-  if (!prizeTierHistoryContract || !ticketPrimary || ticketsSecondary.length === 0) return undefined;
+  if (
+    !prizeTierHistoryContract ||
+    !ticketPrimary ||
+    ticketsSecondary.length === 0
+  )
+    return undefined;
   debug(
     "computePrizeDistribution:prizeTierHistoryContract",
     !!prizeTierHistoryContract
   );
   const ticketL2 = ticketsSecondary[0];
 
-  validateContractListIsConnected([prizeTierHistoryContract, ticketPrimary, ticketL2])
+  validateContractListIsConnected([
+    prizeTierHistoryContract,
+    ticketPrimary,
+    ticketL2,
+  ]);
   // @TODO: handle case where ticketContracts is empty?
 
   const { drawId, beaconPeriodSeconds } = draw;
@@ -61,16 +79,24 @@ export async function computePrizeDistribution(
     endTime
   );
   if (!getMultiTicketAverageTotalSupplies) return undefined;
-  debug("computePrizeDistribution:getMultiTicketAverageTotalSupplies", getMultiTicketAverageTotalSupplies);
+  debug(
+    "computePrizeDistribution:getMultiTicketAverageTotalSupplies",
+    getMultiTicketAverageTotalSupplies
+  );
 
   const primaryTicketTotalSupply = getMultiTicketAverageTotalSupplies[0];
   const secondaryTicketSupplies = getMultiTicketAverageTotalSupplies.slice(1);
 
   const combinedTotalSupply = sumBigNumbers(getMultiTicketAverageTotalSupplies);
-  const combinedTotalSupplySecondaryTickets = sumBigNumbers(secondaryTicketSupplies);
+  const combinedTotalSupplySecondaryTickets = sumBigNumbers(
+    secondaryTicketSupplies
+  );
   debug("computePrizeDistribution:combinedTotalSupply", combinedTotalSupply);
-  debug("computePrizeDistribution:combinedTotalSupplySecondaryTickets", combinedTotalSupplySecondaryTickets);
-  getMultiTicketAverageTotalSupplies.forEach((avg) =>
+  debug(
+    "computePrizeDistribution:combinedTotalSupplySecondaryTickets",
+    combinedTotalSupplySecondaryTickets
+  );
+  getMultiTicketAverageTotalSupplies.forEach(avg =>
     debug("Ticket ${idx}: ", avg)
   );
 
@@ -86,9 +112,12 @@ export async function computePrizeDistribution(
       decimals
     )}`
   );
-  debug(`computePrizeDistribution: total number of picks: ${(2 ** bitRangeSize) ** matchCardinality}`);
+  debug(
+    `computePrizeDistribution: total number of picks: ${(2 ** bitRangeSize) **
+      matchCardinality}`
+  );
 
-  let numberOfPicks
+  let numberOfPicks;
   const totalPicks = (2 ** bitRangeSize) ** matchCardinality;
   if (combinedTotalSupply.gt("0")) {
     numberOfPicks = calculatePicksFromAverageTotalSuppliesBetween(

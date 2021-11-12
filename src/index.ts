@@ -11,8 +11,15 @@ export * from "./generatePicks";
 export * from "./prepareClaims";
 export * from "./validatePrizeDistributionParameters";
 
-// Utility functions
+// Configuration
+export * as config from "./config";
+
+// Fetching
+export * as fetching from "./fetching";
+
+// Utils
 export * from "./utils";
+export * as utils from "./utils";
 
 // Helpers
 export * from "./helpers/calculateNumberOfPrizesForIndex";

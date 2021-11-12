@@ -1,12 +1,18 @@
 import { BigNumber } from "@ethersproject/bignumber";
-const debug = require("debug")("v4-js-core:calculatePicksFromAverageTotalSuppliesBetween");
+const debug = require("debug")(
+  "v4-js-core:calculatePicksFromAverageTotalSuppliesBetween"
+);
 
 export function calculatePicksFromAverageTotalSuppliesBetween(
   totalPicks: number,
   ticketPrimaryTotalSupply: BigNumber,
   otherTicketsTotalSupply: BigNumber
 ): number | undefined {
-  if (!BigNumber.isBigNumber(ticketPrimaryTotalSupply) || !BigNumber.isBigNumber(otherTicketsTotalSupply)) return undefined;
+  if (
+    !BigNumber.isBigNumber(ticketPrimaryTotalSupply) ||
+    !BigNumber.isBigNumber(otherTicketsTotalSupply)
+  )
+    return undefined;
   let numberOfPicks;
   if (ticketPrimaryTotalSupply.gt("0")) {
     numberOfPicks = ticketPrimaryTotalSupply
@@ -15,7 +21,11 @@ export function calculatePicksFromAverageTotalSuppliesBetween(
   } else {
     numberOfPicks = BigNumber.from("0");
   }
-  debug(`calculatePicksFromAverageTotalSuppliesBetween:numberOfPicks ${Math.floor(numberOfPicks.toNumber())}`);
+  debug(
+    `calculatePicksFromAverageTotalSuppliesBetween:numberOfPicks ${Math.floor(
+      numberOfPicks.toNumber()
+    )}`
+  );
   return Math.floor(numberOfPicks.toNumber());
 }
 

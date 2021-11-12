@@ -88,6 +88,8 @@ import { initialize } from 'pooltogether/v4-js';
 const ptv4 = initialize(providers, mainnetContractList)
 ```
 
+> **ALERT**: The `v4-js` module must be initialize before functions requiring blockchain reads can be used.
+
 ## Providers
 Providers being passed must inherit the Provider type interface from `@ethersproject/abstract-provider`. In other words, ethers provider interfaces like JsonRpcProvider, InfuraProvider, FallbackProvider, etc... are usable as Provider interfaces.
 

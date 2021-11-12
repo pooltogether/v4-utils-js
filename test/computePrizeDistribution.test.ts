@@ -1,17 +1,11 @@
-import { BigNumber, ethers } from 'ethers';
+import { BigNumber } from 'ethers';
 import { mainnet as mainnetContractList } from '@pooltogether/v4-pool-data'
-import PoolTogetherV4, { computePrizeDistribution, getProviderFromChainId } from '../src';
-import { Provider } from "@ethersproject/abstract-provider";
+import PoolTogetherV4, { computePrizeDistribution, config } from '../src';
 const debug = require("debug")("v4-js-core:test");
 
 describe('computePrizeDistribution', () => {
-  let providerMainnet: Provider, providerRinkeby: Provider, providerPolygon: Provider;
-
   beforeAll(() => {
-    providerMainnet = ethers.getDefaultProvider('mainnet');
-    providerRinkeby = ethers.getDefaultProvider('rinkeby');
-    providerPolygon = getProviderFromChainId(137);
-    new PoolTogetherV4({ 1: providerMainnet, 4: providerRinkeby, 137: providerPolygon }, mainnetContractList)
+    new PoolTogetherV4(config.providersAll, mainnetContractList)
   })
 
   it('should succeed to calculate a PrizeDistribution', async () => {

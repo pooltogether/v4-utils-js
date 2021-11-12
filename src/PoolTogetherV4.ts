@@ -1,4 +1,3 @@
-
 import { providers } from "ethers";
 import { ContractList } from "@pooltogether/contract-list-schema";
 import { Contract } from "@ethersproject/contracts";
@@ -56,7 +55,7 @@ export class PoolTogetherV4 {
       (contract: any) => getAddress(contract.address) === getAddress(address)
     );
     if (!contract) return undefined;
-    debug("PoolTogetherV4:getContract", contract)
+    debug("PoolTogetherV4:getContract", contract);
     return createContract(
       contract.address,
       createInterface(contract.abi),
