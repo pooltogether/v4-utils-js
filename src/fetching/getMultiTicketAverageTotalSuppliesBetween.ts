@@ -1,14 +1,15 @@
 import { Contract } from "@ethersproject/contracts";
-import { BigNumberish } from "ethers";
+import { BigNumber, BigNumberish } from "ethers";
 
 export async function getMultiTicketAverageTotalSuppliesBetween(
-  tickets: Contract[],
+  tickets: Array<Contract | undefined>,
   startTime?: BigNumberish,
   endTime?: BigNumberish
-): Promise<any | undefined> {
+): Promise<BigNumber[] | undefined> {
   if (!tickets || !startTime || !endTime) return undefined;
   return await Promise.all(
     tickets.map(async contract => {
+      if (!contract) return undefined;
       return (
         await contract.getAverageTotalSuppliesBetween([startTime], [endTime])
       )[0];

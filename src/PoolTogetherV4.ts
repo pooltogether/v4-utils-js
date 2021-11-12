@@ -1,10 +1,13 @@
+
 import { providers } from "ethers";
 import { ContractList } from "@pooltogether/contract-list-schema";
 import { Contract } from "@ethersproject/contracts";
-import { getContract, getInterface } from "./utils";
+import { createContract, createInterface } from "./utils";
 import { Providers } from "./types";
-import { Provider } from '@ethersproject/abstract-provider'
-import { InfuraProvider } from '@ethersproject/providers'
+import { Provider } from "@ethersproject/abstract-provider";
+import { InfuraProvider } from "@ethersproject/providers";
+import { getAddress } from "@ethersproject/address";
+const debug = require("debug")("v4-js-core");
 export interface PoolTogetherV4Config {
   infuraApiKey: string;
 }
@@ -50,12 +53,13 @@ export class PoolTogetherV4 {
   getContract(address: string): Contract | undefined {
     if (!this.contractList) return undefined;
     const contract = this.contractList.contracts.find(
-      (contract: any) => contract.address === address
+      (contract: any) => getAddress(contract.address) === getAddress(address)
     );
     if (!contract) return undefined;
-    return getContract(
+    debug("PoolTogetherV4:getContract", contract)
+    return createContract(
       contract.address,
-      getInterface(contract.abi),
+      createInterface(contract.abi),
       this.getProvider(contract.chainId)
     );
   }

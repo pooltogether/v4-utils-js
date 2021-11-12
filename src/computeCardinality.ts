@@ -1,8 +1,8 @@
-import { utils } from "ethers";
+import { BigNumber, utils } from "ethers";
 
 export function computeCardinality(
   bitRangeSize: number,
-  totalSupply: number,
+  totalSupply: BigNumber,
   totalSupplyDecimals: number
 ): number {
   let numberOfPicks;

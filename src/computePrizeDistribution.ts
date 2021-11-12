@@ -1,60 +1,38 @@
-// @ts-nocheck
 import { BigNumber } from "@ethersproject/bignumber";
 import { Draw, PrizeDistribution } from "@pooltogether/v4-ts-types";
 import { ethers } from "ethers";
-import { ContractAddressWithNetwork } from "./types";
-import { calculatePicks } from "./calculatePicks";
-import { computeCardinality } from "./computeCardinality";
-import { getContract } from "./utils/getContract";
-import { sumBigNumbers } from "./utils/sumBigNumbers";
-import { getProviderFromNetwork } from "./utils/getProviderFromNetwork";
+import { calculatePicksFromAverageTotalSuppliesBetween, computeCardinality } from './index'
+import { sumBigNumbers } from "./utils";
 import { getMultiTicketAverageTotalSuppliesBetween } from "./fetching/getMultiTicketAverageTotalSuppliesBetween";
-import { getContractFromAddressAndName } from "./utils/getContractFromAddressAndName";
-import { InterfaceTicket, InterfacePrizeTierHistory } from "./interfaces";
 import { PoolTogetherV4 } from "./PoolTogetherV4";
+import { validateContractListIsConnected } from './utils'
 const debug = require("debug")("v4-js-core");
-
-// draw, chainId, prizeTierHistoryAddress, ticketPrimary, ticketList[]
 
 export async function computePrizeDistribution(
   draw: Draw,
-  prizeTierHistory?: ContractAddressWithNetwork,
-  ticketsToCalculate?: ContractAddressWithNetwork[]
+  prizeTierHistory?: string,
+  ticketPrimaryAddress?: string,
+  ticketSecondaryAddressList?: Array<string>
 ): Promise<PrizeDistribution | undefined> {
   debug("computePrizeDistribution:entered");
   const poolTogetherV4 = new PoolTogetherV4();
-  console.log(poolTogetherV4);
-
-  if (!draw || !prizeTierHistory || !ticketsToCalculate) return undefined;
-
-  // Get L1:PrizeTierHistory Contract
-  const prizeTierHistoryContract = getContractFromAddressAndName(
-    "PrizeTierHistory",
-    prizeTierHistory.address,
-    getProviderFromNetwork(prizeTierHistory.network)
-  );
-
+  if (!draw || !prizeTierHistory || !ticketPrimaryAddress || !ticketSecondaryAddressList) return undefined;
+  const prizeTierHistoryContract = poolTogetherV4.getContract(prizeTierHistory)
+  const ticketPrimary = poolTogetherV4.getContract(ticketPrimaryAddress)
+  const ticketsSecondary = ticketSecondaryAddressList.map(address => {
+    return poolTogetherV4.getContract(address)
+  });
+  if (!prizeTierHistoryContract || !ticketPrimary || ticketsSecondary.length === 0) return undefined;
   debug(
     "computePrizeDistribution:prizeTierHistoryContract",
     !!prizeTierHistoryContract
   );
-  if (!prizeTierHistoryContract) return;
+  const ticketL2 = ticketsSecondary[0];
 
-  // Get MultiNetwork:Ticket Contracts
-  const ticketContracts = ticketsToCalculate.map(ticketWithNetwork => {
-    const { address, network } = ticketWithNetwork;
-    return getContractFromAddressAndName(
-      "Ticket",
-      address,
-      getProviderFromNetwork(network)
-    );
-  });
-  const ticketL1 = ticketContracts[0];
-  const ticketL2 = ticketContracts[1];
-
+  validateContractListIsConnected([prizeTierHistoryContract, ticketPrimary, ticketL2])
   // @TODO: handle case where ticketContracts is empty?
-  if (!ticketContracts) return;
-  const { drawId, beaconPeriodSeconds, beaconPeriodStartedAt } = draw;
+
+  const { drawId, beaconPeriodSeconds } = draw;
   debug("computePrizeDistribution:fetching-data");
 
   const prizeTier = await prizeTierHistoryContract.getPrizeTier(drawId);
@@ -67,51 +45,60 @@ export async function computePrizeDistribution(
   } = prizeTier;
   debug("computePrizeDistribution:prizeTier", prizeTier);
 
-  const decimals = await ticketL1.decimals();
+  const decimals = await ticketPrimary.decimals();
   debug("computePrizeDistribution:decimals", decimals);
 
   const { endTimestampOffset } = prizeTier;
   const startTime = draw.timestamp - beaconPeriodSeconds;
   const endTime = draw.timestamp - endTimestampOffset;
+  debug("computePrizeDistribution:startTime", startTime);
+  debug("computePrizeDistribution:endTime", endTime);
 
+  if (ticketsSecondary.length === 0) return undefined;
   const getMultiTicketAverageTotalSupplies = await getMultiTicketAverageTotalSuppliesBetween(
-    ticketContracts,
+    [ticketPrimary, ...ticketsSecondary],
     startTime,
     endTime
   );
+  if (!getMultiTicketAverageTotalSupplies) return undefined;
+  debug("computePrizeDistribution:getMultiTicketAverageTotalSupplies", getMultiTicketAverageTotalSupplies);
+
+  const primaryTicketTotalSupply = getMultiTicketAverageTotalSupplies[0];
+  const secondaryTicketSupplies = getMultiTicketAverageTotalSupplies.slice(1);
+
   const combinedTotalSupply = sumBigNumbers(getMultiTicketAverageTotalSupplies);
-  getMultiTicketAverageTotalSupplies.forEach((avg, idx) =>
+  const combinedTotalSupplySecondaryTickets = sumBigNumbers(secondaryTicketSupplies);
+  debug("computePrizeDistribution:combinedTotalSupply", combinedTotalSupply);
+  debug("computePrizeDistribution:combinedTotalSupplySecondaryTickets", combinedTotalSupplySecondaryTickets);
+  getMultiTicketAverageTotalSupplies.forEach((avg) =>
     debug("Ticket ${idx}: ", avg)
   );
-  debug("computePrizeDistribution:combinedTotalSupply", combinedTotalSupply);
 
   const matchCardinality = computeCardinality(
     bitRangeSize,
     sumBigNumbers(getMultiTicketAverageTotalSupplies),
     decimals
   );
-  debug(`cardinality is ${matchCardinality}`);
-
+  debug(`computePrizeDistribution::matchCardinality ${matchCardinality}`);
   debug(
-    `total supply (combined): ${ethers.utils.formatUnits(
+    `matchCardinality:totalSupply(combined) formated: ${ethers.utils.formatUnits(
       combinedTotalSupply,
       decimals
     )}`
   );
-  debug(`total number of picks: ${(2 ** bitRangeSize) ** matchCardinality}`);
+  debug(`computePrizeDistribution: total number of picks: ${(2 ** bitRangeSize) ** matchCardinality}`);
 
-  let numberOfPicks = 0;
+  let numberOfPicks
+  const totalPicks = (2 ** bitRangeSize) ** matchCardinality;
   if (combinedTotalSupply.gt("0")) {
-    numberOfPicks = await calculatePicks(
-      bitRangeSize,
-      matchCardinality,
-      startTime,
-      endTime,
-      ticketL1,
-      ticketL2
+    numberOfPicks = calculatePicksFromAverageTotalSuppliesBetween(
+      totalPicks,
+      primaryTicketTotalSupply,
+      combinedTotalSupplySecondaryTickets
     );
   }
-  debug(`number of picks is ${numberOfPicks}`);
+
+  debug(`computePrizeDistribution: number of picks is ${numberOfPicks}`);
 
   const prizeDistribution: PrizeDistribution = {
     bitRangeSize: bitRangeSize,
@@ -124,8 +111,7 @@ export async function computePrizeDistribution(
     prize: prize,
     endTimestampOffset,
   };
-
-  debug(`prizeDistribution: `, prizeDistribution);
+  debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);
 
   return prizeDistribution;
 }

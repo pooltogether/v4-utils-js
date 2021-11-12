@@ -1,14 +1,18 @@
 import { BigNumber, ethers } from 'ethers';
 import { mainnet as mainnetContractList } from '@pooltogether/v4-pool-data'
-import PoolTogetherV4, { computePrizeDistribution } from '../src';
-import { ContractAddressWithNetwork } from '../src/types'
+import PoolTogetherV4, { computePrizeDistribution, getProviderFromChainId } from '../src';
+import { Provider } from "@ethersproject/abstract-provider";
 const debug = require("debug")("v4-js-core:test");
 
 describe('computePrizeDistribution', () => {
-  const providerMainnet = ethers.getDefaultProvider('mainnet');
-  const providerRinkeby = ethers.getDefaultProvider('rinkeby');
+  let providerMainnet: Provider, providerRinkeby: Provider, providerPolygon: Provider;
 
-  new PoolTogetherV4({ 1: providerMainnet, 4: providerRinkeby }, mainnetContractList)
+  beforeAll(() => {
+    providerMainnet = ethers.getDefaultProvider('mainnet');
+    providerRinkeby = ethers.getDefaultProvider('rinkeby');
+    providerPolygon = getProviderFromChainId(137);
+    new PoolTogetherV4({ 1: providerMainnet, 4: providerRinkeby, 137: providerPolygon }, mainnetContractList)
+  })
 
   it('should succeed to calculate a PrizeDistribution', async () => {
     const draw = {
@@ -19,26 +23,9 @@ describe('computePrizeDistribution', () => {
       beaconPeriodSeconds: 86400,
     }
 
-    const prizeTierHistory: ContractAddressWithNetwork = {
-      name: 'PrizeTierHistory',
-      address: '0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D',
-      network: 'mainnet',
-      chainId: 1
-    }
-
-    const ticketL1: ContractAddressWithNetwork = {
-      name: 'Ticket',
-      address: '0xdd4d117723C257CEe402285D3aCF218E9A8236E1',
-      network: 'mainnet',
-      chainId: 1
-    }
-
-    const ticketL2: ContractAddressWithNetwork = {
-      name: 'Ticket',
-      address: '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076',
-      network: 'polygon-mainnet',
-      chainId: 137
-    }
+    const prizeTierHistory = '0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D'
+    const ticketL1 = '0xdd4d117723C257CEe402285D3aCF218E9A8236E1'
+    const ticketL2 = '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076'
 
     const expectation = {
       bitRangeSize: 2,
@@ -59,7 +46,7 @@ describe('computePrizeDistribution', () => {
       endTimestampOffset: 900
     }
 
-    const results = await computePrizeDistribution(draw, prizeTierHistory, [ticketL1, ticketL2]).catch(e => console.log(e))
+    const results = await computePrizeDistribution(draw, prizeTierHistory, ticketL1, [ticketL2])
     debug('computePrizeDistribution:results', results)
     expect(results).toEqual(expectation);
   });

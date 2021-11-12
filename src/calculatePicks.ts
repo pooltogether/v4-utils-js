@@ -1,6 +1,6 @@
 import { Contract } from "@ethersproject/contracts";
 import { ethers } from "ethers";
-
+const debug = require("debug")("v4-js-core:calculatePicks");
 export async function calculatePicks(
   bitRange: number,
   cardinality: number,
@@ -26,7 +26,7 @@ export async function calculatePicks(
   } else {
     numberOfPicks = ethers.BigNumber.from("0");
   }
-  console.log(`returning numberOfPicks ${Math.floor(numberOfPicks)}`);
+  debug(`returning numberOfPicks ${Math.floor(numberOfPicks)}`);
   return Math.floor(numberOfPicks);
 }
 
