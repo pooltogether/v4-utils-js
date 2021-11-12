@@ -1,7 +1,8 @@
-import { filterResultsByValue } from '../../src/helpers/filterResultsByValue';
 import { BigNumber } from 'ethers';
 import { expect } from 'chai';
+import { filterResultsByValue } from '../../src/helpers/filterResultsByValue';
 import { DrawResults } from '../../src/types';
+const debug = require("debug")("v4-js-core:test");
 
 describe('filterResultsByValue()', () => {
   it('should slice to the correct amount, filters out prizes[0]', () => {
@@ -28,7 +29,7 @@ describe('filterResultsByValue()', () => {
     };
     const filteredResults = filterResultsByValue(results, 2);
     expect(filteredResults.prizes.length).to.equal(2);
-    console.log(filteredResults);
+    debug(filteredResults);
     // expect(filteredResults.prizes[0]).to.equal(results.prizes[1])
   });
 });

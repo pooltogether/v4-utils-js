@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BigNumber, ethers, utils } from 'ethers';
 import { expect } from 'chai';
 import {
@@ -28,7 +29,7 @@ describe.only('batchCalculateDrawResults()', () => {
     // div by 1e18 = 4.166666666666667e16 = 0.0416666666666667e18
 
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -38,6 +39,7 @@ describe.only('batchCalculateDrawResults()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     const exampleDraw: Draw = {
@@ -45,6 +47,9 @@ describe.only('batchCalculateDrawResults()', () => {
       winningRandomNumber: BigNumber.from(
         '8781184742215173699638593792190316559257409652205547100981219837421219359728'
       ),
+      timestamp: 1,
+      beaconPeriodStartedAt: 1,
+      beaconPeriodSeconds: 1
     };
 
     const exampleUser: User = {
@@ -78,7 +83,7 @@ describe.only('batchCalculateDrawResults()', () => {
 
     debug('winning number ', winningRandomNumber);
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.4'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -89,11 +94,15 @@ describe.only('batchCalculateDrawResults()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     const exampleDraw: Draw = {
       drawId: 1,
       winningRandomNumber: BigNumber.from(winningRandomNumber),
+      timestamp: 0,
+      beaconPeriodStartedAt: 0,
+      beaconPeriodSeconds: 0
     };
 
     const results = batchCalculateDrawResults(
@@ -109,7 +118,7 @@ describe.only('batchCalculateDrawResults()', () => {
 describe('calculatePrizeAmount()', () => {
   it('Can calculate the prize given the draw settings and number of matches', async () => {
     // const exampleDrawSettings : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: BigNumber.from(ethers.utils.parseEther("1")),
@@ -119,7 +128,7 @@ describe('calculatePrizeAmount()', () => {
     //     maxPicksPerUser: BigNumber.from(1000),
     // }
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -129,6 +138,7 @@ describe('calculatePrizeAmount()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     const result = calculatePrizeAmount(exampleDrawSettings, 2);
@@ -138,7 +148,7 @@ describe('calculatePrizeAmount()', () => {
   });
   it('Can calculate the prize given the draw settings and number of matches', async () => {
     // const exampleDrawSettings : TsunamiDrawSettings = {
-    //     distributions: [
+    //     tiers: [
     //         ethers.utils.parseEther("0.4"),
     //         ethers.utils.parseEther("0.2"),
     //         ethers.utils.parseEther("0.1"),
@@ -150,7 +160,7 @@ describe('calculatePrizeAmount()', () => {
     //     maxPicksPerUser: BigNumber.from(1000),
     // }
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -160,6 +170,7 @@ describe('calculatePrizeAmount()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     const result = calculatePrizeAmount(exampleDrawSettings, 3);
@@ -228,7 +239,7 @@ describe('calculatePrizeForPrizeDistributionIndex()', () => {
     // div by 1e18 = 1.25e18
 
     // const exampleDrawSettings : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: BigNumber.from(ethers.utils.parseEther("1")),
@@ -239,7 +250,7 @@ describe('calculatePrizeForPrizeDistributionIndex()', () => {
     // }
 
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -249,6 +260,7 @@ describe('calculatePrizeForPrizeDistributionIndex()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     //calculatePrizeForPrizeDistributionIndex(prizeDistributionIndex: number, drawSettings: TsunamiDrawSettings, draw: Draw)
@@ -264,7 +276,7 @@ describe('calculatePrizeForPrizeDistributionIndex()', () => {
 describe('calculateFractionOfPrize()', () => {
   it('can calculate the fraction for the prize distribution', async () => {
     // const exampleDrawSettings : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: BigNumber.from(ethers.utils.parseEther("1")),
@@ -275,7 +287,7 @@ describe('calculateFractionOfPrize()', () => {
     // }
 
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -285,6 +297,7 @@ describe('calculateFractionOfPrize()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
     // distributionIndex = matchCardinality - numberOfMatches = 3 - 2 = 1
     // distributions[1] = 0.2e18 = prizeAtIndex
@@ -300,7 +313,7 @@ describe('calculateFractionOfPrize()', () => {
 describe('prepareClaimForUserFromDrawResult()', () => {
   it('returns correct claim struct for user', async () => {
     // const exampleDrawSettings : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: ethers.utils.parseEther("1"),
@@ -310,7 +323,7 @@ describe('prepareClaimForUserFromDrawResult()', () => {
     //     maxPicksPerUser: BigNumber.from(1000),
     // }
     const exampleDrawSettings: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -320,6 +333,7 @@ describe('prepareClaimForUserFromDrawResult()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     const drawId = 2;
@@ -330,6 +344,9 @@ describe('prepareClaimForUserFromDrawResult()', () => {
       winningRandomNumber: BigNumber.from(
         '8781184742215173699638593792190316559257409652205547100981219837421219359728'
       ),
+      timestamp: 0,
+      beaconPeriodStartedAt: 0,
+      beaconPeriodSeconds: 0
     };
 
     const exampleUser: User = {
@@ -352,7 +369,7 @@ describe('prepareClaimForUserFromDrawResult()', () => {
 describe('prepareClaimsForUserFromDrawResults()', () => {
   it('returns correct claim struct for user', async () => {
     // const exampleDrawSettings1 : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: ethers.utils.parseEther("1"),
@@ -362,7 +379,7 @@ describe('prepareClaimsForUserFromDrawResults()', () => {
     //     maxPicksPerUser: BigNumber.from(1000),
     // }
     const exampleDrawSettings1: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -372,10 +389,11 @@ describe('prepareClaimsForUserFromDrawResults()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
 
     // const exampleDrawSettings2 : TsunamiDrawSettings = {
-    //     distributions: [ethers.utils.parseEther("0.3"),
+    //     tiers: [ethers.utils.parseEther("0.3"),
     //                     ethers.utils.parseEther("0.2"),
     //                     ethers.utils.parseEther("0.1")],
     //     numberOfPicks: ethers.utils.parseEther("1"),
@@ -386,7 +404,7 @@ describe('prepareClaimsForUserFromDrawResults()', () => {
     // }
 
     const exampleDrawSettings2: PrizeDistribution = {
-      distributions: [
+      tiers: [
         formatDistributionNumber('0.3'),
         formatDistributionNumber('0.2'),
         formatDistributionNumber('0.1'),
@@ -396,6 +414,7 @@ describe('prepareClaimsForUserFromDrawResults()', () => {
       bitRangeSize: 4,
       prize: BigNumber.from(utils.parseEther('100')),
       maxPicksPerUser: 100,
+      expiryDuration: 0
     };
     const drawIds = [2, 3];
     const winningPickIndices = BigNumber.from(1);
@@ -405,12 +424,18 @@ describe('prepareClaimsForUserFromDrawResults()', () => {
       winningRandomNumber: BigNumber.from(
         '8781184742215173699638593792190316559257409652205547100981219837421219359728'
       ),
+      timestamp: 0,
+      beaconPeriodStartedAt: 0,
+      beaconPeriodSeconds: 0
     };
     const exampleDraw2: Draw = {
       drawId: drawIds[1],
       winningRandomNumber: BigNumber.from(
         '8781184742215173699638593792190316559257409652205547100981219837421219359728'
       ),
+      timestamp: 0,
+      beaconPeriodStartedAt: 0,
+      beaconPeriodSeconds: 0
     };
 
     const exampleUser: User = {
