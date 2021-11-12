@@ -1,7 +1,7 @@
-import { filterResultsByValue } from '../src/helpers/filterResultsByValue';
+import { filterResultsByValue } from '../../src/helpers/filterResultsByValue';
 import { BigNumber } from 'ethers';
 import { expect } from 'chai';
-import { DrawResults } from '../src/types';
+import { DrawResults } from '../../src/types';
 
 describe('filterResultsByValue()', () => {
   it('should slice to the correct amount, filters out prizes[0]', () => {

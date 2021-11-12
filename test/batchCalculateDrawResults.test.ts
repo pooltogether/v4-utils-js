@@ -9,12 +9,11 @@ import {
 } from '../src/types';
 import { batchCalculateDrawResults } from '../src/batchCalculateDrawResults';
 import { prepareClaims } from '../src/prepareClaims';
-
 import { calculateFractionOfPrize } from '../src/helpers/calculateFractionOfPrize';
 import { calculatePrizeAmount } from '../src/helpers/calculatePrizeAmount';
-
 import { findBitMatchesAtIndex } from '../src/helpers/findBitMatchesAtIndex';
 import { calculatePrizeForDistributionIndex } from '../src/helpers/calculatePrizeForDistributionIndex';
+const debug = require("debug")("v4-js-core:test");
 
 const formatDistributionNumber = (distribution: string) =>
   utils.parseUnits(distribution, 9).toNumber();
@@ -77,7 +76,7 @@ describe.only('batchCalculateDrawResults()', () => {
       [winningNumber, 1]
     );
 
-    console.log('winning number ', winningRandomNumber);
+    debug('winning number ', winningRandomNumber);
     const exampleDrawSettings: PrizeDistribution = {
       distributions: [
         formatDistributionNumber('0.4'),

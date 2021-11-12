@@ -1,4 +1,4 @@
-import { findBitMatchesAtIndex } from '../src/helpers/findBitMatchesAtIndex';
+import { findBitMatchesAtIndex } from '../../src/helpers/findBitMatchesAtIndex';
 import { ethers } from 'ethers';
 import { expect } from 'chai';
 

@@ -13,7 +13,7 @@ export const providersTestnet = {
 export const providersAll = {
   ...providersMainnet,
   ...providersTestnet,
-}
+};
 
 export default {
   all: providersAll,

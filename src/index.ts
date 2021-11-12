@@ -9,19 +9,13 @@ export * from "./computePicks";
 export * from "./computePrizeDistribution";
 export * from "./generatePicks";
 export * from "./prepareClaims";
-export * from "./validatePrizeDistributionParameters";
+export * from "./utils/validatePrizeDistributionParameters";
 
-// Configuration
-export * as config from "./config";
-
-// Fetching
-export * as fetching from "./fetching";
-
-// Utils
 export * from "./utils";
-export * as utils from "./utils";
-
-// Helpers
+export * from "./config";
+export * as config from "./config";
+export * from "./fetching";
+export * from "./utils";
 export * from "./helpers/calculateNumberOfPrizesForIndex";
 export * from "./helpers/calculatePrizeForDistributionIndex";
 
