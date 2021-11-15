@@ -36,3 +36,18 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_ONE = {
   prize: PRIZE_EXAMPLE_ONE,
   endTimestampOffset: 900,
 };
+
+export const contactList = {
+  name: "Mainnet ContractList",
+  version: { major: 1, minor: 0, patch: 0 },
+  tags: {},
+  contracts: [
+    {
+      chainId: 1,
+      address: "0x000000000000000000000000000000000000dead",
+      version: { major: 1, minor: 0, patch: 0 },
+      type: "ContractName",
+      abi: [],
+    },
+  ],
+};
