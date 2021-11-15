@@ -5,7 +5,10 @@ import { DAYS_IN_SECONDS } from "../src/constants";
 describe("calculatePicks", () => {
   let ptv4: PoolTogetherV4;
   beforeAll(() => {
-    ptv4 = new PoolTogetherV4(config.providers.providersAll, mainnetContractList);
+    ptv4 = new PoolTogetherV4(
+      config.providers.providersAll,
+      mainnetContractList
+    );
   });
 
   const ticketL1 = "0xdd4d117723C257CEe402285D3aCF218E9A8236E1";
