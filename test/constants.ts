@@ -44,7 +44,7 @@ export const contactList = {
   contracts: [
     {
       chainId: 1,
-      address: "0x000000000000000000000000000000000000dead",
+      address: "0x000000000000000000000000000000000000dEaD",
       version: { major: 1, minor: 0, patch: 0 },
       type: "ContractName",
       abi: [],

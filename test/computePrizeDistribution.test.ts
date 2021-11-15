@@ -1,4 +1,4 @@
-import { BigNumber } from "ethers";
+import { BigNumber } from "@ethersproject/bignumber";
 import { mainnet as mainnetContractList } from "@pooltogether/v4-pool-data";
 import PoolTogetherV4, { computePrizeDistribution, config } from "../src";
 const debug = require("debug")("v4-js-core:test");
