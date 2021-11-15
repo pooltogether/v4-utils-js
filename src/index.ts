@@ -8,6 +8,7 @@ export * from "./computeDrawResults";
 export * from "./computePicks";
 export * from "./computePrizeDistribution";
 export * from "./generatePicks";
+export * from "./initialize";
 export * from "./prepareClaims";
 export * from "./utils/validatePrizeDistributionParameters";
 
