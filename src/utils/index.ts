@@ -1,5 +1,6 @@
 export * from "./createContract";
 export * from "./createInterface";
+export * from "./formatTierToBasePercentage";
 export * from "./getContract";
 export * from "./getInterface";
 export * from "./getJsonRpcProvider";
