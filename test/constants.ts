@@ -1,6 +1,11 @@
 import { BigNumber } from "@ethersproject/bignumber";
+import { keccak256 } from "@ethersproject/keccak256";
+import { toUtf8Bytes } from "@ethersproject/strings";
 import { parseUnits } from "@ethersproject/units";
 import { formatTierToBasePercentage } from "../src/utils/formatTierToBasePercentage";
+
+export const ADDRESS_DEAD = '0x000000000000000000000000000000000000dEaD'
+export const BYTES32_ADDRESS_DEAD = keccak256(toUtf8Bytes(ADDRESS_DEAD));
 
 export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 6)
 
