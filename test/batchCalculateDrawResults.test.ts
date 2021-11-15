@@ -13,7 +13,6 @@ import { calculateFractionOfPrize } from "../src/helpers/calculateFractionOfPriz
 import { calculatePrizeAmount } from "../src/helpers/calculatePrizeAmount";
 import { findBitMatchesAtIndex } from "../src/helpers/findBitMatchesAtIndex";
 import { calculatePrizeForDistributionIndex } from "../src/helpers/calculatePrizeForDistributionIndex";
-
 import { formatTierToBasePercentage } from "../src/utils/formatTierToBasePercentage";
 const debug = require("debug")("v4-js-core:test");
 
