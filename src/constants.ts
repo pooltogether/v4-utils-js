@@ -1,0 +1,1 @@
+export const TIER_DENOMINATION = 9;
