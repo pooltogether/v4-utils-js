@@ -6,9 +6,8 @@ import { formatTierToBasePercentage } from "../src/utils/formatTierToBasePercent
 
 export const ADDRESS_DEAD = '0x000000000000000000000000000000000000dEaD'
 export const BYTES32_ADDRESS_DEAD = keccak256(toUtf8Bytes(ADDRESS_DEAD));
-
-export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 6)
-
+export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18)
+export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000')
 export const TIERS_EXAMPLE_ONE = [
   formatTierToBasePercentage('0.25'),
   formatTierToBasePercentage('0.05'),
@@ -32,8 +31,8 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_ONE = {
   tiers: TIERS_EXAMPLE_ONE,
   maxPicksPerUser: 2,
   expiryDuration: 5184000,
-  numberOfPicks: BigNumber.from({ _hex: "0x04dc79", _isBigNumber: true }),
+  numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
   startTimestampOffset: 86400,
-  prize: BigNumber.from({ _hex: "0x037ce0a900", _isBigNumber: true }),
+  prize: PRIZE_EXAMPLE_ONE,
   endTimestampOffset: 900,
 };
