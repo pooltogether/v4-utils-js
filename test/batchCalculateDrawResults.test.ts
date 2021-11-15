@@ -1,5 +1,5 @@
 import { BigNumber, ethers, utils } from "ethers";
-import { expect } from "chai";
+// import { expect } from "chai";
 import {
   Claim,
   Draw,
@@ -53,7 +53,7 @@ describe.only("batchCalculateDrawResults()", () => {
       exampleUser
     );
     const expectedPrize = BigNumber.from("0x94a62bef705e30"); // const prizeReceived = utils.parseEther("0.041666666666666667")
-    expect(results[0].totalValue).to.deep.equal(expectedPrize);
+    expect(results[0].totalValue).toStrictEqual(expectedPrize);
   });
 
   it("all matches", async () => {
@@ -101,7 +101,7 @@ describe.only("batchCalculateDrawResults()", () => {
       exampleUser
     );
     const prizeReceived = utils.parseEther("40");
-    expect(results[0].totalValue).to.deep.equal(prizeReceived);
+    expect(results[0].totalValue).toStrictEqual(prizeReceived);
   });
 });
 
@@ -123,8 +123,8 @@ describe("calculatePrizeAmount()", () => {
 
     const result = calculatePrizeAmount(exampleDrawSettings, 2);
     const prizeReceived = utils.parseEther("1.25");
-    expect(result!.amount).to.deep.equal(prizeReceived);
-    expect(result!.distributionIndex).to.deep.equal(1);
+    expect(result!.amount).toStrictEqual(prizeReceived);
+    expect(result!.distributionIndex).toStrictEqual(1);
   });
   it("Can calculate the prize given the draw settings and number of matches", async () => {
     const exampleDrawSettings: PrizeDistribution = {
@@ -143,7 +143,7 @@ describe("calculatePrizeAmount()", () => {
 
     const result = calculatePrizeAmount(exampleDrawSettings, 3);
     const prizeReceived = utils.parseEther("1.25");
-    expect(result!.amount).to.deep.equal(prizeReceived);
+    expect(result!.amount).toStrictEqual(prizeReceived);
   });
 });
 
@@ -155,7 +155,7 @@ describe("findBitMatchesAtIndex()", () => {
       1,
       8
     );
-    expect(result).to.be.true;
+    expect(result).toBeTruthy();
   });
 
   it("Can NOT findBitMatchesAtIndex", async () => {
@@ -165,7 +165,7 @@ describe("findBitMatchesAtIndex()", () => {
       1,
       6
     );
-    expect(result).to.be.false;
+    expect(result).toBeFalsy();
   });
 
   it("Can findBitMatchesAtIndex", async () => {
@@ -179,7 +179,7 @@ describe("findBitMatchesAtIndex()", () => {
       1,
       8
     );
-    expect(result).to.be.true;
+    expect(result).toBeTruthy();
   });
 
   it("Can NOT findBitMatchesAtIndex", async () => {
@@ -193,7 +193,7 @@ describe("findBitMatchesAtIndex()", () => {
       2,
       8
     );
-    expect(result).to.be.false;
+    expect(result).toBeFalsy();
   });
 });
 
@@ -218,7 +218,7 @@ describe("calculatePrizeForPrizeDistributionIndex()", () => {
       exampleDrawSettings
     );
     const prize = utils.parseEther("1.25");
-    expect(prizeReceivable).to.deep.equal(prize);
+    expect(prizeReceivable).toStrictEqual(prize);
   });
 });
 
@@ -239,7 +239,7 @@ describe("calculateFractionOfPrize()", () => {
     };
     const fraction = calculateFractionOfPrize(1, exampleDrawSettings);
     const expectedFraction = utils.parseEther("0.0125");
-    expect(fraction).to.deep.equal(expectedFraction);
+    expect(fraction).toStrictEqual(expectedFraction);
   });
 });
 
@@ -284,8 +284,8 @@ describe("prepareClaimForUserFromDrawResult()", () => {
     );
 
     const claimResult: Claim = prepareClaims(exampleUser, drawResult);
-    expect(claimResult.drawIds).to.deep.equal([drawId]);
-    expect(claimResult.data).to.deep.equal([[winningPickIndices]]);
+    expect(claimResult.drawIds).toStrictEqual([drawId]);
+    expect(claimResult.data).toStrictEqual([[winningPickIndices]]);
   });
 });
 
@@ -350,11 +350,11 @@ describe("prepareClaimsForUserFromDrawResults()", () => {
       exampleUser
     );
 
-    expect(drawResults.length).to.equal(1); // only wins exampleDraw1
+    expect(drawResults.length).toEqual(1); // only wins exampleDraw1
 
     const claimResult: Claim = prepareClaims(exampleUser, drawResults);
 
-    expect(claimResult.drawIds).to.deep.equal([drawIds[0]]);
-    expect(claimResult.data).to.deep.equal([[winningPickIndices]]);
+    expect(claimResult.drawIds).toStrictEqual([drawIds[0]]);
+    expect(claimResult.data).toStrictEqual([[winningPickIndices]]);
   });
 });

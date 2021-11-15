@@ -5,7 +5,7 @@ const debug = require("debug")("v4-js-core:test");
 
 describe("computePrizeDistribution", () => {
   beforeAll(() => {
-    new PoolTogetherV4(config.providersAll, mainnetContractList);
+    new PoolTogetherV4(config.providers.providersAll, mainnetContractList);
   });
 
   it("should succeed to calculate a PrizeDistribution", async () => {

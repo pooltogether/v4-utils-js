@@ -4,21 +4,29 @@ import { toUtf8Bytes } from "@ethersproject/strings";
 import { parseUnits } from "@ethersproject/units";
 import { formatTierToBasePercentage } from "../src/utils/formatTierToBasePercentage";
 
-export const ADDRESS_DEAD = '0x000000000000000000000000000000000000dEaD'
+export const ADDRESS_DEAD = "0x000000000000000000000000000000000000dEaD";
 export const BYTES32_ADDRESS_DEAD = keccak256(toUtf8Bytes(ADDRESS_DEAD));
-export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18)
-export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000')
+export const PRIZE_EXAMPLE_ONE = parseUnits("5000", 18);
+export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from("1000");
 export const TIERS_EXAMPLE_ONE = [
-  formatTierToBasePercentage('0.25'),
-  formatTierToBasePercentage('0.05'),
-  formatTierToBasePercentage('0.5'),
-  formatTierToBasePercentage('0.2'),
-  0, 0, 0, 0,
-  0, 0, 0, 0
-]
+  formatTierToBasePercentage("0.25"),
+  formatTierToBasePercentage("0.05"),
+  formatTierToBasePercentage("0.5"),
+  formatTierToBasePercentage("0.2"),
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+];
 
 export const DRAW_EXAMPLE_ONE = {
-  winningRandomNumber: BigNumber.from("21288413488180966377126236036201345909019919575750940621513526137694302720820"),
+  winningRandomNumber: BigNumber.from(
+    "21288413488180966377126236036201345909019919575750940621513526137694302720820"
+  ),
   drawId: 1,
   timestamp: 1634410924,
   beaconPeriodStartedAt: 1634324400,

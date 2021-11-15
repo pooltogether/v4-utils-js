@@ -14,7 +14,7 @@ export * from "./utils/validatePrizeDistributionParameters";
 
 export * from "./utils";
 export * from "./config";
-export * as config from "./config";
+export * from "./config";
 export * from "./fetching";
 export * from "./utils";
 export * from "./helpers/calculateNumberOfPrizesForIndex";

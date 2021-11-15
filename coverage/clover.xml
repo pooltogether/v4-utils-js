@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1636997020662" clover="3.2.0">
+  <project timestamp="1636997020663" name="All files">
+    <metrics statements="448" coveredstatements="419" conditionals="104" coveredconditionals="63" methods="56" coveredmethods="47" elements="608" coveredelements="529" complexity="0" loc="448" ncloc="448" packages="5" files="44" classes="44"/>
+    <package name="src">
+      <metrics statements="220" coveredstatements="205" conditionals="38" coveredconditionals="18" methods="27" coveredmethods="21"/>
+      <file name="PoolTogetherV4.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/PoolTogetherV4.ts">
+        <metrics statements="35" coveredstatements="28" conditionals="10" coveredconditionals="2" methods="11" coveredmethods="5"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="26" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="12" type="stmt"/>
+        <line num="46" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="12" type="stmt"/>
+        <line num="56" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="57" count="10" type="stmt"/>
+        <line num="58" count="128" type="stmt"/>
+        <line num="60" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="61" count="10" type="stmt"/>
+        <line num="62" count="10" type="stmt"/>
+        <line num="69" count="12" type="stmt"/>
+        <line num="70" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="76" count="12" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="79" count="12" type="stmt"/>
+        <line num="81" count="12" type="stmt"/>
+      </file>
+      <file name="batchCalculateDrawResults.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/batchCalculateDrawResults.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+      </file>
+      <file name="calculateDrawResults.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/calculateDrawResults.ts">
+        <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+      </file>
+      <file name="calculatePicks.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/calculatePicks.ts">
+        <metrics statements="15" coveredstatements="14" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="1"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="34" count="12" type="stmt"/>
+      </file>
+      <file name="calculatePicksFromAverageTotalSuppliesBetween.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/calculatePicksFromAverageTotalSuppliesBetween.ts">
+        <metrics statements="11" coveredstatements="9" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+      </file>
+      <file name="computeCardinality.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/computeCardinality.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+      </file>
+      <file name="computeDrawResults.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/computeDrawResults.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="34" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+      </file>
+      <file name="computePicks.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/computePicks.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+      </file>
+      <file name="computePrizeDistribution.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/computePrizeDistribution.ts">
+        <metrics statements="60" coveredstatements="57" conditionals="13" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="77" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="83" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="124" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="132" count="1" type="stmt"/>
+        <line num="134" count="1" type="stmt"/>
+        <line num="145" count="1" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
+        <line num="150" count="12" type="stmt"/>
+      </file>
+      <file name="constants.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/constants.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="14" type="stmt"/>
+        <line num="3" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+      </file>
+      <file name="generatePicks.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/generatePicks.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="104" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/index.ts">
+        <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+      </file>
+      <file name="initialize.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/initialize.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+      </file>
+      <file name="prepareClaims.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/prepareClaims.ts">
+        <metrics statements="13" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.config">
+      <metrics statements="41" coveredstatements="41" conditionals="20" coveredconditionals="19" methods="0" coveredmethods="0"/>
+      <file name="bridging.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/config/bridging.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="37" count="12" type="stmt"/>
+        <line num="64" count="12" type="stmt"/>
+        <line num="69" count="12" type="stmt"/>
+      </file>
+      <file name="chains.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/config/chains.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="35" count="12" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="63" count="12" type="stmt"/>
+        <line num="77" count="12" type="stmt"/>
+        <line num="91" count="12" type="stmt"/>
+        <line num="105" count="12" type="stmt"/>
+        <line num="115" count="12" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/config/index.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+      </file>
+      <file name="networks.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/config/networks.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="20" coveredconditionals="19" methods="0" coveredmethods="0"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="19" count="13" type="stmt"/>
+        <line num="22" count="13" type="stmt"/>
+        <line num="26" count="13" type="stmt"/>
+        <line num="29" count="13" type="stmt"/>
+        <line num="33" count="13" type="stmt"/>
+      </file>
+      <file name="providers.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/config/providers.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.fetching">
+      <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <file name="getMultiTicketAverageTotalSuppliesBetween.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/fetching/getMultiTicketAverageTotalSuppliesBetween.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/fetching/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.helpers">
+      <metrics statements="112" coveredstatements="110" conditionals="9" coveredconditionals="5" methods="13" coveredmethods="13"/>
+      <file name="calculateFractionOfPrize.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculateFractionOfPrize.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+      </file>
+      <file name="calculateNumberOfPicksForUser.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculateNumberOfPicksForUser.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+      </file>
+      <file name="calculateNumberOfPrizesForIndex.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculateNumberOfPrizesForIndex.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+      <file name="calculatePickPrize.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculatePickPrize.ts">
+        <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="25" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="42" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+      </file>
+      <file name="calculatePrizeAmount.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculatePrizeAmount.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="18" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+      </file>
+      <file name="calculatePrizeForDistributionIndex.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/calculatePrizeForDistributionIndex.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+      </file>
+      <file name="computePick.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/computePick.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="107" type="stmt"/>
+        <line num="8" count="107" type="stmt"/>
+        <line num="12" count="107" type="stmt"/>
+        <line num="17" count="107" type="stmt"/>
+        <line num="22" count="107" type="stmt"/>
+      </file>
+      <file name="filterResultsByValue.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/filterResultsByValue.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="3" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="2" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="21" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+      </file>
+      <file name="findBitMatchesAtIndex.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/findBitMatchesAtIndex.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
+        <line num="12" count="15" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+        <line num="21" count="15" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="24" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="26" count="15" type="stmt"/>
+        <line num="27" count="15" type="stmt"/>
+        <line num="28" count="15" type="stmt"/>
+        <line num="31" count="15" type="stmt"/>
+      </file>
+      <file name="sanityCheckPrizeDistribution.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/helpers/sanityCheckPrizeDistribution.ts">
+        <metrics statements="10" coveredstatements="8" conditionals="3" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="66" coveredstatements="54" conditionals="30" coveredconditionals="16" methods="13" coveredmethods="10"/>
+      <file name="createContract.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/createContract.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="14" count="10" type="cond" truecount="2" falsecount="1"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="18" count="13" type="stmt"/>
+      </file>
+      <file name="createInterface.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/createInterface.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+      </file>
+      <file name="formatTierToBasePercentage.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/formatTierToBasePercentage.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="14" type="stmt"/>
+        <line num="3" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="40" type="stmt"/>
+      </file>
+      <file name="getContract.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/getContract.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="getInterface.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/getInterface.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="getJsonRpcProvider.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/getJsonRpcProvider.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="48" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+      </file>
+      <file name="getProviderFromChainId.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/getProviderFromChainId.ts">
+        <metrics statements="11" coveredstatements="9" conditionals="11" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="15" count="48" type="cond" truecount="8" falsecount="3"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="13" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/index.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="13" type="stmt"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+      </file>
+      <file name="isContractConnectedToProvider.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/isContractConnectedToProvider.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="4" type="cond" truecount="3" falsecount="1"/>
+        <line num="7" count="13" type="stmt"/>
+      </file>
+      <file name="isContractConnectedToSigner.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/isContractConnectedToSigner.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="7" count="13" type="stmt"/>
+      </file>
+      <file name="sumBigNumbers.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/sumBigNumbers.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="validateContractListIsConnected.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/validateContractListIsConnected.ts">
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="10" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="13" type="stmt"/>
+      </file>
+      <file name="validatePrizeDistributionParameters.ts" path="/Users/admin/Documents/GitHub/POOLTogether/backend/LIBRARIES/v4-js/src/utils/validatePrizeDistributionParameters.ts">
+        <metrics statements="3" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="7" count="12" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

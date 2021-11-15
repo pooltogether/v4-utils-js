@@ -1,12 +1,11 @@
 import { mainnet as mainnetContractList } from "@pooltogether/v4-pool-data";
 import PoolTogetherV4, { calculatePicks, config } from "../src";
-import { DAYS_IN_SECONDS } from '../src/constants'
+import { DAYS_IN_SECONDS } from "../src/constants";
 
 describe("calculatePicks", () => {
-
   let ptv4: PoolTogetherV4;
   beforeAll(() => {
-    ptv4 = new PoolTogetherV4(config.providersAll, mainnetContractList);
+    ptv4 = new PoolTogetherV4(config.providers.providersAll, mainnetContractList);
   });
 
   const ticketL1 = "0xdd4d117723C257CEe402285D3aCF218E9A8236E1";
@@ -47,5 +46,4 @@ describe("calculatePicks", () => {
     );
     expect(calculatedPicks).toEqual(728975);
   });
-
 });
