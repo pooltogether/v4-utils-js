@@ -1,7 +1,5 @@
-
-
-describe('computeDrawResults', () => {
-  it('should', () => {
-    expect(1 + 1).toEqual(2)
+describe("computeDrawResults", () => {
+  it("should", () => {
+    expect(1 + 1).toEqual(2);
   });
 });

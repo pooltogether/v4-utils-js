@@ -6,9 +6,10 @@ export async function calculatePicks(
   cardinality: number,
   startTime: number,
   endTime: number,
-  ticket: Contract,
-  otherTicket: Contract
+  ticket?: Contract,
+  otherTicket?: Contract
 ) {
+  if (!ticket || !otherTicket) return undefined;
   const totalPicks = (2 ** bitRange) ** cardinality;
   const ticketTotalSupply = (
     await ticket.getAverageTotalSuppliesBetween([startTime], [endTime])

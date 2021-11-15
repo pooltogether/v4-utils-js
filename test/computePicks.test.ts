@@ -1,7 +1,5 @@
-
-
-describe('computePicks', () => {
-  it('should', () => {
-    expect(1 + 1).toEqual(2)
+describe("computePicks", () => {
+  it("should", () => {
+    expect(1 + 1).toEqual(2);
   });
 });

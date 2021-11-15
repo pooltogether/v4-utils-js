@@ -1,7 +1,5 @@
-
-
-describe('calculateNumberOfPicksForUser', () => {
-  it('should', () => {
-    expect(1 + 1).toEqual(2)
+describe("calculateNumberOfPicksForUser", () => {
+  it("should", () => {
+    expect(1 + 1).toEqual(2);
   });
 });
