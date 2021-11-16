@@ -8,7 +8,7 @@
 
 # PoolTogether V4 JS
 ![Tests](https://github.com/pooltogether/v4-js/actions/workflows/main.yml/badge.svg)
-[![Coveralls](https://coveralls.io/repos/github/pooltogether/v4-test/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-js?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 The `v4-js` module is a general purpose JS library for reading/writing to the Pooltogether V4 protocol.
