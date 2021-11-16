@@ -2,6 +2,7 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { keccak256 } from "@ethersproject/keccak256";
 import { toUtf8Bytes } from "@ethersproject/strings";
 import { parseUnits } from "@ethersproject/units";
+import { User } from "../src/types";
 import { formatTierToBasePercentage } from "../src/utils/formatTierToBasePercentage";
 
 export const ADDRESS_DEAD = "0x000000000000000000000000000000000000dEaD";
@@ -22,6 +23,12 @@ export const TIERS_EXAMPLE_ONE = [
   0,
   0,
 ];
+
+export const USER_EXAMPLE_ONE: User = {
+  address: ADDRESS_DEAD,
+  picks: [],
+  normalizedBalances: []
+}
 
 export const DRAW_EXAMPLE_ONE = {
   winningRandomNumber: BigNumber.from(
