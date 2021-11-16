@@ -8,12 +8,13 @@ export * from "./computeDrawResults";
 export * from "./computePicks";
 export * from "./computePrizeDistribution";
 export * from "./generatePicks";
+export * from "./initialize";
 export * from "./prepareClaims";
 export * from "./utils/validatePrizeDistributionParameters";
 
 export * from "./utils";
 export * from "./config";
-export * as config from "./config";
+export * from "./config";
 export * from "./fetching";
 export * from "./utils";
 export * from "./helpers/calculateNumberOfPrizesForIndex";

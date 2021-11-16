@@ -1,7 +1,5 @@
-
-
-describe('calculatePrizeAmount', () => {
-  it('should', () => {
-    expect(1 + 1).toEqual(2)
+describe("calculatePrizeAmount", () => {
+  it("should", () => {
+    expect(1 + 1).toEqual(2);
   });
 });
