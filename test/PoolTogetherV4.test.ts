@@ -73,7 +73,6 @@ describe("PoolTogetherV4", () => {
   });
 
   it("should fail to get Infura provider.", async () => {
-    console.log(pt4, 'pt4')
     const provider = pt4.getInfuraProvider(4)
     expect(provider?._isProvider).toBeFalsy();
   });
