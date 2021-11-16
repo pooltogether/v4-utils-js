@@ -65,7 +65,7 @@ export class PoolTogetherV4 {
   }
 
   getProviderList(): Providers | undefined {
-    return this.providers
+    return this.providers;
   }
 
   getContract(address: string): Contract | undefined {

@@ -6,13 +6,13 @@ describe("PoolTogetherV4", () => {
 
   beforeAll(() => {
     pt4 = new PoolTogetherV4(config.providers.providersAll, contactList);
-  })
+  });
 
   beforeEach(() => {
     pt4.setProviders(config.providers.providersAll);
     pt4.setContractList(contactList);
     pt4.setConfiguration({ infuraApiKey: undefined });
-  })
+  });
 
   it("should succeed to initialize PoolTogetherV4", async () => {
     expect(pt4.isInitialized).toBeTruthy();
@@ -29,12 +29,12 @@ describe("PoolTogetherV4", () => {
   });
 
   it("should succeed to set configuration", async () => {
-    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY })
+    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY });
     expect(pt4?.config?.infuraApiKey).toBeTruthy();
   });
 
   it("should succeed to set configuration", async () => {
-    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY })
+    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY });
     expect(pt4?.config?.infuraApiKey).toBeTruthy();
   });
 
@@ -46,13 +46,13 @@ describe("PoolTogetherV4", () => {
   it("should succeed to get contracts.", async () => {
     const contracts = pt4.getContracts([ADDRESS_DEAD]);
     // @ts-ignore
-    expect(contracts[0]?.interface).toBeTruthy
+    expect(contracts[0]?.interface).toBeTruthy();
   });
 
   it("should succeed to get contract list.", async () => {
-    const contracts = pt4.getContractList()
+    const contracts = pt4.getContractList();
     // @ts-ignore
-    expect(contracts.version).toBeTruthy
+    expect(contracts.version).toBeTruthy();
   });
 
   it("should succeed to get a provider.", async () => {
@@ -67,19 +67,19 @@ describe("PoolTogetherV4", () => {
   });
 
   it("should succeed to get a provider list.", async () => {
-    const providers = pt4.getProviderList()
+    const providers = pt4.getProviderList();
     // @ts-ignore
     expect(providers[1]._isProvider).toBeTruthy();
   });
 
   it("should fail to get Infura provider.", async () => {
-    const provider = pt4.getInfuraProvider(4)
+    const provider = pt4.getInfuraProvider(4);
     expect(provider?._isProvider).toBeFalsy();
   });
 
   it("should succeed to get Infura provider.", async () => {
-    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY })
-    const provider = pt4.getInfuraProvider(4)
+    pt4.setConfiguration({ infuraApiKey: process.env.INFURA_API_KEY });
+    const provider = pt4.getInfuraProvider(4);
     expect(provider?._isProvider).toBeTruthy();
   });
 });
