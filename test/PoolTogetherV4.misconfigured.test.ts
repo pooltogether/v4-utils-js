@@ -20,27 +20,26 @@ describe("PoolTogetherV4", () => {
 
   it("should fail to get contract list.", async () => {
     const contracts = pt4.getContractList();
-    expect(contracts).toBeUndefined()
+    expect(contracts).toBeUndefined();
   });
 
   it("should fail to get a provider.", async () => {
     const provider = pt4.getProvider(1);
-    expect(provider).toBeUndefined()
+    expect(provider).toBeUndefined();
   });
 
   it("should fail to get a providers.", async () => {
     const providers = pt4.getProviders([1, 4]);
-    expect(providers).toEqual([undefined, undefined])
+    expect(providers).toEqual([undefined, undefined]);
   });
 
   it("should fail to get a provider list.", async () => {
     const providers = pt4.getProviderList();
-    expect(providers).toBeUndefined()
+    expect(providers).toBeUndefined();
   });
 
   it("should fail to get Infura provider.", async () => {
     const provider = pt4.getInfuraProvider(4);
     expect(provider?._isProvider).toBeFalsy();
   });
-
 });

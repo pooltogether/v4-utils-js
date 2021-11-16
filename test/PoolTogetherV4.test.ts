@@ -6,11 +6,12 @@ describe("PoolTogetherV4", () => {
   let pt4: PoolTogetherV4;
 
   beforeAll(() => {
-    pt4 = new PoolTogetherV4(config.providers.providersAll, contactList, { infuraApiKey: process.env.INFURA_API_KEY });
+    pt4 = new PoolTogetherV4(config.providers.providersAll, contactList, {
+      infuraApiKey: process.env.INFURA_API_KEY,
+    });
   });
 
-  beforeEach(() => {
-  });
+  beforeEach(() => { });
 
   it("should succeed to initialize PoolTogetherV4", async () => {
     expect(pt4.isInitialized).toBeTruthy();
@@ -78,5 +79,4 @@ describe("PoolTogetherV4", () => {
     const provider = pt4.getInfuraProvider(4);
     expect(provider?._isProvider).toBeTruthy();
   });
-
 });
