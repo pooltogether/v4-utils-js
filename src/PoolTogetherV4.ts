@@ -8,7 +8,7 @@ import { InfuraProvider } from "@ethersproject/providers";
 import { getAddress } from "@ethersproject/address";
 const debug = require("debug")("v4-js-core");
 export interface PoolTogetherV4Config {
-  infuraApiKey: string;
+  infuraApiKey?: string;
 }
 
 export class PoolTogetherV4 {
@@ -36,8 +36,20 @@ export class PoolTogetherV4 {
     return this;
   }
 
+  setProviders(providers: Providers) {
+    this.providers = providers;
+  }
+
+  setContractList(contractList: ContractList) {
+    this.contractList = contractList;
+  }
+
+  setConfiguration(config: PoolTogetherV4Config) {
+    this.config = config;
+  }
+
   getInfuraProvider(chainId: number): InfuraProvider | undefined {
-    return !this.config
+    return !this.config || !this.config.infuraApiKey
       ? undefined
       : new providers.InfuraProvider(chainId, this.config.infuraApiKey);
   }
@@ -46,10 +58,14 @@ export class PoolTogetherV4 {
     return !this.providers ? undefined : this.providers[chainId];
   }
 
-  async getProviders(chainIds: number[]) {
+  getProviders(chainIds: number[]) {
     return chainIds.map((chainId: number) => {
       return this.getProvider(chainId);
     });
+  }
+
+  getProviderList(): Providers | undefined {
+    return this.providers
   }
 
   getContract(address: string): Contract | undefined {
@@ -73,7 +89,7 @@ export class PoolTogetherV4 {
     });
   }
 
-  async getContractList() {
+  getContractList() {
     return this.contractList;
   }
 }
