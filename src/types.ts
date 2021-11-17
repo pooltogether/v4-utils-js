@@ -17,7 +17,7 @@ export interface PrizeDistribution {
   maxPicksPerUser: number;
   expiryDuration: number;
   numberOfPicks: BigNumber;
-  tiers: number[];
+  tiers: number[] | BigNumber[];
   prize: BigNumber;
 }
 
@@ -70,5 +70,5 @@ export interface UserDrawResult {
 }
 
 export interface Providers {
-  [chainId: number]: Provider;
+  [chainId: number]: Provider | undefined;
 }
