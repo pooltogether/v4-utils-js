@@ -15,8 +15,5 @@ export function calculatePrizeForDistributionIndex(
     fractionOfPrize
   );
   expectedPrizeAmount = expectedPrizeAmount.div(ethers.constants.WeiPerEther);
-
-  // console.log("expectedPrizeAmount ", utils.formatEther(expectedPrizeAmount))
-
   return expectedPrizeAmount;
 }

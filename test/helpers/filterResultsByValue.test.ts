@@ -30,6 +30,5 @@ describe("filterResultsByValue()", () => {
     const filteredResults = filterResultsByValue(results, 2);
     expect(filteredResults.prizes.length).to.equal(2);
     debug(filteredResults);
-    // expect(filteredResults.prizes[0]).to.equal(results.prizes[1])
   });
 });
