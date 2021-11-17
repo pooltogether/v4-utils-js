@@ -9,7 +9,6 @@ export function validateContractListIsConnected(
     if (typeof element === 'undefined' || !isContractConnectedToProvider(element)) {
       return false
     }
-
   }
   return true;
 }
