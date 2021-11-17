@@ -1,15 +1,13 @@
 import { Interface } from "@ethersproject/abi";
 import { Contract } from "@ethersproject/contracts";
-import {
-  JsonRpcProvider,
-  Web3Provider,
-  Provider,
-} from "@ethersproject/providers";
+import { BaseProvider } from "@ethersproject/providers";
+import { Signer } from "@ethersproject/abstract-signer";
+import { Wallet } from "@ethersproject/wallet";
 
 export const createContract = (
   address: string,
   contractInterface: Interface,
-  provider?: Provider | JsonRpcProvider | Web3Provider
+  provider?: BaseProvider | Signer | Wallet
 ): Contract | undefined => {
   if (!address || !contractInterface) return undefined;
   return new Contract(address, contractInterface, provider);
