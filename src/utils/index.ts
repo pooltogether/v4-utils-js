@@ -6,4 +6,7 @@ export * from "./getProviderFromChainId";
 export * from "./isContractConnectedToProvider";
 export * from "./isContractConnectedToSigner";
 export * from "./validateContractListIsConnected";
+export * from "./sanityCheckPrizeDistribution";
 export * from "./sumBigNumbers";
+export * from "./validateContractListIsConnected";
+export * from "./validatePrizeDistributionParameters";

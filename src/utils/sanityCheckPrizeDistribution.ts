@@ -1,10 +1,11 @@
 import { BigNumber, ethers } from "ethers";
 import { PrizeDistribution } from "../types";
 
-// checks that the PrizeDistribution are appropriate
 export function sanityCheckPrizeDistribution(
   prizeDistribution: PrizeDistribution
 ): string {
+  console.log(prizeDistribution.bitRangeSize,
+    Math.floor(256 / prizeDistribution.matchCardinality))
   if (
     prizeDistribution.bitRangeSize >=
     Math.floor(256 / prizeDistribution.matchCardinality)

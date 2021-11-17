@@ -1,5 +1,10 @@
 import { Wallet } from "@ethersproject/wallet";
-import PoolTogetherV4, { isContractConnectedToSigner, createContract, createInterface, config } from "../../src";
+import PoolTogetherV4, {
+  isContractConnectedToSigner,
+  createContract,
+  createInterface,
+  config,
+} from "../../src";
 import { contactList, ADDRESS_DEAD } from "../constants";
 
 describe("isContractConnectedToSigner", () => {
@@ -19,10 +24,9 @@ describe("isContractConnectedToSigner", () => {
   });
 
   it("should succeed to validate contract is connected to signer", () => {
-    const ABI: any = []
-    const signer = Wallet.createRandom()
-    const contract = createContract(ADDRESS_DEAD, createInterface(ABI), signer)
+    const ABI: any = [];
+    const signer = Wallet.createRandom();
+    const contract = createContract(ADDRESS_DEAD, createInterface(ABI), signer);
     expect(isContractConnectedToSigner(contract)).toBeTruthy();
   });
-
 });

@@ -11,7 +11,7 @@ describe("PoolTogetherV4", () => {
     });
   });
 
-  beforeEach(() => { });
+  beforeEach(() => {});
 
   it("should succeed to initialize PoolTogetherV4", async () => {
     expect(pt4.isInitialized).toBeTruthy();

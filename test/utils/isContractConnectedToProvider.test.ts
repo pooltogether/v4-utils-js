@@ -17,8 +17,8 @@ describe("isContractConnectedToProvider", () => {
   });
 
   it("should fail to validate contract is connected to provider", () => {
-    const ABI: any = []
-    const contract = createContract(ADDRESS_DEAD, createInterface(ABI))
+    const ABI: any = [];
+    const contract = createContract(ADDRESS_DEAD, createInterface(ABI));
     expect(isContractConnectedToProvider(contract)).toBeFalsy();
   });
 
@@ -26,5 +26,4 @@ describe("isContractConnectedToProvider", () => {
     const contract = pt4.getContract(ADDRESS_DEAD);
     expect(isContractConnectedToProvider(contract)).toBeTruthy();
   });
-
 });

@@ -9,8 +9,8 @@ describe("validateDrawStructIsSet", () => {
       drawId: 0,
       winningRandomNumber: BigNumber.from(1),
       beaconPeriodStartedAt: 0,
-      beaconPeriodSeconds: 0
-    }
+      beaconPeriodSeconds: 0,
+    };
     expect(validateDrawStructIsSet(draw)).toBeFalsy();
   });
 
@@ -20,8 +20,8 @@ describe("validateDrawStructIsSet", () => {
       drawId: 0,
       winningRandomNumber: BigNumber.from(1),
       beaconPeriodStartedAt: 0,
-      beaconPeriodSeconds: 0
-    }
+      beaconPeriodSeconds: 0,
+    };
     expect(validateDrawStructIsSet(draw)).toBeFalsy();
   });
 
@@ -31,8 +31,8 @@ describe("validateDrawStructIsSet", () => {
       drawId: 1,
       winningRandomNumber: BigNumber.from(1),
       beaconPeriodStartedAt: 0,
-      beaconPeriodSeconds: 0
-    }
+      beaconPeriodSeconds: 0,
+    };
     expect(validateDrawStructIsSet(draw)).toBeFalsy();
   });
 
@@ -42,8 +42,8 @@ describe("validateDrawStructIsSet", () => {
       drawId: 1,
       winningRandomNumber: BigNumber.from(1),
       beaconPeriodStartedAt: 0,
-      beaconPeriodSeconds: 0
-    }
+      beaconPeriodSeconds: 0,
+    };
     expect(validateDrawStructIsSet(draw)).toBeTruthy();
   });
 });

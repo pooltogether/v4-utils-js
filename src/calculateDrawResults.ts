@@ -1,6 +1,6 @@
 import { utils } from "ethers";
 import { generatePicks } from "./generatePicks";
-import { sanityCheckPrizeDistribution } from "./helpers/sanityCheckPrizeDistribution";
+import { sanityCheckPrizeDistribution } from "./utils/sanityCheckPrizeDistribution";
 import { Draw, DrawResults, PrizeDistribution, User } from "./types";
 import { computeDrawResults } from "./computeDrawResults";
 import { filterResultsByValue } from "./helpers/filterResultsByValue";
