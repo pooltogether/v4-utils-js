@@ -1,7 +1,8 @@
 import { Draw } from "../types";
 
-export function validateDrawParameters(draw: Draw): boolean {
+// @TODO: Add more reasonable checks for validating the Draw object.
+export function validateDrawStructIsSet(draw: Draw): boolean {
   return draw && draw.drawId > 0 && draw.timestamp > 0;
 }
 
-export default validateDrawParameters;
+export default validateDrawStructIsSet;

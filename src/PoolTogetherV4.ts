@@ -73,7 +73,6 @@ export class PoolTogetherV4 {
     const contract = this.contractList.contracts.find(
       (contract: any) => getAddress(contract.address) === getAddress(address)
     );
-    console.log(contract, "contractcontract");
     if (!contract) return undefined;
     debug("PoolTogetherV4:getContract", contract);
     return createContract(
