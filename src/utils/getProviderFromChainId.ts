@@ -29,7 +29,7 @@ export function getProviderFromChainId(
     case "80001":
       return getJsonRpcProvider(NETWORK_URL_POLYGON_MUMBAI);
     default:
-      return undefined
+      return undefined;
   }
 }
 

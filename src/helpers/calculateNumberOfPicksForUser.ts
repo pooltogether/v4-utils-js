@@ -6,7 +6,7 @@ export function calculateNumberOfPicksForUser(
   normalizedBalance: BigNumber
 ): number {
   const numberOfPicksForDraw = drawSettings.numberOfPicks;
-  if (!numberOfPicksForDraw || !normalizedBalance) return 0
+  if (!numberOfPicksForDraw || !normalizedBalance) return 0;
   return numberOfPicksForDraw
     .mul(normalizedBalance)
     .div(constants.WeiPerEther)

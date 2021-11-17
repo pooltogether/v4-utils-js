@@ -6,8 +6,11 @@ export function validateContractListIsConnected(
 ): boolean {
   for (let index = 0; index < contracts.length; index++) {
     const element = contracts[index];
-    if (typeof element === 'undefined' || !isContractConnectedToProvider(element)) {
-      return false
+    if (
+      typeof element === "undefined" ||
+      !isContractConnectedToProvider(element)
+    ) {
+      return false;
     }
   }
   return true;

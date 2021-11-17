@@ -17,7 +17,7 @@ export interface PrizeDistribution {
   maxPicksPerUser: number;
   expiryDuration: number;
   numberOfPicks: BigNumber;
-  tiers: number[] | BigNumber[];
+  tiers: Array<BigNumber | number>;
   prize: BigNumber;
 }
 

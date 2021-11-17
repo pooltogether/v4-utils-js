@@ -25,17 +25,7 @@ export const TIERS_EXAMPLE_ONE = [
   0,
 ];
 
-export const TIERS_EXAMPLE_EMPTY = [
-  0, 0, 0, 0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-];
+export const TIERS_EXAMPLE_EMPTY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export const TIERS_EXAMPLE_INVALID = [
   formatTierToBasePercentage("500000000"),

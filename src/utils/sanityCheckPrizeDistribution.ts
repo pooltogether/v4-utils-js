@@ -4,8 +4,6 @@ import { PrizeDistribution } from "../types";
 export function sanityCheckPrizeDistribution(
   prizeDistribution: PrizeDistribution
 ): string {
-  console.log(prizeDistribution.bitRangeSize,
-    Math.floor(256 / prizeDistribution.matchCardinality))
   if (
     prizeDistribution.bitRangeSize >=
     Math.floor(256 / prizeDistribution.matchCardinality)

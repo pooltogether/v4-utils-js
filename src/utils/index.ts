@@ -9,4 +9,5 @@ export * from "./validateContractListIsConnected";
 export * from "./sanityCheckPrizeDistribution";
 export * from "./sumBigNumbers";
 export * from "./validateContractListIsConnected";
-export * from "./validatePrizeDistributionParameters";
+export * from "./isDrawStructSet";
+export * from "./isPrizeDistributionStructSet";

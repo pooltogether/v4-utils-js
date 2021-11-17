@@ -48,7 +48,7 @@ git clone https://github.com/pooltogether/v4-core
 - [computePrizeDistribution]()
 - [generatePicks]()
 - [prepareClaims]()
-- [validatePrizeDistributionParameters]()
+- [isPrizeDistributionStructSet]()
 
 ## Config
 - [bridging]()

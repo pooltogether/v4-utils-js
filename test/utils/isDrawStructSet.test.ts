@@ -1,8 +1,8 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { validateDrawStructIsSet } from "../../src";
+import { isDrawStructSet } from "../../src";
 import { Draw } from "../../src/types";
 
-describe("validateDrawStructIsSet", () => {
+describe("isDrawStructSet", () => {
   it("should fail to validate Draw", () => {
     const draw: Draw = {
       timestamp: 0,
@@ -11,7 +11,7 @@ describe("validateDrawStructIsSet", () => {
       beaconPeriodStartedAt: 0,
       beaconPeriodSeconds: 0,
     };
-    expect(validateDrawStructIsSet(draw)).toBeFalsy();
+    expect(isDrawStructSet(draw)).toBeFalsy();
   });
 
   it("should fail to validate Draw with invalid draw id", () => {
@@ -22,7 +22,7 @@ describe("validateDrawStructIsSet", () => {
       beaconPeriodStartedAt: 0,
       beaconPeriodSeconds: 0,
     };
-    expect(validateDrawStructIsSet(draw)).toBeFalsy();
+    expect(isDrawStructSet(draw)).toBeFalsy();
   });
 
   it("should fail to validate Draw with invalid timestamp", () => {
@@ -33,7 +33,7 @@ describe("validateDrawStructIsSet", () => {
       beaconPeriodStartedAt: 0,
       beaconPeriodSeconds: 0,
     };
-    expect(validateDrawStructIsSet(draw)).toBeFalsy();
+    expect(isDrawStructSet(draw)).toBeFalsy();
   });
 
   it("should succeed to validate Draw", () => {
@@ -44,6 +44,6 @@ describe("validateDrawStructIsSet", () => {
       beaconPeriodStartedAt: 0,
       beaconPeriodSeconds: 0,
     };
-    expect(validateDrawStructIsSet(draw)).toBeTruthy();
+    expect(isDrawStructSet(draw)).toBeTruthy();
   });
 });

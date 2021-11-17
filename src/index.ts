@@ -10,7 +10,7 @@ export * from "./computePrizeDistribution";
 export * from "./generatePicks";
 export * from "./initialize";
 export * from "./prepareClaims";
-export * from "./utils/validatePrizeDistributionParameters";
+export * from "./utils/isPrizeDistributionStructSet";
 
 export * from "./utils";
 export * from "./config";
