@@ -11,7 +11,7 @@ import {
 
 export function getProviderFromChainId(
   chainId: string | number
-): JsonRpcProvider {
+): JsonRpcProvider | undefined {
   switch (chainId) {
     case 1:
     case "1":
@@ -29,7 +29,7 @@ export function getProviderFromChainId(
     case "80001":
       return getJsonRpcProvider(NETWORK_URL_POLYGON_MUMBAI);
     default:
-      return getJsonRpcProvider(NETWORK_URL_MAINNET);
+      return undefined;
   }
 }
 

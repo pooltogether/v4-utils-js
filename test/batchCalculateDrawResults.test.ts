@@ -1,5 +1,4 @@
 import { BigNumber, ethers, utils } from "ethers";
-// import { expect } from "chai";
 import {
   Claim,
   Draw,

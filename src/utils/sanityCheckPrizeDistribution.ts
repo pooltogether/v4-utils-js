@@ -1,7 +1,6 @@
 import { BigNumber, ethers } from "ethers";
 import { PrizeDistribution } from "../types";
 
-// checks that the PrizeDistribution are appropriate
 export function sanityCheckPrizeDistribution(
   prizeDistribution: PrizeDistribution
 ): string {
