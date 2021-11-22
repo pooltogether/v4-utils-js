@@ -25,9 +25,10 @@ export interface PrizeTier {
   bitRangeSize: number;
   drawId: number;
   maxPicksPerUser: number;
-  prize: number;
-  tiers: number;
-  validityDuration: number;
+  expiryDuration: number;
+  endTimestampOffset: number;
+  prize: BigNumber;
+  tiers: Array<number>;
 }
 
 export interface Pick {
