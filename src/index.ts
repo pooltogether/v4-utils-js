@@ -6,5 +6,6 @@ export * from "./calculatePicksFromAverageTotalSuppliesBetween";
 export * from "./computeCardinality";
 export * from "./computePicks";
 export * from "./computeDrawResults";
+export * from "./computePrizeDistributionFromTicketAverageTotalSupplies";
 export * from "./generatePicks";
 export * from "./prepareClaims";
