@@ -1,21 +1,10 @@
-import PoolTogetherV4 from "./PoolTogetherV4";
+export * from "./utils";
+export * from "./helpers";
 export * from "./batchCalculateDrawResults";
 export * from "./calculateDrawResults";
-export * from "./calculatePicks";
 export * from "./calculatePicksFromAverageTotalSuppliesBetween";
 export * from "./computeCardinality";
-export * from "./computeDrawResults";
 export * from "./computePicks";
-export * from "./computePrizeDistribution";
+export * from "./computeDrawResults";
 export * from "./generatePicks";
-export * from "./initialize";
 export * from "./prepareClaims";
-export * from "./utils/isPrizeDistributionStructSet";
-
-export * from "./utils";
-export * from "./config";
-export * from "./helpers";
-export * from "./fetching";
-export * from "./utils";
-
-export default PoolTogetherV4;
