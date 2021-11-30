@@ -19,4 +19,18 @@ describe("computePrizeFromAbsolutePrizes.test", () => {
       ])
     ).toEqual(BigNumber.from("4900"));
   });
+
+  it("should correctly sum 5 tiers prizes", () => {
+    expect(
+      computePrizeFromAbsolutePrizes(2, [
+        BigNumber.from("100"), // 1
+        BigNumber.from("100"), // 3
+        BigNumber.from("100"), // 12
+        BigNumber.from("100"), // 48
+        BigNumber.from("100"), // 192
+        BigNumber.from("100"), // 768
+        BigNumber.from("100"), // 3072
+      ]).toString()
+    ).toEqual(BigNumber.from("409600").toString());
+  });
 });
