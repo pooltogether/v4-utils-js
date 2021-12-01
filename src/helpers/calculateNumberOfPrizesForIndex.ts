@@ -5,9 +5,8 @@ export function calculateNumberOfPrizesForIndex(
   let bitRangeDecimal = 2 ** bitRangeSize;
   let numberOfPrizesForIndex = bitRangeDecimal ** prizeDistributionIndex;
 
-  while (prizeDistributionIndex > 0) {
+  if (prizeDistributionIndex > 0) {
     numberOfPrizesForIndex -= bitRangeDecimal ** (prizeDistributionIndex - 1);
-    prizeDistributionIndex--;
   }
 
   return numberOfPrizesForIndex;
