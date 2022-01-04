@@ -8,10 +8,10 @@ import {
 } from '../src/types';
 import { batchCalculateDrawResults } from '../src/batchCalculateDrawResults';
 import { prepareClaims } from '../src/prepareClaims';
-import { calculateFractionOfPrize } from '../src/helpers/calculateFractionOfPrize';
-import { calculatePrizeAmount } from '../src/helpers/calculatePrizeAmount';
-import { findBitMatchesAtIndex } from '../src/helpers/findBitMatchesAtIndex';
-import { calculatePrizeForDistributionIndex } from '../src/helpers/calculatePrizeForDistributionIndex';
+import { calculateFractionOfPrize } from '../src/calculateFractionOfPrize';
+import { calculatePrizeAmount } from '../src/calculatePrizeAmount';
+import { findBitMatchesAtIndex } from '../src/utils/findBitMatchesAtIndex';
+import { calculatePrizeForDistributionIndex } from '../src/calculatePrizeForDistributionIndex';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 const debug = require('debug')('v4-js-core:test');
 

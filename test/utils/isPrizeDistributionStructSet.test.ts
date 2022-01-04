@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { isPrizeDistributionStructSet } from '../../src';
+import { isPrizeDistributionStructSet } from '../../src/utils';
 import { PrizeDistribution } from '../../src/types';
 
 describe('isPrizeDistributionStructSet', () => {

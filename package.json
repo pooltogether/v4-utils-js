@@ -20,7 +20,8 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "docs": "yarn typedoc src/index.ts --out docs"
+    "docs": "yarn typedoc src/index.ts --out docs",
+    "clean": "jest --clearCache"
   },
   "peerDependencies": {},
   "dependencies": {

@@ -1,6 +1,6 @@
 import { BigNumber } from 'ethers';
 import { expect } from 'chai';
-import { filterResultsByValue } from '../../src/helpers/filterResultsByValue';
+import { filterResultsByValue } from '../../src/utils/filterResultsByValue';
 import { DrawResults } from '../../src/types';
 const debug = require('debug')('v4-js-core:test');
 

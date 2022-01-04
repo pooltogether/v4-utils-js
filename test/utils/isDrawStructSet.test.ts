@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { isDrawStructSet } from '../../src';
+import { isDrawStructSet } from '../../src/utils';
 import { Draw } from '../../src/types';
 
 describe('isDrawStructSet', () => {

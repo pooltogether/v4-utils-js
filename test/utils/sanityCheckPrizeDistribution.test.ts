@@ -1,5 +1,4 @@
-import { sanityCheckPrizeDistribution } from '../../src';
-
+import { sanityCheckPrizeDistribution } from '../../src/utils';
 import {
   PRIZE_DISTRIBUTION_EXAMPLE_INVALID,
   PRIZE_DISTRIBUTION_EXAMPLE_VALID,
