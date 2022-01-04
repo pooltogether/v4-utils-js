@@ -1,4 +1,4 @@
-export * from "./createContract";
+export { default as createContract } from "./createContract";
 export * from "./createInterface";
 export * from "./formatTierToBasePercentage";
 export * from "./isDrawStructSet";

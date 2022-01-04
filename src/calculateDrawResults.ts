@@ -3,7 +3,7 @@ import { generatePicks } from "./generatePicks";
 import { sanityCheckPrizeDistribution } from "./utils/sanityCheckPrizeDistribution";
 import { Draw, DrawResults, PrizeDistribution, User } from "./types";
 import { computeDrawResults } from "./computeDrawResults";
-import { filterResultsByValue } from "./helpers/filterResultsByValue";
+import { filterResultsByValue } from "./utils/filterResultsByValue";
 
 const debug = require("debug")("pt:v4-core-js");
 

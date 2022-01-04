@@ -1,8 +1,13 @@
-export * from "./utils";
-export * from "./helpers";
+export * as utils from "./utils";
 export * from "./batchCalculateDrawResults";
 export * from "./calculateDrawResults";
 export * from "./calculatePicksFromAverageTotalSuppliesBetween";
+export * from "./calculateNumberOfPicksForUser";
+export * from "./calculateNumberOfPrizesForIndex";
+export * from "./calculatePickPrize";
+export * from "./calculatePrizeAmount";
+export * from "./calculatePrizeForDistributionIndex";
+export * from "./computePick";
 export * from "./computeCardinality";
 export * from "./computePicks";
 export * from "./computeDrawResults";

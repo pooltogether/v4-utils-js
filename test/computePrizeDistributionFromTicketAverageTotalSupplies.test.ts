@@ -21,9 +21,9 @@ describe("computePrizeDistributionFromTicketAverageTotalSupplies", () => {
       maxPicksPerUser: 2,
       expiryDuration: 86400,
       drawId: 1,
-      prize: BigNumber.from('100000000000000'),
-      tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    }
+      prize: BigNumber.from("100000000000000"),
+      tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    };
 
     const expectation = {
       bitRangeSize: 2,

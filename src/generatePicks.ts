@@ -1,6 +1,6 @@
 import { BigNumber, ethers } from "ethers";
-import { calculateNumberOfPicksForUser } from "./helpers/calculateNumberOfPicksForUser";
-import { computePick } from "./helpers/computePick";
+import { calculateNumberOfPicksForUser } from "./calculateNumberOfPicksForUser";
+import { computePick } from "./computePick";
 import { Pick, PrizeDistribution } from "./types";
 
 export function generatePicks(

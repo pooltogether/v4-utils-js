@@ -1,22 +1,24 @@
-import { BigNumber } from '@ethersproject/bignumber'
+import { BigNumber } from "@ethersproject/bignumber";
 import { utils } from "ethers";
-const debug = require('debug')('pt-v4-js')
+const debug = require("debug")("pt-v4-js");
 
 export function computeCardinality(
   bitRangeSize: BigNumber,
   totalSupply: BigNumber,
   totalSupplyDecimals: BigNumber
 ): number {
-  debug("computeCardinality:ENTER")
+  debug("computeCardinality:ENTER");
   let numberOfPicks;
   let matchCardinality = BigNumber.from(2);
   const range = BigNumber.from(2).pow(bitRangeSize);
   debug("computeCardinality:matchCardinality: ", matchCardinality.toString());
   debug("computeCardinality:range: ", range.toString());
   debug("computeCardinality:totalSupply: ", totalSupply.toString());
-  debug("computeCardinality:totalSupplyDecimals: ", totalSupplyDecimals.toString());
+  debug(
+    "computeCardinality:totalSupplyDecimals: ",
+    totalSupplyDecimals.toString()
+  );
   do {
-
     numberOfPicks = utils.parseUnits(
       `${range.pow(matchCardinality)}`,
       totalSupplyDecimals

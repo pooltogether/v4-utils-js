@@ -1,7 +1,7 @@
 import { BigNumber, utils } from "ethers";
-import { PrizeDistribution, PickPrize } from "../types";
+import { PrizeDistribution, PickPrize } from "./types";
 import { calculatePrizeAmount } from "./calculatePrizeAmount";
-import { findBitMatchesAtIndex } from "./findBitMatchesAtIndex";
+import { findBitMatchesAtIndex } from "./utils/findBitMatchesAtIndex";
 
 const debug = require("debug")("pt:v4-core-js");
 
