@@ -1,6 +1,6 @@
-import { Pick } from "./types";
-import { BigNumber } from "ethers";
-import { computePick } from "./computePick";
+import { Pick } from './types';
+import { BigNumber } from 'ethers';
+import { computePick } from './computePick';
 
 export function computePicks(
   address: string,

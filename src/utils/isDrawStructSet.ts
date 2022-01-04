@@ -1,4 +1,4 @@
-import { Draw } from "../types";
+import { Draw } from '../types';
 
 // @TODO: Add more reasonable checks for validating the Draw object.
 export function isDrawStructSet(draw: Draw): boolean {

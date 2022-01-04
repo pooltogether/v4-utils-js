@@ -1,8 +1,8 @@
-import { parseUnits } from "@ethersproject/units";
-import { BigNumber, utils } from "ethers";
-import { PrizeDistribution } from "./types";
-import { calculateNumberOfPrizesForIndex } from "./calculateNumberOfPrizesForIndex";
-const debug = require("debug")("pt:v4-core-js");
+import { parseUnits } from '@ethersproject/units';
+import { BigNumber, utils } from 'ethers';
+import { PrizeDistribution } from './types';
+import { calculateNumberOfPrizesForIndex } from './calculateNumberOfPrizesForIndex';
+const debug = require('debug')('pt:v4-core-js');
 
 export function calculateFractionOfPrize(
   prizeDistributionIndex: number,
@@ -13,11 +13,11 @@ export function calculateFractionOfPrize(
     prizeDistributionIndex
   );
 
-  debug("numberOfPrizes for index ", numberOfPrizes);
+  debug('numberOfPrizes for index ', numberOfPrizes);
 
   const valueAtDistributionIndex = drawSettings.tiers[prizeDistributionIndex];
   debug(
-    "valueAtDistributionIndex ",
+    'valueAtDistributionIndex ',
     utils.formatEther(valueAtDistributionIndex.toString())
   );
 
@@ -29,6 +29,6 @@ export function calculateFractionOfPrize(
   const fractionOfPrize = valueAtDistributionIndexUnformatted.div(
     numberOfPrizes
   );
-  debug("fractionOfPrize: ", utils.formatEther(fractionOfPrize));
+  debug('fractionOfPrize: ', utils.formatEther(fractionOfPrize));
   return fractionOfPrize;
 }

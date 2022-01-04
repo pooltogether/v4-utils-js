@@ -1,9 +1,9 @@
-import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
-import { Draw, PrizeDistribution, PrizeTier } from "./types";
-import { calculatePicksFromAverageTotalSuppliesBetween } from "./calculatePicksFromAverageTotalSuppliesBetween";
-import { computeCardinality } from "./computeCardinality";
-import { sumBigNumbers } from "./utils";
-const debug = require("debug")("v4-js-core");
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
+import { Draw, PrizeDistribution, PrizeTier } from './types';
+import { calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
+import { computeCardinality } from './computeCardinality';
+import { sumBigNumbers } from './utils';
+const debug = require('debug')('v4-js-core');
 
 function createBigNumber(value: BigNumberish) {
   return BigNumber.from(value);
@@ -63,7 +63,7 @@ export async function computePrizeDistributionFromTicketAverageTotalSupplies(
     matchCardinality
   );
 
-  if (totalAverageSupplies.gt("0")) {
+  if (totalAverageSupplies.gt('0')) {
     numberOfPicks = calculatePicksFromAverageTotalSuppliesBetween(
       totalPicks.toNumber(),
       BigNumber.from(ticketPrimaryAverageTotalSupply),

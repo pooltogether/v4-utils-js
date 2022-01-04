@@ -1,5 +1,5 @@
-import { Draw, DrawResults, PrizeDistribution, User } from "./types";
-import { calculateDrawResults } from "./calculateDrawResults";
+import { Draw, DrawResults, PrizeDistribution, User } from './types';
+import { calculateDrawResults } from './calculateDrawResults';
 
 // main entry point for tsunami draw calculations
 export function batchCalculateDrawResults(

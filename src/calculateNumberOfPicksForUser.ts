@@ -1,5 +1,5 @@
-import { BigNumber, constants } from "ethers";
-import { PrizeDistribution } from "./types";
+import { BigNumber, constants } from 'ethers';
+import { PrizeDistribution } from './types';
 
 export function calculateNumberOfPicksForUser(
   drawSettings: PrizeDistribution,

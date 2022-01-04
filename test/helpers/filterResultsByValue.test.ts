@@ -1,11 +1,11 @@
-import { BigNumber } from "ethers";
-import { expect } from "chai";
-import { filterResultsByValue } from "../../src/helpers/filterResultsByValue";
-import { DrawResults } from "../../src/types";
-const debug = require("debug")("v4-js-core:test");
+import { BigNumber } from 'ethers';
+import { expect } from 'chai';
+import { filterResultsByValue } from '../../src/helpers/filterResultsByValue';
+import { DrawResults } from '../../src/types';
+const debug = require('debug')('v4-js-core:test');
 
-describe("filterResultsByValue()", () => {
-  it("should slice to the correct amount, filters out prizes[0]", () => {
+describe('filterResultsByValue()', () => {
+  it('should slice to the correct amount, filters out prizes[0]', () => {
     const results: DrawResults = {
       drawId: 1,
       totalValue: BigNumber.from(1),

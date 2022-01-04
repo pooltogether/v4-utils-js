@@ -1,5 +1,5 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { User, DrawResults, Claim } from "./types";
+import { BigNumber } from '@ethersproject/bignumber';
+import { User, DrawResults, Claim } from './types';
 
 export function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   let claim: Claim = {

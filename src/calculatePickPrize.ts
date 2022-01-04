@@ -1,9 +1,9 @@
-import { BigNumber, utils } from "ethers";
-import { PrizeDistribution, PickPrize } from "./types";
-import { calculatePrizeAmount } from "./calculatePrizeAmount";
-import { findBitMatchesAtIndex } from "./utils/findBitMatchesAtIndex";
+import { BigNumber, utils } from 'ethers';
+import { PrizeDistribution, PickPrize } from './types';
+import { calculatePrizeAmount } from './calculatePrizeAmount';
+import { findBitMatchesAtIndex } from './utils/findBitMatchesAtIndex';
 
-const debug = require("debug")("pt:v4-core-js");
+const debug = require('debug')('pt:v4-core-js');
 
 // returns the fraction of the total prize that the user will win for this pick
 export function calculatePickPrize(
@@ -19,8 +19,8 @@ export function calculatePickPrize(
     matchIndex < prizeDistribution.matchCardinality;
     matchIndex++
   ) {
-    debug("winningRandomNumber: ", winningRandomNumber.toString());
-    debug("randomNumberThisPick: ", bigRando.toString());
+    debug('winningRandomNumber: ', winningRandomNumber.toString());
+    debug('randomNumberThisPick: ', bigRando.toString());
     // attempt to match numbers
     if (
       !findBitMatchesAtIndex(

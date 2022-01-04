@@ -1,5 +1,5 @@
-describe("calculatePrizeForDistributionIndex", () => {
-  it("should", () => {
+describe('calculatePrizeForDistributionIndex', () => {
+  it('should', () => {
     expect(1 + 1).toEqual(2);
   });
 });

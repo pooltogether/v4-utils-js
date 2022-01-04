@@ -1,7 +1,7 @@
-import { BigNumber, ethers } from "ethers";
-import { calculateNumberOfPicksForUser } from "./calculateNumberOfPicksForUser";
-import { computePick } from "./computePick";
-import { Pick, PrizeDistribution } from "./types";
+import { BigNumber, ethers } from 'ethers';
+import { calculateNumberOfPicksForUser } from './calculateNumberOfPicksForUser';
+import { computePick } from './computePick';
+import { Pick, PrizeDistribution } from './types';
 
 export function generatePicks(
   prizeDistribution: PrizeDistribution,
@@ -14,7 +14,7 @@ export function generatePicks(
   );
 
   const usersAddressHashed = ethers.utils.solidityKeccak256(
-    ["address"],
+    ['address'],
     [address]
   );
 

@@ -1,7 +1,7 @@
-import { PrizeDistribution, PickPrize } from "./types";
-import { calculatePrizeForDistributionIndex } from "./calculatePrizeForDistributionIndex";
+import { PrizeDistribution, PickPrize } from './types';
+import { calculatePrizeForDistributionIndex } from './calculatePrizeForDistributionIndex';
 
-const debug = require("debug")("pt:v4-core-js");
+const debug = require('debug')('pt:v4-core-js');
 
 // calculates the absolute amount of Prize in Wei for the Draw and TsunamiDrawSettings
 export function calculatePrizeAmount(

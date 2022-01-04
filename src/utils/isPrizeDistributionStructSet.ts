@@ -1,4 +1,4 @@
-import { PrizeDistribution } from "../types";
+import { PrizeDistribution } from '../types';
 
 // @TODO: Add more reasonable checks for validating the Draw object.
 export function isPrizeDistributionStructSet(

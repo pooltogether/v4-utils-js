@@ -1,5 +1,5 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { Provider } from "@ethersproject/abstract-provider";
+import { BigNumber } from '@ethersproject/bignumber';
+import { Provider } from '@ethersproject/abstract-provider';
 
 export interface Draw {
   drawId: number;

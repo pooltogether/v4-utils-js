@@ -1,11 +1,11 @@
-import { utils } from "ethers";
-import { generatePicks } from "./generatePicks";
-import { sanityCheckPrizeDistribution } from "./utils/sanityCheckPrizeDistribution";
-import { Draw, DrawResults, PrizeDistribution, User } from "./types";
-import { computeDrawResults } from "./computeDrawResults";
-import { filterResultsByValue } from "./utils/filterResultsByValue";
+import { utils } from 'ethers';
+import { generatePicks } from './generatePicks';
+import { sanityCheckPrizeDistribution } from './utils/sanityCheckPrizeDistribution';
+import { Draw, DrawResults, PrizeDistribution, User } from './types';
+import { computeDrawResults } from './computeDrawResults';
+import { filterResultsByValue } from './utils/filterResultsByValue';
 
-const debug = require("debug")("pt:v4-core-js");
+const debug = require('debug')('pt:v4-core-js');
 
 export function calculateDrawResults(
   prizeDistribution: PrizeDistribution,
@@ -17,7 +17,7 @@ export function calculateDrawResults(
   const sanityCheckPrizeDistrbutionResult = sanityCheckPrizeDistribution(
     prizeDistribution
   );
-  if (sanityCheckPrizeDistrbutionResult !== "") {
+  if (sanityCheckPrizeDistrbutionResult !== '') {
     throw new Error(
       `draw-calculator-js PrizeDistribution invalid: ${sanityCheckPrizeDistrbutionResult}`
     );

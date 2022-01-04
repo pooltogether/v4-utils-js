@@ -5,9 +5,9 @@ import {
   Draw,
   DrawResults,
   PickPrize,
-} from "./types";
-import { calculatePickPrize } from "./calculatePickPrize";
-import { ethers } from "ethers";
+} from './types';
+import { calculatePickPrize } from './calculatePickPrize';
+import { ethers } from 'ethers';
 
 export function computeDrawResults(
   drawSettings: PrizeDistribution,

@@ -1,6 +1,6 @@
-import { BigNumber, ethers } from "ethers";
-import { PrizeDistribution } from "./types";
-import { calculateFractionOfPrize } from "./calculateFractionOfPrize";
+import { BigNumber, ethers } from 'ethers';
+import { PrizeDistribution } from './types';
+import { calculateFractionOfPrize } from './calculateFractionOfPrize';
 
 export function calculatePrizeForDistributionIndex(
   distributionIndex: number,

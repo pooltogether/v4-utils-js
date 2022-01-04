@@ -1,9 +1,9 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { isPrizeDistributionStructSet } from "../../src";
-import { PrizeDistribution } from "../../src/types";
+import { BigNumber } from '@ethersproject/bignumber';
+import { isPrizeDistributionStructSet } from '../../src';
+import { PrizeDistribution } from '../../src/types';
 
-describe("isPrizeDistributionStructSet", () => {
-  it("should fail to validate PrizeDistribution", () => {
+describe('isPrizeDistributionStructSet', () => {
+  it('should fail to validate PrizeDistribution', () => {
     const prizeDistribution: PrizeDistribution = {
       bitRangeSize: 0,
       matchCardinality: 0,
@@ -16,7 +16,7 @@ describe("isPrizeDistributionStructSet", () => {
     expect(isPrizeDistributionStructSet(prizeDistribution)).toBeFalsy();
   });
 
-  it("should fail to validate PrizeDistribution with invalid bitRangeSize", () => {
+  it('should fail to validate PrizeDistribution with invalid bitRangeSize', () => {
     const prizeDistribution: PrizeDistribution = {
       bitRangeSize: 0,
       matchCardinality: 1,
@@ -29,7 +29,7 @@ describe("isPrizeDistributionStructSet", () => {
     expect(isPrizeDistributionStructSet(prizeDistribution)).toBeFalsy();
   });
 
-  it("should fail to validate PrizeDistribution with invalid matchCardinality", () => {
+  it('should fail to validate PrizeDistribution with invalid matchCardinality', () => {
     const prizeDistribution: PrizeDistribution = {
       bitRangeSize: 1,
       matchCardinality: 0,
@@ -42,7 +42,7 @@ describe("isPrizeDistributionStructSet", () => {
     expect(isPrizeDistributionStructSet(prizeDistribution)).toBeFalsy();
   });
 
-  it("should succeed to validate PrizeDistribution", () => {
+  it('should succeed to validate PrizeDistribution', () => {
     const prizeDistribution: PrizeDistribution = {
       bitRangeSize: 1,
       matchCardinality: 1,
