@@ -1,4 +1,4 @@
-import { ethers } from 'ethers';
+import { ethers, BigNumber } from 'ethers';
 import { findBitMatchesAtIndex } from '../../src/utils/findBitMatchesAtIndex';
 
 const bn = (num: any) => ethers.BigNumber.from(num);
@@ -24,5 +24,53 @@ describe('findBitMatchesAtIndex', () => {
     expect(
       findBitMatchesAtIndex(bin('111001111'), bin('111100111'), 2, 3)
     ).toBeTruthy();
+  });
+
+  it('Can findBitMatchesAtIndex', async () => {
+    const result = findBitMatchesAtIndex(
+      BigNumber.from(61676),
+      BigNumber.from(61612),
+      1,
+      8
+    );
+    expect(result).toBeTruthy();
+  });
+
+  it('Can NOT findBitMatchesAtIndex', async () => {
+    const result = findBitMatchesAtIndex(
+      BigNumber.from(61676),
+      BigNumber.from(61612),
+      1,
+      6
+    );
+    expect(result).toBeFalsy();
+  });
+
+  it('Can findBitMatchesAtIndex', async () => {
+    const result = findBitMatchesAtIndex(
+      BigNumber.from(
+        '24703804328475188150699190457572086651745971796997325887553663750514688469872'
+      ),
+      BigNumber.from(
+        '8781184742215173699638593792190316559257409652205547100981219837421219359728'
+      ),
+      1,
+      8
+    );
+    expect(result).toBeTruthy();
+  });
+
+  it('Can NOT findBitMatchesAtIndex', async () => {
+    const result = findBitMatchesAtIndex(
+      BigNumber.from(
+        '24703804328475188150699190457572086651745971796997325887553663750514688469872'
+      ),
+      BigNumber.from(
+        '8781184742215173699638593792190316559257409652205547100981219837421219359728'
+      ),
+      2,
+      8
+    );
+    expect(result).toBeFalsy();
   });
 });

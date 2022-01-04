@@ -1,11 +1,13 @@
 import { Draw, DrawResults, PrizeDistribution, User } from './types';
 import calculateDrawResults from './calculateDrawResults';
+const debug = require('debug')('pt:v4-utils-js:batchCalculateDrawResults');
 
 function batchCalculateDrawResults(
   prizeDistribution: PrizeDistribution[],
   draws: Draw[],
   user: User
 ): DrawResults[] {
+  debug('arguments: ', { prizeDistribution, draws, user });
   const results: DrawResults[] = [];
   draws.forEach((draw, index) => {
     const drawResults = calculateDrawResults(
@@ -16,6 +18,7 @@ function batchCalculateDrawResults(
     );
     results.push(drawResults);
   });
+  debug('results: ', { results });
   return results;
 }
 
