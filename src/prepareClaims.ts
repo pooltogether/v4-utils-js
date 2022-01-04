@@ -26,5 +26,4 @@ function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   return claim;
 }
 
-
-export default prepareClaims
+export default prepareClaims;
