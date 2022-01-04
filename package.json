@@ -1,9 +1,9 @@
 {
   "name": "@pooltogether/v4-js",
-  "author": "Kames Geraghty",
-  "description": "PoolTogether V4 JS library for general calculations and computers of the protocol state.",
+  "author": "PoolTogether Inc",
+  "description": "Utility library for off-chain calculations and computation  of the v4 smart contracts",
   "module": "dist/v4-js.esm.js",
-  "version": "0.0.1-beta.0",
+  "version": "0.1.0-beta.1",
   "license": "GPL-3.0-only",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -19,10 +19,9 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "prepare": "tsdx build"
   },
+  "peerDependencies": {},
   "dependencies": {
     "@ethersproject/abi": "^5.5.0",
     "@ethersproject/address": "^5.5.0",
@@ -42,18 +41,15 @@
   },
   "devDependencies": {
     "@pooltogether/v4-pool-data": "^1.1.0",
-    "@size-limit/preset-small-lib": "^6.0.4",
     "@types/chai": "^4.2.22",
     "@types/node": "^16.11.7",
     "chai": "^4.3.4",
     "debug": "^4.3.2",
     "husky": "^7.0.4",
-    "size-limit": "^6.0.4",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -64,15 +60,5 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "size-limit": [
-    {
-      "path": "dist/v4-js.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/v4-js.esm.js",
-      "limit": "10 KB"
-    }
-  ]
+  }
 }
