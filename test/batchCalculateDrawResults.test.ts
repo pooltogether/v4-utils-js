@@ -6,12 +6,12 @@ import {
   PrizeDistribution,
   User,
 } from '../src/types';
-import { batchCalculateDrawResults } from '../src/batchCalculateDrawResults';
-import { prepareClaims } from '../src/prepareClaims';
-import { calculateFractionOfPrize } from '../src/calculateFractionOfPrize';
-import { calculatePrizeAmount } from '../src/calculatePrizeAmount';
+import { batchCalculateDrawResults } from '../src';
+import { prepareClaims } from '../src';
+import { calculateFractionOfPrize } from '../src';
+import { calculatePrizeAmount } from '../src';
 import { findBitMatchesAtIndex } from '../src/utils/findBitMatchesAtIndex';
-import { calculatePrizeForDistributionIndex } from '../src/calculatePrizeForDistributionIndex';
+import { calculatePrizeForDistributionIndex } from '../src';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 const debug = require('debug')('v4-js-core:test');
 

@@ -6,10 +6,10 @@ import {
   DrawResults,
   PickPrize,
 } from './types';
-import { calculatePickPrize } from './calculatePickPrize';
+import calculatePickPrize from './calculatePickPrize';
 import { ethers } from 'ethers';
 
-export function computeDrawResults(
+function computeDrawResults(
   drawSettings: PrizeDistribution,
   draw: Draw,
   picks: Pick[]
@@ -42,3 +42,5 @@ export function computeDrawResults(
   }
   return results;
 }
+
+export default computeDrawResults;

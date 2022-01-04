@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { User, DrawResults, Claim } from './types';
 
-export function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
+function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   let claim: Claim = {
     userAddress: user.address,
     drawIds: [],
@@ -25,3 +25,6 @@ export function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   });
   return claim;
 }
+
+
+export default prepareClaims

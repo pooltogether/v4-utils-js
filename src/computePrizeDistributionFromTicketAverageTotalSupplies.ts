@@ -1,7 +1,7 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { Draw, PrizeDistribution, PrizeTier } from './types';
-import { calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
-import { computeCardinality } from './computeCardinality';
+import calculatePicksFromAverageTotalSuppliesBetween from './calculatePicksFromAverageTotalSuppliesBetween';
+import computeCardinality from './computeCardinality';
 import { sumBigNumbers } from './utils';
 const debug = require('debug')('v4-js-core');
 
@@ -9,7 +9,7 @@ function createBigNumber(value: BigNumberish) {
   return BigNumber.from(value);
 }
 
-export async function computePrizeDistributionFromTicketAverageTotalSupplies(
+async function computePrizeDistributionFromTicketAverageTotalSupplies(
   draw: Draw,
   prizeTier?: PrizeTier,
   ticketPrimaryAverageTotalSupply?: BigNumberish,
@@ -86,3 +86,5 @@ export async function computePrizeDistributionFromTicketAverageTotalSupplies(
 
   return prizeDistribution;
 }
+
+export default computePrizeDistributionFromTicketAverageTotalSupplies;

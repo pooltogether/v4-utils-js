@@ -1,8 +1,8 @@
 import { BigNumber, ethers } from 'ethers';
 import { PrizeDistribution } from './types';
-import { calculateFractionOfPrize } from './calculateFractionOfPrize';
+import calculateFractionOfPrize from './calculateFractionOfPrize';
 
-export function calculatePrizeForDistributionIndex(
+function calculatePrizeForDistributionIndex(
   distributionIndex: number,
   prizeDistrbution: PrizeDistribution
 ): BigNumber {
@@ -17,3 +17,5 @@ export function calculatePrizeForDistributionIndex(
   expectedPrizeAmount = expectedPrizeAmount.div(ethers.constants.WeiPerEther);
   return expectedPrizeAmount;
 }
+
+export default calculatePrizeForDistributionIndex;

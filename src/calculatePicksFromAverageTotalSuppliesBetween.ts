@@ -3,7 +3,7 @@ const debug = require('debug')(
   'v4-js-core:calculatePicksFromAverageTotalSuppliesBetween'
 );
 
-export function calculatePicksFromAverageTotalSuppliesBetween(
+function calculatePicksFromAverageTotalSuppliesBetween(
   totalPicks: number,
   ticketPrimaryTotalSupply: BigNumber,
   otherTicketsTotalSupply: BigNumber

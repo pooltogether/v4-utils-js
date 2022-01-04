@@ -1,13 +1,13 @@
 import { utils } from 'ethers';
-import { generatePicks } from './generatePicks';
+import generatePicks from './generatePicks';
 import { sanityCheckPrizeDistribution } from './utils/sanityCheckPrizeDistribution';
 import { Draw, DrawResults, PrizeDistribution, User } from './types';
-import { computeDrawResults } from './computeDrawResults';
+import computeDrawResults from './computeDrawResults';
 import { filterResultsByValue } from './utils/filterResultsByValue';
 
 const debug = require('debug')('pt:v4-core-js');
 
-export function calculateDrawResults(
+function calculateDrawResults(
   prizeDistribution: PrizeDistribution,
   draw: Draw,
   user: User,
@@ -50,3 +50,5 @@ export function calculateDrawResults(
 
   return results;
 }
+
+export default calculateDrawResults;

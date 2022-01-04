@@ -6,7 +6,7 @@ import { findBitMatchesAtIndex } from './utils/findBitMatchesAtIndex';
 const debug = require('debug')('pt:v4-core-js');
 
 // returns the fraction of the total prize that the user will win for this pick
-export function calculatePickPrize(
+function calculatePickPrize(
   randomNumberThisPick: string,
   winningRandomNumber: BigNumber,
   prizeDistribution: PrizeDistribution
@@ -46,3 +46,5 @@ export function calculatePickPrize(
   // else there is no prize
   return undefined;
 }
+
+export default calculatePickPrize;

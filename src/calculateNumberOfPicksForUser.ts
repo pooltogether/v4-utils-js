@@ -1,7 +1,7 @@
 import { BigNumber, constants } from 'ethers';
 import { PrizeDistribution } from './types';
 
-export function calculateNumberOfPicksForUser(
+function calculateNumberOfPicksForUser(
   drawSettings: PrizeDistribution,
   normalizedBalance: BigNumber
 ): number {
@@ -12,3 +12,5 @@ export function calculateNumberOfPicksForUser(
     .div(constants.WeiPerEther)
     .toNumber();
 }
+
+export default calculateNumberOfPicksForUser;

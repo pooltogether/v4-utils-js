@@ -1,9 +1,9 @@
 import { BigNumber, ethers } from 'ethers';
-import { calculateNumberOfPicksForUser } from './calculateNumberOfPicksForUser';
-import { computePick } from './computePick';
+import calculateNumberOfPicksForUser from './calculateNumberOfPicksForUser';
+import computePick from './computePick';
 import { Pick, PrizeDistribution } from './types';
 
-export function generatePicks(
+function generatePicks(
   prizeDistribution: PrizeDistribution,
   address: string,
   normalizedBalance: BigNumber
@@ -25,3 +25,5 @@ export function generatePicks(
   }
   return picks;
 }
+
+export default generatePicks;

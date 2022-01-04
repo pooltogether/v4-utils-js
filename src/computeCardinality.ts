@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { utils } from 'ethers';
 const debug = require('debug')('pt-v4-js');
 
-export function computeCardinality(
+function computeCardinality(
   bitRangeSize: BigNumber,
   totalSupply: BigNumber,
   totalSupplyDecimals: BigNumber

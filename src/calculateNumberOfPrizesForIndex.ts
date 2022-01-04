@@ -1,4 +1,4 @@
-export function calculateNumberOfPrizesForIndex(
+function calculateNumberOfPrizesForIndex(
   bitRangeSize: number,
   prizeDistributionIndex: number
 ): number {
@@ -12,3 +12,5 @@ export function calculateNumberOfPrizesForIndex(
 
   return numberOfPrizesForIndex;
 }
+
+export default calculateNumberOfPrizesForIndex;

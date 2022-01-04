@@ -1,5 +1,5 @@
 import { BigNumber } from 'ethers';
-import { computeCardinality } from '../src';
+import computeCardinality from '../src/computeCardinality';
 
 describe('computeCardinality', () => {
   it('should compute cardinality for a small bitrange and total supply', () => {

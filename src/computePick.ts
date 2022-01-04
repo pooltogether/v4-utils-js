@@ -3,7 +3,7 @@ import { BigNumber, ethers } from 'ethers';
 
 const debug = require('debug')('pt:v4-core-js');
 
-export function computePick(address: string, pick: number): Pick {
+function computePick(address: string, pick: number): Pick {
   debug(`computePick::address is ${address} and pick ${pick}`);
   const abiEncodedValue = ethers.utils.solidityPack(
     ['bytes32', 'uint256'],
@@ -24,3 +24,5 @@ export function computePick(address: string, pick: number): Pick {
     hash: userRandomNumber,
   };
 }
+
+export default computePick;

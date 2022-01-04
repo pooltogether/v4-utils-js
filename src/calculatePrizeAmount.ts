@@ -1,5 +1,5 @@
 import { PrizeDistribution, PickPrize } from './types';
-import { calculatePrizeForDistributionIndex } from './calculatePrizeForDistributionIndex';
+import calculatePrizeForDistributionIndex from './calculatePrizeForDistributionIndex';
 
 const debug = require('debug')('pt:v4-core-js');
 
@@ -29,3 +29,5 @@ export function calculatePrizeAmount(
   // user did not qualify for a prize
   return undefined;
 }
+
+export default calculatePrizeAmount;

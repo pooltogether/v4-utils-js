@@ -1,8 +1,7 @@
 import { Draw, DrawResults, PrizeDistribution, User } from './types';
-import { calculateDrawResults } from './calculateDrawResults';
+import calculateDrawResults from './calculateDrawResults';
 
-// main entry point for tsunami draw calculations
-export function batchCalculateDrawResults(
+function batchCalculateDrawResults(
   prizeDistribution: PrizeDistribution[],
   draws: Draw[],
   user: User
@@ -19,3 +18,5 @@ export function batchCalculateDrawResults(
   });
   return results;
 }
+
+export default batchCalculateDrawResults;
