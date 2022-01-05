@@ -11,7 +11,7 @@ import { prepareClaims } from '../src';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 const debug = require('debug')('v4-js-core:test');
 
-describe('batchCalculateDrawResults()', () => {
+describe.skip('batchCalculateDrawResults()', () => {
   it('Single DrawCalculator run 1 matches', async () => {
     const exampleDrawSettings: PrizeDistribution = {
       tiers: [

@@ -1,14 +1,8 @@
 import { BigNumber, ethers, utils } from 'ethers';
-import {
-  Claim,
-  Draw,
-  PrizeDistribution,
-  User,
-} from '../src/types';
+import { Claim, Draw, PrizeDistribution, User } from '../src/types';
 import { batchCalculateDrawResults } from '../src';
 import { prepareClaims } from '../src';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
-
 
 describe('prepareClaimForUserFromDrawResult()', () => {
   it('returns correct claim struct for user', async () => {

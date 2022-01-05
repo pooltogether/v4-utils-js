@@ -1,7 +1,5 @@
 import { BigNumber, utils } from 'ethers';
-import {
-  PrizeDistribution,
-} from '../src/types';
+import { PrizeDistribution } from '../src/types';
 import { calculatePrizeAmount } from '../src';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 describe('calculatePrizeAmount()', () => {
@@ -21,12 +19,12 @@ describe('calculatePrizeAmount()', () => {
     };
 
     const result = calculatePrizeAmount(exampleDrawSettings, 2);
-    console.log(result?.amount.toString(), 'result')
+    console.log(result?.amount.toString(), 'result');
     const prizeReceived = utils.parseEther('1.33');
     expect(result?.amount).toStrictEqual(prizeReceived);
     expect(result?.distributionIndex).toStrictEqual(1);
   });
-  
+
   it('Can calculate the prize given the draw settings and number of matches', async () => {
     const exampleDrawSettings: PrizeDistribution = {
       tiers: [
