@@ -1,5 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { utils } from 'ethers';
+
 const debug = require('debug')('pt-v4-js');
 
 function computeCardinality(

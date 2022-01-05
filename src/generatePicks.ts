@@ -1,4 +1,5 @@
 import { BigNumber, ethers } from 'ethers';
+
 import calculateNumberOfPicksForUser from './calculateNumberOfPicksForUser';
 import computePick from './computePick';
 import { Pick, PrizeDistribution } from './types';

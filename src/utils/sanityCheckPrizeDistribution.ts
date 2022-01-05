@@ -1,4 +1,5 @@
 import { BigNumber, ethers } from 'ethers';
+
 import { PrizeDistribution } from '../types';
 
 export function sanityCheckPrizeDistribution(

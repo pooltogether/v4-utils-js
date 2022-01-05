@@ -1,4 +1,7 @@
 import { BigNumber, ethers, utils } from 'ethers';
+
+import { batchCalculateDrawResults } from '../src';
+import { prepareClaims } from '../src';
 import {
   Claim,
   Draw,
@@ -6,9 +9,8 @@ import {
   PrizeDistribution,
   User,
 } from '../src/types';
-import { batchCalculateDrawResults } from '../src';
-import { prepareClaims } from '../src';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
+
 const debug = require('debug')('v4-js-core:test');
 
 describe.skip('batchCalculateDrawResults()', () => {

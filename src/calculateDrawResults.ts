@@ -1,11 +1,12 @@
-import { utils } from 'ethers';
-import generatePicks from './generatePicks';
-import { sanityCheckPrizeDistribution } from './utils/sanityCheckPrizeDistribution';
-import { Draw, DrawResults, PrizeDistribution, User } from './types';
+import { formatEther } from '@ethersproject/units';
+
 import computeDrawResults from './computeDrawResults';
+import generatePicks from './generatePicks';
+import { Draw, DrawResults, PrizeDistribution, User } from './types';
+import { throwErrorInvalidPrizeDistribution } from './utils';
 import { filterResultsByValue } from './utils/filterResultsByValue';
 
-const debug = require('debug')('pt:v4-core-js');
+const debug = require('debug')('pt:v4-utils-js:calculateDrawResults');
 
 function calculateDrawResults(
   prizeDistribution: PrizeDistribution,
@@ -13,15 +14,7 @@ function calculateDrawResults(
   user: User,
   drawIndex: number = 0
 ): DrawResults {
-  // first check PrizeDistribution passed is sane
-  const sanityCheckPrizeDistrbutionResult = sanityCheckPrizeDistribution(
-    prizeDistribution
-  );
-  if (sanityCheckPrizeDistrbutionResult !== '') {
-    throw new Error(
-      `draw-calculator-js PrizeDistribution invalid: ${sanityCheckPrizeDistrbutionResult}`
-    );
-  }
+  throwErrorInvalidPrizeDistribution(prizeDistribution);
 
   // generate the picks for the user by hashing the address with the pickIndices
   user.picks = generatePicks(
@@ -40,7 +33,7 @@ function calculateDrawResults(
   );
 
   debug(
-    `user ${user.address} has ${utils.formatEther(
+    `user ${user.address} has ${formatEther(
       results.totalValue
     )} prizes for this draw..`
   );

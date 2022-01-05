@@ -1,4 +1,5 @@
 import { parseEther } from '@ethersproject/units';
+
 import { generatePicks } from '../src';
 import { ADDRESS_DEAD, PRIZE_DISTRIBUTION_EXAMPLE_ONE } from './constants';
 

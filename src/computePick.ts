@@ -1,5 +1,6 @@
-import { Pick } from './types';
 import { BigNumber, ethers } from 'ethers';
+
+import { Pick } from './types';
 
 const debug = require('debug')('pt:v4-core-js');
 

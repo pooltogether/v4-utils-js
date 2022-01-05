@@ -1,8 +1,10 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
-import { Draw, PrizeDistribution, PrizeTier } from './types';
+
 import calculatePicksFromAverageTotalSuppliesBetween from './calculatePicksFromAverageTotalSuppliesBetween';
 import computeCardinality from './computeCardinality';
+import { Draw, PrizeDistribution, PrizeTier } from './types';
 import { sumBigNumbers } from './utils';
+
 const debug = require('debug')('v4-js-core');
 
 function createBigNumber(value: BigNumberish) {

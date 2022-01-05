@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import computeCardinality from '../src/computeCardinality';
 
 describe('computeCardinality', () => {

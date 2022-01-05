@@ -1,4 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
+
 import { User, DrawResults, Claim } from './types';
 
 function prepareClaims(user: User, drawResults: DrawResults[]): Claim {

@@ -1,4 +1,5 @@
 import { ethers, BigNumber } from 'ethers';
+
 import { findBitMatchesAtIndex } from '../../src/utils/findBitMatchesAtIndex';
 
 const bn = (num: any) => ethers.BigNumber.from(num);

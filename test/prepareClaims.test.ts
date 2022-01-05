@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { prepareClaims } from '../src';
 import { DrawResults, User } from '../src/types';
 import { ADDRESS_DEAD } from './constants';

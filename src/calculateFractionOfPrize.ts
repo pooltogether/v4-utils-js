@@ -1,7 +1,9 @@
 import { parseUnits } from '@ethersproject/units';
 import { BigNumber, utils } from 'ethers';
-import { PrizeDistribution } from './types';
+
 import calculateNumberOfPrizesForIndex from './calculateNumberOfPrizesForIndex';
+import { PrizeDistribution } from './types';
+
 const debug = require('debug')('pt:v4-core-js');
 
 function calculateFractionOfPrize(

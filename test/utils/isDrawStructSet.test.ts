@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { isDrawStructSet } from '../../src/utils';
+
 import { Draw } from '../../src/types';
+import { isDrawStructSet } from '../../src/utils';
 
 describe('isDrawStructSet', () => {
   it('should fail to validate Draw', () => {

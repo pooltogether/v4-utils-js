@@ -1,7 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
-import { PrizeDistribution } from '../src/types';
+
 import { calculatePrizeForDistributionIndex } from '../src';
+import { PrizeDistribution } from '../src/types';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 
 describe('calculatePrizeForPrizeDistributionIndex()', () => {

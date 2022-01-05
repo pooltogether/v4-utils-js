@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { isPrizeDistributionStructSet } from '../../src/utils';
+
 import { PrizeDistribution } from '../../src/types';
+import { isPrizeDistributionStructSet } from '../../src/utils';
 
 describe('isPrizeDistributionStructSet', () => {
   it('should fail to validate PrizeDistribution', () => {

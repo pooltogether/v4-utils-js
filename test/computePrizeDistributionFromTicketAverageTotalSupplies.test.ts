@@ -1,6 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
+
 import { computePrizeDistributionFromTicketAverageTotalSupplies } from '../src';
 import { PrizeTier } from '../src/types';
+
 const debug = require('debug')('v4-js-core:test');
 
 describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {

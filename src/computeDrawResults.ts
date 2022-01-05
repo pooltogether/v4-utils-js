@@ -1,3 +1,6 @@
+import { ethers } from 'ethers';
+
+import calculatePickPrize from './calculatePickPrize';
 import {
   Pick,
   PrizeAwardable,
@@ -6,8 +9,6 @@ import {
   DrawResults,
   PickPrize,
 } from './types';
-import calculatePickPrize from './calculatePickPrize';
-import { ethers } from 'ethers';
 
 function computeDrawResults(
   drawSettings: PrizeDistribution,

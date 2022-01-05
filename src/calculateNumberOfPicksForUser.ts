@@ -1,4 +1,5 @@
 import { BigNumber, constants } from 'ethers';
+
 import { PrizeDistribution } from './types';
 
 function calculateNumberOfPicksForUser(

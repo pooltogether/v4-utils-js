@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { formatTierToBasePercentage } from '../../src/utils';
 
 describe('formatTierToBasePercentage.test', () => {

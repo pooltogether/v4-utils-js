@@ -1,5 +1,5 @@
-import { PrizeDistribution, PickPrize } from './types';
 import calculatePrizeForDistributionIndex from './calculatePrizeForDistributionIndex';
+import { PrizeDistribution, PickPrize } from './types';
 
 const debug = require('debug')('pt:v4-core-js');
 

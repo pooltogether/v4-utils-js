@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { calculateDrawResults } from '../src';
 import { DrawResults, PrizeDistribution, Draw, User } from '../src/types';
 import {
@@ -6,6 +7,8 @@ import {
   PRIZE_DISTRIBUTION_EXAMPLE_ONE,
   USER_EXAMPLE_ONE,
 } from './constants';
+
+const debug = require('debug')('pt:v4-utils-js:calculateDrawResults:test');
 
 describe('calculateDrawResults', () => {
   it('should succeed to calculate empty draw results', () => {
@@ -17,6 +20,7 @@ describe('calculateDrawResults', () => {
       draw,
       user
     );
+    debug('results: ', calculatedDrawResults);
     expect(calculatedDrawResults.drawId).toEqual(1);
     expect(calculatedDrawResults.prizes).toEqual([]);
     expect(calculatedDrawResults.totalValue).toEqual(BigNumber.from('0'));

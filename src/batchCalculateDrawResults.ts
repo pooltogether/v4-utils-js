@@ -1,5 +1,6 @@
-import { Draw, DrawResults, PrizeDistribution, User } from './types';
 import calculateDrawResults from './calculateDrawResults';
+import { Draw, DrawResults, PrizeDistribution, User } from './types';
+
 const debug = require('debug')('pt:v4-utils-js:batchCalculateDrawResults');
 
 function batchCalculateDrawResults(

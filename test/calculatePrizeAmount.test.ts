@@ -1,6 +1,7 @@
 import { BigNumber, utils } from 'ethers';
-import { PrizeDistribution } from '../src/types';
+
 import { calculatePrizeAmount } from '../src';
+import { PrizeDistribution } from '../src/types';
 import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
 describe('calculatePrizeAmount()', () => {
   it('Can calculate the prize given the draw settings and number of matches', async () => {

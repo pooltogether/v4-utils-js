@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { BigNumber } from 'ethers';
+
 import { DrawResults, PrizeAwardable } from './types';
 
 const debug = require('debug')('pt:v4-core-js');

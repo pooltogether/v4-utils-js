@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { calculatePicksFromAverageTotalSuppliesBetween } from '../src';
 
 describe('calculatePicksFromAverageTotalSuppliesBetween', () => {

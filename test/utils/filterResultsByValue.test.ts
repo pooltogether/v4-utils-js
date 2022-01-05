@@ -1,7 +1,9 @@
-import { BigNumber } from 'ethers';
 import { expect } from 'chai';
-import { filterResultsByValue } from '../../src/utils/filterResultsByValue';
+import { BigNumber } from 'ethers';
+
 import { DrawResults } from '../../src/types';
+import { filterResultsByValue } from '../../src/utils/filterResultsByValue';
+
 const debug = require('debug')('v4-js-core:test');
 
 describe('filterResultsByValue()', () => {

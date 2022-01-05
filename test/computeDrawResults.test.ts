@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { DrawResults } from '../src/types';
+
 import { computeDrawResults } from '../src';
+import { DrawResults } from '../src/types';
 import { DRAW_EXAMPLE_ONE, PRIZE_DISTRIBUTION_EXAMPLE_ONE } from './constants';
 
 describe('computeDrawResults', () => {
