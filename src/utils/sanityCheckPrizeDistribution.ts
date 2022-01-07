@@ -13,7 +13,9 @@ export function sanityCheckPrizeDistribution(
   } else {
     let sum = BigNumber.from(0);
     for (let i = 0; i < prizeDistribution.tiers.length; i++) {
-      sum = sum.add(prizeDistribution.tiers[i]);
+      // Convert any BigNumberish to BigNumber
+      let bn = BigNumber.from(prizeDistribution.tiers[i]);
+      sum = sum.add(bn);
     }
     if (sum.gt(ethers.utils.parseEther('1'))) {
       return 'DrawCalc/tiers-gt-100%';

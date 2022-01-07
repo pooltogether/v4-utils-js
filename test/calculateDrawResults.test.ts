@@ -1,4 +1,4 @@
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import { calculateDrawResults } from '../src';
 import { DrawResults, PrizeDistribution, Draw, User } from '../src/types';

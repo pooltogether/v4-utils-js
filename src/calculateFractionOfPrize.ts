@@ -4,20 +4,21 @@ import { BigNumber, utils } from 'ethers';
 import calculateNumberOfPrizesForIndex from './calculateNumberOfPrizesForIndex';
 import { PrizeDistribution } from './types';
 
-const debug = require('debug')('pt:v4-core-js');
+const debug = require('debug')('pt:tsunami-sdk-drawCalculator');
 
-function calculateFractionOfPrize(
+export function calculateFractionOfPrize(
   prizeDistributionIndex: number,
-  drawSettings: PrizeDistribution
+  prizeDistribution: PrizeDistribution
 ): BigNumber {
   const numberOfPrizes = calculateNumberOfPrizesForIndex(
-    drawSettings.bitRangeSize,
+    prizeDistribution.bitRangeSize,
     prizeDistributionIndex
   );
 
   debug('numberOfPrizes for index ', numberOfPrizes);
 
-  const valueAtDistributionIndex = drawSettings.tiers[prizeDistributionIndex];
+  const valueAtDistributionIndex =
+    prizeDistribution.tiers[prizeDistributionIndex];
   debug(
     'valueAtDistributionIndex ',
     utils.formatEther(valueAtDistributionIndex.toString())

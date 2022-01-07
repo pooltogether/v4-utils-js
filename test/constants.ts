@@ -12,10 +12,10 @@ export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18);
 export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000');
 
 export const TIERS_EXAMPLE_ONE = [
-  formatTierToBasePercentage('0.25'),
-  formatTierToBasePercentage('0.05'),
-  formatTierToBasePercentage('0.5'),
-  formatTierToBasePercentage('0.2'),
+  formatTierToBasePercentage('0.25').toNumber(),
+  formatTierToBasePercentage('0.05').toNumber(),
+  formatTierToBasePercentage('0.5').toNumber(),
+  formatTierToBasePercentage('0.2').toNumber(),
   0,
   0,
   0,
@@ -29,10 +29,10 @@ export const TIERS_EXAMPLE_ONE = [
 export const TIERS_EXAMPLE_EMPTY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export const TIERS_EXAMPLE_INVALID = [
-  formatTierToBasePercentage('500000000'),
-  formatTierToBasePercentage('500000000'),
-  formatTierToBasePercentage('500000000'),
-  formatTierToBasePercentage('500000000'),
+  formatTierToBasePercentage('5000000000'),
+  formatTierToBasePercentage('5000000000'),
+  formatTierToBasePercentage('5000000000'),
+  formatTierToBasePercentage('5000000000'),
   0,
   0,
   0,
@@ -66,9 +66,9 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_ONE = {
   maxPicksPerUser: 2,
   expiryDuration: 5184000,
   numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
-  startTimestampOffset: 86400,
   prize: PRIZE_EXAMPLE_ONE,
-  endTimestampOffset: 900,
+  drawdrawStartTimestampOffset: 86400,
+  drawEndTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_VALID = {
@@ -78,9 +78,9 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_VALID = {
   maxPicksPerUser: 2,
   expiryDuration: 5184000,
   numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
-  startTimestampOffset: 86400,
+  drawStartTimestampOffset: 86400,
   prize: PRIZE_EXAMPLE_ONE,
-  endTimestampOffset: 900,
+  drawEndTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_INVALID = {
@@ -90,9 +90,9 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_INVALID = {
   maxPicksPerUser: 0,
   expiryDuration: 0,
   numberOfPicks: BigNumber.from('0'),
-  startTimestampOffset: 0,
+  drawStartTimestampOffset: 0,
   prize: BigNumber.from('0'),
-  endTimestampOffset: 0,
+  drawEndTimestampOffset: 0,
 };
 
 export const contactList = {

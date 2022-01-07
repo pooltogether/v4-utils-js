@@ -15,4 +15,5 @@ export { default as computePicks } from './computePicks';
 export { default as computePrizeDistributionFromTicketAverageTotalSupplies } from './computePrizeDistributionFromTicketAverageTotalSupplies';
 export { default as generatePicks } from './generatePicks';
 export { default as prepareClaims } from './prepareClaims';
+export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
 export { utils };

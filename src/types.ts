@@ -1,75 +1,67 @@
-import { Provider } from '@ethersproject/abstract-provider';
-import { BigNumber } from '@ethersproject/bignumber';
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
+// import { Provider } from '@ethersproject/abstract-provider';
 
-export interface Draw {
+export type PrizeTier = {
+  bitRangeSize: number;
+  expiryDuration?: number;
+  maxPicksPerUser: number;
+  prize: BigNumber;
+  tiers: Array<BigNumberish>;
+};
+
+export type PrizeDistribution = PrizeTier & {
+  matchCardinality: number;
+  numberOfPicks: BigNumber;
+  drawStartTimestampOffset?: number;
+  drawEndTimestampOffset?: number;
+};
+
+export type Draw = {
   drawId: number;
   winningRandomNumber: BigNumber;
-  timestamp: number;
-  beaconPeriodStartedAt: number;
-  beaconPeriodSeconds: number;
-}
+  timestamp?: number;
+  beaconPeriodStartedAt?: number;
+  beaconPeriodSeconds?: number;
+};
 
-export interface PrizeDistribution {
-  bitRangeSize: number;
-  matchCardinality: number;
-  startTimestampOffset?: number;
-  endTimestampOffset?: number;
-  maxPicksPerUser: number;
-  expiryDuration: number;
-  numberOfPicks: BigNumber;
-  tiers: Array<BigNumber | number>;
-  prize: BigNumber;
-}
-
-export interface PrizeTier {
-  bitRangeSize: number;
-  drawId: number;
-  maxPicksPerUser: number;
-  expiryDuration: number;
-  endTimestampOffset: number;
-  prize: BigNumber;
-  tiers: Array<number>;
-}
-
-export interface Pick {
+export type Pick = {
   index: number;
   hash: string;
-}
+};
 
-export interface User {
+export type User = {
   address: string;
   normalizedBalances: BigNumber[];
   picks?: Pick[]; // optional as user may not have picks (under floor)
-}
+};
 
-export interface DrawResults {
+export type DrawResults = {
   drawId: number;
   totalValue: BigNumber;
   prizes: PrizeAwardable[];
-}
+};
 
-export interface PrizeAwardable {
+// prize that a User can receive
+export type PrizeAwardable = {
   amount: BigNumber;
   distributionIndex: number;
   pick: BigNumber; //populate with claim index
-}
+};
 
-export interface PickPrize {
+export type PickPrize = {
   amount: BigNumber;
   distributionIndex: number;
-}
+};
 
-export interface Claim {
+export type Claim = {
   userAddress: string;
   drawIds: number[];
-  data: BigNumber[][];
-}
+  winningPickIndices: BigNumber[][];
+  encodedWinningPickIndices: string;
+};
 
-export interface UserDrawResult {
+export type UserDrawResult = {
   user: User;
+  // drawId: BigNumber
   drawResult: DrawResults;
-}
-
-export interface Providers {
-  [chainId: number]: Provider | undefined;
-}
+};

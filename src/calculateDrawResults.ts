@@ -4,7 +4,6 @@ import computeDrawResults from './computeDrawResults';
 import generatePicks from './generatePicks';
 import { Draw, DrawResults, PrizeDistribution, User } from './types';
 import { throwErrorInvalidPrizeDistribution } from './utils';
-import { filterResultsByValue } from './utils/filterResultsByValue';
 
 const debug = require('debug')('pt:v4-utils-js:calculateDrawResults');
 
@@ -37,9 +36,6 @@ function calculateDrawResults(
       results.totalValue
     )} prizes for this draw..`
   );
-
-  // sort the picks by value and filter out if some picks beyond the maxUserPicks
-  results = filterResultsByValue(results, prizeDistribution.maxPicksPerUser);
 
   return results;
 }

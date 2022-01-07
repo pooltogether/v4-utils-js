@@ -31,7 +31,6 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     expiryDuration,
     bitRangeSize,
     maxPicksPerUser,
-    endTimestampOffset,
     tiers,
     prize,
   } = prizeTier;
@@ -80,9 +79,9 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     maxPicksPerUser: maxPicksPerUser,
     expiryDuration,
     numberOfPicks: BigNumber.from(numberOfPicks),
-    startTimestampOffset: beaconPeriodSeconds,
+    drawStartTimestampOffset: beaconPeriodSeconds,
     prize: prize,
-    endTimestampOffset,
+    drawEndTimestampOffset: 0,
   };
   debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);
 

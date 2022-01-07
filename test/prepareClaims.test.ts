@@ -1,47 +1,87 @@
-import { BigNumber } from 'ethers';
+import { defaultAbiCoder } from '@ethersproject/abi';
+import { expect } from 'chai';
+import { BigNumber, ethers, utils } from 'ethers';
 
-import { prepareClaims } from '../src';
-import { DrawResults, User } from '../src/types';
-import { ADDRESS_DEAD } from './constants';
+import { prepareClaims, batchCalculateDrawResults } from '../src';
+import {
+  Claim,
+  Draw,
+  DrawResults,
+  PrizeDistribution,
+  User,
+} from '../src/types';
+import { formatDistributionNumber } from '../src/utils';
 
-describe('prepareClaims', () => {
-  it('should prepare claims for two draws using the dEaD address', () => {
-    const user: User = {
-      address: ADDRESS_DEAD,
-      normalizedBalances: [
-        BigNumber.from('1'),
-        BigNumber.from('1'),
-        BigNumber.from('1'),
+describe('prepareClaims()', () => {
+  it('returns correct claim struct for user', async () => {
+    const examplePrizeDistribution1: PrizeDistribution = {
+      tiers: [
+        formatDistributionNumber('0.3'),
+        formatDistributionNumber('0.2'),
+        formatDistributionNumber('0.1'),
       ],
-      picks: [],
+      numberOfPicks: BigNumber.from(10),
+      matchCardinality: 3,
+      bitRangeSize: 4,
+      prize: BigNumber.from(utils.parseEther('100')),
+      maxPicksPerUser: 1000,
     };
-    const drawResults: DrawResults[] = [
-      {
-        drawId: 1,
-        totalValue: BigNumber.from('1000'),
-        prizes: [
-          {
-            amount: BigNumber.from('100'),
-            distributionIndex: 3,
-            pick: BigNumber.from('10'),
-          },
-        ],
-      },
-      {
-        drawId: 2,
-        totalValue: BigNumber.from('1000'),
-        prizes: [
-          {
-            amount: BigNumber.from('1000'),
-            distributionIndex: 5,
-            pick: BigNumber.from('10'),
-          },
-        ],
-      },
-    ];
-    const claims = prepareClaims(user, drawResults);
-    expect(claims.userAddress).toEqual(user.address);
-    expect(claims.drawIds).toEqual([1, 2]);
-    expect(claims.data[0][0]).toEqual(BigNumber.from('10'));
+
+    const examplePrizeDistribution2: PrizeDistribution = {
+      tiers: [
+        formatDistributionNumber('0.3'),
+        formatDistributionNumber('0.2'),
+        formatDistributionNumber('0.1'),
+      ],
+      numberOfPicks: BigNumber.from(10),
+      matchCardinality: 3,
+      bitRangeSize: 10, // set very high so matching unlikely
+      prize: BigNumber.from(utils.parseEther('100')),
+      maxPicksPerUser: 1000,
+    };
+    const drawIds = [2, 3];
+    const winningPickIndices = BigNumber.from(1);
+
+    const exampleDraw1: Draw = {
+      drawId: drawIds[0],
+      winningRandomNumber: BigNumber.from(
+        '8781184742215173699638593792190316559257409652205547100981219837421219359728'
+      ),
+    };
+    const exampleDraw2: Draw = {
+      drawId: drawIds[1],
+      winningRandomNumber: BigNumber.from(
+        '8781184742215173699638593792190316559257409652205547100981219837421219359728'
+      ),
+    };
+
+    const exampleUser: User = {
+      address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+      normalizedBalances: [
+        ethers.utils.parseEther('0.2'),
+        ethers.utils.parseEther('0.2'),
+      ],
+    };
+
+    const drawResults: DrawResults[] = batchCalculateDrawResults(
+      [examplePrizeDistribution1, examplePrizeDistribution2],
+      [exampleDraw1, exampleDraw2],
+      exampleUser
+    );
+
+    expect(drawResults.length).to.equal(2);
+
+    const claimResult: Claim = prepareClaims(exampleUser, drawResults);
+
+    expect(claimResult.drawIds).to.deep.equal([drawIds[0]]);
+
+    const expectedData = defaultAbiCoder.encode(
+      ['uint256[][]'],
+      [[[winningPickIndices]]]
+    );
+    expect(claimResult.encodedWinningPickIndices).to.deep.equal(expectedData);
+    expect(claimResult.winningPickIndices).to.deep.equal([
+      [winningPickIndices],
+    ]);
   });
 });

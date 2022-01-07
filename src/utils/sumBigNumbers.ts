@@ -1,4 +1,4 @@
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 function sumTwoBigNumbers(bn1: BigNumber, bn2: BigNumber): BigNumber {
   return bn1.add(bn2);

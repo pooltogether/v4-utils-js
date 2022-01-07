@@ -2,7 +2,7 @@ import { BigNumber, ethers } from 'ethers';
 
 import { Pick } from './types';
 
-const debug = require('debug')('pt:v4-core-js');
+const debug = require('debug')('pt:v4-utils-js');
 
 function computePick(address: string, pick: number): Pick {
   debug(`computePick::address is ${address} and pick ${pick}`);

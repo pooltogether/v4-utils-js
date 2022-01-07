@@ -30,7 +30,7 @@ describe('isDrawStructSet', () => {
     const draw: Draw = {
       timestamp: 0,
       drawId: 1,
-      winningRandomNumber: BigNumber.from(1),
+      winningRandomNumber: BigNumber.from(0),
       beaconPeriodStartedAt: 0,
       beaconPeriodSeconds: 0,
     };

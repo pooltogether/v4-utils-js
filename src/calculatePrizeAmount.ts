@@ -1,10 +1,9 @@
 import calculatePrizeForDistributionIndex from './calculatePrizeForDistributionIndex';
 import { PrizeDistribution, PickPrize } from './types';
 
-const debug = require('debug')('pt:v4-core-js');
+const debug = require('debug')('pt:v4-utils-js');
 
-// calculates the absolute amount of Prize in Wei for the Draw and TsunamiDrawSettings
-export function calculatePrizeAmount(
+function calculatePrizeAmount(
   prizeDistribution: PrizeDistribution,
   matches: number
 ): PickPrize | undefined {

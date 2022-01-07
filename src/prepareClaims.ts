@@ -1,18 +1,20 @@
-import { BigNumber } from '@ethersproject/bignumber';
+import { defaultAbiCoder } from '@ethersproject/abi';
+import { BigNumber } from 'ethers';
 
+import { sortByBigNumberAsc } from './sortByBigNumber';
 import { User, DrawResults, Claim } from './types';
 
 function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   let claim: Claim = {
     userAddress: user.address,
     drawIds: [],
-    data: [],
+    encodedWinningPickIndices: '',
+    winningPickIndices: [],
   };
   if (drawResults.length === 0) {
     return claim;
   }
 
-  // for each draw run the runDrawCalculatorForSingleDraw, if there is a winner add to result
   drawResults.forEach(drawResult => {
     if (drawResult.totalValue.gt(BigNumber.from(0))) {
       claim.drawIds.push(drawResult.drawId);
@@ -21,9 +23,17 @@ function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
       for (const prizeAwardable of drawResult.prizes) {
         winningPicks.push(prizeAwardable.pick);
       }
-      claim.data.push(winningPicks);
+      claim.winningPickIndices.push(winningPicks);
     }
   });
+
+  claim.winningPickIndices = claim.winningPickIndices.map(data =>
+    data.sort(sortByBigNumberAsc)
+  );
+  claim.encodedWinningPickIndices = defaultAbiCoder.encode(
+    ['uint256[][]'],
+    [claim.winningPickIndices]
+  );
   return claim;
 }
 

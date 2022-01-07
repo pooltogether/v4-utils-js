@@ -1,9 +1,9 @@
 // @ts-nocheck
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import { DrawResults, PrizeAwardable } from './types';
 
-const debug = require('debug')('pt:v4-core-js');
+const debug = require('debug')('pt:v4-utils-js');
 
 export function filterResultsByValue(
   drawResults: DrawResults,
