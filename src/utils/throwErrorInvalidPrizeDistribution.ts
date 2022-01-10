@@ -10,7 +10,7 @@ function throwErrorInvalidPrizeDistribution(
   );
   if (sanityCheckPrizeDistrbutionResult !== '') {
     throw new Error(
-      `draw-calculator-js PrizeDistribution invalid: ${sanityCheckPrizeDistrbutionResult}`
+      `PrizeDistribution invalid: ${sanityCheckPrizeDistrbutionResult}`
     );
   }
 }

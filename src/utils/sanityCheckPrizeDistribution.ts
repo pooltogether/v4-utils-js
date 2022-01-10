@@ -1,7 +1,8 @@
-import { parseEther } from '@ethersproject/units';
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
+import { TIER_DENOMINATION_BASE_MAX } from '../constants';
 import { PrizeDistribution } from '../types';
+import isTiersValid from './isTiersValid';
 
 function sanityCheckPrizeDistribution(
   prizeDistribution: PrizeDistribution
@@ -18,10 +19,13 @@ function sanityCheckPrizeDistribution(
       let bn = BigNumber.from(prizeDistribution.tiers[i]);
       sum = sum.add(bn);
     }
-    if (sum.gt(parseEther('1'))) {
+    if (sum.gt(TIER_DENOMINATION_BASE_MAX)) {
       return 'DrawCalc/tiers-gt-100%';
     }
   }
+
+  isTiersValid(prizeDistribution.tiers);
+
   return ''; // no error -> sane settings
 }
 

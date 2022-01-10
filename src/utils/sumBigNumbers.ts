@@ -1,9 +1,12 @@
-import { BigNumber } from '@ethersproject/bignumber';
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-export function sumTwoBigNumbers(bn1: BigNumber, bn2: BigNumber): BigNumber {
-  return bn1.add(bn2);
+export function sumTwoBigNumbers(
+  bn1: BigNumberish,
+  bn2: BigNumberish
+): BigNumber {
+  return BigNumber.from(bn1).add(BigNumber.from(bn2));
 }
 
-export function sumBigNumbers(numbers: BigNumber[]) {
-  return numbers.reduce(sumTwoBigNumbers);
+export function sumBigNumbers(numbers: BigNumberish[]): BigNumberish {
+  return numbers.reduce(sumTwoBigNumbers, BigNumber.from(0));
 }
