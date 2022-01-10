@@ -3,7 +3,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 const debug = require('debug')('pt:v4-utils-js');
 
 //SOLIDITY SIG: function _findBitMatchesAtIndex(uint256 word1, uint256 word2, uint256 indexOffset, uint8 _bitRangeMaskValue)
-export function findBitMatchesAtIndex(
+function findBitMatchesAtIndex(
   word1: BigNumber,
   word2: BigNumber,
   matchIndex: number,
@@ -31,3 +31,5 @@ export function findBitMatchesAtIndex(
   );
   return match;
 }
+
+export default findBitMatchesAtIndex;

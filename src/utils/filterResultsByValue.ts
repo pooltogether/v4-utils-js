@@ -1,11 +1,10 @@
-// @ts-nocheck
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { DrawResults, PrizeAwardable } from './types';
+import { DrawResults, PrizeAwardable } from '../types';
 
 const debug = require('debug')('pt:v4-utils-js');
 
-export function filterResultsByValue(
+function filterResultsByValue(
   drawResults: DrawResults,
   maxPicksPerUser: number
 ): DrawResults {
@@ -42,3 +41,5 @@ export function filterResultsByValue(
   // if not greater than max picks per user, return the whole array
   return drawResults;
 }
+
+export default filterResultsByValue;

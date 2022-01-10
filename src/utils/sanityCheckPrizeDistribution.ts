@@ -1,8 +1,9 @@
-import { BigNumber, ethers } from 'ethers';
+import { parseEther } from '@ethersproject/units';
+import { BigNumber } from 'ethers';
 
 import { PrizeDistribution } from '../types';
 
-export function sanityCheckPrizeDistribution(
+function sanityCheckPrizeDistribution(
   prizeDistribution: PrizeDistribution
 ): string {
   if (
@@ -17,9 +18,11 @@ export function sanityCheckPrizeDistribution(
       let bn = BigNumber.from(prizeDistribution.tiers[i]);
       sum = sum.add(bn);
     }
-    if (sum.gt(ethers.utils.parseEther('1'))) {
+    if (sum.gt(parseEther('1'))) {
       return 'DrawCalc/tiers-gt-100%';
     }
   }
   return ''; // no error -> sane settings
 }
+
+export default sanityCheckPrizeDistribution;

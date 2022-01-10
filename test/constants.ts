@@ -4,7 +4,7 @@ import { toUtf8Bytes } from '@ethersproject/strings';
 import { parseUnits } from '@ethersproject/units';
 
 import { User } from '../src/types';
-import { formatTierToBasePercentage } from '../src/utils/formatTierToBasePercentage';
+import { formatTierPercentage } from '../src/utils/formatTierPercentage';
 
 export const ADDRESS_DEAD = '0x000000000000000000000000000000000000dEaD';
 export const BYTES32_ADDRESS_DEAD = keccak256(toUtf8Bytes(ADDRESS_DEAD));
@@ -12,10 +12,10 @@ export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18);
 export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000');
 
 export const TIERS_EXAMPLE_ONE = [
-  formatTierToBasePercentage('0.25').toNumber(),
-  formatTierToBasePercentage('0.05').toNumber(),
-  formatTierToBasePercentage('0.5').toNumber(),
-  formatTierToBasePercentage('0.2').toNumber(),
+  formatTierPercentage('0.25').toNumber(),
+  formatTierPercentage('0.05').toNumber(),
+  formatTierPercentage('0.5').toNumber(),
+  formatTierPercentage('0.2').toNumber(),
   0,
   0,
   0,
@@ -29,10 +29,10 @@ export const TIERS_EXAMPLE_ONE = [
 export const TIERS_EXAMPLE_EMPTY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export const TIERS_EXAMPLE_INVALID = [
-  formatTierToBasePercentage('5000000000'),
-  formatTierToBasePercentage('5000000000'),
-  formatTierToBasePercentage('5000000000'),
-  formatTierToBasePercentage('5000000000'),
+  formatTierPercentage('5000000000'),
+  formatTierPercentage('5000000000'),
+  formatTierPercentage('5000000000'),
+  formatTierPercentage('5000000000'),
   0,
   0,
   0,
