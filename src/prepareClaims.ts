@@ -1,8 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from 'ethers';
 
-import { sortByBigNumberAsc } from './utils';
 import { User, DrawResults, Claim } from './types';
+import { sortByBigNumberAsc } from './utils';
 
 function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
   let claim: Claim = {

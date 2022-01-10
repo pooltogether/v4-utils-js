@@ -3,7 +3,7 @@ import { BigNumber, ethers, utils } from 'ethers';
 
 import { batchCalculateDrawResults } from '../src';
 import { Draw, PrizeDistribution, User } from '../src/types';
-import { formatDistributionNumber } from '../src/utils/formatDistributionNumber';
+import { formatDistributionNumber } from '../src/utils';
 
 describe('batchCalculateDrawResults()', () => {
   it('Single DrawCalculator run 1 matches', async () => {
@@ -44,9 +44,10 @@ describe('batchCalculateDrawResults()', () => {
       [exampleDraw],
       exampleUser
     );
-    console.log(results);
-    // const expectedPrize = utils.parseEther(7.8125);
-    // expect(results[0].totalValue).to.deep.equal(expectedPrize);
+    console.log(results[0].totalValue.toString());
+    const expectedPrize = utils.parseEther('7.8125');
+    console.log(expectedPrize.toString(), 'expectedPrize');
+    expect(results[0].totalValue).to.deep.equal(expectedPrize);
   });
 
   it('all matches', async () => {

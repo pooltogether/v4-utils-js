@@ -14,10 +14,7 @@ function computeCardinality(
   debug('matchCardinality: ', matchCardinality.toString());
   debug('range: ', range.toString());
   debug('totalSupply: ', totalSupply.toString());
-  debug(
-    'totalSupplyDecimals: ',
-    totalSupplyDecimals.toString()
-  );
+  debug('totalSupplyDecimals: ', totalSupplyDecimals.toString());
   do {
     numberOfPicks = utils.parseUnits(
       `${range.pow(matchCardinality)}`,

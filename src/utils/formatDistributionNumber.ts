@@ -1,6 +1,10 @@
-import { utils } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
+import { parseUnits } from '@ethersproject/units';
 
-export const formatDistributionNumber = (distribution: string) =>
-  utils.parseUnits(distribution, 9).toNumber();
+import { TIER_DENOMINATION } from '../constants';
+
+export const formatDistributionNumber = (distribution: string): BigNumber => {
+  return parseUnits(distribution, TIER_DENOMINATION);
+};
 
 export default formatDistributionNumber;
