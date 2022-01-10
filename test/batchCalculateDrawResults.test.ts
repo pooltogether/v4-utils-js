@@ -3,7 +3,7 @@ import { BigNumber, ethers, utils } from 'ethers';
 
 import { batchCalculateDrawResults } from '../src';
 import { Draw, PrizeDistribution, User } from '../src/types';
-import { formatDistributionNumber } from '../src/utils';
+import { formatTierPercentage } from '../src/utils';
 
 describe('batchCalculateDrawResults()', () => {
   it('Single DrawCalculator run 1 matches', async () => {
@@ -16,9 +16,9 @@ describe('batchCalculateDrawResults()', () => {
 
     const examplePrizeDistribution: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.3'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.3'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 3,
@@ -68,10 +68,10 @@ describe('batchCalculateDrawResults()', () => {
     console.log('winning number ', winningRandomNumber);
     const examplePrizeDistribution: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.4'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.4'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 4,

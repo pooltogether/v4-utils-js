@@ -8,7 +8,7 @@
 
 - [filterResultsByValue](utils.md#filterresultsbyvalue)
 - [findBitMatchesAtIndex](utils.md#findbitmatchesatindex)
-- [formatDistributionNumber](utils.md#formatdistributionnumber)
+- [formatTierPercentage](utils.md#formatTierPercentage)
 - [formatTierToBasePercentage](utils.md#formattiertobasepercentage)
 - [isDrawStructSet](utils.md#isdrawstructset)
 - [isPrizeDistributionStructSet](utils.md#isprizedistributionstructset)
@@ -62,9 +62,9 @@ ___
 
 ___
 
-### formatDistributionNumber
+### formatTierPercentage
 
-▸ `Const` **formatDistributionNumber**(`distribution`): `number`
+▸ `Const` **formatTierPercentage**(`distribution`): `number`
 
 #### Parameters
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[utils/formatDistributionNumber.ts:3](https://github.com/pooltogether/v4-js/blob/082f5ed/src/utils/formatDistributionNumber.ts#L3)
+[utils/formatTierPercentage.ts:3](https://github.com/pooltogether/v4-js/blob/082f5ed/src/utils/formatTierPercentage.ts#L3)
 
 ___
 

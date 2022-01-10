@@ -3,7 +3,7 @@ import { BigNumber, utils } from 'ethers';
 
 import { calculatePrizeForDistributionIndex } from '../src';
 import { PrizeDistribution } from '../src/types';
-import { formatDistributionNumber } from '../src/utils';
+import { formatTierPercentage } from '../src/utils';
 
 describe('calculatePrizeForDistributionIndex()', () => {
   it('can calculate the prize awardable for the prize distribution and prize', async () => {
@@ -16,9 +16,9 @@ describe('calculatePrizeForDistributionIndex()', () => {
 
     const examplePrizeDistribution: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.3'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.3'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 3,

@@ -3,15 +3,15 @@ import { parseEther } from '@ethersproject/units';
 
 import { calculateFractionOfPrize } from '../src';
 import { PrizeDistribution } from '../src/types';
-import { formatDistributionNumber } from '../src/utils';
+import { formatTierPercentage } from '../src/utils';
 
 describe.skip('calculateFractionOfPrize()', () => {
   it('can calculate the fraction for the prize distribution', async () => {
     const exampleDrawSettings: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.3'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.3'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 3,

@@ -10,15 +10,15 @@ import {
   PrizeDistribution,
   User,
 } from '../src/types';
-import { formatDistributionNumber } from '../src/utils';
+import { formatTierPercentage } from '../src/utils';
 
 describe('prepareClaims()', () => {
   it('returns correct claim struct for user', async () => {
     const examplePrizeDistribution1: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.3'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.3'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 3,
@@ -29,9 +29,9 @@ describe('prepareClaims()', () => {
 
     const examplePrizeDistribution2: PrizeDistribution = {
       tiers: [
-        formatDistributionNumber('0.3'),
-        formatDistributionNumber('0.2'),
-        formatDistributionNumber('0.1'),
+        formatTierPercentage('0.3'),
+        formatTierPercentage('0.2'),
+        formatTierPercentage('0.1'),
       ],
       numberOfPicks: BigNumber.from(10),
       matchCardinality: 3,

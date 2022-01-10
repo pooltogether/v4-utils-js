@@ -6,5 +6,5 @@ export * from './isPrizeDistributionStructSet';
 export * from './sanityCheckPrizeDistribution';
 export * from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
-export { default as formatDistributionNumber } from './formatDistributionNumber';
+export { default as formatTierPercentage } from './formatTierPercentage';
 export { default as throwErrorInvalidPrizeDistribution } from './throwErrorInvalidPrizeDistribution';
