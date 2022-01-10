@@ -6,7 +6,7 @@
 
 <br />
 
-# PoolTogether V4 Utility Library
+# Utility Library for PoolTogether V4
 ![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
