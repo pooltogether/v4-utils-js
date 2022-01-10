@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { DrawResults } from '../../src/types';
 import { filterResultsByValue } from '../../src/utils/filterResultsByValue';
 
-const debug = require('debug')('v4-js-core:test');
+const debug = require('debug')('v4-utils-js:test');
 
 describe('filterResultsByValue()', () => {
   it('should slice to the correct amount, filters out prizes[0]', () => {

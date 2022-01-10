@@ -1,8 +1,8 @@
 {
-  "name": "@pooltogether/v4-js",
+  "name": "@pooltogether/v4-utils-js",
   "author": "PoolTogether Inc",
-  "description": "Utility library for off-chain calculations and computation of the v4 smart contracts",
-  "module": "dist/v4-js.esm.js",
+  "description": "Utility library for PoolTogether V4 off-chain calculations and computations.",
+  "module": "dist/v4-utils-js.esm.js",
   "version": "0.1.0-beta.1",
   "license": "GPL-3.0-only",
   "main": "dist/index.js",

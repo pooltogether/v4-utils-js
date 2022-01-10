@@ -4,7 +4,7 @@ import calculatePrizeAmount from './calculatePrizeAmount';
 import { PrizeDistribution, PickPrize } from './types';
 import { findBitMatchesAtIndex } from './utils/findBitMatchesAtIndex';
 
-const debug = require('debug')('pt:v4-utils-js');
+const debug = require('debug')('pt:v4-utils-js:calculatePickPrize');
 
 // returns the fraction of the total prize that the user will win for this pick
 function calculatePickPrize(

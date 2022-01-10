@@ -1,7 +1,7 @@
 import calculatePrizeForDistributionIndex from './calculatePrizeForDistributionIndex';
 import { PrizeDistribution, PickPrize } from './types';
 
-const debug = require('debug')('pt:v4-utils-js');
+const debug = require('debug')('pt:v4-utils-js:calculatePrizeAmount');
 
 function calculatePrizeAmount(
   prizeDistribution: PrizeDistribution,

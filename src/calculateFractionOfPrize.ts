@@ -4,7 +4,7 @@ import { BigNumber, utils } from 'ethers';
 import calculateNumberOfPrizesForIndex from './calculateNumberOfPrizesForIndex';
 import { PrizeDistribution } from './types';
 
-const debug = require('debug')('pt:tsunami-sdk-drawCalculator');
+const debug = require('debug')('pt:v4-utils-js');
 
 export function calculateFractionOfPrize(
   prizeDistributionIndex: number,

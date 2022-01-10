@@ -7,22 +7,22 @@
 <br />
 
 # PoolTogether V4 Utility Library
-![Tests](https://github.com/pooltogether/v4-js/actions/workflows/main.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-js?branch=master)
+![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-The `v4-js` is a utility library for off-chain calculations and computation of the v4 smart contracts past, present and future state.
+The `v4-utils-js` is a utility library for off-chain calculations and computation of the v4 smart contracts past, present and future state.
 
 # Installation
 
 This project is available as an NPM package:
 
 ```sh
-npm install @pooltogether/v4-js
+npm install @pooltogether/v4-utils-js
 ```
 
 ```sh
-yarn add @pooltogether/v4-js
+yarn add @pooltogether/v4-utils-js
 ```
 
 The repo can be cloned from Github for contributions.

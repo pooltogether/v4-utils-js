@@ -1,5 +1,4 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
-// import { Provider } from '@ethersproject/abstract-provider';
 
 export type PrizeTier = {
   bitRangeSize: number;

@@ -1,6 +1,6 @@
-[@pooltogether/v4-js](README.md) / Exports
+[@pooltogether/v4-utils-js](README.md) / Exports
 
-# @pooltogether/v4-js
+# @pooltogether/v4-utils-js
 
 ## Table of contents
 
@@ -26,6 +26,8 @@
 - [computePrizeDistributionFromTicketAverageTotalSupplies](modules.md#computeprizedistributionfromticketaveragetotalsupplies)
 - [generatePicks](modules.md#generatepicks)
 - [prepareClaims](modules.md#prepareclaims)
+- [sortByBigNumberAsc](modules.md#sortbybignumberasc)
+- [sortByBigNumberDesc](modules.md#sortbybignumberdesc)
 
 ## Functions
 
@@ -47,7 +49,7 @@
 
 #### Defined in
 
-[batchCalculateDrawResults.ts:5](https://github.com/pooltogether/v4-js/blob/789649e/src/batchCalculateDrawResults.ts#L5)
+[batchCalculateDrawResults.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/batchCalculateDrawResults.ts#L6)
 
 ___
 
@@ -70,20 +72,20 @@ ___
 
 #### Defined in
 
-[calculateDrawResults.ts:10](https://github.com/pooltogether/v4-js/blob/789649e/src/calculateDrawResults.ts#L10)
+[calculateDrawResults.ts:10](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateDrawResults.ts#L10)
 
 ___
 
 ### calculateFractionOfPrize
 
-▸ **calculateFractionOfPrize**(`prizeDistributionIndex`, `drawSettings`): `BigNumber`
+▸ **calculateFractionOfPrize**(`prizeDistributionIndex`, `prizeDistribution`): `BigNumber`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `prizeDistributionIndex` | `number` |
-| `drawSettings` | `PrizeDistribution` |
+| `prizeDistribution` | `PrizeDistribution` |
 
 #### Returns
 
@@ -91,7 +93,7 @@ ___
 
 #### Defined in
 
-[calculateFractionOfPrize.ts:7](https://github.com/pooltogether/v4-js/blob/789649e/src/calculateFractionOfPrize.ts#L7)
+[calculateFractionOfPrize.ts:9](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateFractionOfPrize.ts#L9)
 
 ___
 
@@ -112,7 +114,7 @@ ___
 
 #### Defined in
 
-[calculateNumberOfPicksForUser.ts:4](https://github.com/pooltogether/v4-js/blob/789649e/src/calculateNumberOfPicksForUser.ts#L4)
+[calculateNumberOfPicksForUser.ts:5](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNumberOfPicksForUser.ts#L5)
 
 ___
 
@@ -133,7 +135,7 @@ ___
 
 #### Defined in
 
-[calculateNumberOfPrizesForIndex.ts:1](https://github.com/pooltogether/v4-js/blob/789649e/src/calculateNumberOfPrizesForIndex.ts#L1)
+[calculateNumberOfPrizesForIndex.ts:1](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNumberOfPrizesForIndex.ts#L1)
 
 ___
 
@@ -155,7 +157,7 @@ ___
 
 #### Defined in
 
-[calculatePickPrize.ts:9](https://github.com/pooltogether/v4-js/blob/789649e/src/calculatePickPrize.ts#L9)
+[calculatePickPrize.ts:10](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePickPrize.ts#L10)
 
 ___
 
@@ -177,7 +179,7 @@ ___
 
 #### Defined in
 
-[calculatePicksFromAverageTotalSuppliesBetween.ts:6](https://github.com/pooltogether/v4-js/blob/789649e/src/calculatePicksFromAverageTotalSuppliesBetween.ts#L6)
+[calculatePicksFromAverageTotalSuppliesBetween.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePicksFromAverageTotalSuppliesBetween.ts#L7)
 
 ___
 
@@ -198,7 +200,7 @@ ___
 
 #### Defined in
 
-[calculatePrizeAmount.ts:7](https://github.com/pooltogether/v4-js/blob/789649e/src/calculatePrizeAmount.ts#L7)
+[calculatePrizeAmount.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePrizeAmount.ts#L6)
 
 ___
 
@@ -219,7 +221,7 @@ ___
 
 #### Defined in
 
-[calculatePrizeForDistributionIndex.ts:5](https://github.com/pooltogether/v4-js/blob/789649e/src/calculatePrizeForDistributionIndex.ts#L5)
+[calculatePrizeForDistributionIndex.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePrizeForDistributionIndex.ts#L6)
 
 ___
 
@@ -241,7 +243,7 @@ ___
 
 #### Defined in
 
-[computeCardinality.ts:5](https://github.com/pooltogether/v4-js/blob/789649e/src/computeCardinality.ts#L5)
+[computeCardinality.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computeCardinality.ts#L6)
 
 ___
 
@@ -263,7 +265,7 @@ ___
 
 #### Defined in
 
-[computeDrawResults.ts:12](https://github.com/pooltogether/v4-js/blob/789649e/src/computeDrawResults.ts#L12)
+[computeDrawResults.ts:13](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computeDrawResults.ts#L13)
 
 ___
 
@@ -284,7 +286,7 @@ ___
 
 #### Defined in
 
-[computePick.ts:6](https://github.com/pooltogether/v4-js/blob/789649e/src/computePick.ts#L6)
+[computePick.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePick.ts#L7)
 
 ___
 
@@ -305,7 +307,7 @@ ___
 
 #### Defined in
 
-[computePicks.ts:5](https://github.com/pooltogether/v4-js/blob/789649e/src/computePicks.ts#L5)
+[computePicks.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePicks.ts#L6)
 
 ___
 
@@ -329,7 +331,7 @@ ___
 
 #### Defined in
 
-[computePrizeDistributionFromTicketAverageTotalSupplies.ts:12](https://github.com/pooltogether/v4-js/blob/789649e/src/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L12)
+[computePrizeDistributionFromTicketAverageTotalSupplies.ts:14](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L14)
 
 ___
 
@@ -351,7 +353,7 @@ ___
 
 #### Defined in
 
-[generatePicks.ts:6](https://github.com/pooltogether/v4-js/blob/789649e/src/generatePicks.ts#L6)
+[generatePicks.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/generatePicks.ts#L7)
 
 ___
 
@@ -372,4 +374,46 @@ ___
 
 #### Defined in
 
-[prepareClaims.ts:4](https://github.com/pooltogether/v4-js/blob/789649e/src/prepareClaims.ts#L4)
+[prepareClaims.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/prepareClaims.ts#L7)
+
+___
+
+### sortByBigNumberAsc
+
+▸ `Const` **sortByBigNumberAsc**(`a`, `b`): ``0`` \| ``1`` \| ``-1``
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `BigNumber` |
+| `b` | `BigNumber` |
+
+#### Returns
+
+``0`` \| ``1`` \| ``-1``
+
+#### Defined in
+
+[sortByBigNumber.ts:3](https://github.com/pooltogether/v4-js/blob/082f5ed/src/sortByBigNumber.ts#L3)
+
+___
+
+### sortByBigNumberDesc
+
+▸ `Const` **sortByBigNumberDesc**(`a`, `b`): ``0`` \| ``1`` \| ``-1``
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `a` | `BigNumber` |
+| `b` | `BigNumber` |
+
+#### Returns
+
+``0`` \| ``1`` \| ``-1``
+
+#### Defined in
+
+[sortByBigNumber.ts:10](https://github.com/pooltogether/v4-js/blob/082f5ed/src/sortByBigNumber.ts#L10)

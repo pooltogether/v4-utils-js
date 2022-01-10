@@ -5,7 +5,7 @@ import computeCardinality from './computeCardinality';
 import { Draw, PrizeDistribution, PrizeTier } from './types';
 import { sumBigNumbers } from './utils';
 
-const debug = require('debug')('v4-js-core');
+const debug = require('debug')('pt:v4-utils-js:computePrizeDistributionFromTicketAverageTotalSupplies');
 
 function createBigNumber(value: BigNumberish) {
   return BigNumber.from(value);

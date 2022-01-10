@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
 const debug = require('debug')(
-  'v4-js-core:calculatePicksFromAverageTotalSuppliesBetween'
+  'v4-utils-js:calculatePicksFromAverageTotalSuppliesBetween'
 );
 
 function calculatePicksFromAverageTotalSuppliesBetween(
