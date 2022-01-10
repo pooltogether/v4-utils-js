@@ -57,7 +57,7 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
 
   const matchCardinality = computeCardinality(
     BigNumber.from(bitRangeSize),
-    totalAverageSupplies,
+    BigNumber.from(totalAverageSupplies),
     BigNumber.from(decimals)
   );
 
@@ -66,11 +66,11 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     matchCardinality
   );
 
-  if (totalAverageSupplies.gt('0')) {
+  if (BigNumber.from(totalAverageSupplies).gt('0')) {
     numberOfPicks = calculatePicksFromAverageTotalSuppliesBetween(
       totalPicks.toNumber(),
       BigNumber.from(ticketPrimaryAverageTotalSupply),
-      secondaryTotalAverageSupplies
+      BigNumber.from(secondaryTotalAverageSupplies)
     );
   }
 

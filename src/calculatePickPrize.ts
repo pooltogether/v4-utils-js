@@ -2,7 +2,7 @@ import { BigNumber, utils } from 'ethers';
 
 import calculatePrizeAmount from './calculatePrizeAmount';
 import { PrizeDistribution, PickPrize } from './types';
-import { findBitMatchesAtIndex } from './utils/findBitMatchesAtIndex';
+import { findBitMatchesAtIndex } from './utils';
 
 const debug = require('debug')('pt:v4-utils-js:calculatePickPrize');
 

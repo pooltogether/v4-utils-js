@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { expect } from 'chai';
 
 import { DrawResults } from '../../src/types';
-import { filterResultsByValue } from '../../src/utils/filterResultsByValue';
+import { filterResultsByValue } from '../../src/utils';
 
 const debug = require('debug')('v4-utils-js:test');
 

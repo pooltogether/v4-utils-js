@@ -1,6 +1,6 @@
 import { ethers, BigNumber } from 'ethers';
 
-import { findBitMatchesAtIndex } from '../../src/utils/findBitMatchesAtIndex';
+import { findBitMatchesAtIndex } from '../../src/utils';
 
 const bn = (num: any) => ethers.BigNumber.from(num);
 const bin = (binaryString: string) => bn(parseInt(binaryString, 2));

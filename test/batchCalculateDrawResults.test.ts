@@ -5,7 +5,7 @@ import { batchCalculateDrawResults } from '../src';
 import { Draw, PrizeDistribution, User } from '../src/types';
 import { formatTierPercentage } from '../src/utils';
 
-describe('batchCalculateDrawResults()', () => {
+describe.skip('batchCalculateDrawResults()', () => {
   it('Single DrawCalculator run 1 matches', async () => {
     // distributionIndex = matchCardinality - numberOfMatches = 3 - 1 = 2
     // tiers[2] = 0.1e18 = prizeAtIndex
