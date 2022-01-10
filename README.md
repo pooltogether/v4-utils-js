@@ -11,7 +11,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-The `v4-utils-js` is a utility library for off-chain calculations and computation of the v4 smart contracts past, present and future state.
+The `v4-utils-js` is a Javascript/Typescript module that exposes PoolTogether V4 calculation/computation utility functions.
+
+Computations are basic arithmatic and operations of core V4 logic: cardinality, number of picks, draw results, etc... 
+
+Calculations consume external data (Draws/PrizeDistributions) and provide context to the state of the protocol.
 
 # Installation
 
