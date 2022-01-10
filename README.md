@@ -11,11 +11,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-The `v4-utils-js` is a Javascript/Typescript module that exposes PoolTogether V4 calculation/computation utility functions.
+The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
 
-Computations are basic arithmatic and operations of core V4 logic: cardinality, number of picks, draw results, etc... 
+**Computations:** basic arithmatic and operations of core V4 logic: cardinality, number of picks, draw results, etc... 
 
-Calculations consume external data (Draws/PrizeDistributions) and provide context to the state of the protocol.
+**Calculations:** generally consume protocol data (Draws/PrizeDistributions/RandomNumber) and provide context to the state of the protocol.
 
 # Installation
 
