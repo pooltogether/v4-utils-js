@@ -10,7 +10,7 @@ function generatePicks(
   normalizedBalance: BigNumber
 ): Pick[] {
   let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
-    prizeDistribution,
+    prizeDistribution.numberOfPicks,
     normalizedBalance
   );
 
@@ -20,8 +20,8 @@ function generatePicks(
   );
 
   let picks: Pick[] = [];
-
-  for (let pickIndex = 0; pickIndex < numberOfPicks; pickIndex++) {
+  let numberOfPicksRemaining = numberOfPicks.toNumber();
+  for (let pickIndex = 0; pickIndex < numberOfPicksRemaining; pickIndex++) {
     picks.push(computePick(usersAddressHashed, pickIndex));
   }
   return picks;
