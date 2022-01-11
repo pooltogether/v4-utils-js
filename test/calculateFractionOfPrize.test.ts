@@ -9,7 +9,7 @@ describe('calculateFractionOfPrize', () => {
       formatTierPercentage('0.3'),
       formatTierPercentage('0.2'),
       formatTierPercentage('0.1'),
-    ]
+    ];
     const fraction = calculateFractionOfPrize(1, 4, tiers);
     const expectedFraction = parseEther('0.013333333333333333');
     expect(fraction).toStrictEqual(expectedFraction);

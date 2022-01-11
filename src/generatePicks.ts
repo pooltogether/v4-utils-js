@@ -2,8 +2,8 @@ import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
 import calculateNormalizedBalancePicksFromTotalPicks from './calculateNormalizedBalancePicksFromTotalPicks';
 import computePick from './computePick';
-import {hashUserAddress} from './utils' ;
 import { Pick } from './types';
+import { hashUserAddress } from './utils';
 
 function generatePicks(
   totalNumberOfPicks: BigNumberish,
