@@ -12,7 +12,7 @@ import {
 } from '../src/types';
 import { formatTierPercentage } from '../src/utils';
 
-describe('prepareClaims()', () => {
+describe('prepareClaims', () => {
   it('returns correct claim struct for user', async () => {
     const examplePrizeDistribution1: PrizeDistribution = {
       tiers: [

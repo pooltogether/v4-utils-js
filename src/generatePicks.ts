@@ -1,6 +1,6 @@
 import { BigNumber, ethers } from 'ethers';
 
-import calculateNumberOfPicksForUser from './calculateNumberOfPicksForUser';
+import calculateNormalizedBalancePicksFromTotalPicks from './calculateNormalizedBalancePicksFromTotalPicks';
 import computePick from './computePick';
 import { Pick, PrizeDistribution } from './types';
 
@@ -9,7 +9,7 @@ function generatePicks(
   address: string,
   normalizedBalance: BigNumber
 ): Pick[] {
-  let numberOfPicks = calculateNumberOfPicksForUser(
+  let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
     prizeDistribution,
     normalizedBalance
   );

@@ -2,7 +2,7 @@ import * as utils from './utils';
 export { default as batchCalculateDrawResults } from './batchCalculateDrawResults';
 export { default as calculateDrawResults } from './calculateDrawResults';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
-export { default as calculateNumberOfPicksForUser } from './calculateNumberOfPicksForUser';
+export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';
 export { default as calculateNumberOfPrizesForIndex } from './calculateNumberOfPrizesForIndex';
 export { default as calculatePickPrize } from './calculatePickPrize';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';

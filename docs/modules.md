@@ -13,7 +13,7 @@
 - [batchCalculateDrawResults](modules.md#batchcalculatedrawresults)
 - [calculateDrawResults](modules.md#calculatedrawresults)
 - [calculateFractionOfPrize](modules.md#calculatefractionofprize)
-- [calculateNumberOfPicksForUser](modules.md#calculatenumberofpicksforuser)
+- [calculateNormalizedBalancePicksFromTotalPicks](modules.md#calculateNormalizedBalancePicksFromTotalPicks)
 - [calculateNumberOfPrizesForIndex](modules.md#calculatenumberofprizesforindex)
 - [calculatePickPrize](modules.md#calculatepickprize)
 - [calculatePicksFromAverageTotalSuppliesBetween](modules.md#calculatepicksfromaveragetotalsuppliesbetween)
@@ -97,9 +97,9 @@ ___
 
 ___
 
-### calculateNumberOfPicksForUser
+### calculateNormalizedBalancePicksFromTotalPicks
 
-▸ **calculateNumberOfPicksForUser**(`drawSettings`, `normalizedBalance`): `number`
+▸ **calculateNormalizedBalancePicksFromTotalPicks**(`drawSettings`, `normalizedBalance`): `number`
 
 #### Parameters
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[calculateNumberOfPicksForUser.ts:5](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNumberOfPicksForUser.ts#L5)
+[calculateNormalizedBalancePicksFromTotalPicks.ts:5](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNormalizedBalancePicksFromTotalPicks.ts#L5)
 
 ___
 
