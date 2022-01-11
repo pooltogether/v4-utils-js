@@ -14,11 +14,11 @@
 - [calculateDrawResults](modules.md#calculatedrawresults)
 - [calculateFractionOfPrize](modules.md#calculatefractionofprize)
 - [calculateNormalizedBalancePicksFromTotalPicks](modules.md#calculateNormalizedBalancePicksFromTotalPicks)
-- [calculateNumberOfPrizesForIndex](modules.md#calculatenumberofprizesforindex)
+- [calculateNumberOfPrizesForTierIndex](modules.md#calculateNumberOfPrizesForTierIndex)
 - [calculatePickPrize](modules.md#calculatepickprize)
 - [calculatePicksFromAverageTotalSuppliesBetween](modules.md#calculatepicksfromaveragetotalsuppliesbetween)
 - [calculatePrizeAmount](modules.md#calculateprizeamount)
-- [calculatePrizeForDistributionIndex](modules.md#calculateprizefordistributionindex)
+- [calculatePrizeForTierPercentage](modules.md#calculatePrizeForTierPercentage)
 - [computeCardinality](modules.md#computecardinality)
 - [computeDrawResults](modules.md#computedrawresults)
 - [computePick](modules.md#computepick)
@@ -118,9 +118,9 @@ ___
 
 ___
 
-### calculateNumberOfPrizesForIndex
+### calculateNumberOfPrizesForTierIndex
 
-▸ **calculateNumberOfPrizesForIndex**(`bitRangeSize`, `prizeDistributionIndex`): `number`
+▸ **calculateNumberOfPrizesForTierIndex**(`bitRangeSize`, `prizeDistributionIndex`): `number`
 
 #### Parameters
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[calculateNumberOfPrizesForIndex.ts:1](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNumberOfPrizesForIndex.ts#L1)
+[calculateNumberOfPrizesForTierIndex.ts:1](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateNumberOfPrizesForTierIndex.ts#L1)
 
 ___
 
@@ -204,9 +204,9 @@ ___
 
 ___
 
-### calculatePrizeForDistributionIndex
+### calculatePrizeForTierPercentage
 
-▸ **calculatePrizeForDistributionIndex**(`distributionIndex`, `prizeDistrbution`): `BigNumber`
+▸ **calculatePrizeForTierPercentage**(`distributionIndex`, `prizeDistrbution`): `BigNumber`
 
 #### Parameters
 
@@ -221,7 +221,7 @@ ___
 
 #### Defined in
 
-[calculatePrizeForDistributionIndex.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePrizeForDistributionIndex.ts#L6)
+[calculatePrizeForTierPercentage.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePrizeForTierPercentage.ts#L6)
 
 ___
 

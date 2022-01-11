@@ -1,32 +1,34 @@
-import calculatePrizeForDistributionIndex from './calculatePrizeForDistributionIndex';
-import { PrizeDistribution, PickPrize } from './types';
+import { BigNumber, BigNumberish } from 'ethers';
 
-const debug = require('debug')('pt:v4-utils-js:calculatePrizeAmount');
+import calculatePrizeForTierPercentage from './calculatePrizeForTierPercentage';
+import { PickPrize } from './types';
+
+const MAXIUMUM_TIERS_LENGTH = 16;
 
 function calculatePrizeAmount(
-  prizeDistribution: PrizeDistribution,
-  matches: number
-): PickPrize | undefined {
-  // returns the prize you would receive for drawSettings and number of matches
-
-  const distributionIndex = prizeDistribution.matchCardinality - matches;
-  debug(
-    `distributionIndex: ${distributionIndex}, : (${prizeDistribution.matchCardinality} - ${matches} )`
-  );
-
-  if (distributionIndex < prizeDistribution.tiers.length) {
-    // user *may* be getting a prize
-    const expectedPrizeAmount = calculatePrizeForDistributionIndex(
-      distributionIndex,
-      prizeDistribution
-    );
+  tierIndex: number,
+  tierValue: BigNumberish,
+  bitRangeSize: number,
+  prizeAmount: BigNumber
+): PickPrize {
+  if (tierIndex > MAXIUMUM_TIERS_LENGTH) {
+    // throw new Error(`tierIndex ${tierIndex} is greater than maximum allowed ${MAXIUMUM_TIERS_LENGTH}`);
     return {
-      amount: expectedPrizeAmount,
-      distributionIndex,
+      amount: BigNumber.from(0),
+      distributionIndex: -1,
     };
   }
-  // user did not qualify for a prize
-  return undefined;
+
+  const expectedPrizeAmount = calculatePrizeForTierPercentage(
+    tierIndex,
+    tierValue,
+    bitRangeSize,
+    prizeAmount
+  );
+  return {
+    amount: expectedPrizeAmount,
+    distributionIndex: tierIndex,
+  };
 }
 
 export default calculatePrizeAmount;

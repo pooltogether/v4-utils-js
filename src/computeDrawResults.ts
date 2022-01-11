@@ -11,7 +11,7 @@ import {
 } from './types';
 
 function computeDrawResults(
-  drawSettings: PrizeDistribution,
+  prizeDistribution: PrizeDistribution,
   draw: Draw,
   picks: Pick[]
 ): DrawResults {
@@ -28,11 +28,11 @@ function computeDrawResults(
     const pickPrize: PickPrize | undefined = calculatePickPrize(
       pick.hash,
       draw.winningRandomNumber,
-      drawSettings
+      prizeDistribution
     );
-
+    
     // if there is a prize for that pick, add it to the results
-    if (pickPrize) {
+    if (pickPrize.amount.gt(0)) {
       const prizeAwardable: PrizeAwardable = {
         ...pickPrize,
         pick: ethers.BigNumber.from(pick.index),

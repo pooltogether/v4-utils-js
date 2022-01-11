@@ -1,4 +1,4 @@
-import { BigNumber, utils } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import calculatePrizeAmount from './calculatePrizeAmount';
 import { PrizeDistribution, PickPrize } from './types';
@@ -11,7 +11,7 @@ function calculatePickPrize(
   randomNumberThisPick: string,
   winningRandomNumber: BigNumber,
   prizeDistribution: PrizeDistribution
-): PickPrize | undefined {
+): PickPrize {
   let numberOfMatches = 0;
   let bigRando = BigNumber.from(randomNumberThisPick);
 
@@ -37,15 +37,14 @@ function calculatePickPrize(
     numberOfMatches++;
   }
   debug(`\n DrawCalculator:: Found ${numberOfMatches} matches..`);
-
-  const pickAmount = calculatePrizeAmount(prizeDistribution, numberOfMatches);
-
-  if (pickAmount) {
-    debug(`user is receiving a prize! ${utils.formatEther(pickAmount.amount)}`);
-    return pickAmount;
-  }
-  // else there is no prize
-  return undefined;
+  const tierIndex = prizeDistribution.matchCardinality - numberOfMatches;
+  const pickAmount = calculatePrizeAmount(
+    tierIndex,
+    prizeDistribution.tiers[tierIndex],
+    prizeDistribution.bitRangeSize,
+    prizeDistribution.prize
+  );
+  return pickAmount;
 }
 
 export default calculatePickPrize;

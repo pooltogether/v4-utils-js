@@ -1,11 +1,10 @@
 import { expect } from 'chai';
 import { BigNumber, utils } from 'ethers';
 
-import { calculatePrizeForDistributionIndex } from '../src';
-import { PrizeDistribution } from '../src/types';
+import { calculatePrizeForTierPercentage } from '../src';
 import { formatTierPercentage } from '../src/utils';
 
-describe('calculatePrizeForDistributionIndex()', () => {
+describe('calculatePrizeForTierPercentage()', () => {
   it('can calculate the prize awardable for the prize distribution and prize', async () => {
     // distributionIndex = matchCardinality - numberOfMatches = 3 - 2 = 1
     // tiers[1] = 0.2e9 = prizeAtIndex
@@ -14,22 +13,11 @@ describe('calculatePrizeForDistributionIndex()', () => {
     // prizeAwardable = prize * fractionOfPrize = 100e18 * 1.333e7 = 1.333e21
     // div by 1e9 = 1.33333e18
 
-    const examplePrizeDistribution: PrizeDistribution = {
-      tiers: [
-        formatTierPercentage('0.3'),
-        formatTierPercentage('0.2'),
-        formatTierPercentage('0.1'),
-      ],
-      numberOfPicks: BigNumber.from(10),
-      matchCardinality: 3,
-      bitRangeSize: 4,
-      prize: BigNumber.from(utils.parseEther('100')),
-      maxPicksPerUser: 1000,
-    };
-
-    const prizeReceivable = calculatePrizeForDistributionIndex(
+    const prizeReceivable = calculatePrizeForTierPercentage(
       1,
-      examplePrizeDistribution
+      formatTierPercentage('0.2'),
+      4,
+      utils.parseEther('100')
     );
     expect(prizeReceivable).to.deep.equal(BigNumber.from('0x1280f39a34855534')); // 1.33333e18
   });

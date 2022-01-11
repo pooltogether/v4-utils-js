@@ -3,11 +3,11 @@ export { default as batchCalculateDrawResults } from './batchCalculateDrawResult
 export { default as calculateDrawResults } from './calculateDrawResults';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
 export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';
-export { default as calculateNumberOfPrizesForIndex } from './calculateNumberOfPrizesForIndex';
+export { default as calculateNumberOfPrizesForTierIndex } from './calculateNumberOfPrizesForTierIndex';
 export { default as calculatePickPrize } from './calculatePickPrize';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
 export { default as calculatePrizeAmount } from './calculatePrizeAmount';
-export { default as calculatePrizeForDistributionIndex } from './calculatePrizeForDistributionIndex';
+export { default as calculatePrizeForTierPercentage } from './calculatePrizeForTierPercentage';
 export { default as computeCardinality } from './computeCardinality';
 export { default as computeDrawResults } from './computeDrawResults';
 export { default as computePick } from './computePick';
