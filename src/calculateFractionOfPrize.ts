@@ -1,38 +1,37 @@
 import { parseUnits } from '@ethersproject/units';
-import { BigNumber, utils } from 'ethers';
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
 import calculateNumberOfPrizesForIndex from './calculateNumberOfPrizesForIndex';
-import { PrizeDistribution } from './types';
 
-const debug = require('debug')('pt:v4-utils-js');
+const debug = require('debug')('pt:v4-utils-js:calculateFractionOfPrize');
 
-export function calculateFractionOfPrize(
+function calculateFractionOfPrize(
   prizeDistributionIndex: number,
-  prizeDistribution: PrizeDistribution
+  bitRangeSize: number,
+  tiers: Array<BigNumberish>,
 ): BigNumber {
   const numberOfPrizes = calculateNumberOfPrizesForIndex(
-    prizeDistribution.bitRangeSize,
+    bitRangeSize,
     prizeDistributionIndex
   );
 
-  debug('numberOfPrizes for index ', numberOfPrizes);
+  debug('calculateNumberOfPrizesForIndex', numberOfPrizes);
 
-  const valueAtDistributionIndex =
-    prizeDistribution.tiers[prizeDistributionIndex];
+  const valueAtDistributionIndex = tiers[prizeDistributionIndex];
   debug(
     'valueAtDistributionIndex ',
-    utils.formatEther(valueAtDistributionIndex.toString())
+    valueAtDistributionIndex.toString()
   );
 
-  const valueAtDistributionIndexUnformatted = parseUnits(
-    String(valueAtDistributionIndex),
+  const valueAtTierIndexUnformatted = parseUnits(
+    valueAtDistributionIndex.toString(),
     9
   );
 
-  const fractionOfPrize = valueAtDistributionIndexUnformatted.div(
+  const fractionOfPrize = valueAtTierIndexUnformatted.div(
     numberOfPrizes
   );
-  debug('fractionOfPrize: ', utils.formatEther(fractionOfPrize));
+  debug('fractionOfPrize: ', fractionOfPrize.toString());
   return fractionOfPrize;
 }
 
