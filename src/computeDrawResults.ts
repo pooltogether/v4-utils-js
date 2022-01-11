@@ -30,7 +30,7 @@ function computeDrawResults(
       draw.winningRandomNumber,
       prizeDistribution
     );
-    
+
     // if there is a prize for that pick, add it to the results
     if (pickPrize.amount.gt(0)) {
       const prizeAwardable: PrizeAwardable = {
