@@ -1,5 +1,5 @@
-import { parseEther, parseUnits } from '@ethersproject/units';
 import { BigNumber } from '@ethersproject/bignumber';
+import { parseEther, parseUnits } from '@ethersproject/units';
 
 import { generatePicks } from '../src';
 import { formatTierPercentage } from '../src/utils';

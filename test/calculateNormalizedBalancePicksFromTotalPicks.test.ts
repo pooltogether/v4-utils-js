@@ -9,7 +9,7 @@ describe('calculateNormalizedBalancePicksFromTotalPicks', () => {
     const normalizeBalance = parseUnits('0.1', 18);
     const numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
       totalPicks,
-      normalizeBalance,
+      normalizeBalance
     );
     expect(numberOfPicks).toEqual(BigNumber.from('100'));
   });

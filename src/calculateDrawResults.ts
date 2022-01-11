@@ -17,7 +17,7 @@ function calculateDrawResults(
 
   // generate the picks for the user by hashing the address with the pickIndices
   user.picks = generatePicks(
-    prizeDistribution,
+    prizeDistribution.numberOfPicks,
     user.address,
     user.normalizedBalances[drawIndex]
   );

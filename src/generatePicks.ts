@@ -1,23 +1,21 @@
-import { BigNumber, ethers } from 'ethers';
+import { BigNumber, BigNumberish, ethers } from 'ethers';
 
 import calculateNormalizedBalancePicksFromTotalPicks from './calculateNormalizedBalancePicksFromTotalPicks';
 import computePick from './computePick';
-import { Pick, PrizeDistribution } from './types';
+import {hashUserAddress} from './utils' ;
+import { Pick } from './types';
 
 function generatePicks(
-  prizeDistribution: PrizeDistribution,
+  totalNumberOfPicks: BigNumberish,
   address: string,
   normalizedBalance: BigNumber
 ): Pick[] {
   let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
-    prizeDistribution.numberOfPicks,
+    totalNumberOfPicks,
     normalizedBalance
   );
 
-  const usersAddressHashed = ethers.utils.solidityKeccak256(
-    ['address'],
-    [address]
-  );
+  const usersAddressHashed = hashUserAddress(address);
 
   let picks: Pick[] = [];
   let numberOfPicksRemaining = numberOfPicks.toNumber();

@@ -32,6 +32,7 @@
     "@ethersproject/contracts": "^5.5.0",
     "@ethersproject/keccak256": "^5.5.0",
     "@ethersproject/networks": "^5.5.0",
+    "@ethersproject/solidity": "^5.5.0",
     "@ethersproject/strings": "^5.5.0",
     "@ethersproject/units": "^5.5.0",
     "@pooltogether/contract-list-schema": "^0.1.4",

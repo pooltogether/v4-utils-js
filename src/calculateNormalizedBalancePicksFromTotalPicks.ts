@@ -7,7 +7,7 @@ function calculateNormalizeBalancePicksFromTotalPicks(
   if (!numberOfPicks || !normalizedBalance) return BigNumber.from(0);
   return BigNumber.from(numberOfPicks)
     .mul(BigNumber.from(normalizedBalance))
-    .div(BigNumber.from("1000000000000000000"))
+    .div(BigNumber.from('1000000000000000000'));
 }
 
-export default calculateNormalizeBalancePicksFromTotalPicks
+export default calculateNormalizeBalancePicksFromTotalPicks;
