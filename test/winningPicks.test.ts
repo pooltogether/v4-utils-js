@@ -1,6 +1,6 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { parseEther } from '@ethersproject/units';
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import { formatTierPercentage } from '../src/utils';
 import winningPicks from '../src/winningPicks';

@@ -55,6 +55,84 @@ The TSDX linting configuration is overwritten to include override(s).
 
 [@pooltogether/v4-utils-js](README.md) / Exports
 
+# Quickstart
+
+The `v4-utils-js` module includes modular calculation and computation function required to validate the PoolTogether V4 protocol state.
+
+In addition to the core utils, `winningPicks` function is exported as a "*kitchensink*" helper to calculate/compute/encode a valid transaction with the maximum number of winning picks.
+
+```ts
+import { Wallet } from '@ethersproject/wallet';
+import { providers } from '@ethersproject/provider';
+import { winningPicks, computeWinningPicks, encodeWinningPicks } from '@pooltogether/v4-utils-js';
+
+// Compute and Encode Winning Picks Seperately
+const computedPicks = computeWinningPicks(user, [draw], [prizeDistribution]);
+const encodePicks = encodeWinningPicks(user, computedWinningPicks);
+
+// Compute and Encode Winning Picks Together
+const computedAndEncodedWinningPicks = computedAndEncodedWinningPicks(user, [draw], [prizeDistribution]);
+
+// Send Encoded Transaction to Mainnet
+const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
+wallet.sendTransaction(computedAndEncodedWinningPicks.encodedWinningPickIndices)
+
+```
+
+
+# Examples
+
+```ts
+import { BigNumber } from '@ethersproject/bignumber';
+import { parseEther } from '@ethersproject/units';
+import { winningPicks, utils } from '@pooltogether/v4-utils-js';
+
+
+const user = {
+    address: '0x0000000000000000000000000000000000000001',
+    normalizedBalances: [
+        parseEther('0.1'),
+        parseEther('0.2'),
+        parseEther('0.3'),
+    ],
+};
+
+const draw = {
+    drawId: 1,
+    winningRandomNumber: BigNumber.from(
+        '0x0000000000000000000000000000000000000000000000000000000000000001'
+    ),
+};
+
+const prizeDistribution = {
+    bitRangeSize: 4,
+    matchCardinality: 10,
+    numberOfPicks: 1000,
+    prize: parseEther('100000'),
+    maxPicksPerUser: 30,
+    tiers: [
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        utils.formatTierPercentage('0.1'),
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ],
+};
+
+const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
+```
+
 # @pooltogether/v4-utils-js
 
 ## Table of contents
