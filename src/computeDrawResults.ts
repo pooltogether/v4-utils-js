@@ -1,24 +1,26 @@
-import { ethers } from 'ethers';
+import { BigNumber} from '@ethersproject/bignumber';
 
 import calculatePickPrize from './calculatePickPrize';
 import {
     Pick,
     PrizeAwardable,
-    PrizeDistribution,
     Draw,
     DrawResults,
     PickPrize,
 } from './types';
 
 function computeDrawResults(
-    prizeDistribution: PrizeDistribution,
     draw: Draw,
-    picks: Pick[]
+    picks: Pick[],
+    bitRangeSize: number,
+    matchCardinality: number,
+    prize: BigNumber,
+    tiers: Array<any>
 ): DrawResults {
     // intialize the results object
     const results: DrawResults = {
         prizes: [],
-        totalValue: ethers.constants.Zero,
+        totalValue: BigNumber.from('0'),
         drawId: draw.drawId,
     };
 
@@ -28,17 +30,17 @@ function computeDrawResults(
         const pickPrize: PickPrize | undefined = calculatePickPrize(
             pick.hash,
             draw.winningRandomNumber,
-            prizeDistribution.bitRangeSize,
-            prizeDistribution.matchCardinality,
-            prizeDistribution.prize,
-            prizeDistribution.tiers
+            bitRangeSize,
+            matchCardinality,
+            prize,
+            tiers
         );
 
         // if there is a prize for that pick, add it to the results
         if (pickPrize.amount.gt(0)) {
             const prizeAwardable: PrizeAwardable = {
                 ...pickPrize,
-                pick: ethers.BigNumber.from(pick.index),
+                pick: BigNumber.from(pick.index),
             };
             results.totalValue = results.totalValue.add(prizeAwardable.amount);
             results.prizes.push(prizeAwardable);

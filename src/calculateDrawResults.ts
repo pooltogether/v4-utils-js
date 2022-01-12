@@ -26,9 +26,12 @@ function calculateDrawResults(
     );
     // run the draw calculator matching engine against these picks
     let results: DrawResults = computeDrawResults(
-        prizeDistribution,
         draw,
-        user.picks
+        user.picks,
+        prizeDistribution.bitRangeSize,
+        prizeDistribution.matchCardinality,
+        prizeDistribution.prize,
+        prizeDistribution.tiers,
     );
 
     debug(

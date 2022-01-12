@@ -20,6 +20,10 @@ describe('calculateDrawResults', () => {
             draw,
             user
         );
+
+
+        console.log(calculatedDrawResults, 'calculatedDrawResults')
+
         debug('results: ', calculatedDrawResults);
         expect(calculatedDrawResults.drawId).toEqual(1);
         expect(calculatedDrawResults.prizes).toEqual([]);

@@ -49,9 +49,12 @@ describe('computeDrawResults', () => {
         ];
 
         let results: DrawResults = computeDrawResults(
-            PRIZE_DISTRIBUTION,
             DRAW_EXAMPLE,
-            picks
+            picks,
+            PRIZE_DISTRIBUTION.bitRangeSize,
+            PRIZE_DISTRIBUTION.matchCardinality,
+            PRIZE_DISTRIBUTION.prize,
+            PRIZE_DISTRIBUTION.tiers,
         );
         expect(results.drawId).toEqual(1);
         expect(results.totalValue).toEqual(BigNumber.from('0'));
