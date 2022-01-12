@@ -12,100 +12,100 @@ export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18);
 export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000');
 
 export const TIERS_EXAMPLE_ONE = [
-  formatTierPercentage('0.25').toNumber(),
-  formatTierPercentage('0.05').toNumber(),
-  formatTierPercentage('0.5').toNumber(),
-  formatTierPercentage('0.2').toNumber(),
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
+    formatTierPercentage('0.25').toNumber(),
+    formatTierPercentage('0.05').toNumber(),
+    formatTierPercentage('0.5').toNumber(),
+    formatTierPercentage('0.2').toNumber(),
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
 ];
 
 export const TIERS_EXAMPLE_EMPTY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export const TIERS_EXAMPLE_INVALID = [
-  formatTierPercentage('5000000000'),
-  formatTierPercentage('5000000000'),
-  formatTierPercentage('5000000000'),
-  formatTierPercentage('5000000000'),
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
+    formatTierPercentage('5000000000'),
+    formatTierPercentage('5000000000'),
+    formatTierPercentage('5000000000'),
+    formatTierPercentage('5000000000'),
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
 ];
 
 export const USER_EXAMPLE_ONE: User = {
-  address: ADDRESS_DEAD,
-  picks: [],
-  normalizedBalances: [],
+    address: ADDRESS_DEAD,
+    picks: [],
+    normalizedBalances: [],
 };
 
 export const DRAW_EXAMPLE_ONE = {
-  winningRandomNumber: BigNumber.from(
-    '21288413488180966377126236036201345909019919575750940621513526137694302720820'
-  ),
-  drawId: 1,
-  timestamp: 1634410924,
-  beaconPeriodStartedAt: 1634324400,
-  beaconPeriodSeconds: 86400,
+    winningRandomNumber: BigNumber.from(
+        '21288413488180966377126236036201345909019919575750940621513526137694302720820'
+    ),
+    drawId: 1,
+    timestamp: 1634410924,
+    beaconPeriodStartedAt: 1634324400,
+    beaconPeriodSeconds: 86400,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_ONE = {
-  bitRangeSize: 2,
-  matchCardinality: 10,
-  tiers: TIERS_EXAMPLE_ONE,
-  maxPicksPerUser: 2,
-  expiryDuration: 5184000,
-  numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
-  prize: PRIZE_EXAMPLE_ONE,
-  drawdrawStartTimestampOffset: 86400,
-  drawEndTimestampOffset: 900,
+    bitRangeSize: 2,
+    matchCardinality: 10,
+    tiers: TIERS_EXAMPLE_ONE,
+    maxPicksPerUser: 2,
+    expiryDuration: 5184000,
+    numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
+    prize: PRIZE_EXAMPLE_ONE,
+    drawdrawStartTimestampOffset: 86400,
+    drawEndTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_VALID = {
-  bitRangeSize: 2,
-  matchCardinality: 10,
-  tiers: TIERS_EXAMPLE_ONE,
-  maxPicksPerUser: 2,
-  expiryDuration: 5184000,
-  numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
-  drawStartTimestampOffset: 86400,
-  prize: PRIZE_EXAMPLE_ONE,
-  drawEndTimestampOffset: 900,
+    bitRangeSize: 2,
+    matchCardinality: 10,
+    tiers: TIERS_EXAMPLE_ONE,
+    maxPicksPerUser: 2,
+    expiryDuration: 5184000,
+    numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
+    drawStartTimestampOffset: 86400,
+    prize: PRIZE_EXAMPLE_ONE,
+    drawEndTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_INVALID = {
-  bitRangeSize: 0,
-  matchCardinality: 50,
-  tiers: TIERS_EXAMPLE_EMPTY,
-  maxPicksPerUser: 0,
-  expiryDuration: 0,
-  numberOfPicks: BigNumber.from('0'),
-  drawStartTimestampOffset: 0,
-  prize: BigNumber.from('0'),
-  drawEndTimestampOffset: 0,
+    bitRangeSize: 0,
+    matchCardinality: 50,
+    tiers: TIERS_EXAMPLE_EMPTY,
+    maxPicksPerUser: 0,
+    expiryDuration: 0,
+    numberOfPicks: BigNumber.from('0'),
+    drawStartTimestampOffset: 0,
+    prize: BigNumber.from('0'),
+    drawEndTimestampOffset: 0,
 };
 
 export const contactList = {
-  name: 'Mainnet ContractList',
-  version: { major: 1, minor: 0, patch: 0 },
-  tags: {},
-  contracts: [
-    {
-      chainId: 1,
-      address: '0x000000000000000000000000000000000000dEaD',
-      version: { major: 1, minor: 0, patch: 0 },
-      type: 'ContractName',
-      abi: [],
-    },
-  ],
+    name: 'Mainnet ContractList',
+    version: { major: 1, minor: 0, patch: 0 },
+    tags: {},
+    contracts: [
+        {
+            chainId: 1,
+            address: '0x000000000000000000000000000000000000dEaD',
+            version: { major: 1, minor: 0, patch: 0 },
+            type: 'ContractName',
+            abi: [],
+        },
+    ],
 };

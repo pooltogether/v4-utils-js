@@ -6,23 +6,23 @@ import { Pick } from './types';
 import { hashUserAddress } from './utils';
 
 function generatePicks(
-  totalNumberOfPicks: BigNumberish,
-  address: string,
-  normalizedBalance: BigNumber
+    totalNumberOfPicks: BigNumberish,
+    address: string,
+    normalizedBalance: BigNumber
 ): Pick[] {
-  let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
-    totalNumberOfPicks,
-    normalizedBalance
-  );
+    let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
+        totalNumberOfPicks,
+        normalizedBalance
+    );
 
-  const usersAddressHashed = hashUserAddress(address);
+    const usersAddressHashed = hashUserAddress(address);
 
-  let picks: Pick[] = [];
-  let numberOfPicksRemaining = numberOfPicks.toNumber();
-  for (let pickIndex = 0; pickIndex < numberOfPicksRemaining; pickIndex++) {
-    picks.push(computePick(usersAddressHashed, pickIndex));
-  }
-  return picks;
+    let picks: Pick[] = [];
+    let numberOfPicksRemaining = numberOfPicks.toNumber();
+    for (let pickIndex = 0; pickIndex < numberOfPicksRemaining; pickIndex++) {
+        picks.push(computePick(usersAddressHashed, pickIndex));
+    }
+    return picks;
 }
 
 export default generatePicks;

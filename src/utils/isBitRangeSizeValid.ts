@@ -1,8 +1,8 @@
 function isBitRangeSizeValid(
-  bitRangeSize: number,
-  matchCardinality: number
+    bitRangeSize: number,
+    matchCardinality: number
 ): boolean {
-  return bitRangeSize <= Math.floor(256 / matchCardinality);
+    return bitRangeSize <= Math.floor(256 / matchCardinality);
 }
 
 export default isBitRangeSizeValid;

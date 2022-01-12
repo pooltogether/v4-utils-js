@@ -1,16 +1,16 @@
 function calculateNumberOfPrizesForTierIndex(
-  bitRangeSize: number,
-  tierIndex: number
+    bitRangeSize: number,
+    tierIndex: number
 ): number {
-  let bitRangeDecimal = 2 ** bitRangeSize;
-  let numberOfPrizesForIndex = bitRangeDecimal ** tierIndex;
+    let bitRangeDecimal = 2 ** bitRangeSize;
+    let numberOfPrizesForIndex = bitRangeDecimal ** tierIndex;
 
-  while (tierIndex > 0) {
-    numberOfPrizesForIndex -= bitRangeDecimal ** (tierIndex - 1);
-    tierIndex--;
-  }
+    while (tierIndex > 0) {
+        numberOfPrizesForIndex -= bitRangeDecimal ** (tierIndex - 1);
+        tierIndex--;
+    }
 
-  return numberOfPrizesForIndex;
+    return numberOfPrizesForIndex;
 }
 
 export default calculateNumberOfPrizesForTierIndex;
