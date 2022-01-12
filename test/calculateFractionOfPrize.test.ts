@@ -10,7 +10,6 @@ describe('calculateFractionOfPrize', () => {
       fractionOfPrize,
       formatTierPercentage('0.1')
     );
-    console.log(fraction.toString());
     expect(fraction).toStrictEqual(parseEther('0.025'));
   });
 });
