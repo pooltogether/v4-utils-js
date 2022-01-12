@@ -28,7 +28,10 @@ function computeDrawResults(
         const pickPrize: PickPrize | undefined = calculatePickPrize(
             pick.hash,
             draw.winningRandomNumber,
-            prizeDistribution
+            prizeDistribution.bitRangeSize,
+            prizeDistribution.matchCardinality,
+            prizeDistribution.prize,
+            prizeDistribution.tiers
         );
 
         // if there is a prize for that pick, add it to the results

@@ -9,6 +9,7 @@ export { default as calculatePickPrize } from './calculatePickPrize';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
 export { default as calculatePrizeAmount } from './calculatePrizeAmount';
 export { default as calculatePrizeForTierPercentage } from './calculatePrizeForTierPercentage';
+export { default as calculateTierIndexFromMatches } from './calculateTierIndexFromMatches';
 export { default as computeCardinality } from './computeCardinality';
 export { default as computeDrawResults } from './computeDrawResults';
 export { default as computePick } from './computePick';
