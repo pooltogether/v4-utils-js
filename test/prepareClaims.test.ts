@@ -2,7 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { expect } from 'chai';
 import { BigNumber, ethers, utils } from 'ethers';
 
-import {batchCalculateDrawResults} from '../src';
+import { batchCalculateDrawResults } from '../src';
 import prepareClaims from '../src/prepareClaims';
 import {
     Claim,

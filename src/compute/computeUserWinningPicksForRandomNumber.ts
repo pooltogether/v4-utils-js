@@ -1,11 +1,13 @@
 import { formatEther } from '@ethersproject/units';
 
-import computeDrawResults from './computeDrawResults';
 import computeUserPicks from '../compute/computeUserPicks';
 import { Draw, DrawResults, PrizeDistribution, User } from '../types';
 import { throwErrorInvalidPrizeDistribution } from '../utils';
+import computeDrawResults from './computeDrawResults';
 
-const debug = require('debug')('pt:v4-utils-js:computeUserWinningPicksForRandomNumber');
+const debug = require('debug')(
+    'pt:v4-utils-js:computeUserWinningPicksForRandomNumber'
+);
 
 function computeUserWinningPicksForRandomNumber(
     prizeDistribution: PrizeDistribution,

@@ -22,11 +22,7 @@ function calculatePicksFromAverageTotalSuppliesBetween(
     } else {
         numberOfPicks = BigNumber.from('0');
     }
-    debug(
-        `numberOfPicks ${Math.floor(
-            numberOfPicks.toNumber()
-        )}`
-    );
+    debug(`numberOfPicks ${Math.floor(numberOfPicks.toNumber())}`);
 
     return Math.floor(numberOfPicks.toNumber());
 }

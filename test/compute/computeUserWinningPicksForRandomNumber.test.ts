@@ -8,7 +8,9 @@ import {
     USER_EXAMPLE_ONE,
 } from '../constants';
 
-const debug = require('debug')('pt:v4-utils-js:computeUserWinningPicksForRandomNumber:test');
+const debug = require('debug')(
+    'pt:v4-utils-js:computeUserWinningPicksForRandomNumber:test'
+);
 
 describe('computeUserWinningPicksForRandomNumber', () => {
     it('should succeed to calculate empty draw results', () => {

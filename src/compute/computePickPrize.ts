@@ -2,8 +2,8 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 import calculateNumberOfMatches from '../calculate/calculateNumberOfMatches';
 import calculateTierIndexFromMatches from '../calculate/calculateTierIndexFromMatches';
-import computePrizeAmount from './computePrizeAmount';
 import { PickPrize } from '../types';
+import computePrizeAmount from './computePrizeAmount';
 
 function computePickPrize(
     pickHash: string,

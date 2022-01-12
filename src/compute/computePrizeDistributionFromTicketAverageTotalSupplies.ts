@@ -1,7 +1,7 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import calculatePicksFromAverageTotalSuppliesBetween from '../calculate/calculatePicksFromAverageTotalSuppliesBetween';
 import calculateCardinality from '../calculate/calculateCardinality';
+import calculatePicksFromAverageTotalSuppliesBetween from '../calculate/calculatePicksFromAverageTotalSuppliesBetween';
 import { Draw, PrizeDistribution, PrizeTier } from '../types';
 import { sumBigNumbers } from '../utils';
 

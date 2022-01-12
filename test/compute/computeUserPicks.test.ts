@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import {computeUserPicks} from '../../src';
+import { computeUserPicks } from '../../src';
 import { ADDRESS_DEAD } from '../constants';
 
 describe('computeUserPicks', () => {

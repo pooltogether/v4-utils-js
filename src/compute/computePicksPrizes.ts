@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import computePickPrize from './computePickPrize';
 import { PickPrize } from '../types';
+import computePickPrize from './computePickPrize';
 
 function computePicksPrizes(
     picks: Array<any>,

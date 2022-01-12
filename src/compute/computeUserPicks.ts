@@ -1,6 +1,9 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import {calculatePick, calculateNormalizedBalancePicksFromTotalPicks} from '../calculate';
+import {
+    calculatePick,
+    calculateNormalizedBalancePicksFromTotalPicks,
+} from '../calculate';
 import { Pick } from '../types';
 import { hashUserAddress } from '../utils';
 

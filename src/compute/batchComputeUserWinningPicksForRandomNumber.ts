@@ -1,7 +1,9 @@
-import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 import { Draw, DrawResults, PrizeDistribution, User } from '../types';
+import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 
-const debug = require('debug')('pt:v4-utils-js:batchcomputeUserWinningPicksForRandomNumber');
+const debug = require('debug')(
+    'pt:v4-utils-js:batchcomputeUserWinningPicksForRandomNumber'
+);
 
 function batchComputeUserWinningPicksForRandomNumber(
     prizeDistribution: PrizeDistribution[],

@@ -14,10 +14,7 @@ function calculateCardinality(
     const range = BigNumber.from(2).pow(bitRangeSize);
     debug('range: ', range.toString());
     do {
-        numberOfPicks = parseUnits(
-            `${range.pow(matchCardinality)}`,
-            decimals
-        );
+        numberOfPicks = parseUnits(`${range.pow(matchCardinality)}`, decimals);
         matchCardinality = matchCardinality.add(1);
         debug('numberOfPicks:loop: ', numberOfPicks.toString());
     } while (numberOfPicks.lt(_totalSupply));
