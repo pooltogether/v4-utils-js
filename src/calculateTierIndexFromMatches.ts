@@ -1,4 +1,7 @@
-function calculateTierIndexFromMatches(matchCardinality: number, numberOfMatches: number) {
+function calculateTierIndexFromMatches(
+    matchCardinality: number,
+    numberOfMatches: number
+) {
     return matchCardinality - numberOfMatches;
 }
 
