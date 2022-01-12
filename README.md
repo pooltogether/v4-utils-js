@@ -35,3 +35,20 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-core
 ```
 
+# Developer Experience
+
+The package is setup using the TSDX zero-config CLI tool. Which includes:
+
+- Typescript
+- Rollup
+- Jest
+- Prettier
+- ESLint
+
+**Minor changes are made to extend the default configuration.**
+
+## ESLint
+
+The TSDX linting configuration is overwritten to include override(s).
+
+- Import/Order

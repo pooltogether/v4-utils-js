@@ -20,8 +20,8 @@ function calculatePickPrize(
     matchIndex < prizeDistribution.matchCardinality;
     matchIndex++
   ) {
-    debug('winningRandomNumber: ', winningRandomNumber.toString());
-    debug('randomNumberThisPick: ', bigRando.toString());
+    debug('winningRandomNumber:', winningRandomNumber.toString());
+    debug('randomNumberThisPick:', bigRando.toString());
     // attempt to match numbers
     if (
       !findBitMatchesAtIndex(
@@ -36,7 +36,8 @@ function calculatePickPrize(
     }
     numberOfMatches++;
   }
-  debug(`\n DrawCalculator:: Found ${numberOfMatches} matches..`);
+
+  debug(`numberOfMatches: ${numberOfMatches}`);
   const tierIndex = prizeDistribution.matchCardinality - numberOfMatches;
   const pickAmount = calculatePrizeAmount(
     tierIndex,
