@@ -1,3 +1,4 @@
+export { default as createDrawResultsObject } from './createDrawResultsObject';
 export { default as filterResultsByValue } from './filterResultsByValue';
 export { default as findBitMatchesAtIndex } from './findBitMatchesAtIndex';
 export { default as hashUserAddress } from './hashUserAddress';
@@ -10,3 +11,4 @@ export { sumBigNumbers, sumTwoBigNumbers } from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
 export { default as formatTierPercentage } from './formatTierPercentage';
 export { default as throwErrorInvalidPrizeDistribution } from './throwErrorInvalidPrizeDistribution';
+export { default as updateDrawResultsWithWinningPicks } from './updateDrawResultsWithWinningPicks';
