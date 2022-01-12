@@ -31,7 +31,7 @@ function calculateDrawResults(
         prizeDistribution.bitRangeSize,
         prizeDistribution.matchCardinality,
         prizeDistribution.prize,
-        prizeDistribution.tiers,
+        prizeDistribution.tiers
     );
 
     debug(

@@ -54,7 +54,7 @@ describe('computeDrawResults', () => {
             PRIZE_DISTRIBUTION.bitRangeSize,
             PRIZE_DISTRIBUTION.matchCardinality,
             PRIZE_DISTRIBUTION.prize,
-            PRIZE_DISTRIBUTION.tiers,
+            PRIZE_DISTRIBUTION.tiers
         );
         expect(results.drawId).toEqual(1);
         expect(results.totalValue).toEqual(BigNumber.from('0'));

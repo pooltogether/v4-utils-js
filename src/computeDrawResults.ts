@@ -1,13 +1,7 @@
-import { BigNumber} from '@ethersproject/bignumber';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import calculatePickPrize from './calculatePickPrize';
-import {
-    Pick,
-    PrizeAwardable,
-    Draw,
-    DrawResults,
-    PickPrize,
-} from './types';
+import { Pick, PrizeAwardable, Draw, DrawResults, PickPrize } from './types';
 
 function computeDrawResults(
     draw: Draw,

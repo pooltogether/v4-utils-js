@@ -21,8 +21,7 @@ describe('calculateDrawResults', () => {
             user
         );
 
-
-        console.log(calculatedDrawResults, 'calculatedDrawResults')
+        console.log(calculatedDrawResults, 'calculatedDrawResults');
 
         debug('results: ', calculatedDrawResults);
         expect(calculatedDrawResults.drawId).toEqual(1);
