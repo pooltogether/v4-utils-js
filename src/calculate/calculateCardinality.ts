@@ -4,9 +4,9 @@ import { parseUnits } from '@ethersproject/units';
 const debug = require('debug')('pt:v4-utils-js:calculateCardinality');
 
 function calculateCardinality(
-    bitRangeSize: number,
+    bitRangeSize: BigNumberish,
     totalSupply: BigNumberish,
-    decimals: number
+    decimals: BigNumberish
 ): number {
     const _totalSupply = BigNumber.from(totalSupply);
     let numberOfPicks;
