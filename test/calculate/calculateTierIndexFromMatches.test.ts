@@ -1,4 +1,4 @@
-import calculateTierIndexFromMatches from '../src/calculateTierIndexFromMatches';
+import { calculateTierIndexFromMatches } from '../../src';
 
 describe('calculateTierIndexFromMatches', () => {
     it('should return index 0', () => {

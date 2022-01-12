@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { BigNumber, utils } from 'ethers';
 
-import { calculatePrizeForTierPercentage } from '../src';
-import { formatTierPercentage } from '../src/utils';
+import { calculatePrizeForTierPercentage } from '../../src';
+import { formatTierPercentage } from '../../src/utils';
 
 describe('calculatePrizeForTierPercentage()', () => {
     it('can calculate the prize awardable for the prize distribution and prize', async () => {

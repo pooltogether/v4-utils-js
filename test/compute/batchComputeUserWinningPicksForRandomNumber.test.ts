@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import { BigNumber, ethers, utils } from 'ethers';
 
-import { batchCalculateDrawResults } from '../src';
-import { Draw, PrizeDistribution, User } from '../src/types';
-import { formatTierPercentage } from '../src/utils';
+import { batchCalculateDrawResults } from '../../src';
+import { Draw, PrizeDistribution, User } from '../../src/types';
+import { formatTierPercentage } from '../../src/utils';
 
 describe.skip('batchCalculateDrawResults()', () => {
     it('Single DrawCalculator run 1 matches', async () => {

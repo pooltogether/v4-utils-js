@@ -13,9 +13,9 @@
 
 The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
 
-**Computations:** basic arithmatic and operations of core V4 logic: cardinality, number of picks, draw results, etc... 
+**Caclulations:** Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
 
-**Calculations:** generally consume protocol data (Draws/PrizeDistributions/RandomNumber) and provide context to the state of the protocol.
+**Computations:** Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
 
 # Installation
 

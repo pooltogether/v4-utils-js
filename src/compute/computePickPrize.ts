@@ -1,13 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import calculateNumberOfMatches from './calculateNumberOfMatches';
-import calculatePrizeAmount from './calculatePrizeAmount';
-import calculateTierIndexFromMatches from './calculateTierIndexFromMatches';
-import { PickPrize } from './types';
+import calculateNumberOfMatches from '../calculate/calculateNumberOfMatches';
+import calculateTierIndexFromMatches from '../calculate/calculateTierIndexFromMatches';
+import computePrizeAmount from './computePrizeAmount';
+import { PickPrize } from '../types';
 
-// returns the fraction of the total prize that the user will win for this pick
-function calculatePickPrize(
-    randomNumberThisPick: string,
+function computePickPrize(
+    pickHash: string,
     winningRandomNumber: BigNumber,
     bitRangeSize: number,
     matchCardinality: number,
@@ -15,7 +14,7 @@ function calculatePickPrize(
     tiers: Array<any>
 ): PickPrize {
     let numberOfMatches = calculateNumberOfMatches(
-        randomNumberThisPick,
+        pickHash,
         winningRandomNumber,
         matchCardinality,
         bitRangeSize
@@ -24,7 +23,7 @@ function calculatePickPrize(
         matchCardinality,
         numberOfMatches
     );
-    const pickAmount = calculatePrizeAmount(
+    const pickAmount = computePrizeAmount(
         tierIndex,
         tiers[tierIndex],
         bitRangeSize,
@@ -33,4 +32,4 @@ function calculatePickPrize(
     return pickAmount;
 }
 
-export default calculatePickPrize;
+export default computePickPrize;

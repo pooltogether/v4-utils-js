@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { calculatePicksFromAverageTotalSuppliesBetween } from '../src';
+import { calculatePicksFromAverageTotalSuppliesBetween } from '../../src';
 
 describe('calculatePicksFromAverageTotalSuppliesBetween', () => {
     it('should calculate the number of picks for a target ticket using total picks and total ticks supply', () => {

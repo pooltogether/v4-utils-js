@@ -1,16 +1,16 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { computePicks } from '../src';
-import { BYTES32_ADDRESS_DEAD } from './constants';
+import { calculatePicks } from '../../src';
+import { BYTES32_ADDRESS_DEAD } from '../constants';
 
-describe('computePicks', () => {
+describe('calculatePicks', () => {
     it('should compute 3 pick hashes for the dEaD address', () => {
         const pickIndices = [
             BigNumber.from(1),
             BigNumber.from(2),
             BigNumber.from(3),
         ];
-        const computedPicks = computePicks(BYTES32_ADDRESS_DEAD, pickIndices);
+        const computedPicks = calculatePicks(BYTES32_ADDRESS_DEAD, pickIndices);
         const expectation = [
             {
                 index: 1,

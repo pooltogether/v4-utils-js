@@ -1,9 +1,9 @@
-// @ts-nocheck
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { expect } from 'chai';
 import { BigNumber, ethers, utils } from 'ethers';
 
-import { prepareClaims, batchCalculateDrawResults } from '../src';
+import {batchCalculateDrawResults} from '../src';
+import prepareClaims from '../src/prepareClaims';
 import {
     Claim,
     Draw,

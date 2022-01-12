@@ -1,13 +1,13 @@
 import { formatEther } from '@ethersproject/units';
 
 import computeDrawResults from './computeDrawResults';
-import generatePicks from './generatePicks';
-import { Draw, DrawResults, PrizeDistribution, User } from './types';
-import { throwErrorInvalidPrizeDistribution } from './utils';
+import computeUserPicks from '../compute/computeUserPicks';
+import { Draw, DrawResults, PrizeDistribution, User } from '../types';
+import { throwErrorInvalidPrizeDistribution } from '../utils';
 
-const debug = require('debug')('pt:v4-utils-js:calculateDrawResults');
+const debug = require('debug')('pt:v4-utils-js:computeUserWinningPicksForRandomNumber');
 
-function calculateDrawResults(
+function computeUserWinningPicksForRandomNumber(
     prizeDistribution: PrizeDistribution,
     draw: Draw,
     user: User,
@@ -16,7 +16,7 @@ function calculateDrawResults(
     throwErrorInvalidPrizeDistribution(prizeDistribution);
 
     // generate the picks for the user by hashing the address with the pickIndices
-    user.picks = generatePicks(
+    user.picks = computeUserPicks(
         prizeDistribution.numberOfPicks,
         user.address,
         user.normalizedBalances[drawIndex]
@@ -43,4 +43,4 @@ function calculateDrawResults(
     return results;
 }
 
-export default calculateDrawResults;
+export default computeUserWinningPicksForRandomNumber;

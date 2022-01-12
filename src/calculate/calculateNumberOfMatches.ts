@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import { findBitMatchesAtIndex } from './utils';
+import { findBitMatchesAtIndex } from '../utils';
 
 function calculateNumberOfMatches(
     pickNumber: BigNumberish,

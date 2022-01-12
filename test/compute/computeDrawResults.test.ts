@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { computeDrawResults } from '../src';
-import { DrawResults } from '../src/types';
-import { formatTierPercentage } from '../src/utils';
+import { computeDrawResults } from '../../src';
+import { DrawResults } from '../../src/types';
+import { formatTierPercentage } from '../../src/utils';
 
 describe('computeDrawResults', () => {
     it('should return a draw result with zero winning picks', () => {

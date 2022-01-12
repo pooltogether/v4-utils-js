@@ -1,10 +1,10 @@
 import { parseUnits } from '@ethersproject/units';
 
-import calculatePrizeAmount from '../src/calculatePrizeAmount';
+import { computePrizeAmount } from '../../src';
 
-describe('calculatePrizeAmount', () => {
+describe('computePrizeAmount', () => {
     it('should calculate a 50% of totalPrize as the 1st tier index prize', () => {
-        const prize = calculatePrizeAmount(
+        const prize = computePrizeAmount(
             0, // Tier Index
             500000000, // Tier Percentage (1e9)
             10, // bitRangeSize

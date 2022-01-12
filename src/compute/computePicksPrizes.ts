@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import calculatePickPrize from './calculatePickPrize';
-import { PickPrize } from './types';
+import computePickPrize from './computePickPrize';
+import { PickPrize } from '../types';
 
-function calculatePickListPrizes(
+function computePicksPrizes(
     picks: Array<any>,
     winningRandomNumber: BigNumber,
     bitRangeSize: number,
@@ -12,7 +12,7 @@ function calculatePickListPrizes(
     tiers: Array<any>
 ): PickPrize[] {
     return picks.map(pick =>
-        calculatePickPrize(
+        computePickPrize(
             pick.hash,
             winningRandomNumber,
             bitRangeSize,
@@ -23,4 +23,4 @@ function calculatePickListPrizes(
     );
 }
 
-export default calculatePickListPrizes;
+export default computePicksPrizes;

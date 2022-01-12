@@ -1,11 +1,10 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import calculateNormalizedBalancePicksFromTotalPicks from './calculateNormalizedBalancePicksFromTotalPicks';
-import computePick from './computePick';
-import { Pick } from './types';
-import { hashUserAddress } from './utils';
+import {calculatePick, calculateNormalizedBalancePicksFromTotalPicks} from '../calculate';
+import { Pick } from '../types';
+import { hashUserAddress } from '../utils';
 
-function generatePicks(
+function computeUserPicks(
     totalNumberOfPicks: BigNumberish,
     address: string,
     normalizedBalance: BigNumber
@@ -20,9 +19,9 @@ function generatePicks(
     let picks: Pick[] = [];
     let numberOfPicksRemaining = numberOfPicks.toNumber();
     for (let pickIndex = 0; pickIndex < numberOfPicksRemaining; pickIndex++) {
-        picks.push(computePick(usersAddressHashed, pickIndex));
+        picks.push(calculatePick(usersAddressHashed, pickIndex));
     }
     return picks;
 }
 
-export default generatePicks;
+export default computeUserPicks;

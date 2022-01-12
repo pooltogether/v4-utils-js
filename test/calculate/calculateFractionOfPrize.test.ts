@@ -1,7 +1,7 @@
 import { parseEther } from '@ethersproject/units';
 
-import { calculateFractionOfPrize } from '../src';
-import { formatTierPercentage } from '../src/utils';
+import { calculateFractionOfPrize } from '../../src';
+import { formatTierPercentage } from '../../src/utils';
 
 describe('calculateFractionOfPrize', () => {
     it('can calculate the fraction for the prize distribution', async () => {

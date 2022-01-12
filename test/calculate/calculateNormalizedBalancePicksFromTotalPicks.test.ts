@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseUnits } from '@ethersproject/units';
 
-import calculateNormalizedBalancePicksFromTotalPicks from '../src/calculateNormalizedBalancePicksFromTotalPicks';
+import { calculateNormalizedBalancePicksFromTotalPicks } from '../../src';
 
 describe('calculateNormalizedBalancePicksFromTotalPicks', () => {
     it('should calculate 10% of the picks if the normalized balance is 0.1', () => {

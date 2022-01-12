@@ -15,14 +15,14 @@
 - [calculateFractionOfPrize](modules.md#calculatefractionofprize)
 - [calculateNormalizedBalancePicksFromTotalPicks](modules.md#calculateNormalizedBalancePicksFromTotalPicks)
 - [calculateNumberOfPrizesForTierIndex](modules.md#calculateNumberOfPrizesForTierIndex)
-- [calculatePickPrize](modules.md#calculatepickprize)
+- [computePickPrize](modules.md#computePickPrize)
 - [calculatePicksFromAverageTotalSuppliesBetween](modules.md#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeAmount](modules.md#calculateprizeamount)
+- [computePrizeAmount](modules.md#computePrizeAmount)
 - [calculatePrizeForTierPercentage](modules.md#calculatePrizeForTierPercentage)
-- [computeCardinality](modules.md#computecardinality)
+- [calculateCardinality](modules.md#calculateCardinality)
 - [computeDrawResults](modules.md#computedrawresults)
-- [computePick](modules.md#computepick)
-- [computePicks](modules.md#computepicks)
+- [calculatePick](modules.md#calculatePick)
+- [calculatePicks](modules.md#calculatePicks)
 - [computePrizeDistributionFromTicketAverageTotalSupplies](modules.md#computeprizedistributionfromticketaveragetotalsupplies)
 - [generatePicks](modules.md#generatepicks)
 - [prepareClaims](modules.md#prepareclaims)
@@ -139,9 +139,9 @@ ___
 
 ___
 
-### calculatePickPrize
+### computePickPrize
 
-▸ **calculatePickPrize**(`randomNumberThisPick`, `winningRandomNumber`, `prizeDistribution`): `PickPrize` \| `undefined`
+▸ **computePickPrize**(`randomNumberThisPick`, `winningRandomNumber`, `prizeDistribution`): `PickPrize` \| `undefined`
 
 #### Parameters
 
@@ -157,7 +157,7 @@ ___
 
 #### Defined in
 
-[calculatePickPrize.ts:10](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePickPrize.ts#L10)
+[computePickPrize.ts:10](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePickPrize.ts#L10)
 
 ___
 
@@ -183,9 +183,9 @@ ___
 
 ___
 
-### calculatePrizeAmount
+### computePrizeAmount
 
-▸ **calculatePrizeAmount**(`prizeDistribution`, `matches`): `PickPrize` \| `undefined`
+▸ **computePrizeAmount**(`prizeDistribution`, `matches`): `PickPrize` \| `undefined`
 
 #### Parameters
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[calculatePrizeAmount.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePrizeAmount.ts#L6)
+[computePrizeAmount.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePrizeAmount.ts#L6)
 
 ___
 
@@ -225,9 +225,9 @@ ___
 
 ___
 
-### computeCardinality
+### calculateCardinality
 
-▸ **computeCardinality**(`bitRangeSize`, `totalSupply`, `totalSupplyDecimals`): `number`
+▸ **calculateCardinality**(`bitRangeSize`, `totalSupply`, `totalSupplyDecimals`): `number`
 
 #### Parameters
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[computeCardinality.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computeCardinality.ts#L6)
+[calculateCardinality.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculateCardinality.ts#L6)
 
 ___
 
@@ -269,9 +269,9 @@ ___
 
 ___
 
-### computePick
+### calculatePick
 
-▸ **computePick**(`address`, `pick`): `Pick`
+▸ **calculatePick**(`address`, `pick`): `Pick`
 
 #### Parameters
 
@@ -286,13 +286,13 @@ ___
 
 #### Defined in
 
-[computePick.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePick.ts#L7)
+[calculatePick.ts:7](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePick.ts#L7)
 
 ___
 
-### computePicks
+### calculatePicks
 
-▸ **computePicks**(`address`, `pickIndices`): `Pick`[]
+▸ **calculatePicks**(`address`, `pickIndices`): `Pick`[]
 
 #### Parameters
 
@@ -307,7 +307,7 @@ ___
 
 #### Defined in
 
-[computePicks.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/computePicks.ts#L6)
+[calculatePicks.ts:6](https://github.com/pooltogether/v4-js/blob/082f5ed/src/calculatePicks.ts#L6)
 
 ___
 

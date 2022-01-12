@@ -1,4 +1,4 @@
-import calculateNumberOfMatches from '../src/calculateNumberOfMatches';
+import { calculateNumberOfMatches } from '../../src';
 
 describe('calculateNumberOfMatches', () => {
     it('should calculate 0 matches', () => {

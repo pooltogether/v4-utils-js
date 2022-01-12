@@ -1,11 +1,11 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import calculatePickListPrizes from './calculatePickListPrizes';
-import { Pick, Draw, DrawResults } from './types';
+import computePicksPrizes from '../compute/computePicksPrizes';
+import { Pick, Draw, DrawResults } from '../types';
 import {
     createDrawResultsObject,
     updateDrawResultsWithWinningPicks,
-} from './utils';
+} from '../utils';
 
 function computeDrawResults(
     draw: Draw,
@@ -15,7 +15,7 @@ function computeDrawResults(
     prize: BigNumber,
     tiers: Array<any>
 ): DrawResults {
-    const pickPrizes = calculatePickListPrizes(
+    const pickPrizes = computePicksPrizes(
         picks,
         draw.winningRandomNumber,
         bitRangeSize,

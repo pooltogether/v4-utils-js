@@ -1,17 +1,13 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import calculatePicksFromAverageTotalSuppliesBetween from './calculatePicksFromAverageTotalSuppliesBetween';
-import computeCardinality from './computeCardinality';
-import { Draw, PrizeDistribution, PrizeTier } from './types';
-import { sumBigNumbers } from './utils';
+import calculatePicksFromAverageTotalSuppliesBetween from '../calculate/calculatePicksFromAverageTotalSuppliesBetween';
+import calculateCardinality from '../calculate/calculateCardinality';
+import { Draw, PrizeDistribution, PrizeTier } from '../types';
+import { sumBigNumbers } from '../utils';
 
 const debug = require('debug')(
     'pt:v4-utils-js:computePrizeDistributionFromTicketAverageTotalSupplies'
 );
-
-function createBigNumber(value: BigNumberish) {
-    return BigNumber.from(value);
-}
 
 async function computePrizeDistributionFromTicketAverageTotalSupplies(
     draw: Draw,
@@ -37,11 +33,11 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
         prize,
     } = prizeTier;
 
-    const ticketPrimaryAverageTotalSupplyBigNumber = createBigNumber(
+    const ticketPrimaryAverageTotalSupplyBigNumber = BigNumber.from(
         ticketPrimaryAverageTotalSupply
     );
     const ticketSecondaryListAverageTotalSupplyBigNumber = ticketSecondaryListAverageTotalSupply.map(
-        createBigNumber
+        BigNumber.from
     );
 
     // Sums the ALL ticket average total supplies.
@@ -55,7 +51,7 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
         ticketSecondaryListAverageTotalSupplyBigNumber
     );
 
-    const matchCardinality = computeCardinality(
+    const matchCardinality = calculateCardinality(
         BigNumber.from(bitRangeSize),
         BigNumber.from(totalAverageSupplies),
         BigNumber.from(decimals)

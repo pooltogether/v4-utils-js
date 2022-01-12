@@ -1,9 +1,9 @@
-import calculateDrawResults from './calculateDrawResults';
-import { Draw, DrawResults, PrizeDistribution, User } from './types';
+import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
+import { Draw, DrawResults, PrizeDistribution, User } from '../types';
 
-const debug = require('debug')('pt:v4-utils-js:batchCalculateDrawResults');
+const debug = require('debug')('pt:v4-utils-js:batchcomputeUserWinningPicksForRandomNumber');
 
-function batchCalculateDrawResults(
+function batchComputeUserWinningPicksForRandomNumber(
     prizeDistribution: PrizeDistribution[],
     draws: Draw[],
     user: User
@@ -11,7 +11,7 @@ function batchCalculateDrawResults(
     debug('arguments: ', { prizeDistribution, draws, user });
     const results: DrawResults[] = [];
     draws.forEach((draw, index) => {
-        const drawResults = calculateDrawResults(
+        const drawResults = computeUserWinningPicksForRandomNumber(
             prizeDistribution[index],
             draw,
             user,
@@ -23,4 +23,4 @@ function batchCalculateDrawResults(
     return results;
 }
 
-export default batchCalculateDrawResults;
+export default batchComputeUserWinningPicksForRandomNumber;
