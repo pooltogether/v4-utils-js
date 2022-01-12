@@ -1,10 +1,4 @@
-{
-  "extends": [
-    "prettier/@typescript-eslint",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "plugin:prettier/recommended"
-  ],
+module.exports ={
   "overrides": [
     {
       "files": ["*.ts"],

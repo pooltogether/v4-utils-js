@@ -3,6 +3,7 @@ export { default as batchCalculateDrawResults } from './batchCalculateDrawResult
 export { default as calculateDrawResults } from './calculateDrawResults';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
 export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';
+export { default as calculateNumberOfMatches } from './calculateNumberOfMatches';
 export { default as calculateNumberOfPrizesForTierIndex } from './calculateNumberOfPrizesForTierIndex';
 export { default as calculatePickPrize } from './calculatePickPrize';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
