@@ -4,13 +4,13 @@ export type PrizeTier = {
     bitRangeSize: number;
     expiryDuration?: number;
     maxPicksPerUser: number;
-    prize: BigNumber;
+    prize: BigNumberish;
     tiers: Array<BigNumberish>;
 };
 
 export type PrizeDistribution = PrizeTier & {
     matchCardinality: number;
-    numberOfPicks: BigNumber;
+    numberOfPicks: BigNumberish;
     drawStartTimestampOffset?: number;
     drawEndTimestampOffset?: number;
 };
@@ -44,7 +44,7 @@ export type DrawResults = {
 export type PrizeAwardable = {
     amount: BigNumber;
     distributionIndex: number;
-    pick: BigNumber; //populate with claim index
+    pick: BigNumberish; //populate with claim index
 };
 
 export type PickPrize = {

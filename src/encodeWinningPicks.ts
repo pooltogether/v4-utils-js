@@ -4,12 +4,12 @@ import { BigNumber } from 'ethers';
 import { User, DrawResults, Claim } from './types';
 import { sortByBigNumberAsc } from './utils';
 
-function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
+function encodeWinningPicks(user: User, drawResults: DrawResults[]): Claim {
     let claim: Claim = {
         userAddress: user.address,
         drawIds: [],
-        encodedWinningPickIndices: '',
         winningPickIndices: [],
+        encodedWinningPickIndices: '',
     };
     if (drawResults.length === 0) {
         return claim;
@@ -21,7 +21,7 @@ function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
             // now add the pickIndices data
             let winningPicks: BigNumber[] = [];
             for (const prizeAwardable of drawResult.prizes) {
-                winningPicks.push(prizeAwardable.pick);
+                winningPicks.push(BigNumber.from(prizeAwardable.pick));
             }
             claim.winningPickIndices.push(winningPicks);
         }
@@ -37,4 +37,4 @@ function prepareClaims(user: User, drawResults: DrawResults[]): Claim {
     return claim;
 }
 
-export default prepareClaims;
+export default encodeWinningPicks;

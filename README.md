@@ -52,3 +52,488 @@ The package is setup using the TSDX zero-config CLI tool. Which includes:
 The TSDX linting configuration is overwritten to include override(s).
 
 - Import/Order
+
+[@pooltogether/v4-utils-js](README.md) / Exports
+
+# @pooltogether/v4-utils-js
+
+## Table of contents
+
+### Namespaces
+
+- [utils](docs/modules/utils.md)
+
+### Functions
+
+- [calculateCardinality](docs/modules.md#calculatecardinality)
+- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](docs/modules.md#calculatepick)
+- [calculatePicks](docs/modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
+- [computeDrawResults](docs/modules.md#computedrawresults)
+- [computePickPrize](docs/modules.md#computepickprize)
+- [computePicksPrizes](docs/modules.md#computepicksprizes)
+- [computePrizeAmount](docs/modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](docs/modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](docs/modules.md#computewinningpicks)
+- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
+- [winningPicks](docs/modules.md#winningpicks)
+
+## Functions
+
+### calculateCardinality
+
+▸ **calculateCardinality**(`bitRangeSize`, `totalSupply`, `decimals`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `bitRangeSize` | `BigNumberish` |
+| `totalSupply` | `BigNumberish` |
+| `decimals` | `BigNumberish` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[calculate/calculateCardinality.ts:6](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateCardinality.ts#L6)
+
+___
+
+### calculateFractionOfPrize
+
+▸ **calculateFractionOfPrize**(`tierTotalPrizes`, `tierValue`): `BigNumber`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `tierTotalPrizes` | `BigNumberish` |
+| `tierValue` | `BigNumberish` |
+
+#### Returns
+
+`BigNumber`
+
+#### Defined in
+
+[calculate/calculateFractionOfPrize.ts:4](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateFractionOfPrize.ts#L4)
+
+___
+
+### calculateNormalizedBalancePicksFromTotalPicks
+
+▸ **calculateNormalizedBalancePicksFromTotalPicks**(`numberOfPicks`, `normalizedBalance`): `BigNumber`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `numberOfPicks` | `BigNumberish` |
+| `normalizedBalance` | `BigNumberish` |
+
+#### Returns
+
+`BigNumber`
+
+#### Defined in
+
+[calculate/calculateNormalizedBalancePicksFromTotalPicks.ts:3](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateNormalizedBalancePicksFromTotalPicks.ts#L3)
+
+___
+
+### calculateNumberOfMatches
+
+▸ **calculateNumberOfMatches**(`pickNumber`, `winningRandomNumber`, `matchCardinality`, `bitRangeSize`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `pickNumber` | `BigNumberish` |
+| `winningRandomNumber` | `BigNumberish` |
+| `matchCardinality` | `number` |
+| `bitRangeSize` | `number` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[calculate/calculateNumberOfMatches.ts:5](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateNumberOfMatches.ts#L5)
+
+___
+
+### calculateNumberOfPrizesForTierIndex
+
+▸ **calculateNumberOfPrizesForTierIndex**(`bitRangeSize`, `tierIndex`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `bitRangeSize` | `number` |
+| `tierIndex` | `number` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[calculate/calculateNumberOfPrizesForTierIndex.ts:1](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateNumberOfPrizesForTierIndex.ts#L1)
+
+___
+
+### calculatePick
+
+▸ **calculatePick**(`address`, `pick`): `Pick`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+| `pick` | `BigNumberish` |
+
+#### Returns
+
+`Pick`
+
+#### Defined in
+
+[calculate/calculatePick.ts:6](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculatePick.ts#L6)
+
+___
+
+### calculatePicks
+
+▸ **calculatePicks**(`address`, `picks`): `Pick`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+| `picks` | `BigNumber`[] |
+
+#### Returns
+
+`Pick`[]
+
+#### Defined in
+
+[calculate/calculatePicks.ts:6](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculatePicks.ts#L6)
+
+___
+
+### calculatePicksFromAverageTotalSuppliesBetween
+
+▸ **calculatePicksFromAverageTotalSuppliesBetween**(`totalPicks`, `ticketPrimaryTotalSupply`, `otherTicketsTotalSupply`): `number` \| `undefined`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `totalPicks` | `number` |
+| `ticketPrimaryTotalSupply` | `BigNumber` |
+| `otherTicketsTotalSupply` | `BigNumber` |
+
+#### Returns
+
+`number` \| `undefined`
+
+#### Defined in
+
+[calculate/calculatePicksFromAverageTotalSuppliesBetween.ts:7](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculatePicksFromAverageTotalSuppliesBetween.ts#L7)
+
+___
+
+### calculatePrizeForTierPercentage
+
+▸ **calculatePrizeForTierPercentage**(`tierIndex`, `tierValue`, `bitRangeSize`, `prizeAmount`): `BigNumber`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `tierIndex` | `number` |
+| `tierValue` | `BigNumberish` |
+| `bitRangeSize` | `number` |
+| `prizeAmount` | `BigNumber` |
+
+#### Returns
+
+`BigNumber`
+
+#### Defined in
+
+[calculate/calculatePrizeForTierPercentage.ts:6](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculatePrizeForTierPercentage.ts#L6)
+
+___
+
+### calculateTierIndexFromMatches
+
+▸ **calculateTierIndexFromMatches**(`matchCardinality`, `numberOfMatches`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `matchCardinality` | `number` |
+| `numberOfMatches` | `number` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[calculate/calculateTierIndexFromMatches.ts:1](https://github.com/pooltogether/v4-js/blob/58aa21e/src/calculate/calculateTierIndexFromMatches.ts#L1)
+
+___
+
+### computeDrawResults
+
+▸ **computeDrawResults**(`draw`, `picks`, `bitRangeSize`, `matchCardinality`, `prize`, `tiers`): `DrawResults`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `draw` | `Draw` |
+| `picks` | `Pick`[] |
+| `bitRangeSize` | `number` |
+| `matchCardinality` | `number` |
+| `prize` | `BigNumber` |
+| `tiers` | `any`[] |
+
+#### Returns
+
+`DrawResults`
+
+#### Defined in
+
+[compute/computeDrawResults.ts:10](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computeDrawResults.ts#L10)
+
+___
+
+### computePickPrize
+
+▸ **computePickPrize**(`pickHash`, `winningRandomNumber`, `bitRangeSize`, `matchCardinality`, `prize`, `tiers`): `PickPrize`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `pickHash` | `string` |
+| `winningRandomNumber` | `BigNumber` |
+| `bitRangeSize` | `number` |
+| `matchCardinality` | `number` |
+| `prize` | `BigNumber` |
+| `tiers` | `any`[] |
+
+#### Returns
+
+`PickPrize`
+
+#### Defined in
+
+[compute/computePickPrize.ts:8](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computePickPrize.ts#L8)
+
+___
+
+### computePicksPrizes
+
+▸ **computePicksPrizes**(`picks`, `winningRandomNumber`, `bitRangeSize`, `matchCardinality`, `prize`, `tiers`): `PickPrize`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `picks` | `any`[] |
+| `winningRandomNumber` | `BigNumber` |
+| `bitRangeSize` | `number` |
+| `matchCardinality` | `number` |
+| `prize` | `BigNumber` |
+| `tiers` | `any`[] |
+
+#### Returns
+
+`PickPrize`[]
+
+#### Defined in
+
+[compute/computePicksPrizes.ts:6](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computePicksPrizes.ts#L6)
+
+___
+
+### computePrizeAmount
+
+▸ **computePrizeAmount**(`tierIndex`, `tierValue`, `bitRangeSize`, `prizeAmount`): `PickPrize`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `tierIndex` | `number` |
+| `tierValue` | `BigNumberish` |
+| `bitRangeSize` | `number` |
+| `prizeAmount` | `BigNumber` |
+
+#### Returns
+
+`PickPrize`
+
+#### Defined in
+
+[compute/computePrizeAmount.ts:8](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computePrizeAmount.ts#L8)
+
+___
+
+### computePrizeDistributionFromTicketAverageTotalSupplies
+
+▸ **computePrizeDistributionFromTicketAverageTotalSupplies**(`draw`, `prizeTier?`, `ticketPrimaryAverageTotalSupply?`, `ticketSecondaryListAverageTotalSupply?`, `decimals?`): `Promise`<`PrizeDistribution` \| `undefined`\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `draw` | `Draw` | `undefined` |
+| `prizeTier?` | `PrizeTier` | `undefined` |
+| `ticketPrimaryAverageTotalSupply?` | `BigNumberish` | `undefined` |
+| `ticketSecondaryListAverageTotalSupply?` | `BigNumberish`[] | `undefined` |
+| `decimals` | `BigNumberish` | `18` |
+
+#### Returns
+
+`Promise`<`PrizeDistribution` \| `undefined`\>
+
+#### Defined in
+
+[compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts:12](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L12)
+
+___
+
+### computeUserPicks
+
+▸ **computeUserPicks**(`totalNumberOfPicks`, `address`, `normalizedBalance`): `Pick`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `totalNumberOfPicks` | `BigNumberish` |
+| `address` | `string` |
+| `normalizedBalance` | `BigNumber` |
+
+#### Returns
+
+`Pick`[]
+
+#### Defined in
+
+[compute/computeUserPicks.ts:10](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computeUserPicks.ts#L10)
+
+___
+
+### computeUserWinningPicksForRandomNumber
+
+▸ **computeUserWinningPicksForRandomNumber**(`randomNumber`, `bitRangeSize`, `matchCardinality`, `numberOfPicks`, `prize`, `tiers`, `userAddress`, `userNormalizedBalance`): `DrawResults`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `randomNumber` | `BigNumberish` |
+| `bitRangeSize` | `number` |
+| `matchCardinality` | `number` |
+| `numberOfPicks` | `BigNumberish` |
+| `prize` | `BigNumberish` |
+| `tiers` | `any`[] |
+| `userAddress` | `string` |
+| `userNormalizedBalance` | `BigNumberish` |
+
+#### Returns
+
+`DrawResults`
+
+#### Defined in
+
+[compute/computeUserWinningPicksForRandomNumber.ts:11](https://github.com/pooltogether/v4-js/blob/58aa21e/src/compute/computeUserWinningPicksForRandomNumber.ts#L11)
+
+___
+
+### computeWinningPicks
+
+▸ **computeWinningPicks**(`user`, `draws`, `prizeDistributions`): `DrawResults`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `user` | `User` |
+| `draws` | `Draw`[] |
+| `prizeDistributions` | `PrizeDistribution`[] |
+
+#### Returns
+
+`DrawResults`[]
+
+#### Defined in
+
+computeWinningPicks.ts:4
+
+___
+
+### encodeWinningPicks
+
+▸ **encodeWinningPicks**(`user`, `drawResults`): `Claim`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `user` | `User` |
+| `drawResults` | `DrawResults`[] |
+
+#### Returns
+
+`Claim`
+
+#### Defined in
+
+encodeWinningPicks.ts:7
+
+___
+
+### winningPicks
+
+▸ **winningPicks**(`user`, `draws`, `prizeDistributions`): `Claim`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `user` | `User` |
+| `draws` | `Draw`[] |
+| `prizeDistributions` | `PrizeDistribution`[] |
+
+#### Returns
+
+`Claim`
+
+#### Defined in
+
+winningPicks.ts:5

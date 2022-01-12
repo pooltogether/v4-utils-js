@@ -1,48 +1,47 @@
-import { formatEther } from '@ethersproject/units';
+import { BigNumber, BigNumberish } from 'ethers';
 
+import { computePicksPrizes } from '.';
 import computeUserPicks from '../compute/computeUserPicks';
-import { Draw, DrawResults, PrizeDistribution, User } from '../types';
-import { throwErrorInvalidPrizeDistribution } from '../utils';
-import computeDrawResults from './computeDrawResults';
-
-const debug = require('debug')(
-    'pt:v4-utils-js:computeUserWinningPicksForRandomNumber'
-);
+import { DrawResults } from '../types';
+import {
+    createDrawResultsObject,
+    updateDrawResultsWithWinningPicks,
+} from '../utils';
 
 function computeUserWinningPicksForRandomNumber(
-    prizeDistribution: PrizeDistribution,
-    draw: Draw,
-    user: User,
-    drawIndex: number = 0
+    randomNumber: BigNumberish,
+    bitRangeSize: number,
+    matchCardinality: number,
+    numberOfPicks: BigNumberish,
+    prize: BigNumberish,
+    tiers: Array<any>,
+    userAddress: string,
+    userNormalizedBalance: BigNumberish
 ): DrawResults {
-    throwErrorInvalidPrizeDistribution(prizeDistribution);
+    const _userNormalizedBalance = BigNumber.from(userNormalizedBalance);
+    const _prize = BigNumber.from(prize);
+    const _randomNumber = BigNumber.from(randomNumber);
 
-    // generate the picks for the user by hashing the address with the pickIndices
-    user.picks = computeUserPicks(
-        prizeDistribution.numberOfPicks,
-        user.address,
-        user.normalizedBalances[drawIndex]
-    );
-    debug(
-        `user ${user.address} has ${user.picks.length} picks for drawId ${draw.drawId}. Computing..`
-    );
-    // run the draw calculator matching engine against these picks
-    let results: DrawResults = computeDrawResults(
-        draw,
-        user.picks,
-        prizeDistribution.bitRangeSize,
-        prizeDistribution.matchCardinality,
-        prizeDistribution.prize,
-        prizeDistribution.tiers
+    const userPicks = computeUserPicks(
+        numberOfPicks,
+        userAddress,
+        _userNormalizedBalance
     );
 
-    debug(
-        `user ${user.address} has ${formatEther(
-            results.totalValue
-        )} prizes for this draw..`
+    const pickPrizes = computePicksPrizes(
+        userPicks,
+        _randomNumber,
+        bitRangeSize,
+        matchCardinality,
+        _prize,
+        tiers
     );
 
-    return results;
+    return updateDrawResultsWithWinningPicks(
+        pickPrizes,
+        createDrawResultsObject(1),
+        userPicks
+    );
 }
 
 export default computeUserWinningPicksForRandomNumber;

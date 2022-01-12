@@ -10,5 +10,4 @@ export { default as sanityCheckPrizeDistribution } from './sanityCheckPrizeDistr
 export { sumBigNumbers, sumTwoBigNumbers } from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
 export { default as formatTierPercentage } from './formatTierPercentage';
-export { default as throwErrorInvalidPrizeDistribution } from './throwErrorInvalidPrizeDistribution';
 export { default as updateDrawResultsWithWinningPicks } from './updateDrawResultsWithWinningPicks';

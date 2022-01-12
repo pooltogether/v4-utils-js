@@ -1,4 +1,4 @@
-export { default as batchCalculateDrawResults } from '../compute/batchComputeUserWinningPicksForRandomNumber';
+// export { default as batchCalculateDrawResults } from '../compute/batchComputeUserWinningPicksForRandomNumber';
 export { default as calculateCardinality } from './calculateCardinality';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
 export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';

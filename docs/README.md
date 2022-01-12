@@ -8,12 +8,16 @@
 
 <br />
 
-# PoolTogether V4 Utility Library
+# Utility Library for PoolTogether V4
 ![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-The `v4-utils-js` is a utility library for off-chain calculations and computation of the v4 smart contracts past, present and future state.
+The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
+
+**Caclulations:** Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
+
+**Computations:** Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
 
 # Installation
 
@@ -32,3 +36,21 @@ The repo can be cloned from Github for contributions.
 ```sh
 git clone https://github.com/pooltogether/v4-core
 ```
+
+# Developer Experience
+
+The package is setup using the TSDX zero-config CLI tool. Which includes:
+
+- Typescript
+- Rollup
+- Jest
+- Prettier
+- ESLint
+
+**Minor changes are made to extend the default configuration.**
+
+## ESLint
+
+The TSDX linting configuration is overwritten to include override(s).
+
+- Import/Order
