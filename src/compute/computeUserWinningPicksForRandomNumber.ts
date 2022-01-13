@@ -1,12 +1,12 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import computePicksPrizes from './computePicksPrizes';
-import computeUserPicks from './computeUserPicks';
 import { DrawResults } from '../types';
 import {
     createDrawResultsObject,
     updateDrawResultsWithWinningPicks,
 } from '../utils';
+import computePicksPrizes from './computePicksPrizes';
+import computeUserPicks from './computeUserPicks';
 
 function computeUserWinningPicksForRandomNumber(
     randomNumber: BigNumberish,

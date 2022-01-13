@@ -1,5 +1,5 @@
-import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 import { Draw, DrawResults, PrizeDistribution, User } from '../types';
+import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 
 function computeWinningPicks(
     user: User,

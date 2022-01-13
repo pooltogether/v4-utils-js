@@ -1,7 +1,7 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 
-import calculateNumberOfPrizesForTierIndex from './calculateNumberOfPrizesForTierIndex';
 import calculateFractionOfPrize from './calculateFractionOfPrize';
+import calculateNumberOfPrizesForTierIndex from './calculateNumberOfPrizesForTierIndex';
 
 function calculatePrizeForTierPercentage(
     tierIndex: number,
