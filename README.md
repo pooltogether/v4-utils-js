@@ -12,7 +12,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-[Contracts]() | [Documentation](https://docs.pooltogether.com/) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli) | [API](https://github.com/pooltogether/v4-draw-results)
+[Contracts](https://github.com/pooltogether/v4-core) | [Documentation](https://docs.pooltogether.com/) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli) | [API](https://github.com/pooltogether/v4-draw-results)
 
 
 ## Calculations, Computations and Core Logic
@@ -112,7 +112,7 @@ const computedPicks = computeWinningPicks(user, [draw], [prizeDistribution]);
 const encodePicks = encodeWinningPicks(user, computedWinningPicks);
 
 // Compute and Encode Winning Picks Together
-const computedAndEncodedWinningPicks = computedAndEncodedWinningPicks(user, [draw], [prizeDistribution]);
+const computedAndEncodedWinningPicks = winningPicks(user, [draw], [prizeDistribution]);
 
 // Send Encoded Transaction to Mainnet
 const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
