@@ -55,7 +55,7 @@ Gain insights into the protocol state by analyzing and encoding historical chain
 - [encodeWinningPicks](docs/modules.md#encodewinningpicks)
 - [winningPicks](docs/modules.md#winningpicks)
 
-*Potential Additions*
+*Potential Additions:*
 
 - poolAverageYieldBetweenTimestamps
 - userAverageYieldBetweenTimestamps
@@ -77,12 +77,12 @@ yarn add @pooltogether/v4-utils-js
 The repo can be cloned from Github for contributions.
 
 ```sh
-git clone https://github.com/pooltogether/v4-utis-js
+git clone https://github.com/pooltogether/v4-utils-js
 ```
 
 # 💻 Developer Experience
 
-The package is setup using the TSDX zero-config CLI tool. Which includes:
+The package is setup using the [TSDX zero-config CLI](https://tsdx.io/) which includes:
 
 - Typescript
 - Rollup
@@ -90,13 +90,15 @@ The package is setup using the TSDX zero-config CLI tool. Which includes:
 - Prettier
 - ESLint
 
-**Minor changes are made to extend the default configuration.**
+**Minor changes have been made to extend the default configuration.**
 
-## ESLint
+### ESLint
 
-The TSDX linting configuration is overwritten to include override(s).
+The TSDX linting configuration is overwritten to include override(s)* for:
 
 - Import/Order (used to enforce consistent module import ordering)
+
+###### *The ESLint overrides may incorrectly be interpreted by VSCode since the nested config file is ignored in the IDE
 
 # 🏆 Quickstart (Claim Winning Picks)
 
@@ -117,7 +119,7 @@ const computedAndEncodedWinningPicks = winningPicks(user, [draw], [prizeDistribu
 
 // Send Encoded Transaction to Mainnet
 const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
-wallet.sendTransaction(computedAndEncodedWinningPicks.encodedWinningPickIndices)
+wallet.send(computedAndEncodedWinningPicks.encodedWinningPickIndices)
 
 ```
 
