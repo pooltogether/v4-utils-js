@@ -1,5 +1,7 @@
+import * as calculate from './calculate';
+import * as compute from './compute';
 import * as utils from './utils';
-export { utils };
+export { calculate, compute, utils };
 export * from './calculate';
 export * from './compute';
 export { default as computeWinningPicks } from './computeWinningPicks';
