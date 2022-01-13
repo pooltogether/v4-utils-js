@@ -6,7 +6,7 @@
 
 <br />
 
-# 🧰 PoolTogether V4 Javascript Utilility Library
+# 🧰 Javascript Utilility Library || PoolTogether V4
 ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
 ![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
@@ -15,7 +15,7 @@
 
 ## Calculations, Computations and Core Logic
 
-The `v4-utils-js` is a Javascript module to assist with off-chain calculations and computations in the PoolTogether V4 protocol.
+The `v4-utils-js` is a Javascript module to assist with off-chain calculations and computations in the PoolTogether V4 protocol. 
 
 **Caclulations:**
 
@@ -59,7 +59,7 @@ Gain insights into the protocol state by analyzing and encoding historical chain
 - oddsPerPrizeTierUsingNormalizedBalance
 - encodeDrawPercentageRateAtomicUpdatesAcrossChains
 
-# Installation
+# 💾 Installation
 
 This project is available as an NPM package:
 
@@ -77,7 +77,7 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-utis-js
 ```
 
-# Developer Experience
+# 💻 Developer Experience
 
 The package is setup using the TSDX zero-config CLI tool. Which includes:
 
@@ -93,15 +93,13 @@ The package is setup using the TSDX zero-config CLI tool. Which includes:
 
 The TSDX linting configuration is overwritten to include override(s).
 
-- Import/Order
+- Import/Order (used to enforce consistent module import ordering)
 
-# Quickstart
+# 🏆 Quickstart (Claim Winning Picks)
 
-The `v4-utils-js` module includes core calculation/computation functions to validate the PoolTogether V4 protocol state.
+Core utility functions like `winningPicks(user, draw, prizeDistribution)` calculate, compute and encode any EVM chain compatible transaction with the maximum number of winning picks using the input arguments.
 
-In addition to core utils, `winningPicks` function is exported as a "*kitchensink*" helper to calculate/compute/encode a valid transaction with the maximum number of winning picks.
-
-If you just need to calulcate winning picks and claim prizes the `winningPicks` function is for you 👋 .
+In short, if you just need to calulcate winning picks and claim prizes the `winningPicks` function is for you 👋 
 ```ts
 import { Wallet } from '@ethersproject/wallet';
 import { providers } from '@ethersproject/provider';
@@ -121,7 +119,7 @@ wallet.sendTransaction(computedAndEncodedWinningPicks.encodedWinningPickIndices)
 ```
 
 
-# Examples
+# 🪜 Examples
 
 ```ts
 import { BigNumber } from '@ethersproject/bignumber';
@@ -172,7 +170,7 @@ const prizeDistribution = {
 const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
 ```
 
-# Documentation
+# 📖 Documentation
 
 ### Namespaces
 
