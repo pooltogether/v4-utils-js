@@ -18,7 +18,13 @@
 
 ## Calculations, Computations and Core Logic
 
-The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for PoolTogether V4. 
+The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for PoolTogether V4 protocol.
+
+Assisting with low-level tasks like hashing addresses to generate picks and calculating the total number of prizes for a prize tier.
+
+Additionally, high-order operations like filtering for a users winning picks and processing chain state (draws, prizeDistributions, etc..) to analyze/predict short and long term outcomes are included.
+
+[Open an Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.
 
 **Caclulations:**
 
