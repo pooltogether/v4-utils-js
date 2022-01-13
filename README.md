@@ -6,16 +6,24 @@
 
 <br />
 
-# Utility Library for PoolTogether V4
+# 🧰 PoolTogether V4 Javascript Utilility Library
+![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
 ![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
+
+## Calculations & Computations
+
 The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
 
-**Caclulations:** Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
+**Caclulations:**
 
-**Computations:** Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
+Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
+
+**Computations:** 
+
+Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
 
 # Installation
 
@@ -57,10 +65,11 @@ The TSDX linting configuration is overwritten to include override(s).
 
 # Quickstart
 
-The `v4-utils-js` module includes modular calculation and computation function required to validate the PoolTogether V4 protocol state.
+The `v4-utils-js` module includes core calculation/computation functions to validate the PoolTogether V4 protocol state.
 
-In addition to the core utils, `winningPicks` function is exported as a "*kitchensink*" helper to calculate/compute/encode a valid transaction with the maximum number of winning picks.
+In addition to core utils, `winningPicks` function is exported as a "*kitchensink*" helper to calculate/compute/encode a valid transaction with the maximum number of winning picks.
 
+If you just need to calulcate winning picks and claim prizes the `winningPicks` function is for you 👋 .
 ```ts
 import { Wallet } from '@ethersproject/wallet';
 import { providers } from '@ethersproject/provider';
@@ -87,13 +96,12 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 import { winningPicks, utils } from '@pooltogether/v4-utils-js';
 
-
 const user = {
     address: '0x0000000000000000000000000000000000000001',
     normalizedBalances: [
-        parseEther('0.1'),
-        parseEther('0.2'),
-        parseEther('0.3'),
+        parseEther('0.1'), // 10% of totalSupply
+        parseEther('0.2'), // 20% of totalSupply
+        parseEther('0.3'), // 30% of totalSupply
     ],
 };
 
@@ -108,9 +116,10 @@ const prizeDistribution = {
     bitRangeSize: 4,
     matchCardinality: 10,
     numberOfPicks: 1000,
-    prize: parseEther('100000'),
+    prize: parseEther('1000'),
     maxPicksPerUser: 30,
     tiers: [
+        // Tier prizeAmount is 100% split between 10 tiers. 
         utils.formatTierPercentage('0.1'),
         utils.formatTierPercentage('0.1'),
         utils.formatTierPercentage('0.1'),
@@ -133,9 +142,7 @@ const prizeDistribution = {
 const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
 ```
 
-# @pooltogether/v4-utils-js
-
-## Table of contents
+# Documentation
 
 ### Namespaces
 
