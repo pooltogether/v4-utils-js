@@ -34,7 +34,7 @@ Basic arithmatic and operations for the V4 protocol: cardinality, number of pick
 
 **Computations:** 
 
-Consume protocol current/potential state (i.e. Draws, PrizeDistributions, RandomNumber) and return computed results like user winning picks.
+Consume protocol current/potential state (Draws/PrizeDistributions) and return computed outcomes.
 
 - [computeDrawResults](docs/modules.md#computedrawresults)
 - [computePickPrize](docs/modules.md#computepickprize)
@@ -54,9 +54,10 @@ Gain insights into the protocol state by analyzing and encoding historical chain
 
 *Potential Additions*
 
-- averagePoolYieldBetweenTimestamps
+- poolAverageYieldBetweenTimestamps
+- userAverageYieldBetweenTimestamps
 - oddsPerPrizeTierUsingNormalizedBalance
-- userAverageAPRBetweenTimestamps
+- encodeDrawPercentageRateAtomicUpdatesAcrossChains
 
 # Installation
 
