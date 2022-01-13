@@ -1,4 +1,4 @@
-import computeWinningPicks from './computeWinningPicks';
+import computeWinningPicks from './compute/computeWinningPicks';
 import encodeWinningPicks from './encodeWinningPicks';
 import { Claim, Draw, PrizeDistribution, User } from './types';
 
