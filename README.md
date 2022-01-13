@@ -18,7 +18,7 @@
 
 ## Calculations, Computations and Core Logic
 
-The `v4-utils-js` is a Javascript module to assist with off-chain calculations and computations in the PoolTogether V4 protocol. 
+The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for PoolTogether V4. 
 
 **Caclulations:**
 
