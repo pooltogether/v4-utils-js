@@ -28,7 +28,7 @@ High-order operations like filtering for a users winning picks and processing ch
 
 **Caclulations:**
 
-Basic arithmatic and operations for the V4 protocol:
+Basic arithmetic and operations for the V4 protocol:
 
 - [calculateCardinality](docs/modules.md#calculatecardinality)
 - [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
