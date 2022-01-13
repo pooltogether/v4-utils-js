@@ -1,13 +1,10 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-
 import computeWinningPicks from '../src/computeWinningPicks';
 import { formatTierPercentage } from '../src/utils';
 
 describe('computeWinningPicks', () => {
-
-    
     it('returns correct claim struct for user', async () => {
         const user = {
             address: '0x0000000000000000000000000000000000000001',
@@ -67,6 +64,8 @@ describe('computeWinningPicks', () => {
             BigNumber.from({ _hex: '0x60', _isBigNumber: true }),
         ];
 
-        expect(generatedPicks[0].prizes.length).toStrictEqual(winningPickIndices.length);
+        expect(generatedPicks[0].prizes.length).toStrictEqual(
+            winningPickIndices.length
+        );
     });
 });
