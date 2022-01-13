@@ -2,8 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import computeWinningPicks from '../src/computeWinningPicks';
-import encodeWinningPicks from '../src/encodeWinningPicks';
+import { computeWinningPicks, encodeWinningPicks } from '../src';
 import { Claim } from '../src/types';
 import { formatTierPercentage } from '../src/utils';
 

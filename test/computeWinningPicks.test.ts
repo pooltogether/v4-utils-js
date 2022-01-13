@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import computeWinningPicks from '../src/computeWinningPicks';
+import { computeWinningPicks } from '../src';
 import { formatTierPercentage } from '../src/utils';
 
 describe('computeWinningPicks', () => {

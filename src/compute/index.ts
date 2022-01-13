@@ -5,3 +5,4 @@ export { default as computePrizeAmount } from './computePrizeAmount';
 export { default as computePrizeDistributionFromTicketAverageTotalSupplies } from './computePrizeDistributionFromTicketAverageTotalSupplies';
 export { default as computeUserPicks } from './computeUserPicks';
 export { default as computeUserWinningPicksForRandomNumber } from './computeUserWinningPicksForRandomNumber';
+export { default as computeWinningPicks } from './computeWinningPicks';

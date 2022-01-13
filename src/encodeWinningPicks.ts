@@ -1,5 +1,5 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 import { User, DrawResults, Claim } from './types';
 import { sortByBigNumberAsc } from './utils';
