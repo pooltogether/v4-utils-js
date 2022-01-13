@@ -24,36 +24,36 @@ The `v4-utils-js` is a Javascript module to assist with off-chain calculations a
 
 Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address.
 
-- [calculateCardinality](docs/docs/modules.md#calculatecardinality)
-- [calculateFractionOfPrize](docs/docs/modules.md#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](docs/docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](docs/docs/modules.md#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](docs/docs/modules.md#calculatenumberofprizesfortierindex)
-- [calculatePick](docs/docs/modules.md#calculatepick)
-- [calculatePicks](docs/docs/modules.md#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](docs/docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](docs/docs/modules.md#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](docs/docs/modules.md#calculatetierindexfrommatches)
+- [calculateCardinality](docs/modules.md#calculatecardinality)
+- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](docs/modules.md#calculatepick)
+- [calculatePicks](docs/modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
 
 **Computations:** 
 
 Consume protocol current/potential state (Draws/PrizeDistributions) and return computed outcomes.
 
-- [computeDrawResults](docs/docs/modules.md#computedrawresults)
-- [computePickPrize](docs/docs/modules.md#computepickprize)
-- [computePicksPrizes](docs/docs/modules.md#computepicksprizes)
-- [computePrizeAmount](docs/docs/modules.md#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](docs/docs/modules.md#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](docs/docs/modules.md#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](docs/docs/modules.md#computewinningpicks)
+- [computeDrawResults](docs/modules.md#computedrawresults)
+- [computePickPrize](docs/modules.md#computepickprize)
+- [computePicksPrizes](docs/modules.md#computepicksprizes)
+- [computePrizeAmount](docs/modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](docs/modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](docs/modules.md#computewinningpicks)
 
 **Core:**
 
 Gain insights into the protocol state by analyzing and encoding historical chain state.
 
-- [encodeWinningPicks](docs/docs/modules.md#encodewinningpicks)
-- [winningPicks](docs/docs/modules.md#winningpicks)
+- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
+- [winningPicks](docs/modules.md#winningpicks)
 
 *Potential Additions*
 
