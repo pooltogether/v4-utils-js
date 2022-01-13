@@ -66,7 +66,9 @@ Gain insights into the protocol state by analyzing and encoding historical and p
 - oddsPerPrizeTierUsingNormalizedBalance
 - encodeDrawPercentageRateAtomicUpdatesAcrossChains
 
-[Open an Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.
+[Create Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.<br/>[Open Pull Request](#) adhering to Contribution guidelines.
+
+
 
 # 💾 Installation
 
