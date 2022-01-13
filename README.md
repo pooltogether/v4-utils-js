@@ -24,11 +24,9 @@ Assisting with low-level tasks like hashing addresses to generate picks and calc
 
 High-order operations like filtering for a users winning picks and processing chain state (draws, prizeDistributions, etc..) to analyze/predict short and long term outcomes are included in the `computations` namespaced functions.
 
-[Open an Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.
+**🧮 Caclulations:**
 
-**Caclulations:**
-
-Basic arithmetic and operations for the V4 protocol:
+Arithmetic and operations to match `v4-core` [smart contract](https://github.com/pooltogether/v4-core) operations:
 
 - [calculateCardinality](docs/modules.md#calculatecardinality)
 - [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
@@ -41,7 +39,7 @@ Basic arithmetic and operations for the V4 protocol:
 - [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
 - [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
 
-**Computations:** 
+**🖥️ Computations:** 
 
 Consume protocol chain state and return computed outcomes:
 
@@ -54,19 +52,21 @@ Consume protocol chain state and return computed outcomes:
 - [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
 - [computeWinningPicks](docs/modules.md#computewinningpicks)
 
-**Core:**
+**🏆 Core:**
 
 Gain insights into the protocol state by analyzing and encoding historical and potential chain state.
 
 - [encodeWinningPicks](docs/modules.md#encodewinningpicks)
 - [winningPicks](docs/modules.md#winningpicks)
 
-*Potential Additions:*
+*🙋 Potential Additions:*
 
 - poolAverageYieldBetweenTimestamps
 - userAverageYieldBetweenTimestamps
 - oddsPerPrizeTierUsingNormalizedBalance
 - encodeDrawPercentageRateAtomicUpdatesAcrossChains
+
+[Open an Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.
 
 # 💾 Installation
 
