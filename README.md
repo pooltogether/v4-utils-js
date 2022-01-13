@@ -12,6 +12,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
+POOL Resources: [Contracts]() | [Documentation](https://docs.pooltogether.com/) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli)
+
 
 ## Calculations, Computations and Core Logic
 
