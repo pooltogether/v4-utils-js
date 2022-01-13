@@ -1,5 +1,4 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { expect } from 'chai';
 
 import { DrawResults } from '../../src/types';
 import { filterResultsByValue } from '../../src/utils';
@@ -30,7 +29,7 @@ describe('filterResultsByValue()', () => {
             ],
         };
         const filteredResults = filterResultsByValue(results, 2);
-        expect(filteredResults.prizes.length).to.equal(2);
+        expect(filteredResults.prizes.length).toEqual(2);
         debug(filteredResults);
     });
 });

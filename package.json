@@ -1,27 +1,42 @@
 {
   "name": "@pooltogether/v4-utils-js",
+  "description": "Utility library for PoolTogether V4 off-chain calculations, computations and core logic.",
   "author": "PoolTogether Inc",
-  "description": "Utility library for PoolTogether V4 off-chain calculations and computations.",
-  "module": "dist/v4-utils-js.esm.js",
   "version": "0.1.0-beta.1",
   "license": "GPL-3.0-only",
+  "contributors": [
+    {
+      "name": "Kames Geraghty",
+      "email": "kames@pooltogether.com"
+    },
+    {
+      "name": "Aodhgan Gleeson",
+      "email": "aodhgan@pooltogether.com"
+    }
+  ],
+  "homepage": "https://github.com/pooltogether/v4-utils-js",
+  "bugs": {
+    "url" : "https://github.com/pooltogether/issues",
+    "email" : "bugs@pooltogether.com"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "module": "dist/v4-utils-js.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "docs": "yarn typedoc src/index.ts --out docs",
-    "clean": "jest --clearCache"
+    "clean": "jest --clearCache",
+    "docs": "yarn typedoc src/index.ts --out docs"
   },
   "peerDependencies": {},
   "dependencies": {
@@ -36,17 +51,11 @@
     "@ethersproject/strings": "^5.5.0",
     "@ethersproject/units": "^5.5.0",
     "@pooltogether/contract-list-schema": "^0.1.4",
-    "@pooltogether/v4-core": "^1.1.1",
-    "@pooltogether/v4-periphery": "^1.0.0",
-    "@pooltogether/v4-timelocks": "^1.0.0",
     "ethers": "^5.5.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@pooltogether/v4-pool-data": "^1.1.0",
-    "@types/chai": "^4.2.22",
     "@types/node": "^16.11.7",
-    "chai": "^4.3.4",
     "debug": "^4.3.2",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
@@ -59,7 +68,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint --fix"
     }
   },
   "prettier": {
