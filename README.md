@@ -170,6 +170,17 @@ const prizeDistribution = {
 };
 
 const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
+/**
+userAddress: string;
+drawIds: number[];
+winningPickIndices: BigNumber[][];
+encodedWinningPickIndices: string;
+* -------------------
+userAddress: 0x0000000000000000000000000000000000000001,
+drawIds: [1],
+winningPickIndices: [[1]],
+encodedWinningPickIndices: 0x000...2000...0001
+* /
 ```
 
 # 📖 Documentation
