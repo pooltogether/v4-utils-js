@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { createDrawResultsObject } from '../../src/utils';
 
 describe('createDrawResultsObject', () => {
