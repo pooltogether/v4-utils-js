@@ -1,137 +1,4 @@
-<p align="center">
-  <a href="https://github.com/pooltogether/pooltogether--brand-assets">
-    <img src="https://github.com/pooltogether/pooltogether--brand-assets/blob/977e03604c49c63314450b5d432fe57d34747c66/logo/pooltogether-logo--purple-gradient.png?raw=true" alt="PoolTogether Brand" style="max-width:100%;" width="200">
-  </a>
-</p>
-
-<br />
-
-# Utility Library for PoolTogether V4
-![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
-
-The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
-
-**Caclulations:** Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
-
-**Computations:** Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
-
-# Installation
-
-This project is available as an NPM package:
-
-```sh
-npm install @pooltogether/v4-utils-js
-```
-
-```sh
-yarn add @pooltogether/v4-utils-js
-```
-
-The repo can be cloned from Github for contributions.
-
-```sh
-git clone https://github.com/pooltogether/v4-core
-```
-
-# Developer Experience
-
-The package is setup using the TSDX zero-config CLI tool. Which includes:
-
-- Typescript
-- Rollup
-- Jest
-- Prettier
-- ESLint
-
-**Minor changes are made to extend the default configuration.**
-
-## ESLint
-
-The TSDX linting configuration is overwritten to include override(s).
-
-- Import/Order
-
 [@pooltogether/v4-utils-js](README.md) / Exports
-
-# Quickstart
-
-The `v4-utils-js` module includes modular calculation and computation function required to validate the PoolTogether V4 protocol state.
-
-In addition to the core utils, `winningPicks` function is exported as a "*kitchensink*" helper to calculate/compute/encode a valid transaction with the maximum number of winning picks.
-
-```ts
-import { Wallet } from '@ethersproject/wallet';
-import { providers } from '@ethersproject/provider';
-import { winningPicks, computeWinningPicks, encodeWinningPicks } from '@pooltogether/v4-utils-js';
-
-// Compute and Encode Winning Picks Seperately
-const computedPicks = computeWinningPicks(user, [draw], [prizeDistribution]);
-const encodePicks = encodeWinningPicks(user, computedWinningPicks);
-
-// Compute and Encode Winning Picks Together
-const computedAndEncodedWinningPicks = computedAndEncodedWinningPicks(user, [draw], [prizeDistribution]);
-
-// Send Encoded Transaction to Mainnet
-const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
-wallet.sendTransaction(computedAndEncodedWinningPicks.encodedWinningPickIndices)
-
-```
-
-
-# Examples
-
-```ts
-import { BigNumber } from '@ethersproject/bignumber';
-import { parseEther } from '@ethersproject/units';
-import { winningPicks, utils } from '@pooltogether/v4-utils-js';
-
-
-const user = {
-    address: '0x0000000000000000000000000000000000000001',
-    normalizedBalances: [
-        parseEther('0.1'),
-        parseEther('0.2'),
-        parseEther('0.3'),
-    ],
-};
-
-const draw = {
-    drawId: 1,
-    winningRandomNumber: BigNumber.from(
-        '0x0000000000000000000000000000000000000000000000000000000000000001'
-    ),
-};
-
-const prizeDistribution = {
-    bitRangeSize: 4,
-    matchCardinality: 10,
-    numberOfPicks: 1000,
-    prize: parseEther('100000'),
-    maxPicksPerUser: 30,
-    tiers: [
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        utils.formatTierPercentage('0.1'),
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-    ],
-};
-
-const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
-```
 
 # @pooltogether/v4-utils-js
 
@@ -139,30 +6,30 @@ const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
 
 ### Namespaces
 
-- [utils](docs/modules/utils.md)
+- [utils](modules/utils.md)
 
 ### Functions
 
-- [calculateCardinality](docs/modules.md#calculatecardinality)
-- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
-- [calculatePick](docs/modules.md#calculatepick)
-- [calculatePicks](docs/modules.md#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
-- [computeDrawResults](docs/modules.md#computedrawresults)
-- [computePickPrize](docs/modules.md#computepickprize)
-- [computePicksPrizes](docs/modules.md#computepicksprizes)
-- [computePrizeAmount](docs/modules.md#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](docs/modules.md#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](docs/modules.md#computewinningpicks)
-- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
-- [winningPicks](docs/modules.md#winningpicks)
+- [calculateCardinality](modules.md#calculatecardinality)
+- [calculateFractionOfPrize](modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](modules.md#calculatepick)
+- [calculatePicks](modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](modules.md#calculatetierindexfrommatches)
+- [computeDrawResults](modules.md#computedrawresults)
+- [computePickPrize](modules.md#computepickprize)
+- [computePicksPrizes](modules.md#computepicksprizes)
+- [computePrizeAmount](modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](modules.md#computewinningpicks)
+- [encodeWinningPicks](modules.md#encodewinningpicks)
+- [winningPicks](modules.md#winningpicks)
 
 ## Functions
 

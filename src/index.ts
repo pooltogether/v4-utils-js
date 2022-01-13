@@ -1,10 +1,7 @@
-export * from "./utils";
-export * from "./helpers";
-export * from "./batchCalculateDrawResults";
-export * from "./calculateDrawResults";
-export * from "./calculatePicksFromAverageTotalSuppliesBetween";
-export * from "./computeCardinality";
-export * from "./computePicks";
-export * from "./computeDrawResults";
-export * from "./generatePicks";
-export * from "./prepareClaims";
+import * as utils from './utils';
+export { utils };
+export * from './calculate';
+export * from './compute';
+export { default as computeWinningPicks } from './computeWinningPicks';
+export { default as encodeWinningPicks } from './encodeWinningPicks';
+export { default as winningPicks } from './winningPicks';
