@@ -40,7 +40,7 @@ yarn add @pooltogether/v4-utils-js
 The repo can be cloned from Github for contributions.
 
 ```sh
-git clone https://github.com/pooltogether/v4-core
+git clone https://github.com/pooltogether/v4-utis-js
 ```
 
 # Developer Experience
@@ -60,8 +60,6 @@ The package is setup using the TSDX zero-config CLI tool. Which includes:
 The TSDX linting configuration is overwritten to include override(s).
 
 - Import/Order
-
-[@pooltogether/v4-utils-js](README.md) / Exports
 
 # Quickstart
 
