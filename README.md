@@ -18,17 +18,17 @@
 
 ## Calculations, Computations and Core Logic
 
-The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for PoolTogether V4 protocol.
+The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for the PoolTogether V4 protocol.
 
-Assisting with low-level tasks like hashing addresses to generate picks and calculating the total number of prizes for a prize tier.
+Assisting with low-level tasks like hashing addresses to generate picks and calculating the total number of prizes for a prize tier. The `calculations` namespaced functions are modular: consuming low-level inputs/types to parity smart contract EVM operations.
 
-Additionally, high-order operations like filtering for a users winning picks and processing chain state (draws, prizeDistributions, etc..) to analyze/predict short and long term outcomes are included.
+High-order operations like filtering for a users winning picks and processing chain state (draws, prizeDistributions, etc..) to analyze/predict short and long term outcomes are included in the `computations` namespaced functions.
 
 [Open an Issue](https://github.com/pooltogether/v4-utils-js/issues) to request new features.
 
 **Caclulations:**
 
-Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address.
+Basic arithmatic and operations for the V4 protocol:
 
 - [calculateCardinality](docs/modules.md#calculatecardinality)
 - [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
@@ -43,7 +43,7 @@ Basic arithmatic and operations for the V4 protocol: cardinality, number of pick
 
 **Computations:** 
 
-Consume protocol current/potential state (Draws/PrizeDistributions) and return computed outcomes.
+Consume protocol chain state and return computed outcomes:
 
 - [computeDrawResults](docs/modules.md#computedrawresults)
 - [computePickPrize](docs/modules.md#computepickprize)
@@ -56,7 +56,7 @@ Consume protocol current/potential state (Draws/PrizeDistributions) and return c
 
 **Core:**
 
-Gain insights into the protocol state by analyzing and encoding historical chain state.
+Gain insights into the protocol state by analyzing and encoding historical and potential chain state.
 
 - [encodeWinningPicks](docs/modules.md#encodewinningpicks)
 - [winningPicks](docs/modules.md#winningpicks)
