@@ -13,17 +13,50 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 
-## Calculations & Computations
+## Calculations, Computations and Core Logic
 
-The `v4-utils-js` is a Javascript module to assist with with calculation/computation of the PoolTogether V4 protocol.
+The `v4-utils-js` is a Javascript module to assist with off-chain calculations and computations in the PoolTogether V4 protocol.
 
 **Caclulations:**
 
-Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address, etc... 
+Basic arithmatic and operations for the V4 protocol: cardinality, number of picks, hashed address.
+
+- [calculateCardinality](docs/modules.md#calculatecardinality)
+- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](docs/modules.md#calculatepick)
+- [calculatePicks](docs/modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
 
 **Computations:** 
 
-Consume protocol state (Draws/PrizeDistributions/RandomNumber) and return computed results.
+Consume protocol current/potential state (i.e. Draws, PrizeDistributions, RandomNumber) and return computed results like user winning picks.
+
+- [computeDrawResults](docs/modules.md#computedrawresults)
+- [computePickPrize](docs/modules.md#computepickprize)
+- [computePicksPrizes](docs/modules.md#computepicksprizes)
+- [computePrizeAmount](docs/modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](docs/modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](docs/modules.md#computewinningpicks)
+
+**Core:**
+
+Gain insights into the protocol state by analyzing and encoding historical chain state.
+
+- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
+- [winningPicks](docs/modules.md#winningpicks)
+
+*Potential Additions*
+
+- averagePoolYieldBetweenTimestamps
+- oddsPerPrizeTierUsingNormalizedBalance
+- userAverageAPRBetweenTimestamps
 
 # Installation
 
