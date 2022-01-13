@@ -98,8 +98,6 @@ const user = {
     address: '0x0000000000000000000000000000000000000001',
     normalizedBalances: [
         parseEther('0.1'), // 10% of totalSupply
-        parseEther('0.2'), // 20% of totalSupply
-        parseEther('0.3'), // 30% of totalSupply
     ],
 };
 
