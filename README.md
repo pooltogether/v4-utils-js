@@ -6,10 +6,10 @@
 
 <br />
 
-# 🧰 Javascript Utilility Library || PoolTogether V4
-![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
+# 🧰 Javascript Utilility Library - PoolTogether V4
 ![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=master)
+![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 [Application](https://app.pooltogether.com/) | [Contracts](https://github.com/pooltogether/v4-core) | [Documentation](https://docs.pooltogether.com/) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Static Cache](https://github.com/pooltogether/v4-draw-results)
