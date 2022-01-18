@@ -13,7 +13,6 @@ function computePickPrize(
     prize: BigNumber,
     tiers: Array<any>
 ): PickPrize {
-
     let numberOfMatches = calculateNumberOfMatches(
         pickHash,
         winningRandomNumber,
@@ -32,7 +31,7 @@ function computePickPrize(
         bitRangeSize,
         prize
     );
-    
+
     return pickAmount;
 }
 

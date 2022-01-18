@@ -8,7 +8,9 @@ describe('computePickPrize', () => {
     it('should have 10% of total picks (100/1000) ', () => {
         const pickPrize = computePickPrize(
             hashUserAddress('0x0000000000000000000000000000000000000001'),
-            BigNumber.from('0x0000000000000000000000000000000000000000000000000000000000000001'),
+            BigNumber.from(
+                '0x0000000000000000000000000000000000000000000000000000000000000001'
+            ),
             6, // bitRangeSize
             2, // matchCardinality
             parseEther('1000'),
