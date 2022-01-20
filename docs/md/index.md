@@ -5,8 +5,6 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 ![npm](https://img.shields.io/npm/v/@pooltogether/v4-utils-js)
 
-[Application](https://app.pooltogether.com/) | [Contracts](https://github.com/pooltogether/v4-core) | [Documentation](https://docs.pooltogether.com/) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Static Cache](https://github.com/pooltogether/v4-draw-results)
-
 The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and core logic for the PoolTogether V4 protocol.
 
 Assisting with low-level tasks like hashing addresses to generate picks and calculating the total number of prizes for a prize tier. The `calculations` namespaced functions are modular: consuming low-level inputs/types to parity smart contract EVM operations.
@@ -31,7 +29,7 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-utils-js
 ```
 
-# Quickstart - Compute Winnings Picks & Encode Transaction
+# Quickstart
 
 The most straight-forward approach to calculate winning picks is to call `winningPicks` with historical Draw and PrizeDistrubtion parameters.
 
