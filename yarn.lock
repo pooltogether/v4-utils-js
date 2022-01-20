@@ -2634,6 +2634,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+docusaurus-plugin-typedoc@^0.16.7:
+  version "0.16.7"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-typedoc/-/docusaurus-plugin-typedoc-0.16.7.tgz#b23f22b8ec93d25d8d3e204684ab05e4636a6873"
+  integrity sha512-4V/Nw+cJDbcmA6getpweAKuu1tTyky3/gHliL75DLJntk2pR5wM/x4jNFaYiHOPsnP3d5CkBfK+mSSo4M9jtvA==
+
 domexception@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"

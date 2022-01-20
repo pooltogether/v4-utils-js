@@ -16,8 +16,8 @@
   ],
   "homepage": "https://github.com/pooltogether/v4-utils-js",
   "bugs": {
-    "url" : "https://github.com/pooltogether/issues",
-    "email" : "bugs@pooltogether.com"
+    "url": "https://github.com/pooltogether/issues",
+    "email": "bugs@pooltogether.com"
   },
   "engines": {
     "node": ">=10"
@@ -36,7 +36,11 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "clean": "jest --clearCache",
-    "docs": "yarn typedoc src/index.ts --out docs"
+    "watch": "tsdx watch",
+    "docs": "yarn docs:md",
+    "docs:md": "yarn typedoc --plugin typedoc-plugin-markdown --entryDocument index.md --hideBreadcrumbs true --namedAnchors false --out docs/md",
+    "docs:html": "yarn typedoc --plugin none --options typedoc.json --out docs/appw src/index.ts ",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {},
   "dependencies": {

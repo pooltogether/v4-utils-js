@@ -1,5 +1,3 @@
-[@pooltogether/v4-utils-js](README.md) / Exports
-
 # @pooltogether/v4-utils-js
 
 ## Table of contents
@@ -163,7 +161,7 @@ Re-exports [computeWinningPicks](modules/compute.md#computewinningpicks)
 
 #### Defined in
 
-[encodeWinningPicks.ts:7](https://github.com/pooltogether/v4-js/blob/2137ee6/src/encodeWinningPicks.ts#L7)
+[encodeWinningPicks.ts:7](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/encodeWinningPicks.ts#L7)
 
 ___
 
@@ -185,4 +183,4 @@ ___
 
 #### Defined in
 
-[winningPicks.ts:5](https://github.com/pooltogether/v4-js/blob/2137ee6/src/winningPicks.ts#L5)
+[winningPicks.ts:5](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/winningPicks.ts#L5)
