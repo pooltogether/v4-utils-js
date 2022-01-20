@@ -106,7 +106,6 @@ const computedAndEncodedWinningPicks = winningPicks(user, [draw], [prizeDistribu
 // Send Encoded Transaction to Mainnet
 const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
 wallet.send(computedAndEncodedWinningPicks.encodedWinningPickIndices)
-
 ```
 
 # 🪜 Examples

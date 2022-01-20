@@ -31,7 +31,7 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-utils-js
 ```
 
-# 🏎️ Quickstart - Compute Winnings Picks & Encode Transaction
+# Quickstart - Compute Winnings Picks & Encode Transaction
 
 The most straight-forward approach to calculate winning picks is to call `winningPicks` with historical Draw and PrizeDistrubtion parameters.
 

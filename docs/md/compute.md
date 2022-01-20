@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[compute/computeDrawResults.ts:10](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computeDrawResults.ts#L10)
+[compute/computeDrawResults.ts:10](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computeDrawResults.ts#L10)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[compute/computePickPrize.ts:8](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computePickPrize.ts#L8)
+[compute/computePickPrize.ts:8](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computePickPrize.ts#L8)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[compute/computePicksPrizes.ts:6](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computePicksPrizes.ts#L6)
+[compute/computePicksPrizes.ts:6](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computePicksPrizes.ts#L6)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[compute/computePrizeAmount.ts:8](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computePrizeAmount.ts#L8)
+[compute/computePrizeAmount.ts:8](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computePrizeAmount.ts#L8)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts:12](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L12)
+[compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts:12](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L12)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[compute/computeUserPicks.ts:10](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computeUserPicks.ts#L10)
+[compute/computeUserPicks.ts:10](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computeUserPicks.ts#L10)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-[compute/computeUserWinningPicksForRandomNumber.ts:11](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computeUserWinningPicksForRandomNumber.ts#L11)
+[compute/computeUserWinningPicksForRandomNumber.ts:11](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computeUserWinningPicksForRandomNumber.ts#L11)
 
 ___
 
@@ -204,4 +204,4 @@ ___
 
 #### Defined in
 
-[compute/computeWinningPicks.ts:4](https://github.com/pooltogether/v4-utils-js/blob/5195569/src/compute/computeWinningPicks.ts#L4)
+[compute/computeWinningPicks.ts:4](https://github.com/pooltogether/v4-utils-js/blob/225dead/src/compute/computeWinningPicks.ts#L4)
