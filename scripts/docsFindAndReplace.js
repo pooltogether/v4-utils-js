@@ -4,6 +4,7 @@ const replaceInFiles = require('replace-in-files');
 const replaces = [
     [/modules.md/g, 'modules'],
     [/calculate.md/g, ''],
+    [/Namespace:/g, ''],
 ]
 
 const createOptions= (from, to) => {

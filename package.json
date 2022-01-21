@@ -37,7 +37,7 @@
     "prepare": "tsdx build",
     "clean": "jest --clearCache",
     "watch": "tsdx watch",
-    "docs": "yarn docs:md ;  yarn docs:clean",
+    "docs": "yarn docs:md ; yarn docs:clean",
     "docs:md": "yarn typedoc --plugin typedoc-plugin-markdown --entryDocument index.md --hideBreadcrumbs true --namedAnchors false --out docs/md",
     "docs:html": "yarn typedoc --plugin none --out docs/app src/index.ts ",
     "docs:clean": "node ./scripts/docsFindAndReplace.js ; node ./scripts/docsCleanup.js",
