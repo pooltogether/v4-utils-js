@@ -11,6 +11,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=main)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=main)
 ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+![npm](https://img.shields.io/npm/v/@pooltogether/v4-utils-js)
 
 [Application](https://app.pooltogether.com/) | [Contracts](https://github.com/pooltogether/v4-core) | [Documentation](https://docs.pooltogether.com/) | [Draw Calculator](https://github.com/pooltogether/draw-calculator-cli) | [Frontend Client](https://github.com/pooltogether/v4-js-client) | [Static Cache](https://github.com/pooltogether/v4-draw-results)
 
@@ -85,26 +86,6 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-utils-js
 ```
 
-# 💻 Developer Experience
-
-The package is setup using the [TSDX zero-config CLI](https://tsdx.io/) which includes:
-
-- Typescript
-- Rollup
-- Jest
-- Prettier
-- ESLint
-
-**Minor changes have been made to extend the default configuration.**
-
-### ESLint
-
-The TSDX linting configuration is overwritten to include override(s)* for:
-
-- Import/Order (used to enforce consistent module import ordering)
-
-###### *The ESLint overrides may incorrectly be interpreted by VSCode since the nested config file is ignored in the IDE
-
 # 🏆 Quickstart (Claim Winning Picks)
 
 Core utility functions like `winningPicks(user, draw, prizeDistribution)` calculate, compute and encode any EVM chain compatible transaction with the maximum number of winning picks using the input arguments.
@@ -125,7 +106,6 @@ const computedAndEncodedWinningPicks = winningPicks(user, [draw], [prizeDistribu
 // Send Encoded Transaction to Mainnet
 const wallet = Wallet.createRandom().connect(providers.getDefaultProvider())
 wallet.send(computedAndEncodedWinningPicks.encodedWinningPickIndices)
-
 ```
 
 # 🪜 Examples
@@ -189,6 +169,26 @@ winningPickIndices: [[1]],
 encodedWinningPickIndices: '0x000...2000...0001'
 * /
 ```
+# 💻 Developer Experience
+
+The package is setup using the [TSDX zero-config CLI](https://tsdx.io/) which includes:
+
+- Typescript
+- Rollup
+- Jest
+- Prettier
+- ESLint
+
+**Minor changes have been made to extend the default configuration.**
+
+### ESLint
+
+The TSDX linting configuration is overwritten to include override(s)* for:
+
+- Import/Order (used to enforce consistent module import ordering)
+
+###### *The ESLint overrides may incorrectly be interpreted by VSCode since the nested config file is ignored in the IDE
+
 # 📖 Documentation
 
 ### Namespaces
