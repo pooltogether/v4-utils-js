@@ -1,6 +1,6 @@
-import computeWinningPicks from './compute/computeWinningPicks';
+import computeWinningPicks from '../compute/computeWinningPicks';
 import encodeWinningPicks from './encodeWinningPicks';
-import { Claim, Draw, PrizeDistribution, User } from './types';
+import { Claim, Draw, PrizeDistribution, User } from '../types';
 
 /**
  * @description Computes a User's winning picks for multiple Draws and returns an encoded transaction.

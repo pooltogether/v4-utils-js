@@ -3,26 +3,29 @@ const replaceInFiles = require('replace-in-files');
 
 const replaces = [
     [/modules.md/g, 'modules'],
-    [/calculate.md/g, ''],
+    [/calculate.md/g, 'calculate'],
+    [/compute.md/g, 'compute'],
+    [/core.md/g, 'core'],
+    [/utils.md/g, 'utils'],
     [/Namespace:/g, ''],
 ]
 
 const createOptions= (from, to) => {
-const options = {
-    files: 'docs/md/**/*.md',
-    from: from, // string or regex
-    to: to, // string or fn  (fn: carrying last argument - path to replaced file)
-    optionsForFiles: {
-        ignore: ['**/node_modules/**'],
-    },
-    saveOldFile: false,
-    encoding: 'utf8',
-    shouldSkipBinaryFiles: true,
-    onlyFindPathsWithoutReplace: false,
-    returnPaths: true,
-    returnCountOfMatchesByPaths: true,
-};
-return options
+    const options = {
+        files: 'docs/md/**/*.md',
+        from: from, // string or regex
+        to: to, // string or fn  (fn: carrying last argument - path to replaced file)
+        optionsForFiles: {
+            ignore: ['**/node_modules/**'],
+        },
+        saveOldFile: false,
+        encoding: 'utf8',
+        shouldSkipBinaryFiles: true,
+        onlyFindPathsWithoutReplace: false,
+        returnPaths: true,
+        returnCountOfMatchesByPaths: true,
+    };
+    return options
 }
 
 for (let index = 0; index < replaces.length; index++) {
@@ -31,7 +34,7 @@ for (let index = 0; index < replaces.length; index++) {
         .then(({ changedFiles, countOfMatchesByPaths }) => {
             console.log('Modified files:', changedFiles);
             console.log('Count of matches by paths:', countOfMatchesByPaths);
-            console.log('was called with:', options);
+            // console.log('was called with:', options);
         })
         .catch(error => {
             console.error('Error occurred:', error);

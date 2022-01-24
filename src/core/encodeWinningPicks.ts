@@ -1,8 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { User, DrawResults, Claim } from './types';
-import { sortByBigNumberAsc } from './utils';
+import { User, DrawResults, Claim } from '../types';
+import { sortByBigNumberAsc } from '../utils';
 
 function encodeWinningPicks(user: User, drawResults: DrawResults[]): Claim {
     let claim: Claim = {
