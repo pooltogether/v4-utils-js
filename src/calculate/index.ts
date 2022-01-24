@@ -1,6 +1,6 @@
-// export { default as batchCalculateDrawResults } from '../compute/batchComputeUserWinningPicksForRandomNumber';
 export { default as calculateCardinality } from './calculateCardinality';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
+export { default as calculateNormalizedBalance } from './calculateNormalizedBalance';
 export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';
 export { default as calculateNumberOfMatches } from './calculateNumberOfMatches';
 export { default as calculateNumberOfPrizesForTierIndex } from './calculateNumberOfPrizesForTierIndex';
