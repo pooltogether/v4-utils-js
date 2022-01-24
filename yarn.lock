@@ -6556,6 +6556,11 @@ typedoc-plugin-markdown@^3.11.8:
   dependencies:
     handlebars "^4.7.7"
 
+typedoc-plugin-remove-references@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-remove-references/-/typedoc-plugin-remove-references-0.0.6.tgz#6568615e5857531a497676b5536bc1ff41117443"
+  integrity sha512-QoyHpopznnJbWW/9JT2NHSK+eTmyShkPYebwe5ZnO8aohPLc5okk4puWUDXnNh2Tn7cJU8U3t1tEMO6ghbwE8Q==
+
 typedoc@^0.22.10:
   version "0.22.10"
   resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.22.10.tgz#221e1a2b17bcb71817ef027dc4c4969d572e7620"

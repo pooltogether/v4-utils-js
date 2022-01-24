@@ -12,6 +12,7 @@ const paths = [
     ['./docs/md/modules/calculate.md', './docs/md/calculate.md'],
     ['./docs/md/modules/compute.md', './docs/md/compute.md'],
     ['./docs/md/modules/utils.md', './docs/md/utils.md'],
+    ['./docs/md/modules/core.md', './docs/md/core.md'],
 ];
 try {
     for (let index = 0; index < paths.length; index++) {
