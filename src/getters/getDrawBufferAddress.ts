@@ -1,7 +1,7 @@
-import { getAddressFromDeploymentFile } from "../utils";
+import { getAddressFromDeploymentFile } from '../utils';
 
 function getDrawBufferAddress(network: string): string {
-    return getAddressFromDeploymentFile(network, "DrawBuffer");
+    return getAddressFromDeploymentFile(network, 'DrawBuffer');
 }
 
 export default getDrawBufferAddress;

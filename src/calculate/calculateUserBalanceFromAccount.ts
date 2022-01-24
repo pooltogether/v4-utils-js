@@ -1,13 +1,13 @@
-import { BigNumber } from "@ethersproject/bignumber";
+import { BigNumber } from '@ethersproject/bignumber';
 
-const debug = require("debug")("pt:v4-utils-js");
+const debug = require('debug')('pt:v4-utils-js');
 
 function calculateUserBalanceFromAccount(
     accountEntry: any,
     drawStartTime: number,
     drawEndTime: number
 ): BigNumber | undefined {
-    debug("calculating twabEntry from ", JSON.stringify(accountEntry));
+    debug('calculating twabEntry from ', JSON.stringify(accountEntry));
 
     // beforeOrAtDrawStartTime: S
     // beforeOrAtDrawEndTime: E
@@ -30,22 +30,26 @@ function calculateUserBalanceFromAccount(
     if (sTwab) {
         drawStartTwab = {
             amount: BigNumber.from(sTwab.amount).add(
-                BigNumber.from(sTwab.delegateBalance).mul(drawStartTime - sTwab.timestamp)
+                BigNumber.from(sTwab.delegateBalance).mul(
+                    drawStartTime - sTwab.timestamp
+                )
             ),
-            timestamp: drawStartTime
+            timestamp: drawStartTime,
         };
     } else {
         drawStartTwab = {
             amount: BigNumber.from(0),
-            timestamp: drawStartTime
+            timestamp: drawStartTime,
         };
     }
 
     drawEndTwab = {
         amount: BigNumber.from(eTwab.amount).add(
-            BigNumber.from(eTwab.delegateBalance).mul(drawEndTime - eTwab.timestamp)
+            BigNumber.from(eTwab.delegateBalance).mul(
+                drawEndTime - eTwab.timestamp
+            )
         ),
-        timestamp: drawEndTime
+        timestamp: drawEndTime,
     };
 
     const average: BigNumber = drawEndTwab.amount

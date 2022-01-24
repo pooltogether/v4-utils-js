@@ -1,5 +1,5 @@
-import { getAddressFromDeploymentFile } from "../utils";
+import { getAddressFromDeploymentFile } from '../utils';
 
 export function getPrizeDistributorAddress(chainId: string) {
-    return getAddressFromDeploymentFile(chainId, "PrizeDistributor");
+    return getAddressFromDeploymentFile(chainId, 'PrizeDistributor');
 }

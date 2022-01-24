@@ -1,7 +1,7 @@
 import * as calculate from './calculate';
 import * as compute from './compute';
-import * as utils from './utils';
 import * as getters from './getters';
+import * as utils from './utils';
 export * from './calculate';
 export * from './compute';
 export * from './getters';
