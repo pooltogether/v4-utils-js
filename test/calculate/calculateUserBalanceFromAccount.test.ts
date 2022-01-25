@@ -15,18 +15,26 @@ describe('calculateUserBalanceFromAccount()', () => {
         };
         const drawStartTime = 1634930149;
         const drawEndTime = 1635015649;
-        expect(calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime)).toEqual(
-            undefined,
-        );
+        expect(
+            calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime)
+        ).toEqual(undefined);
     });
 
     it('returns correct value, twabs the same', () => {
         const account: Account = {
             beforeOrAtDrawEndTime: [
-                { amount: '30000000000', delegateBalance: '30000000000', timestamp: '1634789910' },
+                {
+                    amount: '30000000000',
+                    delegateBalance: '30000000000',
+                    timestamp: '1634789910',
+                },
             ],
             beforeOrAtDrawStartTime: [
-                { amount: '30000000000', delegateBalance: '30000000000', timestamp: '1634789910' },
+                {
+                    amount: '30000000000',
+                    delegateBalance: '30000000000',
+                    timestamp: '1634789910',
+                },
             ],
             delegateBalance: '30000000000',
             id: '0x00e6acb9346c6d4940a167f7b196104fa7d84c85',
@@ -36,14 +44,18 @@ describe('calculateUserBalanceFromAccount()', () => {
         const drawStartTime = 1634930149;
         const drawEndTime = 1635015649;
 
-        expect(calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime)).toEqual(
-            BigNumber.from('30000000000'),
-        );
+        expect(
+            calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime)
+        ).toEqual(BigNumber.from('30000000000'));
     });
     it('another user ', () => {
         const account: Account = {
             beforeOrAtDrawEndTime: [
-                { amount: '0', delegateBalance: '310000000', timestamp: '1634988536' },
+                {
+                    amount: '0',
+                    delegateBalance: '310000000',
+                    timestamp: '1634988536',
+                },
             ],
             beforeOrAtDrawStartTime: [],
             delegateBalance: '310000000',
@@ -53,7 +65,11 @@ describe('calculateUserBalanceFromAccount()', () => {
         };
         const drawStartTime = 1634930149;
         const drawEndTime = 1635015649;
-        const balance = calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime);
+        const balance = calculateUserBalanceFromAccount(
+            account,
+            drawStartTime,
+            drawEndTime
+        );
         expect(balance).toEqual(BigNumber.from('98304444'));
     });
     it('user withdraws after draw period', () => {
@@ -79,7 +95,11 @@ describe('calculateUserBalanceFromAccount()', () => {
         };
         const drawStartTime = 1634930149;
         const drawEndTime = 1635015649;
-        const balance = calculateUserBalanceFromAccount(account, drawStartTime, drawEndTime);
+        const balance = calculateUserBalanceFromAccount(
+            account,
+            drawStartTime,
+            drawEndTime
+        );
 
         expect(balance).toEqual(BigNumber.from('102759649122'));
     });

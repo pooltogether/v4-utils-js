@@ -1,6 +1,7 @@
 export { default as createDrawResultsObject } from './createDrawResultsObject';
 export { default as filterResultsByValue } from './filterResultsByValue';
 export { default as findBitMatchesAtIndex } from './findBitMatchesAtIndex';
+export { default as getAddressFromDeploymentFile } from './getAddressFromDeploymentFile';
 export { default as hashUserAddress } from './hashUserAddress';
 export { default as isBitRangeSizeValid } from './isBitRangeSizeValid';
 export { default as isTiersValid } from './isTiersValid';
