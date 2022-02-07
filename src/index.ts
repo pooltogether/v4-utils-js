@@ -5,6 +5,7 @@ import * as utils from './utils';
 export * from './calculate';
 export * from './compute';
 export * from './getters';
+export * from './types';
 export { default as encodeWinningPicks } from './encodeWinningPicks';
 export { default as winningPicks } from './winningPicks';
 export { calculate, compute, utils, getters };
