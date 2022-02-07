@@ -1,17 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-const debug = require('debug')('pt:v4-utils-js');
-
 function calculateUserBalanceFromAccount(
     accountEntry: any,
     drawStartTime: number,
     drawEndTime: number
 ): BigNumber | undefined {
-    debug('calculating twabEntry from ', JSON.stringify(accountEntry));
-
     // beforeOrAtDrawStartTime: S
     // beforeOrAtDrawEndTime: E
-
     // [], [S], [SE], [E]
 
     // if beforeOrAtDrawStartTime exists, beforeOrAtDrawEndTime must exist
