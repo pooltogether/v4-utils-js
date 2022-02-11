@@ -27,36 +27,36 @@ High-order operations like filtering for a users winning picks and processing ch
 
 Arithmetic and operations to match `v4-core` [smart contract](https://github.com/pooltogether/v4-core) operations:
 
-- [calculateCardinality](docs/modules.md#calculatecardinality)
-- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
-- [calculatePick](docs/modules.md#calculatepick)
-- [calculatePicks](docs/modules.md#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
+- [calculateCardinality](docs/md/modules.md#calculatecardinality)
+- [calculateFractionOfPrize](docs/md/modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](docs/md/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](docs/md/modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](docs/md/modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](docs/md/modules.md#calculatepick)
+- [calculatePicks](docs/md/modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](docs/md/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](docs/md/modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](docs/md/modules.md#calculatetierindexfrommatches)
 
 **🖥️ Computations:** 
 
 Consume protocol chain state and return computed outcomes:
 
-- [computeDrawResults](docs/modules.md#computedrawresults)
-- [computePickPrize](docs/modules.md#computepickprize)
-- [computePicksPrizes](docs/modules.md#computepicksprizes)
-- [computePrizeAmount](docs/modules.md#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](docs/modules.md#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](docs/modules.md#computewinningpicks)
+- [computeDrawResults](docs/md/modules.md#computedrawresults)
+- [computePickPrize](docs/md/modules.md#computepickprize)
+- [computePicksPrizes](docs/md/modules.md#computepicksprizes)
+- [computePrizeAmount](docs/md/modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/md/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](docs/md/modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](docs/md/modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](docs/md/modules.md#computewinningpicks)
 
 **🏆 Core:**
 
 Gain insights into the protocol state by analyzing and encoding historical and potential chain state.
 
-- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
-- [winningPicks](docs/modules.md#winningpicks)
+- [encodeWinningPicks](docs/md/modules.md#encodewinningpicks)
+- [winningPicks](docs/md/modules.md#winningpicks)
 
 🙋 *Potential Additions:*
 
@@ -193,29 +193,29 @@ The TSDX linting configuration is overwritten to include override(s)* for:
 
 ### Namespaces
 
-- [calculate](docs/modules/calculate.md)
-- [compute](docs/modules/compute.md)
-- [utils](docs/modules/utils.md)
+- [calculate](docs/md/modules/calculate.md)
+- [compute](docs/md/modules/compute.md)
+- [utils](docs/md/modules/utils.md)
 
 ### References
 
-- [calculateCardinality](docs/modules.md#calculatecardinality)
-- [calculateFractionOfPrize](docs/modules.md#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](docs/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](docs/modules.md#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](docs/modules.md#calculatenumberofprizesfortierindex)
-- [calculatePick](docs/modules.md#calculatepick)
-- [calculatePicks](docs/modules.md#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](docs/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](docs/modules.md#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](docs/modules.md#calculatetierindexfrommatches)
-- [computeDrawResults](docs/modules.md#computedrawresults)
-- [computePickPrize](docs/modules.md#computepickprize)
-- [computePicksPrizes](docs/modules.md#computepicksprizes)
-- [computePrizeAmount](docs/modules.md#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](docs/modules.md#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](docs/modules.md#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](docs/modules.md#computewinningpicks)
-- [encodeWinningPicks](docs/modules.md#encodewinningpicks)
-- [winningPicks](docs/modules.md#winningpicks)
+- [calculateCardinality](docs/md/modules.md#calculatecardinality)
+- [calculateFractionOfPrize](docs/md/modules.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](docs/md/modules.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](docs/md/modules.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](docs/md/modules.md#calculatenumberofprizesfortierindex)
+- [calculatePick](docs/md/modules.md#calculatepick)
+- [calculatePicks](docs/md/modules.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](docs/md/modules.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](docs/md/modules.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](docs/md/modules.md#calculatetierindexfrommatches)
+- [computeDrawResults](docs/md/modules.md#computedrawresults)
+- [computePickPrize](docs/md/modules.md#computepickprize)
+- [computePicksPrizes](docs/md/modules.md#computepicksprizes)
+- [computePrizeAmount](docs/md/modules.md#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](docs/md/modules.md#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](docs/md/modules.md#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](docs/md/modules.md#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](docs/md/modules.md#computewinningpicks)
+- [encodeWinningPicks](docs/md/modules.md#encodewinningpicks)
+- [winningPicks](docs/md/modules.md#winningpicks)
