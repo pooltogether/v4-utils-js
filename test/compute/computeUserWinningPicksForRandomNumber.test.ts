@@ -24,8 +24,8 @@ describe('computeUserWinningPicksForRandomNumber', () => {
                 '21288413488180966377126236036201345909019919575750940621513526137694302720820'
             ),
             drawId: 1,
-            timestamp: 1634410924,
-            beaconPeriodStartedAt: 1634324400,
+            timestamp: BigNumber.from(1634410924),
+            beaconPeriodStartedAt: BigNumber.from(1634324400),
             beaconPeriodSeconds: 86400,
         };
 
