@@ -1,4 +1,5 @@
 import { BigNumber } from 'ethers';
+
 import { Draw, DrawResults, PrizeDistribution } from '../types';
 import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 

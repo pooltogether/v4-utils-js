@@ -1,8 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
-import { Draw, PrizeDistribution } from '../src';
 
+import { Draw, PrizeDistribution } from '../src';
 import { formatTierPercentage } from '../src/utils';
 import winningPicks from '../src/winningPicks';
 
