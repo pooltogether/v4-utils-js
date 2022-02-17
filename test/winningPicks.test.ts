@@ -2,33 +2,38 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
+import { Draw, PrizeDistribution } from '../src';
 import { formatTierPercentage } from '../src/utils';
 import winningPicks from '../src/winningPicks';
 
 describe('winningPicks', () => {
     it('', () => {
-        const user = {
-            address: '0x0000000000000000000000000000000000000001',
-            normalizedBalances: [
-                parseEther('0.1'),
-                parseEther('0.2'),
-                parseEther('0.3'),
-            ],
-        };
+        const userAddress = '0x0000000000000000000000000000000000000001';
+        const normalizedBalances = [
+            parseEther('0.1'),
+            parseEther('0.2'),
+            parseEther('0.3'),
+        ];
 
-        const draw = {
+        const draw: Draw = {
             drawId: 1,
             winningRandomNumber: BigNumber.from(
                 '0x0000000000000000000000000000000000000000000000000000000000000001'
             ),
+            timestamp: BigNumber.from(0),
+            beaconPeriodSeconds: 0,
+            beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeDistribution = {
+        const prizeDistribution: PrizeDistribution = {
             bitRangeSize: 4,
             matchCardinality: 10,
-            numberOfPicks: 1000,
+            numberOfPicks: BigNumber.from(1000),
             prize: parseEther('100000'),
             maxPicksPerUser: 30,
+            expiryDuration: 0,
+            startTimestampOffset: 0,
+            endTimestampOffset: 0,
             tiers: [
                 formatTierPercentage('0.1'),
                 formatTierPercentage('0.1'),
@@ -49,7 +54,12 @@ describe('winningPicks', () => {
             ],
         };
 
-        const generatedPicks = winningPicks(user, [draw], [prizeDistribution]);
+        const generatedPicks = winningPicks(
+            userAddress,
+            normalizedBalances,
+            [draw],
+            [prizeDistribution]
+        );
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),

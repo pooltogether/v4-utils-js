@@ -1,8 +1,11 @@
-import { Draw, DrawResults, PrizeDistribution, User } from '../types';
+import { BigNumber } from 'ethers';
+
+import { Draw, DrawResults, PrizeDistribution } from '../types';
 import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 
 function computeWinningPicks(
-    user: User,
+    userAddress: string,
+    normalizedBalances: BigNumber[],
     draws: Draw[],
     prizeDistributions: PrizeDistribution[]
 ): DrawResults[] {
@@ -14,8 +17,8 @@ function computeWinningPicks(
             prizeDistributions[index].numberOfPicks,
             prizeDistributions[index].prize,
             prizeDistributions[index].tiers,
-            user.address,
-            user.normalizedBalances[index]
+            userAddress,
+            normalizedBalances[index]
         )
     );
 }

@@ -3,7 +3,6 @@ import { keccak256 } from '@ethersproject/keccak256';
 import { toUtf8Bytes } from '@ethersproject/strings';
 import { parseUnits } from '@ethersproject/units';
 
-import { User } from '../src/types';
 import { formatTierPercentage } from '../src/utils/formatTierPercentage';
 
 export const ADDRESS_DEAD = '0x000000000000000000000000000000000000dEaD';
@@ -12,10 +11,10 @@ export const PRIZE_EXAMPLE_ONE = parseUnits('5000', 18);
 export const NUMBER_OF_PICKS_EXAMPLE_ONE = BigNumber.from('1000');
 
 export const TIERS_EXAMPLE_ONE = [
-    formatTierPercentage('0.25').toNumber(),
-    formatTierPercentage('0.05').toNumber(),
-    formatTierPercentage('0.5').toNumber(),
-    formatTierPercentage('0.2').toNumber(),
+    formatTierPercentage('0.25'),
+    formatTierPercentage('0.05'),
+    formatTierPercentage('0.5'),
+    formatTierPercentage('0.2'),
     0,
     0,
     0,
@@ -29,10 +28,10 @@ export const TIERS_EXAMPLE_ONE = [
 export const TIERS_EXAMPLE_EMPTY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export const TIERS_EXAMPLE_INVALID = [
-    formatTierPercentage('5000000000'),
-    formatTierPercentage('5000000000'),
-    formatTierPercentage('5000000000'),
-    formatTierPercentage('5000000000'),
+    formatTierPercentage('0.5'),
+    formatTierPercentage('0.5'),
+    formatTierPercentage('0.5'),
+    formatTierPercentage('0.5'),
     0,
     0,
     0,
@@ -42,12 +41,6 @@ export const TIERS_EXAMPLE_INVALID = [
     0,
     0,
 ];
-
-export const USER_EXAMPLE_ONE: User = {
-    address: ADDRESS_DEAD,
-    picks: [],
-    normalizedBalances: [],
-};
 
 export const DRAW_EXAMPLE_ONE = {
     winningRandomNumber: BigNumber.from(
@@ -68,7 +61,7 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_ONE = {
     numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
     prize: PRIZE_EXAMPLE_ONE,
     drawdrawStartTimestampOffset: 86400,
-    drawEndTimestampOffset: 900,
+    endTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_VALID = {
@@ -78,9 +71,9 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_VALID = {
     maxPicksPerUser: 2,
     expiryDuration: 5184000,
     numberOfPicks: NUMBER_OF_PICKS_EXAMPLE_ONE,
-    drawStartTimestampOffset: 86400,
+    startTimestampOffset: 86400,
     prize: PRIZE_EXAMPLE_ONE,
-    drawEndTimestampOffset: 900,
+    endTimestampOffset: 900,
 };
 
 export const PRIZE_DISTRIBUTION_EXAMPLE_INVALID = {
@@ -90,9 +83,9 @@ export const PRIZE_DISTRIBUTION_EXAMPLE_INVALID = {
     maxPicksPerUser: 0,
     expiryDuration: 0,
     numberOfPicks: BigNumber.from('0'),
-    drawStartTimestampOffset: 0,
+    startTimestampOffset: 0,
     prize: BigNumber.from('0'),
-    drawEndTimestampOffset: 0,
+    endTimestampOffset: 0,
 };
 
 export const contactList = {

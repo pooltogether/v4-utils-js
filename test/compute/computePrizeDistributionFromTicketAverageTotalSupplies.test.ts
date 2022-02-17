@@ -12,8 +12,8 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
                 '21288413488180966377126236036201345909019919575750940621513526137694302720820'
             ),
             drawId: 1,
-            timestamp: 1634410924,
-            beaconPeriodStartedAt: 1634324400,
+            timestamp: BigNumber.from(1634410924),
+            beaconPeriodStartedAt: BigNumber.from(1634324400),
             beaconPeriodSeconds: 86400,
         };
 
@@ -32,12 +32,12 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
             maxPicksPerUser: 2,
             expiryDuration: 86400,
             numberOfPicks: BigNumber.from({ _hex: '0x03', _isBigNumber: true }),
-            drawStartTimestampOffset: 86400,
+            startTimestampOffset: 86400,
             prize: BigNumber.from({
                 _hex: '0x5af3107a4000',
                 _isBigNumber: true,
             }),
-            drawEndTimestampOffset: 0,
+            endTimestampOffset: 0,
         };
 
         const results = await computePrizeDistributionFromTicketAverageTotalSupplies(
