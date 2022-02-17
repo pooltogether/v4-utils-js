@@ -2,15 +2,16 @@ function calculateNumberOfPrizesForTierIndex(
     bitRangeSize: number,
     tierIndex: number
 ): number {
-    let bitRangeDecimal = 2 ** bitRangeSize;
-    let numberOfPrizesForIndex = bitRangeDecimal ** tierIndex;
-
-    while (tierIndex > 0) {
-        numberOfPrizesForIndex -= bitRangeDecimal ** (tierIndex - 1);
-        tierIndex--;
+    // Prize Count = (2**bitRange)**(cardinality-numberOfMatches)
+    // if not grand prize: - (2^bitRange)**(cardinality-numberOfMatches-1) - ... (2^bitRange)**(0)
+    if (tierIndex > 0) {
+        return (
+            (1 << (bitRangeSize * tierIndex)) -
+            (1 << (bitRangeSize * (tierIndex - 1)))
+        );
+    } else {
+        return 1;
     }
-
-    return numberOfPrizesForIndex;
 }
 
 export default calculateNumberOfPrizesForTierIndex;
