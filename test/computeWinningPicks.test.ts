@@ -18,9 +18,9 @@ describe('computeWinningPicks', () => {
             winningRandomNumber: BigNumber.from(
                 '0x0000000000000000000000000000000000000000000000000000000000000001'
             ),
-            timestamp: 0,
+            timestamp: BigNumber.from(0),
             beaconPeriodSeconds: 0,
-            beaconPeriodStartedAt: 0,
+            beaconPeriodStartedAt: BigNumber.from(0),
         };
 
         const prizeDistribution: PrizeDistribution = {

@@ -1,18 +1,18 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
 import { computeDrawResults } from '../../src';
-import { DrawResults } from '../../src/types';
+import { Draw, DrawResults } from '../../src/types';
 import { formatTierPercentage } from '../../src/utils';
 
 describe('computeDrawResults', () => {
     it('should return a draw result with zero winning picks', () => {
-        const DRAW_EXAMPLE = {
+        const DRAW_EXAMPLE: Draw = {
             winningRandomNumber: BigNumber.from(
                 '21288413488180966377126236036201345909019919575750940621513526137694302720820'
             ),
             drawId: 1,
-            timestamp: 1634410924,
-            beaconPeriodStartedAt: 1634324400,
+            timestamp: BigNumber.from(1634410924),
+            beaconPeriodStartedAt: BigNumber.from(1634324400),
             beaconPeriodSeconds: 86400,
         };
 

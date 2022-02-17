@@ -6,8 +6,8 @@ export function calculateDrawTimestampOffsets(
 ) {
     const endTimestampOffset = prizeDistribution.endTimestampOffset;
     const startTimestampOffset = draw.beaconPeriodSeconds;
-    const startTime = draw.timestamp - startTimestampOffset;
-    const endTime = draw.timestamp - endTimestampOffset;
+    const startTime = draw.timestamp.sub(startTimestampOffset);
+    const endTime = draw.timestamp.sub(endTimestampOffset);
 
     return [startTime, endTime];
 }

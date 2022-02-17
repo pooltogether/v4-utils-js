@@ -19,9 +19,9 @@ export type PrizeDistribution = PrizeTier & {
 
 export type Draw = {
     drawId: number;
+    timestamp: BigNumber;
     winningRandomNumber: BigNumber;
-    timestamp: number;
-    beaconPeriodStartedAt: number;
+    beaconPeriodStartedAt: BigNumber;
     beaconPeriodSeconds: number;
 };
 
