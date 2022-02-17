@@ -15,9 +15,9 @@ describe('sanityCheckPrizeDistribution', () => {
             maxPicksPerUser: 0,
             expiryDuration: 0,
             numberOfPicks: BigNumber.from('0'),
-            drawStartTimestampOffset: 0,
+            startTimestampOffset: 0,
             prize: BigNumber.from('0'),
-            drawEndTimestampOffset: 0,
+            endTimestampOffset: 0,
         };
         const prizeDistribution = sanityCheckPrizeDistribution(
             PRIZE_DISTRIBUTION_INVALID
@@ -46,9 +46,9 @@ describe('sanityCheckPrizeDistribution', () => {
             maxPicksPerUser: 0,
             expiryDuration: 0,
             numberOfPicks: BigNumber.from('0'),
-            drawStartTimestampOffset: 0,
+            startTimestampOffset: 0,
             prize: BigNumber.from('0'),
-            drawEndTimestampOffset: 0,
+            endTimestampOffset: 0,
         };
         const prizeDistribution = sanityCheckPrizeDistribution(
             PRIZE_DISTRIBUTION_INVALID
@@ -61,10 +61,10 @@ describe('sanityCheckPrizeDistribution', () => {
             bitRangeSize: 2,
             matchCardinality: 10,
             tiers: [
-                formatTierPercentage('0.25').toNumber(),
-                formatTierPercentage('0.05').toNumber(),
-                formatTierPercentage('0.5').toNumber(),
-                formatTierPercentage('0.2').toNumber(),
+                formatTierPercentage('0.25'),
+                formatTierPercentage('0.05'),
+                formatTierPercentage('0.5'),
+                formatTierPercentage('0.2'),
                 0,
                 0,
                 0,
@@ -77,9 +77,9 @@ describe('sanityCheckPrizeDistribution', () => {
             maxPicksPerUser: 2,
             expiryDuration: 5184000,
             numberOfPicks: BigNumber.from('1000'),
-            drawStartTimestampOffset: 86400,
+            startTimestampOffset: 86400,
             prize: parseUnits('5000', 18),
-            drawEndTimestampOffset: 900,
+            endTimestampOffset: 900,
         };
         const prizeDistribution = sanityCheckPrizeDistribution(
             PRIZE_DISTRIBUTION_VALID

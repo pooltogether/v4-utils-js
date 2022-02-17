@@ -11,9 +11,9 @@ const debug = require('debug')(
 
 async function computePrizeDistributionFromTicketAverageTotalSupplies(
     draw: Draw,
-    prizeTier?: PrizeTier,
-    ticketPrimaryAverageTotalSupply?: BigNumberish,
-    ticketSecondaryListAverageTotalSupply?: Array<BigNumberish>,
+    prizeTier: PrizeTier,
+    ticketPrimaryAverageTotalSupply: BigNumberish,
+    ticketSecondaryListAverageTotalSupply: Array<BigNumberish>,
     decimals: BigNumberish = 18
 ): Promise<PrizeDistribution | undefined> {
     if (
@@ -77,9 +77,9 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
         maxPicksPerUser: maxPicksPerUser,
         expiryDuration,
         numberOfPicks: BigNumber.from(numberOfPicks),
-        drawStartTimestampOffset: beaconPeriodSeconds,
+        startTimestampOffset: beaconPeriodSeconds,
+        endTimestampOffset: 0,
         prize: prize,
-        drawEndTimestampOffset: 0,
     };
     debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);
 

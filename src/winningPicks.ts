@@ -1,15 +1,22 @@
+import { BigNumber } from 'ethers';
 import computeWinningPicks from './compute/computeWinningPicks';
 import encodeWinningPicks from './encodeWinningPicks';
-import { Claim, Draw, PrizeDistribution, User } from './types';
+import { Claim, Draw, PrizeDistribution } from './types';
 
 function winningPicks(
-    user: User,
+    userAddress: string,
+    normalizedBalances: BigNumber[],
     draws: Draw[],
     prizeDistributions: PrizeDistribution[]
 ): Claim {
     return encodeWinningPicks(
-        user,
-        computeWinningPicks(user, draws, prizeDistributions)
+        userAddress,
+        computeWinningPicks(
+            userAddress,
+            normalizedBalances,
+            draws,
+            prizeDistributions
+        )
     );
 }
 

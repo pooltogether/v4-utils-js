@@ -36,9 +36,9 @@ describe('computeDrawResults', () => {
             maxPicksPerUser: 0,
             expiryDuration: 0,
             numberOfPicks: BigNumber.from('10'),
-            drawStartTimestampOffset: 0,
+            startTimestampOffset: 0,
             prize: BigNumber.from('100'),
-            drawEndTimestampOffset: 0,
+            endTimestampOffset: 0,
         };
 
         const picks = [

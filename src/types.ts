@@ -1,26 +1,28 @@
-import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
+import { BigNumber } from '@ethersproject/bignumber';
+
+//////////////////////////// Derived from contracts ////////////////////////////
 
 export type PrizeTier = {
     bitRangeSize: number;
-    expiryDuration?: number;
+    expiryDuration: number;
     maxPicksPerUser: number;
-    prize: BigNumberish;
-    tiers: Array<BigNumberish>;
+    prize: BigNumber;
+    tiers: number[];
 };
 
 export type PrizeDistribution = PrizeTier & {
     matchCardinality: number;
-    numberOfPicks: BigNumberish;
-    drawStartTimestampOffset?: number;
-    drawEndTimestampOffset?: number;
+    numberOfPicks: BigNumber;
+    startTimestampOffset: number;
+    endTimestampOffset: number;
 };
 
 export type Draw = {
     drawId: number;
     winningRandomNumber: BigNumber;
-    timestamp?: number;
-    beaconPeriodStartedAt?: number;
-    beaconPeriodSeconds?: number;
+    timestamp: number;
+    beaconPeriodStartedAt: number;
+    beaconPeriodSeconds: number;
 };
 
 export type Pick = {
@@ -28,23 +30,10 @@ export type Pick = {
     hash: string;
 };
 
-export type User = {
-    address: string;
-    normalizedBalances: BigNumber[];
-    picks?: Pick[]; // optional as user may not have picks (under floor)
-};
-
-export type DrawResults = {
-    drawId: number;
-    totalValue: BigNumber;
-    prizes: PrizeAwardable[];
-};
-
-// prize that a User can receive
 export type PrizeAwardable = {
     amount: BigNumber;
     tierIndex: number;
-    pick: BigNumberish; //populate with claim index
+    pick: BigNumber;
 };
 
 export type PickPrize = {
@@ -59,10 +48,12 @@ export type Claim = {
     encodedWinningPickIndices: string;
 };
 
-export type UserDrawResult = {
-    user: User;
-    // drawId: BigNumber
-    drawResult: DrawResults;
+//////////////////////////// Custom types ////////////////////////////
+
+export type DrawResults = {
+    drawId: number;
+    totalValue: BigNumber;
+    prizes: PrizeAwardable[];
 };
 
 type Twab = {
@@ -84,11 +75,13 @@ export type UserBalance = {
     address: string;
     balance: BigNumber;
 };
+
 export type NormalizedUserBalance = {
     address: string;
     normalizedBalance: BigNumber;
 };
 
+// From Prize API
 export type Prize = {
     address: string;
     pick: BigNumber;

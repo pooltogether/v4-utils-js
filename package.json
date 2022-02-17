@@ -1,87 +1,87 @@
 {
-  "name": "@pooltogether/v4-utils-js",
-  "description": "Utility library for PoolTogether V4 off-chain calculations, computations and core logic.",
-  "author": "PoolTogether Inc",
-  "license": "GPL-3.0-only",
-  "version": "0.1.0",
-  "contributors": [
-    {
-      "name": "Kames Geraghty",
-      "email": "kames@pooltogether.com"
+    "name": "@pooltogether/v4-utils-js",
+    "description": "Utility library for PoolTogether V4 off-chain calculations, computations and core logic.",
+    "author": "PoolTogether Inc",
+    "license": "GPL-3.0-only",
+    "version": "0.1.0",
+    "contributors": [
+        {
+            "name": "Kames Geraghty",
+            "email": "kames@pooltogether.com"
+        },
+        {
+            "name": "Aodhgan Gleeson",
+            "email": "aodhgan@pooltogether.com"
+        }
+    ],
+    "homepage": "https://github.com/pooltogether/v4-utils-js",
+    "bugs": {
+        "url": "https://github.com/pooltogether/issues",
+        "email": "bugs@pooltogether.com"
     },
-    {
-      "name": "Aodhgan Gleeson",
-      "email": "aodhgan@pooltogether.com"
+    "engines": {
+        "node": ">=10"
+    },
+    "module": "dist/v4-utils-js.esm.js",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "start": "tsdx watch --onSuccess \"yalc push\"",
+        "build": "tsdx build",
+        "test": "tsdx test",
+        "lint": "tsdx lint",
+        "prepare": "tsdx build",
+        "clean": "jest --clearCache",
+        "watch": "tsdx watch",
+        "docs": "yarn docs:md ; yarn docs:clean",
+        "docs:md": "yarn typedoc --plugin typedoc-plugin-markdown --entryDocument index.md --hideBreadcrumbs true --namedAnchors false --out docs/md",
+        "docs:html": "yarn typedoc --plugin none --out docs/app src/index.ts ",
+        "docs:clean": "node ./scripts/docsFindAndReplace.js ; node ./scripts/docsCleanup.js",
+        "prepublishOnly": "npm run build"
+    },
+    "peerDependencies": {},
+    "dependencies": {
+        "@ethersproject/abi": "^5.5.0",
+        "@ethersproject/address": "^5.5.0",
+        "@ethersproject/bignumber": "^5.5.0",
+        "@ethersproject/bytes": "^5.5.0",
+        "@ethersproject/contracts": "^5.5.0",
+        "@ethersproject/keccak256": "^5.5.0",
+        "@ethersproject/networks": "^5.5.0",
+        "@ethersproject/solidity": "^5.5.0",
+        "@ethersproject/strings": "^5.5.0",
+        "@ethersproject/units": "^5.5.0",
+        "@pooltogether/contract-list-schema": "^0.1.4",
+        "ethers": "^5.5.1",
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.7",
+        "debug": "^4.3.2",
+        "eslint-import-resolver-typescript": "^2.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "husky": "^7.0.4",
+        "replace-in-files": "^3.0.0",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.3.1",
+        "typedoc": "^0.22.10",
+        "typedoc-plugin-markdown": "^3.11.8",
+        "typescript": "^4.4.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint --fix"
+        }
+    },
+    "prettier": {
+        "printWidth": 80,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5"
     }
-  ],
-  "homepage": "https://github.com/pooltogether/v4-utils-js",
-  "bugs": {
-    "url": "https://github.com/pooltogether/issues",
-    "email": "bugs@pooltogether.com"
-  },
-  "engines": {
-    "node": ">=10"
-  },
-  "module": "dist/v4-utils-js.esm.js",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "clean": "jest --clearCache",
-    "watch": "tsdx watch",
-    "docs": "yarn docs:md ; yarn docs:clean",
-    "docs:md": "yarn typedoc --plugin typedoc-plugin-markdown --entryDocument index.md --hideBreadcrumbs true --namedAnchors false --out docs/md",
-    "docs:html": "yarn typedoc --plugin none --out docs/app src/index.ts ",
-    "docs:clean": "node ./scripts/docsFindAndReplace.js ; node ./scripts/docsCleanup.js",
-    "prepublishOnly": "npm run build"
-  },
-  "peerDependencies": {},
-  "dependencies": {
-    "@ethersproject/abi": "^5.5.0",
-    "@ethersproject/address": "^5.5.0",
-    "@ethersproject/bignumber": "^5.5.0",
-    "@ethersproject/bytes": "^5.5.0",
-    "@ethersproject/contracts": "^5.5.0",
-    "@ethersproject/keccak256": "^5.5.0",
-    "@ethersproject/networks": "^5.5.0",
-    "@ethersproject/solidity": "^5.5.0",
-    "@ethersproject/strings": "^5.5.0",
-    "@ethersproject/units": "^5.5.0",
-    "@pooltogether/contract-list-schema": "^0.1.4",
-    "ethers": "^5.5.1",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/node": "^16.11.7",
-    "debug": "^4.3.2",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "husky": "^7.0.4",
-    "replace-in-files": "^3.0.0",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typedoc": "^0.22.10",
-    "typedoc-plugin-markdown": "^3.11.8",
-    "typescript": "^4.4.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint --fix"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 4,
-    "trailingComma": "es5"
-  }
 }

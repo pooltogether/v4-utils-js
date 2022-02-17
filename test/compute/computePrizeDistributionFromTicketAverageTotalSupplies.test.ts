@@ -32,12 +32,12 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
             maxPicksPerUser: 2,
             expiryDuration: 86400,
             numberOfPicks: BigNumber.from({ _hex: '0x03', _isBigNumber: true }),
-            drawStartTimestampOffset: 86400,
+            startTimestampOffset: 86400,
             prize: BigNumber.from({
                 _hex: '0x5af3107a4000',
                 _isBigNumber: true,
             }),
-            drawEndTimestampOffset: 0,
+            endTimestampOffset: 0,
         };
 
         const results = await computePrizeDistributionFromTicketAverageTotalSupplies(
