@@ -18,7 +18,8 @@ function computeWinningPicks(
             prizeDistributions[index].prize,
             prizeDistributions[index].tiers,
             userAddress,
-            normalizedBalances[index]
+            normalizedBalances[index],
+            draw.drawId
         )
     );
 }
