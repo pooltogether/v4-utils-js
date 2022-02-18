@@ -36,7 +36,7 @@ describe('sortByPrizeAwardableDesc', () => {
     });
 
     it('should return "-1" with two unsorted numbers', () => {
-        expect(sortByPrizeAwardableDesc(list[1], list[0])).toEqual(-1);
+        expect(sortByPrizeAwardableDesc(list[1], list[0])).toEqual(1);
     });
 
     it('should return "1" with two sorted numbers', () => {
