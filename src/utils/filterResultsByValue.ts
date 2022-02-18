@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
 import { DrawResults, PrizeAwardable } from '../types';
+import { sortByPrizeAwardableDesc } from './sortByPrizeAwardable';
 
 const debug = require('debug')('pt:v4-utils-js');
 
@@ -14,27 +15,25 @@ function filterResultsByValue(
             `user has more claims (${drawResults.prizes.length}) than the max picks per user (${maxPicksPerUser}). Sorting..`
         );
         // sort by value
-        const descendingSortedPrizes: PrizeAwardable[] = drawResults.prizes.sort(
-            function(a: PrizeAwardable, b: PrizeAwardable): number {
-                const subbedValue = a.amount.sub(b.amount);
-                if (subbedValue.isZero()) return 0;
-                if (subbedValue.isNegative()) return -1;
-                return 1;
-            }
-        );
+        const descendingSortedPrizes: PrizeAwardable[] = drawResults.prizes
+            .filter(prizeAwardable => !prizeAwardable.amount.isZero())
+            .sort(sortByPrizeAwardableDesc);
+
         // remove the lowest value picks up to the max picks per user
-        const sortedDescendingSortedPrizes = descendingSortedPrizes
-            .slice(0, maxPicksPerUser)
-            .filter(prizeAwardable => !prizeAwardable.amount.isZero());
+        const slicedDescendingSortedPrizes = descendingSortedPrizes.slice(
+            0,
+            maxPicksPerUser
+        );
+
         // sum the sorted values
-        const newTotalValue: BigNumber = descendingSortedPrizes.reduce(
+        const newTotalValue: BigNumber = slicedDescendingSortedPrizes.reduce(
             (accumulator, currentValue) => accumulator.add(currentValue.amount),
             BigNumber.from(0)
         );
         return {
             ...drawResults,
             totalValue: newTotalValue,
-            prizes: sortedDescendingSortedPrizes,
+            prizes: slicedDescendingSortedPrizes,
         };
     }
 

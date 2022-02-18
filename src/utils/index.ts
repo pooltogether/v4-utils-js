@@ -8,6 +8,7 @@ export { default as isTiersValid } from './isTiersValid';
 export { default as sanityCheckPrizeDistribution } from './sanityCheckPrizeDistribution';
 export { sumBigNumbers, sumTwoBigNumbers } from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
+export { sortByPrizeAwardableDesc } from './sortByPrizeAwardable';
 export { default as formatTierPercentage } from './formatTierPercentage';
 export { default as parseTierPercentage } from './parseTierPercentage';
 export { default as updateDrawResultsWithWinningPicks } from './updateDrawResultsWithWinningPicks';
