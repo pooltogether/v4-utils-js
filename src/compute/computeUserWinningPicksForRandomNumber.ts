@@ -16,7 +16,8 @@ function computeUserWinningPicksForRandomNumber(
     prize: BigNumberish,
     tiers: Array<any>,
     userAddress: string,
-    userNormalizedBalance: BigNumberish
+    userNormalizedBalance: BigNumberish,
+    drawId: number
 ): DrawResults {
     const _userNormalizedBalance = BigNumber.from(userNormalizedBalance);
     const _prize = BigNumber.from(prize);
@@ -39,7 +40,7 @@ function computeUserWinningPicksForRandomNumber(
 
     return updateDrawResultsWithWinningPicks(
         pickPrizes,
-        createDrawResultsObject(1),
+        createDrawResultsObject(drawId),
         userPicks
     );
 }

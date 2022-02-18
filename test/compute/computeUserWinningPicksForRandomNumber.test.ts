@@ -23,7 +23,7 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             winningRandomNumber: BigNumber.from(
                 '21288413488180966377126236036201345909019919575750940621513526137694302720820'
             ),
-            drawId: 1,
+            drawId: 2,
             timestamp: BigNumber.from(1634410924),
             beaconPeriodStartedAt: BigNumber.from(1634324400),
             beaconPeriodSeconds: 86400,
@@ -37,10 +37,11 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             prizeDistribution.prize,
             prizeDistribution.tiers,
             '0x000000000000000000000000000000000000dEaD',
-            parseUnits('100', '18')
+            parseUnits('100', '18'),
+            draw.drawId
         );
 
-        expect(calculatedDrawResults.drawId).toEqual(1);
+        expect(calculatedDrawResults.drawId).toEqual(2);
         expect(calculatedDrawResults.prizes).toEqual([]);
         expect(calculatedDrawResults.totalValue).toEqual(BigNumber.from('0'));
     });
