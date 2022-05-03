@@ -4,17 +4,14 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 export type PrizeTier = {
     bitRangeSize: number;
-    expiryDuration: number;
+    matchCardinality: number;
     maxPicksPerUser: number;
+    drawId: number;
+    expiryDuration: number;
+    endTimestampOffset: number;
+    poolStakeTotal: BigNumber;
     prize: BigNumber;
     tiers: number[];
-};
-
-export type PrizeDistribution = PrizeTier & {
-    matchCardinality: number;
-    numberOfPicks: BigNumber;
-    startTimestampOffset: number;
-    endTimestampOffset: number;
 };
 
 export type Draw = {

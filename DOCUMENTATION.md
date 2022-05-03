@@ -35,7 +35,6 @@ Helping with both **low-level calculations** and **higher-order computations**, 
 -   [computePickPrize](compute#computepickprize)
 -   [computePicksPrizes](compute#computepicksprizes)
 -   [computePrizeAmount](compute#computeprizeamount)
--   [computePrizeDistributionFromTicketAverageTotalSupplies](compute#computeprizedistributionfromticketaveragetotalsupplies)
 -   [computeUserPicks](compute#computeuserpicks)
 -   [computeUserWinningPicksForRandomNumber](compute#computeuserwinningpicksforrandomnumber)
 -   [computeWinningPicks](compute#computewinningpicks)

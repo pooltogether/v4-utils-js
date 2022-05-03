@@ -1,32 +1,28 @@
 import { parseUnits } from '@ethersproject/units';
 import { BigNumber } from 'ethers';
+import { PrizeTier } from '../../src/types';
 
-import {
-    formatTierPercentage,
-    sanityCheckPrizeDistribution,
-} from '../../src/utils';
+import { formatTierPercentage, sanityCheckPrizeTier } from '../../src/utils';
 
-describe('sanityCheckPrizeDistribution', () => {
-    it('should fail to sanity check a PrizeDistribution with invalid bitrange', () => {
-        const PRIZE_DISTRIBUTION_INVALID = {
+describe('sanityCheckPrizeTier', () => {
+    it('should fail to sanity check a PrizeTier with invalid bitrange', () => {
+        const PRIZE_TIER_INVALID: PrizeTier = {
             bitRangeSize: 256,
             matchCardinality: 2,
             tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             maxPicksPerUser: 0,
             expiryDuration: 0,
-            numberOfPicks: BigNumber.from('0'),
-            startTimestampOffset: 0,
             prize: BigNumber.from('0'),
             endTimestampOffset: 0,
+            drawId: 0,
+            poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeDistribution = sanityCheckPrizeDistribution(
-            PRIZE_DISTRIBUTION_INVALID
-        );
-        expect(prizeDistribution).toEqual('DrawCalc/bitRangeSize-too-large');
+        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_INVALID);
+        expect(prizeTier).toEqual('DrawCalc/bitRangeSize-too-large');
     });
 
-    it('should fail to sanity check a PrizeDistribution with invalid tiers', () => {
-        const PRIZE_DISTRIBUTION_INVALID = {
+    it('should fail to sanity check a PrizeTier with invalid tiers', () => {
+        const PRIZE_TIER_INVALID: PrizeTier = {
             bitRangeSize: 2,
             matchCardinality: 10,
             tiers: [
@@ -45,19 +41,17 @@ describe('sanityCheckPrizeDistribution', () => {
             ],
             maxPicksPerUser: 0,
             expiryDuration: 0,
-            numberOfPicks: BigNumber.from('0'),
-            startTimestampOffset: 0,
             prize: BigNumber.from('0'),
             endTimestampOffset: 0,
+            drawId: 0,
+            poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeDistribution = sanityCheckPrizeDistribution(
-            PRIZE_DISTRIBUTION_INVALID
-        );
-        expect(prizeDistribution).toEqual('DrawCalc/tiers-gt-100%');
+        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_INVALID);
+        expect(prizeTier).toEqual('DrawCalc/tiers-gt-100%');
     });
 
-    it('should succeed to sanity check an a valid PrizeDistribution', () => {
-        const PRIZE_DISTRIBUTION_VALID = {
+    it('should succeed to sanity check an a valid PrizeTier', () => {
+        const PRIZE_TIER_VALID: PrizeTier = {
             bitRangeSize: 2,
             matchCardinality: 10,
             tiers: [
@@ -76,14 +70,12 @@ describe('sanityCheckPrizeDistribution', () => {
             ],
             maxPicksPerUser: 2,
             expiryDuration: 5184000,
-            numberOfPicks: BigNumber.from('1000'),
-            startTimestampOffset: 86400,
             prize: parseUnits('5000', 18),
             endTimestampOffset: 900,
+            drawId: 0,
+            poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeDistribution = sanityCheckPrizeDistribution(
-            PRIZE_DISTRIBUTION_VALID
-        );
-        expect(prizeDistribution).toEqual('');
+        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_VALID);
+        expect(prizeTier).toEqual('');
     });
 });

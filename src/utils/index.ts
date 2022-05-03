@@ -5,7 +5,7 @@ export { default as findBitMatchesAtIndex } from './findBitMatchesAtIndex';
 export { default as hashUserAddress } from './hashUserAddress';
 export { default as isBitRangeSizeValid } from './isBitRangeSizeValid';
 export { default as isTiersValid } from './isTiersValid';
-export { default as sanityCheckPrizeDistribution } from './sanityCheckPrizeDistribution';
+export { default as sanityCheckPrizeTier } from './sanityCheckPrizeTier';
 export { sumBigNumbers, sumTwoBigNumbers } from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
 export { sortByPrizeAwardableDesc } from './sortByPrizeAwardable';

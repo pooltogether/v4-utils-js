@@ -3,7 +3,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
 import { computeWinningPicks, encodeWinningPicks } from '../src';
-import { Claim, Draw, PrizeDistribution } from '../src/types';
+import { Claim, Draw, PrizeTier } from '../src/types';
 import { formatTierPercentage } from '../src/utils';
 
 describe('encodeWinningPicks', () => {
@@ -25,14 +25,12 @@ describe('encodeWinningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeDistribution: PrizeDistribution = {
+        const prizeTier: PrizeTier = {
             bitRangeSize: 4,
             matchCardinality: 10,
-            numberOfPicks: BigNumber.from(1000),
             prize: parseEther('100000'),
             maxPicksPerUser: 30,
             expiryDuration: 0,
-            startTimestampOffset: 0,
             endTimestampOffset: 0,
             tiers: [
                 formatTierPercentage('0.1'),
@@ -52,17 +50,26 @@ describe('encodeWinningPicks', () => {
                 0,
                 0,
             ],
+            drawId: draw.drawId,
+            poolStakeTotal: BigNumber.from('1'),
         };
 
+        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
+
+        console.log('pre computeWinningPicks');
         const generatedPicks = computeWinningPicks(
             userAddress,
             normalizedBalances,
             [draw],
-            [prizeDistribution]
+            [prizeTier],
+            [gaugeScaledAverage]
         );
+        console.log('post computeWinningPicks');
+        console.log('pre encodeWinningPicks');
         const claimResult: Claim = encodeWinningPicks(userAddress, [
             generatedPicks[0],
         ]);
+        console.log('post encodeWinningPicks');
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),

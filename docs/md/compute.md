@@ -1,17 +1,16 @@
-#  compute
+# compute
 
 ## Table of contents
 
 ### Functions
 
-- [computeDrawResults](compute.md#computedrawresults)
-- [computePickPrize](compute.md#computepickprize)
-- [computePicksPrizes](compute.md#computepicksprizes)
-- [computePrizeAmount](compute.md#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](compute.md#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](compute.md#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](compute.md#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](compute.md#computewinningpicks)
+-   [computeDrawResults](compute.md#computedrawresults)
+-   [computePickPrize](compute.md#computepickprize)
+-   [computePicksPrizes](compute.md#computepicksprizes)
+-   [computePrizeAmount](compute.md#computeprizeamount)
+-   [computeUserPicks](compute.md#computeuserpicks)
+-   [computeUserWinningPicksForRandomNumber](compute.md#computeuserwinningpicksforrandomnumber)
+-   [computeWinningPicks](compute.md#computewinningpicks)
 
 ## Functions
 
@@ -21,14 +20,14 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `draw` | [`Draw`](../modules#draw) |
-| `picks` | [`Pick`](../modules#pick)[] |
-| `bitRangeSize` | `number` |
-| `matchCardinality` | `number` |
-| `prize` | `BigNumber` |
-| `tiers` | `any`[] |
+| Name               | Type                        |
+| :----------------- | :-------------------------- |
+| `draw`             | [`Draw`](../modules#draw)   |
+| `picks`            | [`Pick`](../modules#pick)[] |
+| `bitRangeSize`     | `number`                    |
+| `matchCardinality` | `number`                    |
+| `prize`            | `BigNumber`                 |
+| `tiers`            | `any`[]                     |
 
 #### Returns
 
@@ -38,7 +37,7 @@
 
 [compute/computeDrawResults.ts:10](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computeDrawResults.ts#L10)
 
-___
+---
 
 ### computePickPrize
 
@@ -46,14 +45,14 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `pickHash` | `string` |
+| Name                  | Type        |
+| :-------------------- | :---------- |
+| `pickHash`            | `string`    |
 | `winningRandomNumber` | `BigNumber` |
-| `bitRangeSize` | `number` |
-| `matchCardinality` | `number` |
-| `prize` | `BigNumber` |
-| `tiers` | `any`[] |
+| `bitRangeSize`        | `number`    |
+| `matchCardinality`    | `number`    |
+| `prize`               | `BigNumber` |
+| `tiers`               | `any`[]     |
 
 #### Returns
 
@@ -63,7 +62,7 @@ ___
 
 [compute/computePickPrize.ts:8](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computePickPrize.ts#L8)
 
-___
+---
 
 ### computePicksPrizes
 
@@ -71,14 +70,14 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `picks` | `any`[] |
+| Name                  | Type        |
+| :-------------------- | :---------- |
+| `picks`               | `any`[]     |
 | `winningRandomNumber` | `BigNumber` |
-| `bitRangeSize` | `number` |
-| `matchCardinality` | `number` |
-| `prize` | `BigNumber` |
-| `tiers` | `any`[] |
+| `bitRangeSize`        | `number`    |
+| `matchCardinality`    | `number`    |
+| `prize`               | `BigNumber` |
+| `tiers`               | `any`[]     |
 
 #### Returns
 
@@ -88,7 +87,7 @@ ___
 
 [compute/computePicksPrizes.ts:6](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computePicksPrizes.ts#L6)
 
-___
+---
 
 ### computePrizeAmount
 
@@ -96,12 +95,12 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `tierIndex` | `number` |
-| `tierValue` | `BigNumberish` |
-| `bitRangeSize` | `number` |
-| `prizeAmount` | `BigNumber` |
+| Name           | Type           |
+| :------------- | :------------- |
+| `tierIndex`    | `number`       |
+| `tierValue`    | `BigNumberish` |
+| `bitRangeSize` | `number`       |
+| `prizeAmount`  | `BigNumber`    |
 
 #### Returns
 
@@ -111,7 +110,7 @@ ___
 
 [compute/computePrizeAmount.ts:8](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computePrizeAmount.ts#L8)
 
-___
+---
 
 ### computePrizeDistributionFromTicketAverageTotalSupplies
 
@@ -119,13 +118,13 @@ ___
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `draw` | [`Draw`](../modules#draw) | `undefined` |
-| `prizeTier?` | [`PrizeTier`](../modules#prizetier) | `undefined` |
-| `ticketPrimaryAverageTotalSupply?` | `BigNumberish` | `undefined` |
-| `ticketSecondaryListAverageTotalSupply?` | `BigNumberish`[] | `undefined` |
-| `decimals` | `BigNumberish` | `18` |
+| Name                                     | Type                                | Default value |
+| :--------------------------------------- | :---------------------------------- | :------------ |
+| `draw`                                   | [`Draw`](../modules#draw)           | `undefined`   |
+| `prizeTier?`                             | [`PrizeTier`](../modules#prizetier) | `undefined`   |
+| `ticketPrimaryAverageTotalSupply?`       | `BigNumberish`                      | `undefined`   |
+| `ticketSecondaryListAverageTotalSupply?` | `BigNumberish`[]                    | `undefined`   |
+| `decimals`                               | `BigNumberish`                      | `18`          |
 
 #### Returns
 
@@ -135,7 +134,7 @@ ___
 
 [compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts:12](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computePrizeDistributionFromTicketAverageTotalSupplies.ts#L12)
 
-___
+---
 
 ### computeUserPicks
 
@@ -143,11 +142,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                 | Type           |
+| :------------------- | :------------- |
 | `totalNumberOfPicks` | `BigNumberish` |
-| `address` | `string` |
-| `normalizedBalance` | `BigNumber` |
+| `address`            | `string`       |
+| `normalizedBalance`  | `BigNumber`    |
 
 #### Returns
 
@@ -157,7 +156,7 @@ ___
 
 [compute/computeUserPicks.ts:10](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computeUserPicks.ts#L10)
 
-___
+---
 
 ### computeUserWinningPicksForRandomNumber
 
@@ -165,15 +164,15 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `randomNumber` | `BigNumberish` |
-| `bitRangeSize` | `number` |
-| `matchCardinality` | `number` |
-| `numberOfPicks` | `BigNumberish` |
-| `prize` | `BigNumberish` |
-| `tiers` | `any`[] |
-| `userAddress` | `string` |
+| Name                    | Type           |
+| :---------------------- | :------------- |
+| `randomNumber`          | `BigNumberish` |
+| `bitRangeSize`          | `number`       |
+| `matchCardinality`      | `number`       |
+| `numberOfPicks`         | `BigNumberish` |
+| `prize`                 | `BigNumberish` |
+| `tiers`                 | `any`[]        |
+| `userAddress`           | `string`       |
 | `userNormalizedBalance` | `BigNumberish` |
 
 #### Returns
@@ -184,7 +183,7 @@ ___
 
 [compute/computeUserWinningPicksForRandomNumber.ts:11](https://github.com/pooltogether/v4-utils-js/blob/69ffb1f/src/compute/computeUserWinningPicksForRandomNumber.ts#L11)
 
-___
+---
 
 ### computeWinningPicks
 
@@ -192,10 +191,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `user` | [`User`](../modules#user) |
-| `draws` | [`Draw`](../modules#draw)[] |
+| Name                 | Type                                                  |
+| :------------------- | :---------------------------------------------------- |
+| `user`               | [`User`](../modules#user)                             |
+| `draws`              | [`Draw`](../modules#draw)[]                           |
 | `prizeDistributions` | [`PrizeDistribution`](../modules#prizedistribution)[] |
 
 #### Returns
