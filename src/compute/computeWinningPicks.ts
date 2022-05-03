@@ -1,25 +1,27 @@
 import { BigNumber } from 'ethers';
 
-import { Draw, DrawResults, PrizeDistribution } from '../types';
+import { Draw, DrawResults, PrizeTier } from '../types';
 import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 
 function computeWinningPicks(
     userAddress: string,
     normalizedBalances: BigNumber[],
     draws: Draw[],
-    prizeDistributions: PrizeDistribution[]
+    prizeTiers: PrizeTier[],
+    gaugeScaledAverages: BigNumber[]
 ): DrawResults[] {
     return draws.map((draw, index) =>
         computeUserWinningPicksForRandomNumber(
             draw.winningRandomNumber,
-            prizeDistributions[index].bitRangeSize,
-            prizeDistributions[index].matchCardinality,
-            prizeDistributions[index].numberOfPicks,
-            prizeDistributions[index].prize,
-            prizeDistributions[index].tiers,
+            prizeTiers[index].bitRangeSize,
+            prizeTiers[index].matchCardinality,
+            prizeTiers[index].prize,
+            prizeTiers[index].tiers,
             userAddress,
             normalizedBalances[index],
-            draw.drawId
+            draw.drawId,
+            prizeTiers[index].poolStakeTotal,
+            gaugeScaledAverages[index]
         )
     );
 }

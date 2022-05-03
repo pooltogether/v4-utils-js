@@ -2,12 +2,13 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import { Draw, PrizeDistribution } from '../src';
+import { Draw, PrizeTier } from '../src';
 import { formatTierPercentage } from '../src/utils';
 import winningPicks from '../src/winningPicks';
 
 describe('winningPicks', () => {
-    it('', () => {
+    it('Computes winning picks', () => {
+        console.debug('winningPicks - start');
         const userAddress = '0x0000000000000000000000000000000000000001';
         const normalizedBalances = [
             parseEther('0.1'),
@@ -25,14 +26,12 @@ describe('winningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeDistribution: PrizeDistribution = {
+        const prizeDistribution: PrizeTier = {
             bitRangeSize: 4,
             matchCardinality: 10,
-            numberOfPicks: BigNumber.from(1000),
             prize: parseEther('100000'),
             maxPicksPerUser: 30,
             expiryDuration: 0,
-            startTimestampOffset: 0,
             endTimestampOffset: 0,
             tiers: [
                 formatTierPercentage('0.1'),
@@ -52,14 +51,21 @@ describe('winningPicks', () => {
                 0,
                 0,
             ],
+            drawId: draw.drawId,
+            poolStakeTotal: BigNumber.from('1'),
         };
 
+        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
+
+        console.log('pre winningPicks');
         const generatedPicks = winningPicks(
             userAddress,
             normalizedBalances,
             [draw],
-            [prizeDistribution]
+            [prizeDistribution],
+            [gaugeScaledAverage]
         );
+        console.log('post winningPicks');
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),

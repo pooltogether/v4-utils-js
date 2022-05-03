@@ -11,26 +11,12 @@ describe('computePickPrize', () => {
             BigNumber.from(
                 '0x0000000000000000000000000000000000000000000000000000000000000001'
             ),
-            6, // bitRangeSize
-            2, // matchCardinality
+            2, // bitRangeSize
+            10, // matchCardinality
             parseEther('1000'),
-            [
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                formatTierPercentage('0.1'),
-                0,
-                0,
-                0,
-            ]
+            [formatTierPercentage('1'), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         );
-        console.log(pickPrize.amount.toString());
+        console.log('pickPrize', pickPrize.amount.toString());
         expect(pickPrize.tierIndex).toEqual(2);
         expect(pickPrize.amount).toEqual(parseEther('0.024801587301587000'));
     });
