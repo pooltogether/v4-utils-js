@@ -39,6 +39,7 @@ export type PickPrize = {
 };
 
 export type Claim = {
+    ticketAddress: string;
     userAddress: string;
     drawIds: number[];
     winningPickIndices: BigNumber[][];

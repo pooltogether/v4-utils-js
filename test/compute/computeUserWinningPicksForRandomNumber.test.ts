@@ -32,7 +32,6 @@ describe('computeUserWinningPicksForRandomNumber', () => {
 
         const gaugeScaledAverage: BigNumber = BigNumber.from('1');
 
-        console.log('pre computeUserWinningPicksForRandomNumber');
         const calculatedDrawResults: DrawResults = computeUserWinningPicksForRandomNumber(
             draw.winningRandomNumber,
             prizeTier.bitRangeSize,
@@ -45,7 +44,6 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             prizeTier.poolStakeTotal,
             gaugeScaledAverage
         );
-        console.log('post computeUserWinningPicksForRandomNumber');
 
         expect(calculatedDrawResults.drawId).toEqual(2);
         expect(calculatedDrawResults.prizes).toEqual([]);

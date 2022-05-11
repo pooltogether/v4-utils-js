@@ -16,6 +16,8 @@ describe('winningPicks', () => {
             parseEther('0.3'),
         ];
 
+        const ticketAddress = '0x0000000000000000000000000000000000000002';
+
         const draw: Draw = {
             drawId: 1,
             winningRandomNumber: BigNumber.from(
@@ -26,7 +28,7 @@ describe('winningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeDistribution: PrizeTier = {
+        const prizeTier: PrizeTier = {
             bitRangeSize: 4,
             matchCardinality: 10,
             prize: parseEther('100000'),
@@ -57,15 +59,14 @@ describe('winningPicks', () => {
 
         const gaugeScaledAverage: BigNumber = BigNumber.from('1');
 
-        console.log('pre winningPicks');
         const generatedPicks = winningPicks(
             userAddress,
+            ticketAddress,
             normalizedBalances,
             [draw],
-            [prizeDistribution],
+            [prizeTier],
             [gaugeScaledAverage]
         );
-        console.log('post winningPicks');
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),

@@ -6,10 +6,12 @@ import { sortByBigNumberAsc } from './utils';
 
 function encodeWinningPicks(
     userAddress: string,
+    ticketAddress: string,
     drawResults: DrawResults[]
 ): Claim {
     let claim: Claim = {
         userAddress,
+        ticketAddress,
         drawIds: [],
         winningPickIndices: [],
         encodedWinningPickIndices: '',
