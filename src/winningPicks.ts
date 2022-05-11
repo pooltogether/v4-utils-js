@@ -6,6 +6,7 @@ import { Claim, Draw, PrizeTier } from './types';
 
 function winningPicks(
     userAddress: string,
+    ticketAddress: string,
     normalizedBalances: BigNumber[],
     draws: Draw[],
     prizeTiers: PrizeTier[],
@@ -13,6 +14,7 @@ function winningPicks(
 ): Claim {
     return encodeWinningPicks(
         userAddress,
+        ticketAddress,
         computeWinningPicks(
             userAddress,
             normalizedBalances,

@@ -6,7 +6,6 @@ import {
     updateDrawResultsWithWinningPicks,
 } from '../utils';
 import computePicksPrizes from './computePicksPrizes';
-import computeTotalPicks from './computeTotalPicks';
 import computeUserPicks from './computeUserPicks';
 
 function computeUserWinningPicksForRandomNumber(
@@ -16,37 +15,15 @@ function computeUserWinningPicksForRandomNumber(
     prize: BigNumberish,
     tiers: Array<any>,
     userAddress: string,
-    userNormalizedBalance: BigNumberish,
-    drawId: number,
-    poolStakeTotal: BigNumber,
-    gaugeScaledAverage: BigNumber
+    usersPickCount: BigNumberish,
+    drawId: number
 ): DrawResults {
-    const _userNormalizedBalance = BigNumber.from(userNormalizedBalance);
+    const _usersPickCount = BigNumber.from(usersPickCount);
     const _prize = BigNumber.from(prize);
     const _randomNumber = BigNumber.from(randomNumber);
 
-    console.log('computeUserWinningPicksForRandomNumber pre-computeTotalPicks');
-    const totalNumberOfPicks = computeTotalPicks(
-        bitRangeSize,
-        matchCardinality,
-        poolStakeTotal,
-        gaugeScaledAverage
-    );
-    debugger;
-    console.log(
-        'computeUserWinningPicksForRandomNumber post-computeTotalPicks',
-        totalNumberOfPicks.toString()
-    );
+    const userPicks = computeUserPicks(userAddress, _usersPickCount);
 
-    console.log('pre computeUserPicks');
-    const userPicks = computeUserPicks(
-        totalNumberOfPicks,
-        userAddress,
-        _userNormalizedBalance
-    );
-    console.log('post computeUserPicks');
-
-    console.log('pre computePicksPrizes');
     const pickPrizes = computePicksPrizes(
         userPicks,
         _randomNumber,
@@ -55,7 +32,6 @@ function computeUserWinningPicksForRandomNumber(
         _prize,
         tiers
     );
-    console.log('post computePicksPrizes');
 
     return updateDrawResultsWithWinningPicks(
         pickPrizes,

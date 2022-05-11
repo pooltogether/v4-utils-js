@@ -1,22 +1,10 @@
-import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
+import { BigNumber } from '@ethersproject/bignumber';
 
-import {
-    calculatePick,
-    calculateNormalizedBalancePicksFromTotalPicks,
-} from '../calculate';
+import { calculatePick } from '../calculate';
 import { Pick } from '../types';
 import { hashUserAddress } from '../utils';
 
-function computeUserPicks(
-    totalNumberOfPicks: BigNumberish,
-    address: string,
-    normalizedBalance: BigNumber
-): Pick[] {
-    let numberOfPicks = calculateNormalizedBalancePicksFromTotalPicks(
-        totalNumberOfPicks,
-        normalizedBalance
-    );
-
+function computeUserPicks(address: string, numberOfPicks: BigNumber): Pick[] {
     const usersAddressHashed = hashUserAddress(address);
 
     let picks: Pick[] = [];

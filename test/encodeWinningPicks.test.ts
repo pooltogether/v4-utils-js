@@ -56,7 +56,6 @@ describe('encodeWinningPicks', () => {
 
         const gaugeScaledAverage: BigNumber = BigNumber.from('1');
 
-        console.log('pre computeWinningPicks');
         const generatedPicks = computeWinningPicks(
             userAddress,
             normalizedBalances,
@@ -64,12 +63,9 @@ describe('encodeWinningPicks', () => {
             [prizeTier],
             [gaugeScaledAverage]
         );
-        console.log('post computeWinningPicks');
-        console.log('pre encodeWinningPicks');
         const claimResult: Claim = encodeWinningPicks(userAddress, [
             generatedPicks[0],
         ]);
-        console.log('post encodeWinningPicks');
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),
