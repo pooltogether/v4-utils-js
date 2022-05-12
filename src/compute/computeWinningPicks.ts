@@ -5,10 +5,9 @@ import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksFor
 
 function computeWinningPicks(
     userAddress: string,
-    normalizedBalances: BigNumber[],
+    usersPickCounts: BigNumber[],
     draws: Draw[],
-    prizeTiers: PrizeTier[],
-    gaugeScaledAverages: BigNumber[]
+    prizeTiers: PrizeTier[]
 ): DrawResults[] {
     return draws.map((draw, index) =>
         computeUserWinningPicksForRandomNumber(
@@ -18,10 +17,8 @@ function computeWinningPicks(
             prizeTiers[index].prize,
             prizeTiers[index].tiers,
             userAddress,
-            normalizedBalances[index],
-            draw.drawId,
-            prizeTiers[index].poolStakeTotal,
-            gaugeScaledAverages[index]
+            usersPickCounts[index],
+            draw.drawId
         )
     );
 }
