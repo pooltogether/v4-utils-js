@@ -7,21 +7,14 @@ import { Claim, Draw, PrizeTier } from './types';
 function winningPicks(
     userAddress: string,
     ticketAddress: string,
-    normalizedBalances: BigNumber[],
+    usersPickCounts: BigNumber[],
     draws: Draw[],
-    prizeTiers: PrizeTier[],
-    gaugeScaledAverages: BigNumber[]
+    prizeTiers: PrizeTier[]
 ): Claim {
     return encodeWinningPicks(
         userAddress,
         ticketAddress,
-        computeWinningPicks(
-            userAddress,
-            normalizedBalances,
-            draws,
-            prizeTiers,
-            gaugeScaledAverages
-        )
+        computeWinningPicks(userAddress, usersPickCounts, draws, prizeTiers)
     );
 }
 
