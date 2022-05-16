@@ -10,10 +10,10 @@ describe('winningPicks', () => {
     it('Computes winning picks', () => {
         console.debug('winningPicks - start');
         const userAddress = '0x0000000000000000000000000000000000000001';
-        const normalizedBalances = [
-            parseEther('0.1'),
-            parseEther('0.2'),
-            parseEther('0.3'),
+        const pickCounts = [
+            BigNumber.from('100'),
+            BigNumber.from('200'),
+            BigNumber.from('300'),
         ];
 
         const ticketAddress = '0x0000000000000000000000000000000000000002';
@@ -57,15 +57,12 @@ describe('winningPicks', () => {
             poolStakeTotal: BigNumber.from('1'),
         };
 
-        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
-
         const generatedPicks = winningPicks(
             userAddress,
             ticketAddress,
-            normalizedBalances,
+            pickCounts,
             [draw],
-            [prizeTier],
-            [gaugeScaledAverage]
+            [prizeTier]
         );
 
         const winningPickIndices = [

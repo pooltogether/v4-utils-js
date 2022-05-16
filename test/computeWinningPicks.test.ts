@@ -7,10 +7,10 @@ import { formatTierPercentage } from '../src/utils';
 describe('computeWinningPicks', () => {
     it('returns correct claim struct for user', async () => {
         const userAddress = '0x0000000000000000000000000000000000000001';
-        const normalizedBalances = [
-            parseEther('0.1'),
-            parseEther('0.2'),
-            parseEther('0.3'),
+        const pickCounts = [
+            BigNumber.from('100'),
+            BigNumber.from('200'),
+            BigNumber.from('300'),
         ];
 
         const draw: Draw = {
@@ -52,15 +52,12 @@ describe('computeWinningPicks', () => {
             poolStakeTotal: BigNumber.from('1'),
         };
 
-        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
-
         console.log('pre computeWinningPicks');
         const generatedPicks = computeWinningPicks(
             userAddress,
-            normalizedBalances,
+            pickCounts,
             [draw],
-            [prizeTier],
-            [gaugeScaledAverage]
+            [prizeTier]
         );
         console.log('post computeWinningPicks');
 

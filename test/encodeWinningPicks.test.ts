@@ -9,10 +9,11 @@ import { formatTierPercentage } from '../src/utils';
 describe('encodeWinningPicks', () => {
     it('returns correct claim struct for user', async () => {
         const userAddress = '0x0000000000000000000000000000000000000001';
-        const normalizedBalances = [
-            parseEther('0.1'),
-            parseEther('0.2'),
-            parseEther('0.3'),
+        const ticketAddress = '0x0000000000000000000000000000000000000002';
+        const usersPickCounts = [
+            BigNumber.from('100'),
+            BigNumber.from('200'),
+            BigNumber.from('300'),
         ];
 
         const draw: Draw = {
@@ -54,18 +55,17 @@ describe('encodeWinningPicks', () => {
             poolStakeTotal: BigNumber.from('1'),
         };
 
-        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
-
         const generatedPicks = computeWinningPicks(
             userAddress,
-            normalizedBalances,
+            usersPickCounts,
             [draw],
-            [prizeTier],
-            [gaugeScaledAverage]
+            [prizeTier]
         );
-        const claimResult: Claim = encodeWinningPicks(userAddress, [
-            generatedPicks[0],
-        ]);
+        const claimResult: Claim = encodeWinningPicks(
+            userAddress,
+            ticketAddress,
+            [generatedPicks[0]]
+        );
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),
@@ -85,5 +85,7 @@ describe('encodeWinningPicks', () => {
         expect(claimResult.encodedWinningPickIndices).toStrictEqual(
             expectedData
         );
+        expect(claimResult.ticketAddress).toStrictEqual(ticketAddress);
+        expect(claimResult.userAddress).toStrictEqual(userAddress);
     });
 });
