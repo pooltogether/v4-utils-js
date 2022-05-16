@@ -30,8 +30,6 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             endTimestampOffset: 900,
         };
 
-        const gaugeScaledAverage: BigNumber = BigNumber.from('1');
-
         const calculatedDrawResults: DrawResults = computeUserWinningPicksForRandomNumber(
             draw.winningRandomNumber,
             prizeTier.bitRangeSize,
@@ -39,10 +37,8 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             prizeTier.prize,
             prizeTier.tiers,
             '0x000000000000000000000000000000000000dEaD',
-            parseEther('0.1'),
-            draw.drawId,
-            prizeTier.poolStakeTotal,
-            gaugeScaledAverage
+            '100',
+            draw.drawId
         );
 
         expect(calculatedDrawResults.drawId).toEqual(2);
