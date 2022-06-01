@@ -114,17 +114,17 @@
 
 ### computePrizeDistributionFromTicketAverageTotalSupplies
 
-▸ **computePrizeDistributionFromTicketAverageTotalSupplies**(`draw`, `prizeTier?`, `ticketPrimaryAverageTotalSupply?`, `ticketSecondaryListAverageTotalSupply?`, `decimals?`): `Promise`<[`PrizeDistribution`](../modules#prizedistribution) \| `undefined`\>
+▸ **computePrizeDistributionFromTicketAverageTotalSupplies**(`draw`, `prizeConfig?`, `ticketPrimaryAverageTotalSupply?`, `ticketSecondaryListAverageTotalSupply?`, `decimals?`): `Promise`<[`PrizeDistribution`](../modules#prizedistribution) \| `undefined`\>
 
 #### Parameters
 
-| Name                                     | Type                                | Default value |
-| :--------------------------------------- | :---------------------------------- | :------------ |
-| `draw`                                   | [`Draw`](../modules#draw)           | `undefined`   |
-| `prizeTier?`                             | [`PrizeTier`](../modules#prizetier) | `undefined`   |
-| `ticketPrimaryAverageTotalSupply?`       | `BigNumberish`                      | `undefined`   |
-| `ticketSecondaryListAverageTotalSupply?` | `BigNumberish`[]                    | `undefined`   |
-| `decimals`                               | `BigNumberish`                      | `18`          |
+| Name                                     | Type                                  | Default value |
+| :--------------------------------------- | :------------------------------------ | :------------ |
+| `draw`                                   | [`Draw`](../modules#draw)             | `undefined`   |
+| `prizeConfig?`                           | [`PrizeConfig`](../modules#prizetier) | `undefined`   |
+| `ticketPrimaryAverageTotalSupply?`       | `BigNumberish`                        | `undefined`   |
+| `ticketSecondaryListAverageTotalSupply?` | `BigNumberish`[]                      | `undefined`   |
+| `decimals`                               | `BigNumberish`                        | `18`          |
 
 #### Returns
 

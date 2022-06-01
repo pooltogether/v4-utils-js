@@ -2,7 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import { Draw, PrizeTier } from '../src';
+import { Draw, PrizeConfig } from '../src';
 import { formatTierPercentage } from '../src/utils';
 import winningPicks from '../src/winningPicks';
 
@@ -28,7 +28,7 @@ describe('winningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeTier: PrizeTier = {
+        const prizeConfig: PrizeConfig = {
             bitRangeSize: 4,
             matchCardinality: 10,
             prize: parseEther('100000'),
@@ -62,7 +62,7 @@ describe('winningPicks', () => {
             ticketAddress,
             pickCounts,
             [draw],
-            [prizeTier]
+            [prizeConfig]
         );
 
         const winningPickIndices = [

@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 //////////////////////////// Derived from contracts ////////////////////////////
 
-export type PrizeTier = {
+export type PrizeConfig = {
     bitRangeSize: number;
     matchCardinality: number;
     maxPicksPerUser: number;

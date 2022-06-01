@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
 import { computeUserWinningPicksForRandomNumber } from '../../src';
-import { DrawResults, PrizeTier, Draw } from '../../src/types';
+import { DrawResults, PrizeConfig, Draw } from '../../src/types';
 import { formatTierPercentage } from '../../src/utils';
 
 describe('computeUserWinningPicksForRandomNumber', () => {
@@ -18,7 +18,7 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             beaconPeriodSeconds: 86400,
         };
 
-        const prizeTier: PrizeTier = {
+        const prizeConfig: PrizeConfig = {
             bitRangeSize: 2,
             matchCardinality: 10,
             maxPicksPerUser: 2,
@@ -32,10 +32,10 @@ describe('computeUserWinningPicksForRandomNumber', () => {
 
         const calculatedDrawResults: DrawResults = computeUserWinningPicksForRandomNumber(
             draw.winningRandomNumber,
-            prizeTier.bitRangeSize,
-            prizeTier.matchCardinality,
-            prizeTier.prize,
-            prizeTier.tiers,
+            prizeConfig.bitRangeSize,
+            prizeConfig.matchCardinality,
+            prizeConfig.prize,
+            prizeConfig.tiers,
             '0x000000000000000000000000000000000000dEaD',
             '100',
             draw.drawId

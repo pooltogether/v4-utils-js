@@ -3,7 +3,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
 import { computeWinningPicks, encodeWinningPicks } from '../src';
-import { Claim, Draw, PrizeTier } from '../src/types';
+import { Claim, Draw, PrizeConfig } from '../src/types';
 import { formatTierPercentage } from '../src/utils';
 
 describe('encodeWinningPicks', () => {
@@ -26,7 +26,7 @@ describe('encodeWinningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeTier: PrizeTier = {
+        const prizeConfig: PrizeConfig = {
             bitRangeSize: 4,
             matchCardinality: 10,
             prize: parseEther('100000'),
@@ -59,7 +59,7 @@ describe('encodeWinningPicks', () => {
             userAddress,
             usersPickCounts,
             [draw],
-            [prizeTier]
+            [prizeConfig]
         );
         const claimResult: Claim = encodeWinningPicks(
             userAddress,
