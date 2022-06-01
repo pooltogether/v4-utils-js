@@ -1,21 +1,21 @@
 import { BigNumber } from 'ethers';
 
-import { Draw, DrawResults, PrizeTier } from '../types';
+import { Draw, DrawResults, PrizeConfig } from '../types';
 import computeUserWinningPicksForRandomNumber from './computeUserWinningPicksForRandomNumber';
 
 function computeWinningPicks(
     userAddress: string,
     usersPickCounts: BigNumber[],
     draws: Draw[],
-    prizeTiers: PrizeTier[]
+    prizeConfigs: PrizeConfig[]
 ): DrawResults[] {
     return draws.map((draw, index) =>
         computeUserWinningPicksForRandomNumber(
             draw.winningRandomNumber,
-            prizeTiers[index].bitRangeSize,
-            prizeTiers[index].matchCardinality,
-            prizeTiers[index].prize,
-            prizeTiers[index].tiers,
+            prizeConfigs[index].bitRangeSize,
+            prizeConfigs[index].matchCardinality,
+            prizeConfigs[index].prize,
+            prizeConfigs[index].tiers,
             userAddress,
             usersPickCounts[index],
             draw.drawId

@@ -1,10 +1,10 @@
-import { Draw, PrizeTier } from '../types';
+import { Draw, PrizeConfig } from '../types';
 
 export function calculateDrawTimestampOffsets(
-    prizeTier: PrizeTier,
+    prizeConfig: PrizeConfig,
     draw: Draw
 ) {
-    const endTimestampOffset = prizeTier.endTimestampOffset;
+    const endTimestampOffset = prizeConfig.endTimestampOffset;
     const startTimestampOffset = draw.beaconPeriodSeconds;
     const startTime = draw.timestamp.sub(startTimestampOffset);
     const endTime = draw.timestamp.sub(endTimestampOffset);

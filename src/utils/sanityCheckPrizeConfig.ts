@@ -1,16 +1,16 @@
-import { PrizeTier } from '../types';
+import { PrizeConfig } from '../types';
 import isBitRangeSizeValid from './isBitRangeSizeValid';
 import isTiersValid from './isTiersValid';
 
-function sanityCheckPrizeTier(prizeTier: PrizeTier): string {
+function sanityCheckPrizeConfig(prizeConfig: PrizeConfig): string {
     const validBitRangeSize = isBitRangeSizeValid(
-        prizeTier.bitRangeSize,
-        prizeTier.matchCardinality
+        prizeConfig.bitRangeSize,
+        prizeConfig.matchCardinality
     );
     if (!validBitRangeSize) return 'DrawCalc/bitRangeSize-too-large';
-    const validTiers = isTiersValid(prizeTier.tiers);
+    const validTiers = isTiersValid(prizeConfig.tiers);
     if (!validTiers) return 'DrawCalc/tiers-gt-100%';
     return '';
 }
 
-export default sanityCheckPrizeTier;
+export default sanityCheckPrizeConfig;

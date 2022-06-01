@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import { computeWinningPicks, Draw, PrizeTier } from '../src';
+import { computeWinningPicks, Draw, PrizeConfig } from '../src';
 import { formatTierPercentage } from '../src/utils';
 
 describe('computeWinningPicks', () => {
@@ -23,7 +23,7 @@ describe('computeWinningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeTier: PrizeTier = {
+        const prizeConfig: PrizeConfig = {
             bitRangeSize: 4,
             matchCardinality: 10,
             prize: parseEther('100000'),
@@ -57,7 +57,7 @@ describe('computeWinningPicks', () => {
             userAddress,
             pickCounts,
             [draw],
-            [prizeTier]
+            [prizeConfig]
         );
         console.log('post computeWinningPicks');
 

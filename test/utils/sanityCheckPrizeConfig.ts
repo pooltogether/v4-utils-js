@@ -1,12 +1,12 @@
 import { parseUnits } from '@ethersproject/units';
 import { BigNumber } from 'ethers';
-import { PrizeTier } from '../../src/types';
+import { PrizeConfig } from '../../src/types';
 
-import { formatTierPercentage, sanityCheckPrizeTier } from '../../src/utils';
+import { formatTierPercentage, sanityCheckPrizeConfig } from '../../src/utils';
 
-describe('sanityCheckPrizeTier', () => {
-    it('should fail to sanity check a PrizeTier with invalid bitrange', () => {
-        const PRIZE_TIER_INVALID: PrizeTier = {
+describe('sanityCheckPrizeConfig', () => {
+    it('should fail to sanity check a PrizeConfig with invalid bitrange', () => {
+        const PRIZE_TIER_INVALID: PrizeConfig = {
             bitRangeSize: 256,
             matchCardinality: 2,
             tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -17,12 +17,12 @@ describe('sanityCheckPrizeTier', () => {
             drawId: 0,
             poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_INVALID);
-        expect(prizeTier).toEqual('DrawCalc/bitRangeSize-too-large');
+        const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_INVALID);
+        expect(prizeConfig).toEqual('DrawCalc/bitRangeSize-too-large');
     });
 
-    it('should fail to sanity check a PrizeTier with invalid tiers', () => {
-        const PRIZE_TIER_INVALID: PrizeTier = {
+    it('should fail to sanity check a PrizeConfig with invalid tiers', () => {
+        const PRIZE_TIER_INVALID: PrizeConfig = {
             bitRangeSize: 2,
             matchCardinality: 10,
             tiers: [
@@ -46,12 +46,12 @@ describe('sanityCheckPrizeTier', () => {
             drawId: 0,
             poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_INVALID);
-        expect(prizeTier).toEqual('DrawCalc/tiers-gt-100%');
+        const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_INVALID);
+        expect(prizeConfig).toEqual('DrawCalc/tiers-gt-100%');
     });
 
-    it('should succeed to sanity check an a valid PrizeTier', () => {
-        const PRIZE_TIER_VALID: PrizeTier = {
+    it('should succeed to sanity check an a valid PrizeConfig', () => {
+        const PRIZE_TIER_VALID: PrizeConfig = {
             bitRangeSize: 2,
             matchCardinality: 10,
             tiers: [
@@ -75,7 +75,7 @@ describe('sanityCheckPrizeTier', () => {
             drawId: 0,
             poolStakeTotal: BigNumber.from('1'),
         };
-        const prizeTier = sanityCheckPrizeTier(PRIZE_TIER_VALID);
-        expect(prizeTier).toEqual('');
+        const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_VALID);
+        expect(prizeConfig).toEqual('');
     });
 });
