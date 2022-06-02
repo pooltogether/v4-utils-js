@@ -5,6 +5,6 @@ export * from './calculate';
 export * from './compute';
 export * from './utils';
 export * from './types';
-export { default as encodeWinningPicks } from './encodeWinningPicks';
-export { default as winningPicks } from './winningPicks';
+export { default as encodeWinningPicks } from './utils/encodeWinningPicks';
+export { default as winningPicks } from './utils/winningPicks';
 export { calculate, compute, utils };

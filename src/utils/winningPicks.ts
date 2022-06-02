@@ -1,20 +1,20 @@
 import { BigNumber } from 'ethers';
 
-import computeWinningPicks from './compute/computeWinningPicks';
+import computeWinningPicks from '../compute/computeWinningPicks';
 import encodeWinningPicks from './encodeWinningPicks';
-import { Claim, Draw, PrizeConfig } from './types';
+import { Claim, Draw, PrizeConfig } from '../types';
 
 function winningPicks(
     userAddress: string,
-    ticketAddress: string,
     usersPickCounts: BigNumber[],
     draws: Draw[],
-    prizeConfigs: PrizeConfig[]
+    prizeConfigs: PrizeConfig[],
+    ticketAddress?: string
 ): Claim {
     return encodeWinningPicks(
         userAddress,
-        ticketAddress,
-        computeWinningPicks(userAddress, usersPickCounts, draws, prizeConfigs)
+        computeWinningPicks(userAddress, usersPickCounts, draws, prizeConfigs),
+        ticketAddress
     );
 }
 
