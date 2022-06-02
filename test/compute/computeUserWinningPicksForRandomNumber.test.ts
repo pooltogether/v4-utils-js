@@ -7,7 +7,6 @@ import { formatTierPercentage } from '../../src/utils';
 
 describe('computeUserWinningPicksForRandomNumber', () => {
     it('should succeed to calculate empty draw results', () => {
-        debugger;
         const draw: Draw = {
             winningRandomNumber: BigNumber.from(
                 '21288413488180966377126236036201345909019919575750940621513526137694302720820'
