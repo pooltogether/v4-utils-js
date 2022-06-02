@@ -4,7 +4,7 @@ import { parseEther } from '@ethersproject/units';
 
 import { Draw, PrizeConfig } from '../src';
 import { formatTierPercentage } from '../src/utils';
-import winningPicks from '../src/winningPicks';
+import winningPicks from '../src/utils/winningPicks';
 
 describe('winningPicks', () => {
     it('Computes winning picks', () => {
@@ -59,10 +59,10 @@ describe('winningPicks', () => {
 
         const generatedPicks = winningPicks(
             userAddress,
-            ticketAddress,
             pickCounts,
             [draw],
-            [prizeConfig]
+            [prizeConfig],
+            ticketAddress
         );
 
         const winningPickIndices = [

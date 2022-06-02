@@ -63,8 +63,8 @@ describe('encodeWinningPicks', () => {
         );
         const claimResult: Claim = encodeWinningPicks(
             userAddress,
-            ticketAddress,
-            [generatedPicks[0]]
+            [generatedPicks[0]],
+            ticketAddress
         );
 
         const winningPickIndices = [

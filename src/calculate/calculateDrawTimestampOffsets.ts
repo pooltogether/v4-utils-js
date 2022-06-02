@@ -1,15 +1,13 @@
-import { Draw, PrizeConfig } from '../types';
+import { BigNumber } from 'ethers';
 
 export function calculateDrawTimestampOffsets(
-    prizeConfig: PrizeConfig,
-    draw: Draw
+    endTimestampOffset: number,
+    beaconPeriodSeconds: number,
+    drawTimestamp: BigNumber
 ) {
-    const endTimestampOffset = prizeConfig.endTimestampOffset;
-    const startTimestampOffset = draw.beaconPeriodSeconds;
-    const startTime = draw.timestamp.sub(startTimestampOffset);
-    const endTime = draw.timestamp.sub(endTimestampOffset);
-
-    return [startTime, endTime];
+    const startTime = drawTimestamp.sub(beaconPeriodSeconds);
+    const endTime = drawTimestamp.sub(endTimestampOffset);
+    return { startTime, endTime };
 }
 
 export default calculateDrawTimestampOffsets;
