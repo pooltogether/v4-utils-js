@@ -1,8 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { Claim, DrawResults } from '../types';
 import { sortByBigNumberAsc } from '.';
+import { Claim, DrawResults } from '../types';
 
 function encodeWinningPicksToUint64Array(
     userAddress: string,
@@ -35,7 +35,7 @@ function encodeWinningPicksToUint64Array(
     claim.winningPickIndices = claim.winningPickIndices.map(data =>
         data.sort(sortByBigNumberAsc)
     );
- 
+
     claim.encodedWinningPickIndices = defaultAbiCoder.encode(
         ['uint64[][]'],
         [claim.winningPickIndices]
