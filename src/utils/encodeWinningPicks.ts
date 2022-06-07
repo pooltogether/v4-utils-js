@@ -35,10 +35,19 @@ function encodeWinningPicks(
     claim.winningPickIndices = claim.winningPickIndices.map(data =>
         data.sort(sortByBigNumberAsc)
     );
-    claim.encodedWinningPickIndices = defaultAbiCoder.encode(
-        ['uint256[][]'],
-        [claim.winningPickIndices]
-    );
+    // @dev The ticket address is optional. If "undefined" it's for v4 and if available for v5
+    if(!ticketAddress) {
+        claim.encodedWinningPickIndices = defaultAbiCoder.encode(
+            ['uint256[][]'],
+            [claim.winningPickIndices]
+        );
+    } else {
+        claim.encodedWinningPickIndices = defaultAbiCoder.encode(
+            ['uint64[][]'],
+            [claim.winningPickIndices]
+        );
+    }
+
     return claim;
 }
 
