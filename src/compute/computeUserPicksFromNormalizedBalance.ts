@@ -1,4 +1,5 @@
 import { BigNumberish } from 'ethers';
+
 import calculateNormalizedBalancePicksFromTotalPicks from '../calculate/calculateNormalizedBalancePicksFromTotalPicks';
 import computeUserPicks from './computeUserPicks';
 

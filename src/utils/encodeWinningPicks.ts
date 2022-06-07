@@ -1,8 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { Claim, DrawResults } from '../types';
 import { sortByBigNumberAsc } from '.';
+import { Claim, DrawResults } from '../types';
 
 function encodeWinningPicks(
     userAddress: string,
@@ -36,7 +36,7 @@ function encodeWinningPicks(
         data.sort(sortByBigNumberAsc)
     );
     // @dev The ticket address is optional. If "undefined" it's for v4 and if available for v5
-    if(!ticketAddress) {
+    if (!ticketAddress) {
         claim.encodedWinningPickIndices = defaultAbiCoder.encode(
             ['uint256[][]'],
             [claim.winningPickIndices]
