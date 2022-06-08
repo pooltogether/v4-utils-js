@@ -1,4 +1,7 @@
 export { default as createDrawResultsObject } from './createDrawResultsObject';
+export { default as encodeWinningPicks } from './encodeWinningPicks';
+export { default as encodeWinningPicksToUint64Array } from './encodeWinningPicksToUint64Array';
+export { default as encodeWinningPicksToUint256Array } from './encodeWinningPicksToUint256Array';
 export { default as filterResultsByValue } from './filterResultsByValue';
 export { default as filterUndefinedValues } from './filterUndefinedValues';
 export { default as findBitMatchesAtIndex } from './findBitMatchesAtIndex';

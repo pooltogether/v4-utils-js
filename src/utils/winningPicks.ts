@@ -1,8 +1,8 @@
 import { BigNumber } from 'ethers';
 
 import computeWinningPicks from '../compute/computeWinningPicks';
-import encodeWinningPicks from './encodeWinningPicks';
 import { Claim, Draw, PrizeConfig } from '../types';
+import encodeWinningPicks from './encodeWinningPicks';
 
 function winningPicks(
     userAddress: string,

@@ -1,7 +1,7 @@
 import { parseUnits } from '@ethersproject/units';
 import { BigNumber } from 'ethers';
-import { PrizeConfig } from '../../src/types';
 
+import { PrizeConfig } from '../../src/types';
 import { formatTierPercentage, sanityCheckPrizeConfig } from '../../src/utils';
 
 describe('sanityCheckPrizeConfig', () => {

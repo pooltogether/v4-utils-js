@@ -3,11 +3,15 @@
     "description": "Utility library for PoolTogether V4 off-chain calculations, computations and core logic.",
     "author": "PoolTogether Inc",
     "license": "GPL-3.0-only",
-    "version": "1.0.0-beta",
+    "version": "1.0.0-beta.1",
     "contributors": [
         {
             "name": "Kames Geraghty",
             "email": "kames@pooltogether.com"
+        },
+        {
+            "name": "Dylan Desrosier",
+            "email": "dylan@pooltogether.com"
         },
         {
             "name": "Aodhgan Gleeson",
