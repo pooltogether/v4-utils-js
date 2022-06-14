@@ -64,6 +64,7 @@ type Twab = {
 
 export type Account = {
     id: string;
+    address?: string;
     lastUpdatedTimestamp?: string;
     zeroBalanceOccurredAt?: string | null;
     delegateBalance: string;
