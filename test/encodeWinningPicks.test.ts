@@ -52,7 +52,7 @@ describe('encodeWinningPicks', () => {
                 0,
             ],
             drawId: draw.drawId,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
         };
 
         const generatedPicks = computeWinningPicks(

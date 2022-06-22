@@ -22,7 +22,7 @@ describe('computeUserWinningPicksForRandomNumber', () => {
             matchCardinality: 10,
             maxPicksPerUser: 2,
             drawId: draw.drawId,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
             tiers: [formatTierPercentage('1'), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             expiryDuration: 5184000,
             prize: parseEther('1000'),

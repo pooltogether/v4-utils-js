@@ -33,7 +33,7 @@ export type PrizeConfig = {
     drawId: number;
     expiryDuration: number;
     endTimestampOffset: number;
-    poolStakeTotal: BigNumber;
+    poolStakeCeiling: BigNumber;
     prize: BigNumber;
     tiers: number[];
 };

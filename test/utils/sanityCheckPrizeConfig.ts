@@ -15,7 +15,7 @@ describe('sanityCheckPrizeConfig', () => {
             prize: BigNumber.from('0'),
             endTimestampOffset: 0,
             drawId: 0,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
         };
         const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_INVALID);
         expect(prizeConfig).toEqual('DrawCalc/bitRangeSize-too-large');
@@ -44,7 +44,7 @@ describe('sanityCheckPrizeConfig', () => {
             prize: BigNumber.from('0'),
             endTimestampOffset: 0,
             drawId: 0,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
         };
         const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_INVALID);
         expect(prizeConfig).toEqual('DrawCalc/tiers-gt-100%');
@@ -73,7 +73,7 @@ describe('sanityCheckPrizeConfig', () => {
             prize: parseUnits('5000', 18),
             endTimestampOffset: 900,
             drawId: 0,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
         };
         const prizeConfig = sanityCheckPrizeConfig(PRIZE_TIER_VALID);
         expect(prizeConfig).toEqual('');

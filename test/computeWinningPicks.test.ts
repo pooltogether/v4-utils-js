@@ -49,7 +49,7 @@ describe('computeWinningPicks', () => {
                 0,
             ],
             drawId: draw.drawId,
-            poolStakeTotal: BigNumber.from('1'),
+            poolStakeCeiling: BigNumber.from('1'),
         };
 
         console.log('pre computeWinningPicks');
