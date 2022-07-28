@@ -75,7 +75,7 @@ git clone https://github.com/pooltogether/v4-utils-js
 
 ## 🏎️ &nbsp;Quickstart
 
-`normalizedBalance`, `draw` and `prizeDistribution` data should be fetched using the [@pooltogether/v4-js-client](/protocol/libraries/v4-js-client/) node module.
+`normalizedBalance`, `draw` and `prizeDistribution` data should be fetched using the [@pooltogether/v4-client-js](/protocol/libraries/v4-client-js/) node module.
 
 ### Winnings Picks
 
