@@ -3,11 +3,15 @@
     "description": "Utility library for PoolTogether V4 off-chain calculations, computations and core logic.",
     "author": "PoolTogether Inc",
     "license": "GPL-3.0-only",
-    "version": "0.1.4",
+    "version": "1.0.0-beta.5",
     "contributors": [
         {
             "name": "Kames Geraghty",
             "email": "kames@pooltogether.com"
+        },
+        {
+            "name": "Dylan Desrosier",
+            "email": "dylan@pooltogether.com"
         },
         {
             "name": "Aodhgan Gleeson",
@@ -33,6 +37,7 @@
         "start": "tsdx watch --onSuccess \"yalc push\"",
         "build": "tsdx build",
         "test": "tsdx test",
+        "test:watch": "tsdx test --watch",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
         "clean": "jest --clearCache",

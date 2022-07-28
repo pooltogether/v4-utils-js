@@ -1,14 +1,16 @@
 import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { DrawResults, Claim } from './types';
-import { sortByBigNumberAsc } from './utils';
+import { sortByBigNumberAsc } from '.';
+import { Claim, DrawResults } from '../types';
 
-function encodeWinningPicks(
+function encodeWinningPicksToUint64Array(
     userAddress: string,
-    drawResults: DrawResults[]
+    drawResults: DrawResults[],
+    ticketAddress: string
 ): Claim {
     let claim: Claim = {
+        ticketAddress,
         userAddress,
         drawIds: [],
         winningPickIndices: [],
@@ -33,11 +35,13 @@ function encodeWinningPicks(
     claim.winningPickIndices = claim.winningPickIndices.map(data =>
         data.sort(sortByBigNumberAsc)
     );
+
     claim.encodedWinningPickIndices = defaultAbiCoder.encode(
-        ['uint256[][]'],
+        ['uint64[][]'],
         [claim.winningPickIndices]
     );
+
     return claim;
 }
 
-export default encodeWinningPicks;
+export default encodeWinningPicksToUint64Array;

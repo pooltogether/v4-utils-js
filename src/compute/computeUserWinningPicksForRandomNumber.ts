@@ -12,22 +12,17 @@ function computeUserWinningPicksForRandomNumber(
     randomNumber: BigNumberish,
     bitRangeSize: number,
     matchCardinality: number,
-    numberOfPicks: BigNumberish,
     prize: BigNumberish,
     tiers: Array<any>,
     userAddress: string,
-    userNormalizedBalance: BigNumberish,
+    usersPickCount: BigNumberish,
     drawId: number
 ): DrawResults {
-    const _userNormalizedBalance = BigNumber.from(userNormalizedBalance);
+    const _usersPickCount = BigNumber.from(usersPickCount);
     const _prize = BigNumber.from(prize);
     const _randomNumber = BigNumber.from(randomNumber);
 
-    const userPicks = computeUserPicks(
-        numberOfPicks,
-        userAddress,
-        _userNormalizedBalance
-    );
+    const userPicks = computeUserPicks(userAddress, _usersPickCount);
 
     const pickPrizes = computePicksPrizes(
         userPicks,

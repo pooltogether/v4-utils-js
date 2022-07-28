@@ -2,6 +2,9 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 //////////////////////////// Derived from contracts ////////////////////////////
 
+/**
+ * Core data type for PrizeDistributorV1
+ */
 export type PrizeTier = {
     bitRangeSize: number;
     expiryDuration: number;
@@ -10,11 +13,29 @@ export type PrizeTier = {
     tiers: number[];
 };
 
+/**
+ * Core data type for PrizeDistributorV1
+ */
 export type PrizeDistribution = PrizeTier & {
     matchCardinality: number;
     numberOfPicks: BigNumber;
     startTimestampOffset: number;
     endTimestampOffset: number;
+};
+
+/**
+ * Core data type for PrizeDistributorV2
+ */
+export type PrizeConfig = {
+    bitRangeSize: number;
+    matchCardinality: number;
+    maxPicksPerUser: number;
+    drawId: number;
+    expiryDuration: number;
+    endTimestampOffset: number;
+    poolStakeCeiling: BigNumber;
+    prize: BigNumber;
+    tiers: number[];
 };
 
 export type Draw = {
@@ -42,6 +63,7 @@ export type PickPrize = {
 };
 
 export type Claim = {
+    ticketAddress?: string;
     userAddress: string;
     drawIds: number[];
     winningPickIndices: BigNumber[][];

@@ -1,11 +1,14 @@
 export { default as createDrawResultsObject } from './createDrawResultsObject';
+export { default as encodeWinningPicks } from './encodeWinningPicks';
+export { default as encodeWinningPicksToUint64Array } from './encodeWinningPicksToUint64Array';
+export { default as encodeWinningPicksToUint256Array } from './encodeWinningPicksToUint256Array';
 export { default as filterResultsByValue } from './filterResultsByValue';
 export { default as filterUndefinedValues } from './filterUndefinedValues';
 export { default as findBitMatchesAtIndex } from './findBitMatchesAtIndex';
 export { default as hashUserAddress } from './hashUserAddress';
 export { default as isBitRangeSizeValid } from './isBitRangeSizeValid';
 export { default as isTiersValid } from './isTiersValid';
-export { default as sanityCheckPrizeDistribution } from './sanityCheckPrizeDistribution';
+export { default as sanityCheckPrizeConfig } from './sanityCheckPrizeConfig';
 export { sumBigNumbers, sumTwoBigNumbers } from './sumBigNumbers';
 export { sortByBigNumberDesc, sortByBigNumberAsc } from './sortByBigNumber';
 export { sortByPrizeAwardableDesc } from './sortByPrizeAwardable';

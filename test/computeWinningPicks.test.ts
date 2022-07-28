@@ -1,16 +1,16 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseEther } from '@ethersproject/units';
 
-import { computeWinningPicks, Draw, PrizeDistribution } from '../src';
+import { computeWinningPicks, Draw, PrizeConfig } from '../src';
 import { formatTierPercentage } from '../src/utils';
 
 describe('computeWinningPicks', () => {
     it('returns correct claim struct for user', async () => {
         const userAddress = '0x0000000000000000000000000000000000000001';
-        const normalizedBalances = [
-            parseEther('0.1'),
-            parseEther('0.2'),
-            parseEther('0.3'),
+        const pickCounts = [
+            BigNumber.from('100'),
+            BigNumber.from('200'),
+            BigNumber.from('300'),
         ];
 
         const draw: Draw = {
@@ -23,14 +23,12 @@ describe('computeWinningPicks', () => {
             beaconPeriodStartedAt: BigNumber.from(0),
         };
 
-        const prizeDistribution: PrizeDistribution = {
+        const prizeConfig: PrizeConfig = {
             bitRangeSize: 4,
             matchCardinality: 10,
-            numberOfPicks: BigNumber.from(1000),
             prize: parseEther('100000'),
             maxPicksPerUser: 30,
             expiryDuration: 0,
-            startTimestampOffset: 0,
             endTimestampOffset: 0,
             tiers: [
                 formatTierPercentage('0.1'),
@@ -50,14 +48,18 @@ describe('computeWinningPicks', () => {
                 0,
                 0,
             ],
+            drawId: draw.drawId,
+            poolStakeCeiling: BigNumber.from('1'),
         };
 
+        console.log('pre computeWinningPicks');
         const generatedPicks = computeWinningPicks(
             userAddress,
-            normalizedBalances,
+            pickCounts,
             [draw],
-            [prizeDistribution]
+            [prizeConfig]
         );
+        console.log('post computeWinningPicks');
 
         const winningPickIndices = [
             BigNumber.from({ _hex: '0x01', _isBigNumber: true }),
