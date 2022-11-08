@@ -1,5 +1,6 @@
-import calculateCardinality from '../../src/calculate/calculateCardinality';
 import { parseEther, parseUnits } from '@ethersproject/units';
+
+import calculateCardinality from '../../src/calculate/calculateCardinality';
 
 describe('calculateCardinality', () => {
     it('should calculate', async () => {

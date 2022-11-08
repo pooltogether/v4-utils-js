@@ -1,4 +1,5 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
+
 import calculateCardinality from './calculateCardinality';
 import { calculateTotalSupplyOfPicks } from './calculateTotalSupplyOfPicks';
 

@@ -1,5 +1,6 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { parseUnits } from '@ethersproject/units';
+
 import calculateTotalSupplyOfPicks from './calculateTotalSupplyOfPicks';
 
 const debug = require('debug')('pt:v4-utils-js:calculateCardinality');
