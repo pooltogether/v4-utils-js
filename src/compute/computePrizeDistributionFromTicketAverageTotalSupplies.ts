@@ -52,9 +52,9 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     );
 
     const matchCardinality = calculateCardinality(
-        BigNumber.from(bitRangeSize),
+        bitRangeSize,
         BigNumber.from(totalAverageSupplies),
-        BigNumber.from(decimals)
+        decimals
     );
 
     let numberOfPicks;

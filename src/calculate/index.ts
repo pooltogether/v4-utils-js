@@ -1,11 +1,14 @@
 export { default as calculateCardinality } from './calculateCardinality';
 export { default as calculateFractionOfPrize } from './calculateFractionOfPrize';
 export { default as calculateNormalizedBalance } from './calculateNormalizedBalance';
+export { default as calculatePrizePoolPicksWithDpr } from './calculatePrizePoolPicksWithDpr';
 export { default as calculateNormalizedBalancePicksFromTotalPicks } from './calculateNormalizedBalancePicksFromTotalPicks';
 export { default as calculateNormalizedUserBalancesFromTotalSupply } from './calculateNormalizedUserBalancesFromTotalSupply';
 export { default as calculateNumberOfMatches } from './calculateNumberOfMatches';
 export { default as calculateNumberOfPrizesForTierIndex } from './calculateNumberOfPrizesForTierIndex';
 export { default as calculatePick } from './calculatePick';
+export { default as calculateTotalSupplyOfPicks } from './calculateTotalSupplyOfPicks';
+export { default as calculateNumberOfPrizesPerTier } from './calculateNumberOfPrizesPerTier';
 export { default as calculatePicks } from './calculatePicks';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
 export { default as calculatePrizeForTierPercentage } from './calculatePrizeForTierPercentage';

@@ -10,6 +10,10 @@ export type PrizeTier = {
     tiers: number[];
 };
 
+export type PrizeTierV2 = PrizeTier & {
+    dpr: number;
+};
+
 export type PrizeDistribution = PrizeTier & {
     matchCardinality: number;
     numberOfPicks: BigNumber;

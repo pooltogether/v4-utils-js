@@ -27,11 +27,14 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
 
         const expectation = {
             bitRangeSize: 2,
-            matchCardinality: 2,
+            matchCardinality: 9,
             tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             maxPicksPerUser: 2,
             expiryDuration: 86400,
-            numberOfPicks: BigNumber.from({ _hex: '0x03', _isBigNumber: true }),
+            numberOfPicks: BigNumber.from({
+                _hex: '0xcccc',
+                _isBigNumber: true,
+            }),
             startTimestampOffset: 86400,
             prize: BigNumber.from({
                 _hex: '0x5af3107a4000',
@@ -44,7 +47,8 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
             draw,
             prizeTier,
             BigNumber.from(100000),
-            [BigNumber.from(200000), BigNumber.from(200000)]
+            [BigNumber.from(200000), BigNumber.from(200000)],
+            0
         );
 
         debug(

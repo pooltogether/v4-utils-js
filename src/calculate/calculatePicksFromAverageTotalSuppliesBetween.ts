@@ -4,6 +4,13 @@ const debug = require('debug')(
     'pt:v4-utils-js:calculatePicksFromAverageTotalSuppliesBetween'
 );
 
+/**
+ * Splits picks based on the total supply of tickets compared to other total supplies.
+ * @param totalPicks
+ * @param ticketPrimaryTotalSupply
+ * @param otherTicketsTotalSupply
+ * @returns
+ */
 function calculatePicksFromAverageTotalSuppliesBetween(
     totalPicks: number,
     ticketPrimaryTotalSupply: BigNumber,
