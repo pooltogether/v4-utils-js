@@ -19,15 +19,18 @@ function calculateCardinality(
 ): number {
     const _totalSupply = BigNumber.from(totalSupply);
 
-    let cardinality = 1;
+    let cardinality = 0;
     let numberOfPicks;
     do {
+        cardinality++;
         numberOfPicks = parseUnits(
-            calculateTotalSupplyOfPicks(bitRangeSize, ++cardinality).toString(),
+            calculateTotalSupplyOfPicks(
+                bitRangeSize,
+                cardinality + 1
+            ).toString(),
             decimals
         );
     } while (numberOfPicks.lt(_totalSupply));
-    cardinality--;
 
     debug('bitRangeSize: ', BigNumber.from(bitRangeSize).toString());
     debug('totalSupply: ', BigNumber.from(totalSupply).toString());
