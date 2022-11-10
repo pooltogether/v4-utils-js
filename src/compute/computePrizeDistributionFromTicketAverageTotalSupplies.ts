@@ -14,7 +14,7 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     prizeTier: PrizeTier,
     ticketPrimaryAverageTotalSupply: BigNumberish,
     ticketSecondaryListAverageTotalSupply: Array<BigNumberish>,
-    decimals: BigNumberish = 18
+    decimals: BigNumberish = 0
 ): Promise<PrizeDistribution | undefined> {
     if (
         !draw ||
@@ -78,7 +78,7 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
         expiryDuration,
         numberOfPicks: BigNumber.from(numberOfPicks),
         startTimestampOffset: beaconPeriodSeconds,
-        endTimestampOffset: 0,
+        endTimestampOffset: prizeTier.endTimestampOffset,
         prize: prize,
     };
     debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);

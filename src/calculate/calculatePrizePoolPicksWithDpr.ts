@@ -25,7 +25,7 @@ function calculatePrizePoolPicksWithDpr(
     minPickCost: BigNumberish,
     prizeValue: BigNumberish,
     totalSupply: BigNumberish,
-    decimals: number | string = 0
+    decimals: BigNumberish = 0
 ): number | undefined {
     const _dpr = BigNumber.from(dpr);
     const _totalSupply = BigNumber.from(totalSupply);

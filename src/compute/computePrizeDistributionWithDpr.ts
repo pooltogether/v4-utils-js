@@ -12,19 +12,17 @@ const debug = require('debug')(
  * Computes a full Prize Distribution for a Prize Pool Network using DPR.
  * @param draw
  * @param prizeTier
- * @param prizePoolTotalSupply
- * @param dpr
- * @param minPickCost
- * @param decimals
+ * @param prizePoolTotalSupply average total supply for the duration of the draw provided
+ * @param minPickCost read from the contract at that time
+ * @param decimals decimals used for the Prize Pool ticket token
  * @returns
  */
 async function computePrizeDistributionWithDpr(
     draw: Draw,
     prizeTier: PrizeTierV2,
     prizePoolTotalSupply: BigNumberish,
-    dpr: BigNumberish,
     minPickCost: BigNumberish,
-    decimals: string | number = 0
+    decimals: BigNumberish = 0
 ): Promise<PrizeDistribution | undefined> {
     if (!draw || !prizeTier || !prizePoolTotalSupply) return undefined;
 
@@ -35,6 +33,7 @@ async function computePrizeDistributionWithDpr(
         maxPicksPerUser,
         tiers,
         prize,
+        dpr,
     } = prizeTier;
 
     const _totalSupply = BigNumber.from(prizePoolTotalSupply);
@@ -65,7 +64,7 @@ async function computePrizeDistributionWithDpr(
         expiryDuration,
         numberOfPicks: BigNumber.from(numberOfPicks),
         startTimestampOffset: beaconPeriodSeconds,
-        endTimestampOffset: 0,
+        endTimestampOffset: prizeTier.endTimestampOffset,
         prize: prize,
     };
     debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);

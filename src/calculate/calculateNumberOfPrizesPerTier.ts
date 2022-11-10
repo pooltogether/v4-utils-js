@@ -1,7 +1,7 @@
-import { PrizeTier } from '../types';
+import { PrizeTierConfig } from '../types';
 import calculateNumberOfPrizesForTierIndex from './calculateNumberOfPrizesForTierIndex';
 
-function calculateNumberOfPrizesPerTier(prizeTier: PrizeTier) {
+function calculateNumberOfPrizesPerTier(prizeTier: PrizeTierConfig) {
     return prizeTier.tiers.map((tier, index) =>
         !!tier
             ? calculateNumberOfPrizesForTierIndex(prizeTier.bitRangeSize, index)
