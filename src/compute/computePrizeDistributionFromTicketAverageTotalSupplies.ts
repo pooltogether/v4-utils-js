@@ -9,6 +9,15 @@ const debug = require('debug')(
     'pt:v4-utils-js:computePrizeDistributionFromTicketAverageTotalSupplies'
 );
 
+/**
+ * calculatePrizeDistribution on PrizeDistributionFactory
+ * @param draw
+ * @param prizeTier
+ * @param ticketPrimaryAverageTotalSupply
+ * @param ticketSecondaryListAverageTotalSupply
+ * @param decimals
+ * @returns
+ */
 async function computePrizeDistributionFromTicketAverageTotalSupplies(
     draw: Draw,
     prizeTier: PrizeTier,
