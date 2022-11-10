@@ -1,11 +1,11 @@
 import { BigNumber } from '@ethersproject/bignumber';
 
-import { computePrizeDistributionFromTicketAverageTotalSupplies } from '../../src';
-import { PrizeTier } from '../../src/types';
+import { computePrizeDistributionWithDpr } from '../../src';
+import { PrizeTierV2 } from '../../src/types';
 
 const debug = require('debug')('v4-utils-js:test');
 
-describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
+describe('computePrizeDistributionWithDpr', () => {
     it('should succeed to calculate a valid PrizeDistribution', async () => {
         const draw = {
             winningRandomNumber: BigNumber.from(
@@ -16,25 +16,25 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
             beaconPeriodStartedAt: BigNumber.from(1634324400),
             beaconPeriodSeconds: 86400,
         };
-
-        const prizeTier: PrizeTier = {
+        const prizeTier: PrizeTierV2 = {
             bitRangeSize: 2,
             maxPicksPerUser: 2,
             expiryDuration: 86400,
             prize: BigNumber.from('100000000000000'),
             tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            drawId: 100,
             endTimestampOffset: 900,
+            drawId: 100,
+            dpr: 1e9,
         };
 
         const expectation = {
             bitRangeSize: 2,
-            matchCardinality: 9,
+            matchCardinality: 8,
             tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             maxPicksPerUser: 2,
             expiryDuration: 86400,
             numberOfPicks: BigNumber.from({
-                _hex: '0xcccc',
+                _hex: '0x0112e0',
                 _isBigNumber: true,
             }),
             startTimestampOffset: 86400,
@@ -45,11 +45,11 @@ describe('computePrizeDistributionFromTicketAverageTotalSupplies', () => {
             endTimestampOffset: 900,
         };
 
-        const results = await computePrizeDistributionFromTicketAverageTotalSupplies(
+        const results = await computePrizeDistributionWithDpr(
             draw,
             prizeTier,
             BigNumber.from(100000),
-            [BigNumber.from(200000), BigNumber.from(200000)],
+            1,
             0
         );
 

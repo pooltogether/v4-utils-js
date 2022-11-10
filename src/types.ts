@@ -2,19 +2,27 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 //////////////////////////// Derived from contracts ////////////////////////////
 
-export type PrizeTier = {
+export type PrizeTierConfig = {
     bitRangeSize: number;
     expiryDuration: number;
     maxPicksPerUser: number;
     prize: BigNumber;
     tiers: number[];
+    endTimestampOffset: number;
 };
 
-export type PrizeDistribution = PrizeTier & {
+export type PrizeTier = PrizeTierConfig & {
+    drawId: number;
+};
+
+export type PrizeTierV2 = PrizeTier & {
+    dpr: number;
+};
+
+export type PrizeDistribution = PrizeTierConfig & {
     matchCardinality: number;
     numberOfPicks: BigNumber;
     startTimestampOffset: number;
-    endTimestampOffset: number;
 };
 
 export type Draw = {

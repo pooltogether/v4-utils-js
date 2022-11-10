@@ -2,6 +2,12 @@ import { BigNumber } from '@ethersproject/bignumber';
 
 import { NormalizedUserBalance, UserBalance } from '../types';
 
+/**
+ * Used to calculate the normalized user balances from the total supply of a Prize Pool.
+ * @param userBalances
+ * @param totalSupply
+ * @returns
+ */
 function calculateNormalizedUserBalancesFromTotalSupply(
     userBalances: UserBalance[],
     totalSupply: BigNumber

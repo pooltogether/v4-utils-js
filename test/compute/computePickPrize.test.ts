@@ -30,7 +30,6 @@ describe('computePickPrize', () => {
                 0,
             ]
         );
-        console.log(pickPrize.amount.toString());
         expect(pickPrize.tierIndex).toEqual(2);
         expect(pickPrize.amount).toEqual(parseEther('0.024801587301587000'));
     });

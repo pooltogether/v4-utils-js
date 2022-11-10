@@ -9,12 +9,21 @@ const debug = require('debug')(
     'pt:v4-utils-js:computePrizeDistributionFromTicketAverageTotalSupplies'
 );
 
+/**
+ * calculatePrizeDistribution on PrizeDistributionFactory
+ * @param draw
+ * @param prizeTier
+ * @param ticketPrimaryAverageTotalSupply
+ * @param ticketSecondaryListAverageTotalSupply
+ * @param decimals
+ * @returns
+ */
 async function computePrizeDistributionFromTicketAverageTotalSupplies(
     draw: Draw,
     prizeTier: PrizeTier,
     ticketPrimaryAverageTotalSupply: BigNumberish,
     ticketSecondaryListAverageTotalSupply: Array<BigNumberish>,
-    decimals: BigNumberish = 18
+    decimals: BigNumberish = 0
 ): Promise<PrizeDistribution | undefined> {
     if (
         !draw ||
@@ -52,9 +61,9 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
     );
 
     const matchCardinality = calculateCardinality(
-        BigNumber.from(bitRangeSize),
+        bitRangeSize,
         BigNumber.from(totalAverageSupplies),
-        BigNumber.from(decimals)
+        decimals
     );
 
     let numberOfPicks;
@@ -78,7 +87,7 @@ async function computePrizeDistributionFromTicketAverageTotalSupplies(
         expiryDuration,
         numberOfPicks: BigNumber.from(numberOfPicks),
         startTimestampOffset: beaconPeriodSeconds,
-        endTimestampOffset: 0,
+        endTimestampOffset: prizeTier.endTimestampOffset,
         prize: prize,
     };
     debug(`computePrizeDistribution:prizeDistribution: `, prizeDistribution);
