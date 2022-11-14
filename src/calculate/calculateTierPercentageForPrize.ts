@@ -13,7 +13,10 @@ function calculateTierPercentageForPrize(
         bitRangeSize,
         tierIndex
     );
-    const totalTierPrizes = parseUnits(tierPrize ? tierPrize.toString() : '0', 9).mul(numberOfPrizes);
+    const totalTierPrizes = parseUnits(
+        tierPrize ? tierPrize.toString() : '0',
+        9
+    ).mul(numberOfPrizes);
     const tierPercentage: BigNumber = totalTierPrizes.div(prizeAmount);
     return tierPercentage;
 }
