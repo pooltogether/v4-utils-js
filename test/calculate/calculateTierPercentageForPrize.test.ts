@@ -11,9 +11,7 @@ describe('calculateTierPercentageForPrize', () => {
             1,
             utils.parseUnits('1512', 6)
         );
-        expect(tierPercentage).toStrictEqual(
-            BigNumber.from('132275132')
-        );
+        expect(tierPercentage).toStrictEqual(BigNumber.from('132275132'));
     });
     it('can calculate the tier percentage of a multi-prize tier', async () => {
         const tierPercentage = calculateTierPercentageForPrize(
@@ -22,9 +20,7 @@ describe('calculateTierPercentageForPrize', () => {
             1,
             utils.parseUnits('1512', 6)
         );
-        expect(tierPercentage).toStrictEqual(
-            BigNumber.from('26455026')
-        );
+        expect(tierPercentage).toStrictEqual(BigNumber.from('26455026'));
     });
     it('can calculate the tier percentage of a prize tier with different token decimals', async () => {
         const tierPercentage = calculateTierPercentageForPrize(
@@ -33,8 +29,6 @@ describe('calculateTierPercentageForPrize', () => {
             1,
             utils.parseUnits('1512', 9)
         );
-        expect(tierPercentage).toStrictEqual(
-            BigNumber.from('132275132')
-        );
+        expect(tierPercentage).toStrictEqual(BigNumber.from('132275132'));
     });
 });
