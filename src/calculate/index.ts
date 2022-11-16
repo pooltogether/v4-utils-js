@@ -12,5 +12,6 @@ export { default as calculateNumberOfPrizesPerTier } from './calculateNumberOfPr
 export { default as calculatePicks } from './calculatePicks';
 export { default as calculatePicksFromAverageTotalSuppliesBetween } from './calculatePicksFromAverageTotalSuppliesBetween';
 export { default as calculatePrizeForTierPercentage } from './calculatePrizeForTierPercentage';
+export { default as calculateTierPercentageForPrize } from './calculateTierPercentageForPrize';
 export { default as calculateTierIndexFromMatches } from './calculateTierIndexFromMatches';
 export { default as calculateUserBalanceFromAccount } from './calculateUserBalanceFromAccount';
